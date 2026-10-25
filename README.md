@@ -14,3 +14,12 @@ il tocco apre la pagina con bottoni e ricerca.
 - Bottone WhatsApp con l'ordine già scritto, conto alla rovescia, chiamata, B2B.
 
 Rigenera: `python3 _build/build.py`
+
+## kit-gomma-ruota (stagione invernale, montaggio gratuito fino al 31/12/2026)
+
+- `locandina.jpg`: la locandina con il flash, da `../Locandine/kit-gomma-ruota-inverno/locandina-flash.html`.
+- `index.html` scritto a mano (nessun dato incorporato, niente build).
+- `kit.webp`: foto del kit Davinci scontornata (ruota che gira scorrendo la pagina).
+- Richiesta kit guidata (vettura, misura, invernale/4 stagioni, TPMS, quantità) → messaggio WhatsApp già scritto.
+- Conto alla rovescia al 31/12; a promo finita diventa «Chiedimi le offerte attive».
+- Anteprima: `_build/anteprima-kit-gomma-ruota.html` → `anteprima.jpg` (Chrome senza finestra, 1200×630).

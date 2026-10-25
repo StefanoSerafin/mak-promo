@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kit Gomma&amp;Ruota MAK</title>
+<meta name="description" content="Kit completi Gomma&Ruota configurati sul B2B MAK: noi montiamo, bilanciamo, mettiamo i TPMS se servono e te li spediamo pronti da montare. Montaggio gratuito fino al 31/12.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Kit Gomma&Ruota MAK · Montaggio gratuito fino al 31/12">
+<meta property="og:description" content="Tu scegli ruota e pneumatico, noi te li mandiamo montati, bilanciati e con i TPMS. Richiedi il tuo kit in un tocco.">
+<meta property="og:image" content="https://stefanoserafin.github.io/mak-promo/kit-gomma-ruota/anteprima.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://stefanoserafin.github.io/mak-promo/kit-gomma-ruota/">
+<meta name="theme-color" content="#da2128">
+<link rel="apple-touch-icon" href="icona.png">
+<style>
+:root{
+  --red:#da2128; --ink:#14161a; --mute:#5d626b; --card:#f3f4f6; --line:#e2e4e8; --bg:#fff; --verde:#25d366;
+  --titolo:"DIN Condensed","Avenir Next Condensed","Arial Narrow",system-ui,sans-serif;
+  --testo:"Avenir Next",-apple-system,system-ui,sans-serif;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--testo);font-size:16px;line-height:1.4}
+body{padding-bottom:calc(96px + env(safe-area-inset-bottom))}
+.wrap{max-width:540px;margin:0 auto;overflow:hidden}
+h2{font-family:var(--titolo);font-weight:700;font-size:32px;letter-spacing:.5px;margin:0 0 4px;text-transform:uppercase;line-height:1}
+h2 em{font-style:normal;color:var(--red)}
+.sub{color:var(--mute);margin:0 0 16px;font-size:15px}
+
+/* locandina con riflesso */
+.hero{position:relative;overflow:hidden;line-height:0}
+.hero img{width:100%;height:auto;display:block}
+.hero::after{content:"";position:absolute;top:0;bottom:0;width:40%;left:-60%;pointer-events:none;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-18deg);animation:riflesso 5s 1s infinite}
+@keyframes riflesso{0%{left:-60%}35%,100%{left:130%}}
+
+/* conto alla rovescia */
+.timer{position:sticky;top:0;z-index:20;background:var(--red);color:#fff;text-align:center;padding:10px 12px;box-shadow:0 4px 16px rgba(0,0,0,.18)}
+.timer small{display:block;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;opacity:.92}
+.cifre{display:flex;justify-content:center;gap:10px;font-family:var(--titolo);font-size:30px;line-height:1;margin-top:3px}
+.cifre span b{display:inline-block;min-width:1.3em}
+.cifre span i{font-style:normal;font-size:14px;opacity:.85;margin-left:1px}
+.timer.finita{background:#3f3f46}
+
+section{padding:28px 16px 6px}
+.card{background:var(--card);border-radius:16px;padding:16px}
+
+/* ruota che gira con lo scorrimento */
+.giro{position:relative;height:250px;margin:4px 0 0}
+.giro .disco{position:absolute;right:-60px;top:10px;width:235px;height:235px;border-radius:50%;background:var(--red)}
+.giro img{position:absolute;right:-34px;top:20px;width:215px;height:auto;will-change:transform;filter:drop-shadow(0 14px 16px rgba(0,0,0,.28))}
+.giro .testo{position:absolute;left:0;top:18px;width:50%}
+.giro .testo b{display:block;font-family:var(--titolo);font-size:40px;line-height:.9;text-transform:uppercase}
+.giro .testo b em{font-style:normal;color:var(--red)}
+.giro .testo p{margin:10px 0 0;color:var(--mute);font-size:15px}
+
+/* passaggi */
+.passi{display:grid;gap:10px}
+.passo{display:flex;gap:14px;align-items:flex-start;background:var(--card);border-top:4px solid var(--red);border-radius:4px 4px 14px 14px;padding:14px;
+  opacity:0;transform:translateX(-24px);transition:opacity .5s,transform .5s}
+.passo.vis{opacity:1;transform:none}
+.passo .n{font-family:var(--titolo);font-size:40px;line-height:1;color:var(--red);min-width:42px}
+.passo h3{margin:2px 0 4px;font-family:var(--titolo);font-size:26px;line-height:1;text-transform:uppercase}
+.passo p{margin:0;color:var(--mute);font-size:15px}
+.passo p strong{color:var(--ink)}
+
+/* risparmi */
+.risp{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.risp div{background:var(--card);border-radius:14px;padding:14px 12px;font-size:15px;font-weight:600;
+  opacity:0;transform:translateY(14px);transition:opacity .5s,transform .5s}
+.risp div.vis{opacity:1;transform:none}
+.risp div span{display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font-size:17px;margin-bottom:8px}
+.claim{margin-top:12px;background:var(--red);color:#fff;text-align:center;border-radius:14px;padding:14px 10px 10px;
+  font-family:var(--titolo);font-size:clamp(20px,6.4vw,30px);line-height:1;text-transform:uppercase;white-space:nowrap}
+
+/* richiesta kit */
+label.f{display:block;font-size:13px;color:var(--mute);margin:14px 0 6px;text-transform:uppercase;letter-spacing:1px}
+label.f:first-child{margin-top:0}
+input[type=text],select{width:100%;font:inherit;font-size:17px;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:12px;padding:13px 14px}
+select{-webkit-appearance:none;appearance:none;padding-right:34px;
+  background-image:linear-gradient(45deg,transparent 50%,var(--red) 50%),linear-gradient(135deg,var(--red) 50%,transparent 50%);
+  background-position:calc(100% - 18px) 50%,calc(100% - 12px) 50%;background-size:6px 6px;background-repeat:no-repeat}
+.misura{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:6px;align-items:center}
+.misura i{font-style:normal;color:var(--mute);font-weight:600}
+.scelte{display:flex;gap:8px;flex-wrap:wrap}
+.scelte input{position:absolute;opacity:0;pointer-events:none}
+.scelte label{flex:1;min-width:90px;text-align:center;background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 8px;font-weight:600;font-size:15px}
+.scelte input:checked+label{background:var(--ink);border-color:var(--ink);color:#fff}
+.qta{display:flex;align-items:center;gap:12px}
+.qta button{width:44px;height:44px;border-radius:12px;border:1px solid var(--line);background:#fff;color:var(--ink);font-size:22px}
+.qta b{font-family:var(--titolo);font-size:34px;min-width:30px;text-align:center;line-height:1;padding-top:4px}
+.qta small{color:var(--mute)}
+.riep{margin-top:16px;padding-top:14px;border-top:1px dashed #cfd2d8;font-size:14px;color:var(--mute);white-space:pre-line}
+.riep b{color:var(--ink)}
+.nota{font-size:13px;color:var(--mute);margin-top:8px}
+.salta{animation:salta .45s}
+@keyframes salta{30%{transform:scale(1.04)}60%{transform:scale(.99)}}
+
+/* contatti */
+.btns{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;color:var(--ink);
+  background:var(--card);border-radius:14px;padding:15px 10px;font-weight:600}
+.btn.b2b{background:var(--ink);color:#fff}
+footer{padding:26px 16px 10px;text-align:center;color:var(--mute);font-size:13px}
+footer img{width:130px;display:block;margin:0 auto 10px}
+footer b{color:var(--ink)}
+
+/* bottone fisso WhatsApp */
+.cta{position:fixed;left:0;right:0;bottom:0;z-index:30;padding:10px 16px calc(10px + env(safe-area-inset-bottom));
+  background:linear-gradient(rgba(255,255,255,0),rgba(255,255,255,.96) 30%)}
+.cta a{display:flex;align-items:center;justify-content:center;gap:10px;max-width:508px;margin:0 auto;
+  background:var(--verde);color:#062e16;text-decoration:none;font-weight:800;font-size:18px;border-radius:16px;padding:16px;
+  animation:pulsa 2.4s infinite}
+.cta a svg{width:24px;height:24px;fill:currentColor}
+@keyframes pulsa{0%,100%{box-shadow:0 0 0 0 rgba(37,211,102,.55)}60%{box-shadow:0 0 0 14px rgba(37,211,102,0)}}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .passo,.risp div{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="hero">
+  <img src="locandina.jpg" alt="Kit Gomma e Ruota MAK: configuralo sul B2B, noi montiamo, bilanciamo e mettiamo i TPMS, ti arriva pronto da montare. Montaggio gratuito fino al 31/12" width="1620" height="2025">
+</div>
+
+<div class="timer" id="timer">
+  <small id="timerTesto">Montaggio gratuito ancora per</small>
+  <div class="cifre" id="cifre">
+    <span><b id="gg">–</b><i>g</i></span><span><b id="hh">–</b><i>h</i></span><span><b id="mm">–</b><i>m</i></span><span><b id="ss">–</b><i>s</i></span>
+  </div>
+</div>
+
+<section>
+  <div class="giro" id="giro">
+    <div class="disco"></div>
+    <img id="ruota" src="kit.webp" alt="Kit invernale con cerchio MAK Davinci e pneumatico montato" width="800" height="814">
+    <div class="testo">
+      <b>Ruota <em>+</em> gomma <em>=</em> kit pronto</b>
+      <p>Arriva in officina già montato e bilanciato. Lo togli dalla scatola e lo monti sulla vettura.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Come <em>funziona</em></h2>
+  <p class="sub">Tre passaggi, il lavoro pesante lo facciamo noi.</p>
+  <div class="passi" id="passi">
+    <div class="passo"><span class="n">01</span><div><h3>Tu scegli</h3><p><strong>La ruota e il pneumatico</strong> sul portale B2B, in modo facile e intuitivo.</p></div></div>
+    <div class="passo"><span class="n">02</span><div><h3>Noi montiamo</h3><p><strong>Montaggio, bilanciatura</strong> e sensori <strong>TPMS</strong> se la vettura li richiede.</p></div></div>
+    <div class="passo"><span class="n">03</span><div><h3>Arriva pronto</h3><p>Spedito in officina, <strong>da montare subito</strong> sulla vettura.</p></div></div>
+  </div>
+</section>
+
+<section>
+  <h2>Cosa <em>ti risparmi</em></h2>
+  <p class="sub">Il tempo in officina lo dedichi ai clienti, non alla macchina smontagomme.</p>
+  <div class="risp" id="risp">
+    <div><span>✓</span>Montaggio gomma su cerchio</div>
+    <div><span>✓</span>Bilanciatura</div>
+    <div><span>✓</span>Sensori TPMS installati</div>
+    <div><span>✓</span>Un solo ordine, una sola spedizione</div>
+  </div>
+  <div class="claim">Risparmi tempo · Risparmi denaro</div>
+</section>
+
+<section id="secRichiesta">
+  <h2>Richiedi il <em>tuo kit</em></h2>
+  <p class="sub">Compila quello che sai: ti preparo io la proposta e te la mando su WhatsApp.</p>
+  <div class="card" id="richiesta">
+    <label class="f" for="vettura">Vettura</label>
+    <input type="text" id="vettura" placeholder="Es. VW Tiguan 2021" autocomplete="off">
+
+    <label class="f">Misura pneumatico</label>
+    <div class="misura">
+      <select id="larg" aria-label="Larghezza"></select><i>/</i>
+      <select id="serie" aria-label="Serie"></select><i>R</i>
+      <select id="diam" aria-label="Diametro"></select>
+    </div>
+
+    <label class="f">Pneumatico</label>
+    <div class="scelte">
+      <input type="radio" name="stag" id="s1" value="invernale" checked><label for="s1">Invernale</label>
+      <input type="radio" name="stag" id="s2" value="4 stagioni"><label for="s2">4 stagioni</label>
+    </div>
+
+    <label class="f">Sensori TPMS</label>
+    <div class="scelte">
+      <input type="radio" name="tpms" id="t1" value="sì"><label for="t1">Sì</label>
+      <input type="radio" name="tpms" id="t2" value="no"><label for="t2">No</label>
+      <input type="radio" name="tpms" id="t3" value="non so" checked><label for="t3">Non so</label>
+    </div>
+
+    <label class="f">Quanti kit</label>
+    <div class="qta">
+      <button type="button" id="meno" aria-label="Meno">−</button><b id="nKit">4</b><button type="button" id="piu" aria-label="Più">+</button>
+      <small>ruote complete</small>
+    </div>
+
+    <div class="riep" id="riep"></div>
+  </div>
+  <p class="nota">Se preferisci, puoi configurarlo da solo sul portale B2B.</p>
+</section>
+
+<section>
+  <div class="btns">
+    <a class="btn" href="tel:+393316798961">📞 Chiamami</a>
+    <a class="btn b2b" href="https://b2bshop.makwheels.it/" target="_blank" rel="noopener">🛒 Portale B2B</a>
+  </div>
+</section>
+
+<footer><img src="logo-mak.svg" alt="MAK"><b>Stefano Serafin</b> · Agente MAK · 331 679 8961<br>Nella foto: kit invernale con cerchio MAK Davinci.</footer>
+</div>
+
+<div class="cta"><a id="wa" href="#" target="_blank" rel="noopener">
+  <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.7a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.2-.2-.5-.3z"/></svg>
+  <span id="waTesto">Scrivimi su WhatsApp</span></a></div>
+
+<script>
+const PROMO = {
+  fine: new Date("2026-12-31T23:59:59+01:00"),
+  telefono: "393316798961"
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+  const $ = id => document.getElementById(id);
+
+  /* conto alla rovescia */
+  let finita = false;
+  function tick() {
+    const ms = PROMO.fine - new Date();
+    if (ms <= 0) {
+      finita = true;
+      $("timer").classList.add("finita");
+      $("timerTesto").textContent = "Montaggio gratuito terminato";
+      $("cifre").textContent = "Chiedimi le offerte attive";
+      $("cifre").style.fontSize = "22px";
+      aggiornaWa();
+      return;
+    }
+    const s = Math.floor(ms / 1000);
+    $("gg").textContent = Math.floor(s / 86400);
+    $("hh").textContent = String(Math.floor(s % 86400 / 3600)).padStart(2, "0");
+    $("mm").textContent = String(Math.floor(s % 3600 / 60)).padStart(2, "0");
+    $("ss").textContent = String(s % 60).padStart(2, "0");
+    setTimeout(tick, 1000);
+  }
+
+  /* ruota che gira scorrendo la pagina */
+  const ruota = $("ruota");
+  let pronto = true;
+  window.addEventListener("scroll", () => {
+    if (!pronto) return;
+    pronto = false;
+    requestAnimationFrame(() => {
+      ruota.style.transform = "rotate(" + (window.scrollY * 0.35) + "deg)";
+      pronto = true;
+    });
+  }, {passive: true});
+
+  /* comparsa animata di passaggi e risparmi */
+  function comparsa(contenitore, sel, passo) {
+    const voci = contenitore.querySelectorAll(sel);
+    if (!("IntersectionObserver" in window)) { voci.forEach(v => v.classList.add("vis")); return; }
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) {
+        voci.forEach((v, i) => setTimeout(() => v.classList.add("vis"), i * passo));
+        io.disconnect();
+      }
+    }), {threshold: .2});
+    io.observe(contenitore);
+  }
+  comparsa($("passi"), ".passo", 180);
+  comparsa($("risp"), "div", 110);
+
+  /* richiesta kit */
+  const riempi = (sel, da, a, passo, vuoto) => {
+    sel.add(new Option(vuoto, ""));
+    for (let v = da; v <= a; v += passo) sel.add(new Option(v, v));
+  };
+  riempi($("larg"), 155, 315, 10, "Largh.");
+  riempi($("serie"), 25, 75, 5, "Serie");
+  riempi($("diam"), 14, 22, 1, "Ø");
+
+  let nKit = 4;
+  $("meno").addEventListener("click", () => { if (nKit > 1) { nKit--; aggiorna(); } });
+  $("piu").addEventListener("click", () => { if (nKit < 20) { nKit++; aggiorna(); } });
+  ["vettura", "larg", "serie", "diam"].forEach(id => $(id).addEventListener(id === "vettura" ? "input" : "change", aggiorna));
+  document.querySelectorAll("input[type=radio]").forEach(r => r.addEventListener("change", aggiorna));
+
+  const scelto = nome => document.querySelector("input[name=" + nome + "]:checked").value;
+  function dati() {
+    const l = $("larg").value, s = $("serie").value, d = $("diam").value;
+    return {
+      vettura: $("vettura").value.trim(),
+      misura: l && s && d ? l + "/" + s + " R" + d : (l || s || d ? [l || "?", "/", s || "?", " R", d || "?"].join("") : ""),
+      stagione: scelto("stag"),
+      tpms: scelto("tpms"),
+      n: nKit
+    };
+  }
+  const compilato = k => k.vettura || k.misura;
+
+  function aggiorna() {
+    const k = dati();
+    $("nKit").textContent = k.n;
+    $("riep").innerHTML = "";
+    if (compilato(k)) {
+      const t = document.createElement("div");
+      t.innerHTML = "<b>La tua richiesta</b>\n";
+      t.appendChild(document.createTextNode(
+        k.n + " kit Gomma&Ruota · pneumatico " + k.stagione +
+        (k.vettura ? "\nVettura: " + k.vettura : "") +
+        (k.misura ? "\nMisura: " + k.misura : "") +
+        "\nTPMS: " + k.tpms));
+      $("riep").appendChild(t);
+      $("richiesta").classList.remove("salta");
+      void $("richiesta").offsetWidth;
+      $("richiesta").classList.add("salta");
+    }
+    aggiornaWa();
+  }
+
+  function aggiornaWa() {
+    const k = dati();
+    let testo, etichetta;
+    if (compilato(k)) {
+      testo = "Ciao Stefano, vorrei una proposta per i *kit Gomma&Ruota*:\n" +
+        "• Quantità: " + k.n + " ruote complete\n" +
+        (k.vettura ? "• Vettura: " + k.vettura + "\n" : "") +
+        (k.misura ? "• Misura: " + k.misura + "\n" : "") +
+        "• Pneumatico: " + k.stagione + "\n" +
+        "• TPMS: " + k.tpms + "\n" +
+        (finita ? "" : "(Montaggio gratuito fino al 31/12)\n") +
+        "\nOfficina: ";
+      etichetta = "Invia la richiesta su WhatsApp";
+    } else if (finita) {
+      testo = "Ciao Stefano, ho visto i kit Gomma&Ruota MAK. Ci sono offerte attive adesso?";
+      etichetta = "Chiedimi le offerte attive";
+    } else {
+      testo = "Ciao Stefano, mi interessano i kit Gomma&Ruota con montaggio gratuito fino al 31/12. Mi richiami?";
+      etichetta = "Scrivimi su WhatsApp";
+    }
+    $("wa").href = "https://wa.me/" + PROMO.telefono + "?text=" + encodeURIComponent(testo);
+    $("waTesto").textContent = etichetta;
+  }
+
+  tick();
+  aggiornaWa();
+});
+</script>
+</body>
+</html>
