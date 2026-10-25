@@ -99,6 +99,8 @@ select:disabled{opacity:.45}
 .scelte input{position:absolute;opacity:0;pointer-events:none}
 .scelte label{flex:1;min-width:90px;text-align:center;background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 8px;font-weight:600;font-size:15px}
 .scelte input:checked+label{background:var(--ink);border-color:var(--ink);color:#fff}
+.scelte.griglia{display:grid;grid-template-columns:1fr 1fr}
+.scelte .pallino{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:6px;vertical-align:-1px;border:1px solid #9ca0a8}
 .qta{display:flex;align-items:center;gap:12px}
 .qta button{width:44px;height:44px;border-radius:12px;border:1px solid var(--line);background:#fff;color:var(--ink);font-size:22px}
 .qta b{font-family:var(--titolo);font-size:34px;min-width:30px;text-align:center;line-height:1;padding-top:4px}
@@ -207,6 +209,14 @@ footer b{color:var(--ink)}
       <select id="larg" aria-label="Larghezza"></select><i>/</i>
       <select id="serie" aria-label="Serie"></select><i>R</i>
       <select id="diam" aria-label="Diametro"></select>
+    </div>
+
+    <label class="f">Ruota: preferenze</label>
+    <div class="scelte griglia">
+      <input type="checkbox" name="ruota" id="r1" value="silver"><label for="r1"><span class="pallino" style="background:linear-gradient(135deg,#f4f5f7,#a9adb5)"></span>Silver</label>
+      <input type="checkbox" name="ruota" id="r2" value="nero"><label for="r2"><span class="pallino" style="background:#14161a"></span>Nero</label>
+      <input type="checkbox" name="ruota" id="r3" value="diamantato"><label for="r3"><span class="pallino" style="background:linear-gradient(90deg,#14161a 50%,#d9dce0 50%)"></span>Diamantato</label>
+      <input type="checkbox" name="ruota" id="r4" value="prezzo promo"><label for="r4"><span class="pallino" style="background:var(--red);border-color:var(--red)"></span>Prezzo promo</label>
     </div>
 
     <label class="f">Pneumatico</label>
@@ -386,7 +396,7 @@ document.addEventListener("DOMContentLoaded", () => {
   $("piu").addEventListener("click", () => { if (nKit < 20) { nKit++; aggiorna(); } });
   ["anno", "larg", "serie", "diam"].forEach(id => $(id).addEventListener("change", aggiorna));
   $("altroModello").addEventListener("input", aggiorna);
-  document.querySelectorAll("input[type=radio]").forEach(r => r.addEventListener("change", aggiorna));
+  document.querySelectorAll("input[type=radio],input[type=checkbox]").forEach(r => r.addEventListener("change", aggiorna));
 
   function vettura() {
     const marca = selMarca.value, mod = selModello.value, altro = $("altroModello").value.trim();
@@ -406,6 +416,7 @@ document.addEventListener("DOMContentLoaded", () => {
       libretto: !!libretto,
       misura: l && s && d ? l + "/" + s + " R" + d : (l || s || d ? [l || "?", "/", s || "?", " R", d || "?"].join("") : ""),
       stagione: scelto("stag"),
+      ruota: [...document.querySelectorAll("input[name=ruota]:checked")].map(c => c.value).join(", "),
       tpms: scelto("tpms"),
       n: nKit
     };
@@ -424,6 +435,7 @@ document.addEventListener("DOMContentLoaded", () => {
         (k.libretto ? "\nLibretto: foto caricata" : "") +
         (k.vettura ? "\nVettura: " + k.vettura : "") +
         (k.misura ? "\nMisura: " + k.misura : "") +
+        (k.ruota ? "\nRuota: " + k.ruota : "") +
         "\nTPMS: " + k.tpms));
       $("riep").appendChild(t);
       $("richiesta").classList.remove("salta");
@@ -442,6 +454,7 @@ document.addEventListener("DOMContentLoaded", () => {
         (k.libretto ? "• Libretto: in allegato\n" : "") +
         (k.vettura ? "• Vettura: " + k.vettura + "\n" : "") +
         (k.misura ? "• Misura: " + k.misura + "\n" : "") +
+        (k.ruota ? "• Ruota: " + k.ruota + "\n" : "") +
         "• Pneumatico: " + k.stagione + "\n" +
         "• TPMS: " + k.tpms + "\n" +
         (finita ? "" : "(Montaggio gratuito fino al 31/12)\n") +

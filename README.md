@@ -20,7 +20,7 @@ Rigenera: `python3 _build/build.py`
 - `locandina.jpg`: la locandina con il flash, da `../Locandine/kit-gomma-ruota-inverno/locandina-flash.html`.
 - `index.template.html` da modificare a mano; `index.html` lo genera `_build/build.py` con dentro marche e modelli del configuratore NPK (`../noproblemkit/dati/veicoli.csv`).
 - `kit.webp`: foto del kit Davinci scontornata (ruota che gira scorrendo la pagina).
-- Richiesta kit guidata: foto del libretto oppure marca → modello → anno, misura, invernale/4 stagioni, TPMS, quantità → messaggio WhatsApp già scritto.
+- Richiesta kit guidata: foto del libretto oppure marca → modello → anno, misura, preferenze ruota (silver, nero, diamantato, prezzo promo; anche più di una), invernale/4 stagioni, TPMS, quantità → messaggio WhatsApp già scritto.
 - Con il libretto il bottone verde apre il menu Condividi (foto + testo, poi WhatsApp e Stefano); dove non si possono condividere file apre la chat e chiede di allegarlo. La foto non passa da nessun server.
 - Conto alla rovescia al 31/12; a promo finita diventa «Chiedimi le offerte attive».
 - Anteprima: `_build/anteprima-kit-gomma-ruota.html` → `anteprima.jpg` (Chrome senza finestra, 1200×630).
