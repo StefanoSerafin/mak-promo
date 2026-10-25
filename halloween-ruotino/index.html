@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Promo Halloween NPK</title>
-<meta name="description" content="5 ruotini NPK a scelta fino a 17&quot; a 114,90 € cadauno + IVA. Trova il ruotino per la vettura e ordinalo su WhatsApp. Fino al 1 novembre.">
+<meta name="description" content="Ruotini NPK in acciaio fino a 17&quot; a 114,90 € cadauno + IVA, minimo 5 pezzi. Trova il ruotino per la vettura e ordinalo su WhatsApp. Fino al 1 novembre.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="🎃 Promo Halloween · Ruotini NPK a 114,90 € + IVA">
 <meta property="og:description" content="Trova il ruotino giusto per la vettura e ordinalo in un tocco. Solo fino al 1 novembre.">
@@ -156,13 +156,13 @@ footer b{color:var(--txt)}
 
 <section id="secOrdine">
   <h2>Il tuo ordine</h2>
-  <p class="sub" id="progTesto">5 ruotini a scelta: aggiungili dalla ricerca qui sopra.</p>
+  <p class="sub" id="progTesto">Minimo 5 ruotini in promo: aggiungili dalla ricerca qui sopra.</p>
   <div class="prog" id="prog"><i></i><i></i><i></i><i></i><i></i></div>
   <div class="card" id="ordineCard">
     <div id="ordine"><div class="vuoto">Ancora nessun ruotino.</div></div>
     <div class="totale"><small>Totale promo (IVA esclusa)</small><b id="totale">0,00 €</b></div>
   </div>
-  <p class="nota">Prezzo promo 114,90 € cadauno + IVA per ruotini in acciaio fino a 17". Per gli altri ti mando io il prezzo.</p>
+  <p class="nota">Promo: 114,90 € cadauno + IVA, minimo 5 ruotini in acciaio fino a 17". Esclusi i ruotini in lega e quelli oltre 17": per quelli ti mando io il prezzo.</p>
 </section>
 
 <section>
@@ -263,7 +263,7 @@ document.addEventListener("DOMContentLoaded", () => {
       el.innerHTML =
         '<div class="dx"><div class="cod"></div><div class="det"></div>' +
         '<span class="badge ' + (ok ? "si" : "no") + '">' +
-        (ok ? "🎃 IN PROMO · " + euro(PROMO.prezzo) + " + IVA" : (tipo === "L" ? "In lega · prezzo su richiesta" : "Oltre 17\" · prezzo su richiesta")) +
+        (ok ? "🎃 IN PROMO · " + euro(PROMO.prezzo) + " + IVA" : (tipo === "L" ? "In lega · esclusa dalla promo" : "Oltre 17\" · esclusa dalla promo")) +
         '</span></div><button class="piu" aria-label="Aggiungi all\'ordine">+</button>';
       el.querySelector(".cod").textContent = codice;
       el.querySelector(".det").textContent = misura + " · " + (tipo === "L" ? "lega" : "acciaio") + (anno ? " · " + anno : "");
@@ -307,13 +307,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const nTot = ordine.reduce((t, o) => t + o.qta, 0);
     $("totale").textContent = euro(nPromo * PROMO.prezzo);
     [...$("prog").children].forEach((t, i) => t.classList.toggle("on", i < nPromo));
+    const mancano = PROMO.pezzi - nPromo;
     $("progTesto").textContent = nTot === 0
-      ? PROMO.pezzi + " ruotini a scelta: aggiungili dalla ricerca qui sopra."
-      : nPromo >= PROMO.pezzi
-        ? "🎃 Hai scelto " + nPromo + " ruotini in promo."
-        : "Hai scelto " + nPromo + " ruotin" + (nPromo === 1 ? "o" : "i") + " in promo su " + PROMO.pezzi + ".";
+      ? "Minimo " + PROMO.pezzi + " ruotini in promo: aggiungili dalla ricerca qui sopra."
+      : mancano <= 0
+        ? "🎃 Minimo raggiunto: " + nPromo + " ruotini in promo."
+        : "Ne hai " + nPromo + " in promo: ne manca" + (mancano === 1 ? " 1" : "no " + mancano) + " per arrivare al minimo di " + PROMO.pezzi + ".";
+    $("totale").parentElement.querySelector("small").textContent =
+      mancano > 0 && nPromo > 0 ? "Totale promo (sotto il minimo di " + PROMO.pezzi + ")" : "Totale promo (IVA esclusa)";
     aggiornaWa();
   }
+
+  const nPromoOrdine = () => ordine.filter(inPromo).reduce((t, o) => t + o.qta, 0);
 
   function aggiornaWa() {
     let testo, etichetta;
@@ -327,7 +332,9 @@ document.addEventListener("DOMContentLoaded", () => {
       const n = ordine.reduce((t, o) => t + o.qta, 0);
       testo = "Ciao Stefano, per la *Promo Halloween ruotini NPK* mi servono:\n" +
         ordine.map(o => "• " + o.qta + " × " + o.codice + " (" + o.misura + ") – " + o.veicolo).join("\n") +
-        "\n\nTotale: " + n + " ruotin" + (n === 1 ? "o" : "i") + ".\nOfficina: ";
+        "\n\nTotale: " + n + " ruotin" + (n === 1 ? "o" : "i") + "." +
+        (nPromoOrdine() < PROMO.pezzi ? "\n(Sono sotto il minimo di " + PROMO.pezzi + " pezzi in promo.)" : "") +
+        "\nOfficina: ";
       etichetta = "Invia l'ordine (" + n + ") su WhatsApp";
     }
     $("wa").href = "https://wa.me/" + PROMO.telefono + "?text=" + encodeURIComponent(testo);
