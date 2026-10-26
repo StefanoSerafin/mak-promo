@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Spazzole tergi CO.RA.</title>
-<meta name="description" content="Kit spazzole tergi CO.RA. TotalFit con espositore da muro incluso: kit 70 a 327,20 € o kit 140 a 671,46 € + IVA, −60% sul listino. Scegli il kit e ordina su WhatsApp.">
+<meta name="description" content="Spazzole tergi CO.RA. TotalFit con espositore da muro incluso: promo 70 a −60% o promo 140 a −60% −5% sul listino. Scegli la promo, regola le quantità di ogni misura e ordina su WhatsApp.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Spazzole tergi CO.RA. TotalFit · −60% con espositore incluso">
-<meta property="og:description" content="Kit 70 o kit 140 spazzole universali con espositore da muro, circa 4,70 € a spazzola. Scegli e ordina su WhatsApp.">
+<meta property="og:description" content="Kit 70 o kit 140 spazzole universali con espositore da muro, circa 4,70 € a spazzola. Componi le misure e ordina su WhatsApp.">
 <meta property="og:image" content="https://stefanoserafin.github.io/mak-promo/tergi-cora/anteprima.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -16,7 +16,7 @@
 <link rel="apple-touch-icon" href="icona.png">
 <style>
 :root{
-  --red:#da2128; --ink:#14161a; --mute:#5d626b; --card:#f3f4f6; --line:#e2e4e8; --bg:#fff; --verde:#25d366; --pioggia:#e8eef7;
+  --red:#da2128; --ink:#14161a; --mute:#5d626b; --card:#f3f4f6; --line:#e2e4e8; --bg:#fff; --verde:#25d366; --pioggia:#e8eef7; --ok:#14833b;
   --titolo:"DIN Condensed","Avenir Next Condensed","Arial Narrow",system-ui,sans-serif;
   --testo:"Avenir Next",-apple-system,system-ui,sans-serif;
 }
@@ -31,7 +31,6 @@ section{padding:28px 16px 6px}
 
 .hero{position:relative;overflow:hidden;line-height:0}
 .hero img{width:100%;height:auto;display:block}
-/* pioggia sulla locandina */
 .pioggia{position:absolute;inset:0;pointer-events:none;overflow:hidden}
 .pioggia i{position:absolute;top:-40px;width:2px;height:28px;border-radius:2px;background:linear-gradient(transparent,rgba(70,110,170,.55));animation:goccia linear infinite}
 @keyframes goccia{to{transform:translate(-30px,110vh)}}
@@ -45,7 +44,7 @@ section{padding:28px 16px 6px}
 .avviso.via{transform:translateY(-110%)}
 #secKit{scroll-margin-top:10px}
 
-/* scelta kit */
+/* scelta promo */
 .scelta{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .scelta input{position:absolute;opacity:0;pointer-events:none}
 .scelta label{display:flex;flex-direction:column;background:var(--pioggia);border:2px solid transparent;border-radius:14px;padding:10px;cursor:pointer;transition:border-color .2s,background .2s}
@@ -57,32 +56,47 @@ section{padding:28px 16px 6px}
 .scelta strong{font-family:var(--titolo);font-size:28px;color:var(--red);line-height:1;margin-top:4px;padding-top:3px}
 .scelta em{font-style:normal;font-size:12px;color:var(--mute)}
 
-/* contenuto */
+/* righe codici */
 .card{background:var(--card);border-radius:16px;padding:14px}
-.tab{width:100%;border-collapse:collapse;font-size:14px}
-.tab th{text-align:left;font-size:11px;color:var(--mute);text-transform:uppercase;letter-spacing:.5px;font-weight:600;padding:0 4px 6px}
-.tab td{padding:7px 4px;border-top:1px solid var(--line)}
-.tab td:first-child{font-family:var(--titolo);font-size:20px;padding-top:9px}
-.tab td.c{font-weight:600;font-size:13px}
-.tab td.r,.tab th.r{text-align:right;white-space:nowrap}
-.tab tr{animation:entra .35s both}
-@keyframes entra{from{opacity:0;transform:translateX(-10px)}}
-.esp{display:flex;align-items:center;gap:8px;margin-top:10px;padding:10px;background:#fff;border-radius:12px;font-size:14px}
-.esp b{color:var(--red)}
-.qtarow{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:14px}
-.qtarow span{font-size:14px;font-weight:600}
+.prog{display:flex;align-items:center;gap:12px;margin-bottom:4px}
+.prog b{font-family:var(--titolo);font-size:30px;line-height:1;padding-top:3px;white-space:nowrap}
+.barra{flex:1;height:12px;border-radius:6px;background:#dcdfe4;overflow:hidden}
+.barra i{display:block;height:100%;width:0;background:var(--red);border-radius:6px;transition:width .3s,background .3s}
+.barra.ok i{background:var(--ok)}
+.stato{font-size:13px;font-weight:600;color:var(--mute);margin-bottom:6px}
+.stato.ok{color:var(--ok)}
+.riga{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center;padding:8px 0;border-top:1px solid var(--line)}
+.riga .x{line-height:1.2;min-width:0}
+.riga .x b{font-family:var(--titolo);font-size:22px;padding-top:3px;display:inline-block}
+.riga .x span{font-size:12px;color:var(--mute)}
+.riga .x small{display:block;font-size:13px;color:var(--mute)}
+.riga .x small strong{color:var(--ink)}
+.riga.off .x b{color:#9aa0a8}
 .qta{display:flex;align-items:center;background:#fff;border:1px solid var(--line);border-radius:12px}
-.qta button{width:40px;height:44px;border:0;background:none;color:var(--ink);font-size:22px}
-.qta b{min-width:28px;text-align:center;font-family:var(--titolo);font-size:26px;padding-top:4px}
+.qta button{width:36px;height:42px;border:0;background:none;color:var(--ink);font-size:21px}
+.qta input{width:40px;height:42px;border:0;background:none;color:var(--ink);text-align:center;font-family:var(--titolo);font-size:24px;padding:5px 0 0;-moz-appearance:textfield}
+.qta input::-webkit-outer-spin-button,.qta input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.riga.on .qta{border-color:var(--red)}
+.veloci{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.veloci button{font:inherit;font-weight:600;font-size:14px;border-radius:12px;padding:11px 6px;border:1px dashed #b9bdc4;background:#fff;color:var(--ink)}
+.esp{display:grid;grid-template-columns:70px 1fr;gap:12px;align-items:center;margin-top:12px;padding:10px;background:#fff;border-radius:12px;font-size:14px}
+.esp img{width:70px;height:auto;display:block}
+.esp b{color:var(--red)}
 .totale{margin-top:12px;padding-top:12px;border-top:1px dashed #b9bdc4;display:flex;justify-content:space-between;align-items:flex-end;gap:10px}
 .totale span{font-size:13px;color:var(--mute);line-height:1.3}
-.totale span em{font-style:normal;color:#14833b;font-weight:600}
+.totale span em{font-style:normal;color:var(--ok);font-weight:600}
 .totale b{font-family:var(--titolo);font-size:38px;line-height:1;white-space:nowrap}
 label.f2{display:block;font-size:13px;color:var(--mute);margin:16px 0 6px;text-transform:uppercase;letter-spacing:1px}
 input[type=text]{width:100%;font:inherit;font-size:17px;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:12px;padding:13px 14px}
 .nota{font-size:13px;color:var(--mute);margin-top:8px}
 .salta{animation:salta .45s}
-@keyframes salta{30%{transform:scale(1.03)}60%{transform:scale(.99)}}
+@keyframes salta{30%{transform:scale(1.02)}60%{transform:scale(.995)}}
+
+/* espositore */
+.espo{display:grid;grid-template-columns:1fr 1fr;gap:10px;align-items:end;background:var(--pioggia);border-radius:16px;padding:14px}
+.espo img{width:100%;height:auto;display:block;mix-blend-mode:multiply}
+.espo p{margin:0 0 8px;font-size:14px;color:var(--mute)}
+.espo p b{display:block;font-family:var(--titolo);font-size:24px;color:var(--ink);text-transform:uppercase;line-height:1;padding-top:3px;margin-bottom:4px}
 
 .punti{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .punti div{background:var(--pioggia);border-radius:12px;padding:12px;font-size:14px}
@@ -108,7 +122,7 @@ footer b{color:var(--ink)}
 </head>
 <body>
 <a class="avviso" id="avviso" href="#secKit">
-  <span><b>Scegli il kit:</b> da 70 o da 140 spazzole, espositore incluso</span><i>↓</i>
+  <span><b>Scegli la promo:</b> da 70 o da 140 spazzole, espositore incluso</span><i>↓</i>
 </a>
 <div class="wrap">
 
@@ -118,22 +132,39 @@ footer b{color:var(--ink)}
 </div>
 
 <section id="secKit">
-  <h2>Scegli il <em>kit</em></h2>
-  <p class="sub">Ogni kit ha 10 spazzole per misura e l'espositore da muro, già incluso nel prezzo.</p>
+  <h2>Scegli la <em>promo</em></h2>
+  <p class="sub">Promo 70: −60% sul listino. Promo 140: −60% e un altro −5%. In tutte e due l'espositore è incluso.</p>
   <div class="scelta" id="scelta"></div>
 </section>
 
 <section>
-  <h2>Cosa c'è <em>dentro</em></h2>
+  <h2>Componi il <em>kit</em></h2>
+  <p class="sub">Parti dalla composizione della promo e cambia le quantità come vuoi: tutte le 14 misure si possono scegliere.</p>
   <div class="card" id="ordine">
-    <table class="tab"><thead><tr><th>Misura</th><th>Codice</th><th class="r">Pezzi</th><th class="r">Netto cad.</th></tr></thead><tbody id="righe"></tbody></table>
-    <div class="esp"><b>✓</b> <span><b>Espositore da muro</b> EXPOTERGIMURO incluso (listino 35 €)</span></div>
-    <div class="qtarow"><span>Quanti kit?</span><div class="qta"><button type="button" id="meno" aria-label="Meno">−</button><b id="nk">1</b><button type="button" id="piu" aria-label="Più">+</button></div></div>
+    <div class="prog"><b id="conta">0</b><div class="barra" id="barra"><i></i></div></div>
+    <div class="stato" id="stato"></div>
+    <div id="righe"></div>
+    <div class="veloci">
+      <button type="button" id="std">Composizione della promo</button>
+      <button type="button" id="azzera">Azzera</button>
+    </div>
+    <div class="esp"><img src="foto/espositore-70.jpg" id="espMini" alt=""><span><b>Espositore da muro</b> EXPOTERGIMURO incluso nel prezzo (listino 35 €)</span></div>
     <div class="totale"><span id="totTesto"></span><b id="tot"></b></div>
     <label class="f2" for="officina">Officina (facoltativo)</label>
     <input type="text" id="officina" placeholder="Nome dell'officina" autocomplete="organization">
   </div>
-  <p class="nota">Prezzi netti + IVA, listino CO.RA. con sconto −60% (kit 140: un ulteriore −5%).</p>
+  <p class="nota">Prezzi netti + IVA, listino CO.RA. del 1/5/2025. Le quantità diverse dalla composizione della promo te le confermo io.</p>
+</section>
+
+<section>
+  <h2>Gli <em>espositori</em></h2>
+  <div class="espo">
+    <div><img src="foto/espositore-cora.png" alt="Espositore CO.RA. per spazzole tergicristallo" width="584" height="1236"></div>
+    <div>
+      <p><b>Tutte le misure in vista</b>Il cliente trova la sua spazzola da solo, e tu la vendi senza cercarla in magazzino.</p>
+      <img src="foto/espositore-140.jpg" alt="Espositore da muro TotalFit con 14 misure" width="474" height="1001">
+    </div>
+  </div>
 </section>
 
 <section>
@@ -141,7 +172,7 @@ footer b{color:var(--ink)}
   <div class="punti">
     <div><b>Universali</b>Multiattacco: una spazzola per tante vetture.</div>
     <div><b>Tutte le misure</b>Da 330 a 750 mm, già ordinate sull'espositore.</div>
-    <div><b>Si vendono da sole</b>L'espositore a muro le mette sotto gli occhi del cliente.</div>
+    <div><b>Si vendono da sole</b>L'espositore le mette sotto gli occhi del cliente.</div>
     <div><b>Stagione giusta</b>Con le piogge d'autunno si cambiano le spazzole.</div>
   </div>
 </section>
@@ -167,53 +198,98 @@ const TELEFONO = "393316798961";
 document.addEventListener("DOMContentLoaded", () => {
   const $ = id => document.getElementById(id);
 
-  /* pioggia */
   for (let k = 0; k < 34; k++) {
     const i = document.createElement("i");
     i.style.cssText = "left:" + (Math.random() * 110) + "%;animation-duration:" + (1.1 + Math.random() * 1.2) + "s;animation-delay:-" + (Math.random() * 3) + "s;opacity:" + (.4 + Math.random() * .6);
     $("pioggia").appendChild(i);
   }
 
-  const listino = mm => mm >= 750 ? LISTINO.mm750 : mm >= 530 ? LISTINO.fino700 : LISTINO.fino500;
-  let scelto = "70", nk = 1;
+  /* prezzo netto a spazzola: listino × sconto della promo, arrotondato come nel file CO.RA. */
+  const netto = (c, p) => Math.round(c[3] * PROMO[p].sconto * 1000) / 1000;
+  let promo = "70";
+  const q = {};
+  const standard = p => { CODICI.forEach(c => q[c[0]] = 0); KITS[p].misure.forEach(m => q[m[0]] = PEZZI); };
+  standard(promo);
 
   ["70", "140"].forEach(id => {
     const k = KITS[id], m = k.misure, n = m.length * PEZZI;
     $("scelta").insertAdjacentHTML("beforeend",
-      '<input type="radio" name="kit" id="k' + id + '" value="' + id + '"' + (id === scelto ? " checked" : "") + '>' +
+      '<input type="radio" name="kit" id="k' + id + '" value="' + id + '"' + (id === promo ? " checked" : "") + '>' +
       '<label for="k' + id + '"><div class="f"><img src="foto/' + k.foto + '" alt="Espositore ' + k.nome + '" style="height:' + (id === "140" ? 190 : 120) + 'px"></div>' +
-      '<b>' + k.nome + '</b><small>' + m.length + ' misure, ' + m[0][1] + '–' + m[m.length - 1][1] + ' mm</small>' +
+      '<b>Promo ' + id + '</b><small>' + PROMO[id].testo + ' · standard ' + m.length + ' misure</small>' +
       '<strong>' + euro(k.totale) + '</strong><em>≈ ' + euro(k.totale / n) + ' a spazzola</em></label>');
   });
-  document.querySelectorAll("input[name=kit]").forEach(r => r.addEventListener("change", () => { scelto = r.value; disegna(); }));
-  $("meno").addEventListener("click", () => { if (nk > 1) { nk--; disegna(); } });
-  $("piu").addEventListener("click", () => { if (nk < 5) { nk++; disegna(); } });
+  document.querySelectorAll("input[name=kit]").forEach(r => r.addEventListener("change", () => {
+    promo = r.value; standard(promo); $("espMini").src = "foto/" + KITS[promo].foto; disegna(true);
+  }));
+
+  /* una riga per ognuno dei 14 codici */
+  const righe = {};
+  CODICI.forEach(c => {
+    const d = document.createElement("div");
+    d.className = "riga";
+    d.innerHTML = '<div class="x"><b>' + c[1] + ' mm</b> <span>' + c[2] + '" · ' + c[0] + '</span><small></small></div>' +
+      '<div class="qta"><button type="button" aria-label="Meno">−</button><input type="number" inputmode="numeric" min="0" max="999" aria-label="Pezzi ' + c[0] + '"><button type="button" aria-label="Più">+</button></div>';
+    const [meno, campo, piu] = d.querySelector(".qta").children;
+    meno.addEventListener("click", () => { if (q[c[0]] > 0) { q[c[0]]--; disegna(); } });
+    piu.addEventListener("click", () => { if (q[c[0]] < 999) { q[c[0]]++; disegna(); } });
+    campo.addEventListener("focus", () => campo.select());
+    campo.addEventListener("input", () => { q[c[0]] = Math.min(999, Math.max(0, parseInt(campo.value, 10) || 0)); disegna(false, true); });
+    righe[c[0]] = {d, campo, prezzo: d.querySelector("small")};
+    $("righe").appendChild(d);
+  });
+  $("std").addEventListener("click", () => { standard(promo); disegna(true); });
+  $("azzera").addEventListener("click", () => { CODICI.forEach(c => q[c[0]] = 0); disegna(true); });
   $("officina").addEventListener("input", aggiornaWa);
 
+  const scelte = () => CODICI.filter(c => q[c[0]] > 0);
   let primo = true;
-  function disegna() {
-    const k = KITS[scelto];
-    $("righe").innerHTML = k.misure.map((m, i) =>
-      '<tr style="animation-delay:' + (i * 30) + 'ms"><td>' + m[1] + ' mm <span style="font-family:var(--testo);font-size:12px;color:var(--mute)">' + m[2] + '"</span></td><td class="c">' + m[0] + '</td><td class="r">' + PEZZI * nk + '</td><td class="r">' + euro(m[3]) + '</td></tr>').join("");
-    const n = k.misure.length * PEZZI * nk;
-    const listTot = k.misure.reduce((a, m) => a + listino(m[1]) * PEZZI, 0) * nk;
-    $("nk").textContent = nk;
-    $("tot").textContent = euro(k.totale * nk);
-    $("totTesto").innerHTML = (nk > 1 ? nk + " × " : "") + k.nome + " · " + n + " spazzole + " + (nk > 1 ? nk + " espositori" : "espositore") + ", + IVA<br><em>Risparmi " + euro(listTot - k.totale * nk) + " sul listino</em>";
-    if (!primo) { $("ordine").classList.remove("salta"); void $("ordine").offsetWidth; $("ordine").classList.add("salta"); }
+  function disegna(tutto, daTastiera) {
+    const obiettivo = KITS[promo].misure.length * PEZZI;
+    let n = 0, tot = 0, list = 0;
+    CODICI.forEach(c => {
+      const r = righe[c[0]], k = q[c[0]], p = netto(c, promo);
+      if (!daTastiera || document.activeElement !== r.campo) r.campo.value = k;
+      r.d.classList.toggle("on", k > 0);
+      r.d.classList.toggle("off", k === 0);
+      r.prezzo.innerHTML = "<strong>" + euro(p) + "</strong> cad." + (k ? " · " + euro(p * k) : "");
+      n += k; tot += p * k; list += c[3] * k;
+    });
+    tot = Math.round(tot * 100) / 100;
+    $("conta").textContent = n + " / " + obiettivo;
+    $("barra").firstChild.style.width = Math.min(100, n / obiettivo * 100) + "%";
+    $("barra").classList.toggle("ok", n >= obiettivo);
+    const st = $("stato");
+    st.classList.toggle("ok", n >= obiettivo);
+    st.textContent = !n ? "Nessuna spazzola: usa + e − oppure «Composizione della promo»."
+      : n < obiettivo ? (obiettivo - n === 1 ? "Ne manca 1" : "Ne mancano " + (obiettivo - n)) + " per arrivare alle " + obiettivo + " della promo."
+      : n === obiettivo ? "✓ " + n + " spazzole, come la promo " + promo + "."
+      : "✓ " + n + " spazzole: " + (n - obiettivo) + " in più della promo " + promo + ".";
+    $("tot").textContent = n ? euro(tot) : "–";
+    $("totTesto").innerHTML = n ? "Promo " + promo + " · " + n + " spazzole + espositore, + IVA<br><em>Risparmi " + euro(list - tot) + " sul listino</em>" : "Totale + IVA";
+    if (!primo && !tutto) { $("ordine").classList.remove("salta"); void $("ordine").offsetWidth; $("ordine").classList.add("salta"); }
     primo = false;
     aggiornaWa();
   }
 
   function aggiornaWa() {
-    const k = KITS[scelto];
-    const testo = "Ciao Stefano, vorrei " + (nk > 1 ? nk + " × " : "il ") + "*" + k.nome + " spazzole tergi CO.RA. TotalFit* con espositore da muro (" + euro(k.totale) + " + IVA" + (nk > 1 ? " a kit" : "") + "):\n" +
-      k.misure.map(m => "• " + m[0] + " (" + m[1] + " mm): " + PEZZI * nk + " pz").join("\n") +
-      "\n• EXPOTERGIMURO espositore: " + nk + " pz (incluso)" +
-      "\nTotale: " + euro(k.totale * nk) + " + IVA" +
-      "\n\nOfficina: " + $("officina").value.trim();
+    const s = scelte();
+    let testo, etichetta;
+    if (s.length) {
+      const n = s.reduce((a, c) => a + q[c[0]], 0);
+      const tot = Math.round(s.reduce((a, c) => a + netto(c, promo) * q[c[0]], 0) * 100) / 100;
+      testo = "Ciao Stefano, vorrei la *promo " + promo + " spazzole tergi CO.RA. TotalFit* (" + PROMO[promo].testo + ") con espositore da muro:\n" +
+        s.map(c => "• " + c[0] + " (" + c[1] + " mm): " + q[c[0]] + " pz").join("\n") +
+        "\n• EXPOTERGIMURO espositore: 1 pz (incluso)" +
+        "\nTotale: " + n + " spazzole, " + euro(tot) + " + IVA" +
+        "\n\nOfficina: " + $("officina").value.trim();
+      etichetta = "Ordina la promo " + promo + " su WhatsApp";
+    } else {
+      testo = "Ciao Stefano, mi interessano le spazzole tergi CO.RA. con espositore. Mi dai qualche informazione?";
+      etichetta = "Scrivimi su WhatsApp";
+    }
     $("wa").href = "https://wa.me/" + TELEFONO + "?text=" + encodeURIComponent(testo);
-    $("waTesto").textContent = "Ordina il " + k.nome + " su WhatsApp";
+    $("waTesto").textContent = etichetta;
   }
 
   $("avviso").addEventListener("click", e => { e.preventDefault(); $("secKit").scrollIntoView({behavior: "smooth", block: "start"}); });
@@ -221,7 +297,7 @@ document.addEventListener("DOMContentLoaded", () => {
     new IntersectionObserver(es => es.forEach(e => $("avviso").classList.toggle("via", e.isIntersecting || e.boundingClientRect.top < 0)), {threshold: [0, .1]})
       .observe($("secKit"));
   }
-  disegna();
+  disegna(true);
 });
 </script>
 </body>

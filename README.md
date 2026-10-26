@@ -85,6 +85,7 @@ Rigenera: `python3 _build/build.py`
 ## tergi-cora (kit spazzole tergi CO.RA. TotalFit con espositore da muro)
 
 - Dati in `kit.js` (fonte: `../Locandine/tergi-cora/kit.js`), dal file «Promo KIT SPAZZOLE TERGI CORA - MAK Total Fit.xlsx» dell'eBook agenti (listino CO.RA. 1/5/2025, −60%; kit 140 −5% in più) e dalla campagna Mailchimp del 20/10/2026. Kit 70: 7 misure × 10 = 327,20 €; kit 140: 14 misure × 10 = 671,46 €; espositore EXPOTERGIMURO (listino 35 €) incluso.
-- Foto: i due espositori estratti dallo stesso Excel. La foto `Video Avatar/Immagini/MAK/Espositore Tergi.png` è un altro prodotto (Tergiplus su carrello): non usarla per TotalFit.
-- Scelta kit 70/140, tabella misure con codici e netto, numero di kit, risparmio sul listino, messaggio WhatsApp con tutti i codici; pioggia animata sulla locandina.
+- Foto: i due espositori da muro estratti dallo stesso Excel.
+- Scelta promo 70 (−60%) o 140 (−60% −5%); tutti i 14 codici TF selezionabili in entrambe con la quantità modificabile, partendo dalla composizione della promo (`CODICI` e `PROMO` in `kit.js`, netti = listino × sconto, arrotondati come nel file CO.RA.); contatore verso 70/140, risparmio sul listino, messaggio WhatsApp con i codici scelti; pioggia animata sulla locandina.
+- Su richiesta di Stefano c'è anche la foto `foto/espositore-cora.png` (da `Video Avatar/Immagini/MAK/Espositore Tergi.png`, espositore CO.RA. a terra) nella sezione «Gli espositori».
 - Anteprima: `_build/anteprima-tergi-cora.html`; icona: `_build/icona-tergi-cora.html`.
