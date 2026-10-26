@@ -40,3 +40,10 @@ Rigenera: `python3 _build/build.py`
 - Schede dei kit da toccare per aggiungerli; ordine a righe (menu codice + quantità + togli), «+ Aggiungi riga», «+ Fix Pack completo», nome officina facoltativo → messaggio WhatsApp con codici e quantità.
 - Niente conto alla rovescia (la locandina non ha scadenza). Barra in alto che porta all'ordine.
 - Anteprima: `_build/anteprima-fix-pack.html` → `anteprima.jpg`; icona da `_build/icona-fix-pack.html`.
+
+## refill-multisens (Refill 20 MATE MULTIsens MP6, 15,90 € cad. + IVA, senza scadenza)
+
+- `locandina.jpg`: da `../Locandine/refill-multisens/locandina.html` (PNG/PDF clienti e colleghi nella stessa cartella).
+- `index.html` scritto a mano: tre righe fisse (930000MP6R Rubber, 93000MP6BM Metal Black, 930000MP6M Silver) con il campo pezzi, barra verso i 20 minimi (anche misti), totale indicativo a 20,40 € sotto il minimo e a 15,90 € da 20 in su, risparmio, messaggio WhatsApp con codici e pezzi.
+- Foto: sensori ritagliati dallo screenshot B2B, MA41 da `Video Avatar/Immagini/MATE/MATE MA41.png`, scontornati con `../Locandine/refill-multisens/scontorna.py`.
+- Anteprima: `_build/anteprima-refill-multisens.html`; icona: `_build/icona-refill-multisens.html`.
