@@ -89,3 +89,9 @@ Rigenera: `python3 _build/build.py`
 - Scelta promo 70 (−60%) o 140 (−60% −5%); tutti i 14 codici TF selezionabili in entrambe con la quantità modificabile, partendo dalla composizione della promo (`CODICI` e `PROMO` in `kit.js`, netti = listino × sconto, arrotondati come nel file CO.RA.); contatore verso 70/140, risparmio sul listino, messaggio WhatsApp con i codici scelti; pioggia animata sulla locandina.
 - La foto `Video Avatar/Immagini/MAK/Espositore Tergi.png` (espositore a terra Tergiplus) non va usata: tolta su indicazione di Stefano il 2026-10-26.
 - Anteprima: `_build/anteprima-tergi-cora.html`; icona: `_build/icona-tergi-cora.html`.
+
+## canali-etrto (verifica pneumatico → canali ETRTO, senza prezzi)
+
+- `dati.js` generato da `../Locandine/canali-etrto/genera_dati.py`, che usa la lettura dell'app `../mak-etrto-canali/data/build.py` su `Mak/Canali XLS.xlsx` (684 misure); il canale «9» senza lettera di 285/45 R19–R22 diventa «9J».
+- Larghezza → serie → diametro, scala dei canali con quelli ammessi in verde, tendina «Hai già il cerchio?» con esito ammesso/fuori tabella (31 misure piccole ammettono sia J sia B: la scala usa la J, il controllo guarda la larghezza), messaggio WhatsApp con misura, canali e cerchio verificato.
+- Anteprima: `_build/anteprima-canali-etrto.html`; icona: `_build/icona-canali-etrto.html`.
