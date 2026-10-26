@@ -81,3 +81,10 @@ Rigenera: `python3 _build/build.py`
 - Marca → vettura → scheda con interasse, centraggio, fissaggio e note toccabili (testo del catalogo Xilema 2016), spessori con i codici delle tre varianti; un tocco sul codice lo aggiunge alla richiesta (coppie); messaggio WhatsApp con codici, spessori, varianti e vettura, che chiede prezzo e disponibilità.
 - Foto: le 4 tipologie ritagliate dalla pagina del catalogo Xilema (`../mak-distanziali-xilema/assets/tipo-*.jpg`), schiarite. Avvertenza Xilema (non omologati per il codice della strada) nella locandina e nella pagina.
 - Anteprima: `_build/anteprima-distanziali-xilema.html`; icona: `_build/icona-distanziali-xilema.html`.
+
+## tergi-cora (kit spazzole tergi CO.RA. TotalFit con espositore da muro)
+
+- Dati in `kit.js` (fonte: `../Locandine/tergi-cora/kit.js`), dal file «Promo KIT SPAZZOLE TERGI CORA - MAK Total Fit.xlsx» dell'eBook agenti (listino CO.RA. 1/5/2025, −60%; kit 140 −5% in più) e dalla campagna Mailchimp del 20/10/2026. Kit 70: 7 misure × 10 = 327,20 €; kit 140: 14 misure × 10 = 671,46 €; espositore EXPOTERGIMURO (listino 35 €) incluso.
+- Foto: i due espositori estratti dallo stesso Excel. La foto `Video Avatar/Immagini/MAK/Espositore Tergi.png` è un altro prodotto (Tergiplus su carrello): non usarla per TotalFit.
+- Scelta kit 70/140, tabella misure con codici e netto, numero di kit, risparmio sul listino, messaggio WhatsApp con tutti i codici; pioggia animata sulla locandina.
+- Anteprima: `_build/anteprima-tergi-cora.html`; icona: `_build/icona-tergi-cora.html`.
