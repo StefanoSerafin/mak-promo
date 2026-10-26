@@ -53,3 +53,10 @@ Rigenera: `python3 _build/build.py`
 - Stessa struttura di `refill-multisens/`: locandina da `../Locandine/refill-autel-mx/locandina.html` (disco nero perché lo strumento è rosso), tre righe fisse (93000000MXG Rubber, 9300000MXB Metal Black, 93000000MX Silver), da 22,45 € a 18,47 €, bottoni «20 Rubber», «20 Metal Silver», «Azzera».
 - Foto: sensori ritagliati dallo screenshot B2B, AUTEL TS508 WF da `Video Avatar/Immagini/MATE/MATE/`.
 - Anteprima: `_build/anteprima-refill-autel-mx.html`; icona: `_build/icona-refill-autel-mx.html`.
+
+## riempicarrello (12 articoli «riempicarrello» del B2B, senza scadenza)
+
+- Dati degli articoli in `prodotti.js` (codice, nome, descrizione, prezzo netto, listino barrato): la fonte è `../Locandine/riempicarrello/prodotti.js`, usata anche dalla locandina; se cambia, ricopiarla qui insieme alle foto.
+- `foto/<codice>.png` ritagliate dagli screenshot del carrello B2B del 2026-10-26.
+- Una scheda per articolo con quantità, riepilogo con totale + IVA e risparmio sui listini, messaggio WhatsApp con quantità, codici e prezzi.
+- Anteprima: `_build/anteprima-riempicarrello.html`; icona: `_build/icona-riempicarrello.html`.
