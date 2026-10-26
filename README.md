@@ -32,3 +32,11 @@ Rigenera: `python3 _build/build.py`
 - Disegni SVG generati da `../Locandine/prossima-fermata-futuro/scene.py`; `build.py` nella stessa cartella scrive la locandina (clienti e colleghi) e `index.html` da `index.template.html` (le scene vanno al posto di `<!--__SCENE__-->`).
 - Visore a storie: tocco a destra/sinistra, swipe, frecce; tabellone a palette nella scena 5, braccio animato nelle scene 6-7. Niente conto alla rovescia.
 - Anteprima: `../Locandine/prossima-fermata-futuro/anteprima.html` → `anteprima.jpg`.
+
+## fix-pack (Fix Pack 2026, 154,00 €, senza scadenza)
+
+- `locandina.jpg`: la locandina ricevuta (853×1280, da Downloads il 2026-10-26).
+- `index.html` scritto a mano (nessun dato incorporato): i 7 kit della locandina sono in `KIT` dentro la pagina, codici verificati sul database ordini.
+- Schede dei kit da toccare per aggiungerli; ordine a righe (menu codice + quantità + togli), «+ Aggiungi riga», «+ Fix Pack completo», nome officina facoltativo → messaggio WhatsApp con codici e quantità.
+- Niente conto alla rovescia (la locandina non ha scadenza). Barra in alto che porta all'ordine.
+- Anteprima: `_build/anteprima-fix-pack.html` → `anteprima.jpg`; icona da `_build/icona-fix-pack.html`.
