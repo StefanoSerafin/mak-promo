@@ -100,5 +100,5 @@ Rigenera: `python3 _build/build.py`
 
 - Contenuti dalla pagina wiki «Omologazione delle ruote a libretto» (confermata da Stefano il 4/10/2026) e dai PDF dell'eBook agenti, sezione «Materiale supporto al cliente».
 - `pdf/`: Allegato C (G.U. 13/2/2021), Allegato B (G.U. 24/6/2022) e fac-simile dei bollettini (16 € c/c 4028 + 25 € c/c 9001), copiati senza modifiche; `prev-*.png` sono le miniature della prima pagina.
-- Scelta «misura non a libretto / già a libretto» che cambia il percorso (5 passi o 3), requisiti sì/no con esito (M1, libretto italiano, ruota NAD; N1 escluso), passi con il controllo del certificato NAD sul B2B e l'avviso (GS0), moduli da scaricare, richiesta WhatsApp con vettura, misura e codice MCTC.
+- Scelta «misura non a libretto / già a libretto» che cambia il percorso (5 passi o 3), requisiti sì/no con esito (M1, libretto italiano, ruota NAD; N1 escluso), passi con il controllo del certificato NAD sul B2B e l'avviso (GS0), moduli da scaricare, richiesta WhatsApp con foto del libretto (menu Condividi su iPhone, la foto non passa da nessun server), vettura, misura e codice MCTC.
 - Anteprima: `_build/anteprima-trasformazioni-nad.html`; icona: `_build/icona-trasformazioni-nad.html`.

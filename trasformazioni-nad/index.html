@@ -95,6 +95,15 @@ section{padding:28px 16px 6px}
 .costi div{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:13px;color:var(--mute)}
 .costi b{display:block;font-family:var(--titolo);font-size:28px;color:var(--ink);line-height:1;padding-top:3px}
 
+.libretto{display:flex;align-items:center;gap:12px;background:#fff;border:2px dashed #cfd2d8;border-radius:14px;padding:12px;cursor:pointer}
+.libretto input{position:absolute;opacity:0;width:1px;height:1px;pointer-events:none}
+.libretto .ico{flex:none;width:52px;height:52px;border-radius:12px;background:var(--red);color:#fff;display:flex;align-items:center;justify-content:center;font-size:26px;overflow:hidden}
+.libretto .ico img{width:100%;height:100%;object-fit:cover}
+.libretto b{display:block;font-size:16px}
+.libretto small{color:var(--mute);font-size:13px}
+.libretto.ok{border-style:solid;border-color:var(--verde)}
+.togli{margin-left:auto;flex:none;border:0;background:none;color:var(--mute);font-size:14px;text-decoration:underline;padding:8px}
+.oppure{text-align:center;color:var(--mute);font-size:13px;margin:14px 0 0;text-transform:uppercase;letter-spacing:1px}
 input[type=text]{width:100%;font:inherit;font-size:17px;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:12px;padding:13px 14px}
 label.f{display:block;font-size:13px;color:var(--mute);margin:14px 0 6px;text-transform:uppercase;letter-spacing:1px}
 label.f:first-child{margin-top:0}
@@ -180,6 +189,14 @@ footer b{color:var(--ink)}
   <h2>Hai un <em>caso?</em></h2>
   <p class="sub">Dimmi vettura e misura: ti indico la ruota MAK NAD giusta.</p>
   <div class="card">
+    <label class="f">Libretto di circolazione</label>
+    <label class="libretto" id="librettoBox" for="libretto">
+      <input type="file" id="libretto" accept="image/*">
+      <span class="ico" id="librettoIco">📷</span>
+      <span><b id="librettoTit">Carica il libretto</b><small id="librettoSub">Una foto basta: controllo io omologazione e misure ammesse.</small></span>
+      <button type="button" class="togli" id="togli" hidden>Togli</button>
+    </label>
+    <p class="oppure">oppure scrivi i dati</p>
     <label class="f" for="vettura">Vettura</label>
     <input type="text" id="vettura" placeholder="Es. Volkswagen Golf VII" autocomplete="off">
     <label class="f" for="misura">Misura che vuoi montare</label>
@@ -261,21 +278,56 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll(".passo").forEach(p => io.observe(p));
   } else document.querySelectorAll(".passo").forEach(p => p.classList.add("vis"));
 
+  /* libretto: la foto resta sul telefono e parte solo verso WhatsApp */
+  let libretto = null, urlLib = null, testoWa = "";
+  const condivisioneFile = () => { try { return !!(libretto && navigator.canShare && navigator.canShare({files: [libretto]})); } catch (e) { return false; } };
+  $("libretto").addEventListener("change", e => {
+    const f = e.target.files && e.target.files[0];
+    if (!f) return;
+    libretto = f;
+    if (urlLib) URL.revokeObjectURL(urlLib);
+    urlLib = URL.createObjectURL(f);
+    $("librettoIco").innerHTML = '<img alt="">';
+    $("librettoIco").firstChild.src = urlLib;
+    $("librettoTit").textContent = "Libretto caricato";
+    $("librettoSub").textContent = condivisioneFile() ? "Parte insieme alla richiesta con il bottone verde." : "Ricordati di allegarlo nella chat WhatsApp.";
+    $("librettoBox").classList.add("ok");
+    $("togli").hidden = false;
+    aggiornaWa();
+  });
+  $("togli").addEventListener("click", e => {
+    e.preventDefault();
+    libretto = null; $("libretto").value = "";
+    $("librettoIco").textContent = "📷";
+    $("librettoTit").textContent = "Carica il libretto";
+    $("librettoSub").textContent = "Una foto basta: controllo io omologazione e misure ammesse.";
+    $("librettoBox").classList.remove("ok");
+    $("togli").hidden = true;
+    aggiornaWa();
+  });
+  $("wa").addEventListener("click", e => {
+    if (!condivisioneFile()) return;
+    e.preventDefault();
+    navigator.share({files: [libretto], text: testoWa}).catch(err => { if (err && err.name !== "AbortError") window.open($("wa").href, "_blank"); });
+  });
+
   function aggiornaWa() {
     const vet = $("vettura").value.trim(), mis = $("misura").value.trim(), off = $("officina").value.trim(), mctc = val("mctc");
     const nuova = val("caso") === "nuova";
-    const dati = vet || mis || mctc;
+    const dati = vet || mis || mctc || libretto;
     let testo;
     if (dati) {
       testo = "Ciao Stefano, ho un caso " + (nuova ? "di *trasformazione NAD a libretto*" : "di *ruote MAK con misura già a libretto*") + ":\n" +
+        (libretto ? "• Libretto: in allegato\n" : "") +
         (vet ? "• Vettura: " + vet + "\n" : "") + (mis ? "• Misura: " + mis + "\n" : "") +
         (mctc ? "• Codice MCTC: " + (mctc === "sì" ? "ce l'ho" : "non ancora") + "\n" : "") +
         "Mi indichi la ruota MAK NAD giusta?" + (off ? "\n\nOfficina: " + off : "");
     } else {
       testo = "Ciao Stefano, vorrei fare le trasformazioni NAD in officina. Mi aiuti?" + (off ? "\n\nOfficina: " + off : "");
     }
+    testoWa = testo;
     $("wa").href = "https://wa.me/" + TELEFONO + "?text=" + encodeURIComponent(testo);
-    $("waTesto").textContent = dati ? "Invia il caso su WhatsApp" : "Scrivimi su WhatsApp";
+    $("waTesto").textContent = libretto && condivisioneFile() ? "Invia libretto e caso" : dati ? "Invia il caso su WhatsApp" : "Scrivimi su WhatsApp";
   }
 
   $("avviso").addEventListener("click", e => { e.preventDefault(); $("secModuli").scrollIntoView({behavior: "smooth", block: "start"}); });
