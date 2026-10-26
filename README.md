@@ -67,3 +67,10 @@ Rigenera: `python3 _build/build.py`
 - `foto/`: fustino, fusto e cisterna da `Video Avatar/Immagini/MAK/` senza la scritta «ordine min.», più la foto di gruppo.
 - Scala del prezzo al litro animata, una scheda per confezione con i bancali, riepilogo con merce, trasporto e totale + IVA, messaggio WhatsApp con codici, litri e totale; scheda «Perché Azotal» dalla scheda tecnica SP10.
 - Anteprima: `_build/anteprima-adblue.html`; icona: `_build/icona-adblue.html`.
+
+## calze-light-espositore (starter kit 10 paia Multigrip Light + espositore da banco, 188,40 € + IVA)
+
+- `kit.js` generato da `../Locandine/calze-light-espositore/genera_dati.py`: le 483 misure → taglia Light dall'app `../mak-calze-neve/data/socks.json` e il «mix più ordinato» da 10 paia calcolato sulle righe d'ordine delle Light (nella pagina va solo il mix). Dopo averlo rigenerato, ricopiarlo qui.
+- Ricerca taglia larghezza → serie → diametro, bottone «+ Al kit» che ricorda la misura; kit con 9 taglie, contatore x/10, «Mix più ordinato», «Azzera»; messaggio WhatsApp con taglie, codici 73000SSL0x, paia e misure.
+- Foto vere: espositore da `Video Avatar/Immagini/NPK/espositore calze.jpg` (le altre due foto dell'espositore in quella cartella sono generate e non vanno usate), ruota con la Light ritagliata dalla promo push NPK di ottobre 2025 (eBook).
+- Anteprima: `_build/anteprima-calze-light.html`; icona: `_build/icona-calze-light.html`.
