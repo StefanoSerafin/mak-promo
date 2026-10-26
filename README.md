@@ -74,3 +74,10 @@ Rigenera: `python3 _build/build.py`
 - Ricerca taglia larghezza → serie → diametro, bottone «+ Al kit» che ricorda la misura; kit con 9 taglie, contatore x/10, «Mix più ordinato», «Azzera»; messaggio WhatsApp con taglie, codici 73000SSL0x, paia e misure.
 - Foto vere: espositore da `Video Avatar/Immagini/NPK/espositore calze.jpg` (le altre due foto dell'espositore in quella cartella sono generate e non vanno usate), ruota con la Light ritagliata dalla promo push NPK di ottobre 2025 (eBook).
 - Anteprima: `_build/anteprima-calze-light.html`; icona: `_build/icona-calze-light.html`.
+
+## distanziali-xilema (pubblica, SENZA prezzi)
+
+- `dati.js` generato da `../Locandine/distanziali-xilema/genera_dati.py` dal dataset in chiaro dell'app con PIN (`../mak-distanziali-xilema/data/distanziali.plain.json`, non versionato): vettura, anni, fissaggio, note, interasse, centraggio, spessore e i tre codici. I prezzi non escono mai (lo script lo controlla). Dopo un file Xilema nuovo: build dell'app con PIN, poi `genera_dati.py`, poi ricopiare qui.
+- Marca → vettura → scheda con interasse, centraggio, fissaggio e note toccabili (testo del catalogo Xilema 2016), spessori con i codici delle tre varianti; un tocco sul codice lo aggiunge alla richiesta (coppie); messaggio WhatsApp con codici, spessori, varianti e vettura, che chiede prezzo e disponibilità.
+- Foto: le 4 tipologie ritagliate dalla pagina del catalogo Xilema (`../mak-distanziali-xilema/assets/tipo-*.jpg`), schiarite. Avvertenza Xilema (non omologati per il codice della strada) nella locandina e nella pagina.
+- Anteprima: `_build/anteprima-distanziali-xilema.html`; icona: `_build/icona-distanziali-xilema.html`.
