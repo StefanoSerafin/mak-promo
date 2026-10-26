@@ -60,3 +60,10 @@ Rigenera: `python3 _build/build.py`
 - `foto/<codice>.png` ritagliate dagli screenshot del carrello B2B del 2026-10-26.
 - Una scheda per articolo con quantità, riepilogo con totale + IVA e risparmio sui listini, messaggio WhatsApp con quantità, codici e prezzi.
 - Anteprima: `_build/anteprima-riempicarrello.html`; icona: `_build/icona-riempicarrello.html`.
+
+## adblue (AdBlue by Azotal, 4 confezioni, senza scadenza)
+
+- Dati in `prodotti.js` (codice, litri, confezione, prezzo, trasporto 30 € a bancale Nord e Toscana): la fonte è `../Locandine/adblue/prodotti.js`, presi dalla locandina MAK ufficiale nell'eBook agenti (copia del 2026-10-03); se cambia, ricopiarla qui.
+- `foto/`: fustino, fusto e cisterna da `Video Avatar/Immagini/MAK/` senza la scritta «ordine min.», più la foto di gruppo.
+- Scala del prezzo al litro animata, una scheda per confezione con i bancali, riepilogo con merce, trasporto e totale + IVA, messaggio WhatsApp con codici, litri e totale; scheda «Perché Azotal» dalla scheda tecnica SP10.
+- Anteprima: `_build/anteprima-adblue.html`; icona: `_build/icona-adblue.html`.
