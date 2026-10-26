@@ -114,7 +114,7 @@ section{padding:28px 16px 6px}
 .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px}
 .btns{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
 .btn{display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;color:var(--txt);
-  background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:15px 10px;font-weight:600}
+  background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:15px 8px;font-weight:600;font-size:15px;text-align:center;line-height:1.2}
 .loc img{width:100%;height:auto;display:block;border-radius:12px}
 .nota{font-size:13px;color:var(--mute);margin-top:8px}
 footer{padding:26px 16px 10px;text-align:center;color:var(--mute);font-size:13px}
@@ -163,11 +163,11 @@ footer b{color:var(--txt)}
 <p class="aiuto">Tocca a destra per andare avanti, a sinistra per tornare indietro.</p>
 
 <section>
-  <h2>Sali anche tu</h2>
-  <p class="sub">Portale B2B, configuratori, preventivi e ordini dal telefono: se vuoi ti faccio vedere come li uso io, in 10 minuti, in officina.</p>
+  <h2>Sali anche tu, ti spiego come</h2>
+  <p class="sub">Web app, automazioni, locandine animate come questa: le faccio da solo con l'intelligenza artificiale. Ci vuole meno di quanto pensi.</p>
   <div class="btns">
     <a class="btn" href="tel:+393316798961">📞 Chiamami</a>
-    <a class="btn" href="https://b2bshop.makwheels.it/" target="_blank" rel="noopener">🛒 Portale B2B</a>
+    <a class="btn" id="wa2" href="#" target="_blank" rel="noopener">💬 Scrivimi su WhatsApp</a>
   </div>
 </section>
 
@@ -192,8 +192,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const fermo = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   let ora = 0, timer = [];
 
-  $("wa").href = "https://wa.me/393316798961?text=" + encodeURIComponent(
-    "Ciao Stefano, ho visto «Prossima fermata: Futuro». Sul treno ci voglio salire: quando passi mi fai vedere come usi questi strumenti?");
+  $("wa").href = $("wa2").href = "https://wa.me/393316798961?text=" + encodeURIComponent(
+    "Ciao Stefano, ho visto «Prossima fermata: Futuro». Sul treno ci voglio salire: mi spieghi come fai?");
 
   scene.forEach(s => {
     const p = s.querySelector(".did");
