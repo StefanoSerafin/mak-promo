@@ -185,6 +185,107 @@ footer b{color:var(--ink)}
   <p class="nota">Bollettini intestati al Dipartimento Trasporti Terrestri. Nelle regioni a statuto speciale verifica le modalità con la motorizzazione. Importi del fac-simile: controllali prima del versamento.</p>
 </section>
 
+<!--ESEMPIO-->
+<section id="secEsempio">
+  <h2>Esempio di <em>compilazione</em></h2>
+  <p class="sub">Come si riempiono i due allegati. In blu le parti da scrivere; i numeri rossi rimandano alle spiegazioni sotto.</p>
+  <style>
+.es-tab{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px}
+.es-tab input{position:absolute;opacity:0;pointer-events:none}
+.es-tab label{text-align:center;background:#fff;border:2px solid #e2e4e8;border-radius:12px;padding:10px;font-weight:700;cursor:pointer}
+.es-tab input:checked+label{border-color:#da2128;background:#fff5f5}
+.foglio{position:relative;background:#fff;border:1px solid #d6d9de;border-radius:6px;box-shadow:0 6px 18px rgba(0,0,0,.08);padding:16px 14px 14px;font-family:Georgia,"Times New Roman",serif;font-size:13.5px;line-height:1.75;color:#222}
+.foglio::before{content:"ESEMPIO";position:absolute;right:10px;top:8px;font-family:"DIN Condensed",sans-serif;font-weight:700;font-size:22px;letter-spacing:2px;color:#da2128;border:2px solid #da2128;border-radius:4px;padding:2px 8px 0;transform:rotate(6deg)}
+.foglio .intest{font-family:"Avenir Next",sans-serif;font-size:11px;color:#777;border-bottom:1px solid #ccc;padding-bottom:4px;margin:26px 0 8px}
+.foglio h4{text-align:center;font-style:italic;font-weight:400;margin:4px 0}
+.foglio p{margin:0 0 8px}
+.foglio .c{text-align:center}
+.foglio .piccolo{font-size:12px;color:#777;font-style:italic}
+.v{font-family:"Bradley Hand","Segoe Print","Comic Sans MS",cursive;color:#1d4ed8;font-size:15px;border-bottom:1px dotted #1d4ed8;padding:0 2px}
+.rc{display:inline-block;min-width:17px;height:17px;border-radius:50%;background:#da2128;color:#fff;font:700 11px/17px "Avenir Next",sans-serif;text-align:center;margin-left:2px;vertical-align:super}
+.barrato{text-decoration:line-through;text-decoration-color:#1d4ed8;text-decoration-thickness:2px}
+.firme{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:12px}
+.note-es{margin:12px 0 0;padding:0;list-style:none;counter-reset:n;display:grid;gap:6px}
+.note-es li{counter-increment:n;position:relative;padding:8px 10px 8px 36px;background:#fff;border-radius:10px;font-size:14px;line-height:1.35}
+.note-es li::before{content:counter(n);position:absolute;left:9px;top:8px;width:19px;height:19px;border-radius:50%;background:#da2128;color:#fff;font:700 11px/19px "Avenir Next",sans-serif;text-align:center}
+.es-dati{font-size:13px;color:#5d626b;margin:10px 0 0}
+</style>
+  <div class="es-tab">
+    <input type="radio" name="es" id="esC" checked><label for="esC">Allegato C</label>
+    <input type="radio" name="es" id="esB"><label for="esB">Allegato B</label>
+  </div>
+  <div id="esempioC">
+<div class="foglio">
+  <div class="intest">G.U. 13-2-2021 · Allegato C (articolo 2, comma 2)</div>
+  <h4>Disciplinare</h4>
+  <p>Il sottoscritto <span class="v">Mario Rossi</span><sup class="rc">1</sup> nato a <span class="v">Monza</span> il <span class="v">12/03/1975</span>
+  residente a <span class="v">Monza</span> via <span class="v">Roma 10</span> in qualità di <span class="v">titolare / legale rappresentante</span><sup class="rc">2</sup> della Ditta
+  <span class="v">Gomme Rossi S.r.l.</span> con sede in <span class="v">Monza, via Lecco 25</span> partita IVA o C.F. <span class="v">01234567890</span></p>
+  <p>con la sottoscrizione del presente disciplinare chiede l'identificazione della propria officina di autoriparazione presso
+  l'Ufficio Motorizzazione Civile di <span class="v">Milano</span><sup class="rc">3</sup> per le operazioni di modifiche alle caratteristiche costruttive o funzionali
+  che comportano l'aggiornamento della carta di circolazione […] riportate all'allegato A del decreto del Ministro delle infrastrutture
+  e dei trasporti <span class="v">19 maggio 2022</span><sup class="rc">4</sup> (ora in avanti "decreto").</p>
+  <p class="c"><b>DICHIARA</b></p>
+  <p>– di svolgere attività di autoriparazione ai sensi della legge 5 febbraio 1992, n. 122 e di essere iscritto alla CCIAA di
+  <span class="v">Milano Monza Brianza Lodi</span> al n. <span class="v">MB-123456</span><sup class="rc">5</sup> per le seguenti attività <span class="v">gommista</span></p>
+  <p>– di avere competenze […] per eseguire a perfetta regola d'arte le modifiche ricomprese nell'allegato A al decreto e che di seguito si specificano:<br>
+  <span class="v">6. Installazione sistemi ruota</span><sup class="rc">6</sup></p>
+  <p class="piccolo">[… dichiarazioni e impegni prestampati: non si compilano, si leggono …]</p>
+  <p>– che i recapiti dell'officina sono i seguenti: telefono <span class="v">039 1234567</span> indirizzo e-mail <span class="v">info@gommerossi.example</span> pec (eventuale) <span class="v">gommerossi@pec.example</span></p>
+  <div class="firme"><span>data <span class="v">26/10/2026</span></span><span>timbro e firma <span class="v"><i>timbro + Mario Rossi</i></span><sup class="rc">7</sup></span></div>
+  <p class="piccolo">nota: allegare copia di un valido documento di identità <span class="v">✓ carta d'identità allegata</span><sup class="rc">8</sup></p>
+</div>
+<ol class="note-es">
+  <li>Chi firma: il titolare o il legale rappresentante dell'officina.</li>
+  <li>Il ruolo nella ditta: titolare, legale rappresentante, amministratore.</li>
+  <li>La motorizzazione a cui consegni il modulo: quella della tua provincia.</li>
+  <li>Il decreto da citare per i sistemi ruota: il DM del 19 maggio 2022.</li>
+  <li>Il numero di iscrizione alla Camera di commercio (REA), come in visura.</li>
+  <li>Scrivi solo le modifiche che fai: per il gommista la voce 6 dell'allegato A, «Installazione sistemi ruota».</li>
+  <li>Timbro dell'officina e firma per esteso.</li>
+  <li>Senza documento d'identità il modulo non viene accettato. In cambio ricevi il <b>codice identificativo MCTC</b>.</li>
+</ol></div>
+  <div id="esempioB" hidden>
+<div class="foglio">
+  <div class="intest">G.U. 24-6-2022 · 5. Installazione dei sistemi ruote</div>
+  <p>Il sottoscritto <span class="v">Mario Rossi</span><sup class="rc">1</sup> nato a <span class="v">Monza</span> il <span class="v">12/03/1975</span>
+  residente a <span class="v">Monza</span> via <span class="v">Roma 10</span> in qualità di <span class="v">titolare</span> della
+  Ditta <span class="v">Gomme Rossi S.r.l.</span> con sede in <span class="v">Monza, via Lecco 25</span> partita IVA o C.F. <span class="v">01234567890</span>
+  Iscritta alla CCIAA di <span class="v">Milano Monza Brianza Lodi</span> sezione meccatronica.<sup class="rc">2</sup> codice identificativo MCTC n. <span class="v">MI-0000 (quello ricevuto)</span><sup class="rc">3</sup></p>
+  <p>Consapevole delle sanzioni previste dall'art. 76 del d.P.R. n. 445/2000 in caso di dichiarazioni mendaci e falsità negli atti</p>
+  <p class="c"><b>DICHIARA</b></p>
+  <p>– di aver installato sul veicolo targato <span class="v">AB123CD</span><sup class="rc">4</sup> telaio n. <span class="v">WVWZZZAUZHW000000</span> il sistema ruote
+  individuato dal numero di omologazione <span class="v">NADF294 Rev.00</span><sup class="rc">5</sup> e costituito dai seguenti elementi:<br>
+  1) <span class="v">n. 4 cerchi in lega MAK EMBLEMA 7,5Jx17 ET45, PCD 5x112, foro 57,1</span><sup class="rc">6</sup><br>
+  2) <span class="v">n. 4 pneumatici 225/45 R17 94W</span><br>
+  3) <span class="v">bulloneria / anelli di centraggio come da certificato, se previsti</span></p>
+  <p>– che il suddetto sistema ruote rientra tra quelli previsti per tipo funzionale del veicolo;<br>
+  – che l'installazione è stata effettuata a perfetta regola d'arte e nel rispetto delle prescrizioni fornite costruttore del sistema stesso
+  <s class="barrato">e di quelle del costruttore del veicolo</s><sup class="rc">7</sup>.</p>
+  <p>Si allega alla presente: – copia certificato conformità del sistema ruota <span class="v">✓ COC allegato</span><sup class="rc">8</sup></p>
+  <div class="firme"><span>Luogo e data <span class="v">Monza, 26/10/2026</span></span><span>firma <span class="v"><i>Mario Rossi</i></span></span></div>
+</div>
+<ol class="note-es">
+  <li>Gli stessi dati dell'Allegato C.</li>
+  <li>«Sezione meccatronica» è stampato sul modulo ufficiale anche se la pratica spetta ai gommisti: non correggerlo da solo, chiedi alla tua motorizzazione come lo vuole.</li>
+  <li>Il codice che la motorizzazione ti ha dato dopo l'Allegato C.</li>
+  <li>Targa e numero di telaio presi dal libretto (voci A ed E).</li>
+  <li>Il numero di omologazione NAD della ruota: lo trovi sul certificato NAD (tasto NAD sul B2B) e sul COC.</li>
+  <li>Gli elementi del sistema ruote, come sulla riga del certificato: cerchi (modello, misura, ET, PCD, foro) e la <b>sola</b> misura di pneumatico montata, con indici di carico e velocità uguali o superiori al libretto.</li>
+  <li>La frase si cancella se non ricorre, cioè se il costruttore del veicolo non dà prescrizioni sul montaggio.</li>
+  <li>Allega la copia del COC della ruota. Al cliente consegni Allegato B + COC: ha 30 giorni per aggiornare il libretto con i due bollettini.</li>
+</ol></div>
+  <p class="es-dati">Dati di fantasia (officina, persona, targa e telaio inventati), solo per mostrare cosa va in ogni spazio.</p>
+  <a class="mod" style="margin-top:10px" href="pdf/Esempio-compilazione-Allegati-B-C.pdf" download target="_blank" rel="noopener"><img src="prev-b-1.png" alt=""><div><b>Esempio compilato</b><span>Allegato C e Allegato B con le spiegazioni, in PDF da stampare.</span><em>⬇ Scarica PDF</em></div></a>
+</section>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const t = () => { const b = document.getElementById("esB").checked; document.getElementById("esempioB").hidden = !b; document.getElementById("esempioC").hidden = b; };
+  document.getElementById("esC").addEventListener("change", t); document.getElementById("esB").addEventListener("change", t);
+});
+</script>
+<!--/ESEMPIO-->
+
 <section>
   <h2>Hai un <em>caso?</em></h2>
   <p class="sub">Dimmi vettura e misura: ti indico la ruota MAK NAD giusta.</p>
