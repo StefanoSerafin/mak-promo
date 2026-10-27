@@ -103,3 +103,10 @@ Rigenera: `python3 _build/build.py`
 - Scelta «misura non a libretto / già a libretto» che cambia il percorso (5 passi o 3), requisiti sì/no con esito (M1, libretto italiano, ruota NAD; N1 escluso), passi con il controllo del certificato NAD sul B2B e l'avviso (GS0), moduli da scaricare, richiesta WhatsApp con foto del libretto (menu Condividi su iPhone, la foto non passa da nessun server), vettura, misura e codice MCTC.
 - Anteprima: `_build/anteprima-trasformazioni-nad.html`; icona: `_build/icona-trasformazioni-nad.html`.
 - Sezione «Esempio di compilazione» (Allegato C / Allegato B con dati di fantasia, valori in blu e richiami numerati) e PDF `pdf/Esempio-compilazione-Allegati-B-C.pdf`: tutti e due generati da `../Locandine/trasformazioni-nad/genera_esempio.py`, che riscrive il blocco tra `<!--ESEMPIO-->` e `<!--/ESEMPIO-->` in `index.html`. Modificare l'esempio solo lì.
+
+## anelli-centraggio (anelli di centraggio aftermarket in plastica, senza prezzi)
+
+- `dati.js` generato da `../Locandine/anelli-centraggio/genera_dati.py` (va lanciato con il venv di `mak-preventivi`): 48 anelli da «Anelli di Centraggio.xlsx» (codice, esterno × interno) e 5.282 vetture con il mozzo, ricavato dal Fitment MAK (`mak-preventivi/data/fitment.sqlite`: diametro interno dell'anello indicato, o foro ruota se l'anello non serve). Dalla pagina escono solo marca, modello, tipo e mozzo.
+- Testo e foto dalla bozza Mailchimp «ANELLI CENTRAGGIO 26» (novità Ø 70,1, gamma completa), video YouTube shorts/1F4fZmop28o.
+- Foro del cerchio (7 esterni) → mozzo dalla vettura o dai bottoni → codice con quantità e «Aggiungi»; gamma completa per esterno con le quantità; ordine su WhatsApp con codici e pezzi. Se l'anello non c'è o non serve, la pagina lo dice e il messaggio chiede a Stefano.
+- Anteprima: `_build/anteprima-anelli-centraggio.html`; icona: `_build/icona-anelli-centraggio.html`.
