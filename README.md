@@ -110,3 +110,10 @@ Rigenera: `python3 _build/build.py`
 - Testo e foto dalla bozza Mailchimp «ANELLI CENTRAGGIO 26» (novità Ø 70,1, gamma completa), video YouTube shorts/1F4fZmop28o.
 - Foro del cerchio (7 esterni) → mozzo dalla vettura o dai bottoni → codice con quantità e «Aggiungi»; gamma completa per esterno con le quantità; ordine su WhatsApp con codici e pezzi. Se l'anello non c'è o non serve, la pagina lo dice e il messaggio chiede a Stefano.
 - Anteprima: `_build/anteprima-anelli-centraggio.html`; icona: `_build/icona-anelli-centraggio.html`.
+
+## Copie per i colleghi agenti (`<agente>/<campagna>/`)
+
+- `_build/agenti.py` copia ogni campagna in `<agente>/<campagna>/` con nome, numero, link `tel:` e `wa.me` dell'agente (anche «Ciao <nome>» nei messaggi WhatsApp) e rifà `locandina.jpg` con il suo nome dalla sorgente in `../Locandine/` (fix-pack e halloween-ruotino si copiano: l'immagine non ha nome né numero).
+- Agenti in `AGENTI` dentro lo script. Primo: Angelo Magnotta (+39 392 450 1782) → `stefanoserafin.github.io/mak-promo/angelo/<campagna>/`; elenco in `angelo/`.
+- Le copie non si modificano a mano: dopo ogni cambio a una campagna, o per una campagna nuova, `python3 _build/agenti.py` e push. Lo script si ferma se in una pagina resta il nome o il numero di Stefano.
+- Frasi valide solo per Stefano (es. «il mio video») in `FRASI`.
