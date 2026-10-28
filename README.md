@@ -117,3 +117,13 @@ Rigenera: `python3 _build/build.py`
 - Agenti in `AGENTI` dentro lo script. Primo: Angelo Magnotta (+39 392 450 1782) → `stefanoserafin.github.io/mak-promo/angelo/<campagna>/`; elenco in `angelo/`.
 - Le copie non si modificano a mano: dopo ogni cambio a una campagna, o per una campagna nuova, `python3 _build/agenti.py` e push. Lo script si ferma se in una pagina resta il nome o il numero di Stefano.
 - Frasi valide solo per Stefano (es. «il mio video») in `FRASI`.
+
+## ts900-rinnovi (rinnovi AUTEL TS900, senza scadenza)
+
+- Per i clienti con la TS900 in scadenza (elenco da `../scadenze-ts900/`): aggiornamento 12 mesi (7200000029, 270 €), sblocco Full SGW (7200000046, 390 €), sblocco FCA + Maserati (7200000012, 160 €), IVA esclusa, listino MATE set–dic 2026.
+- `locandina.jpg` da `../Locandine/ts900-rinnovi/locandina.html`; `ts900.png` = foto ufficiale AUTEL ritagliata.
+- Vademecum «Controlla la scadenza»: Supporto › Il mio account › Informazioni personali › Informazioni dispositivo (numero di serie, scadenza = «Expired time»), dal manuale MATE del TS900, con la schermata del manuale e i riquadri rossi. La scadenza SGW non è sullo strumento: la controlla Stefano dal seriale.
+- `etichetta.jpg` (foto dell'etichetta sul retro, se c'è): il riquadro si nasconde da solo se manca.
+- Modulo: voci con prezzo (Full SGW esclude FCA), «controllamelo tu», numero di serie con controllo delle 12 cifre, foto dell'etichetta (menu Condividi: foto + testo verso WhatsApp, nessun server), officina, totale + IVA → messaggio WhatsApp con codici.
+- `index.html` scritto a mano (nessun dato incorporato). Anteprima: `_build/anteprima-ts900-rinnovi.html`; icona: `_build/icona-ts900-rinnovi.html`; prova a 390 px: `_build/prova-ts900.html`.
+

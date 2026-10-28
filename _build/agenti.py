@@ -31,6 +31,7 @@ SORGENTE_LOCANDINA = {
     "fix-pack": None,
     "halloween-ruotino": None,
     "kit-gomma-ruota": "kit-gomma-ruota-inverno/locandina-flash.html",
+    "ts900-rinnovi": "ts900-rinnovi/locandina.html",
 }
 
 STEFANO = {"nome": "Stefano", "cognome": "Serafin", "tel": "393316798961", "tel_vis": "331 679 8961"}
@@ -42,6 +43,7 @@ FRASI = {
         ("Stefano con gli anelli di centraggio sul tavolo", "Anelli di centraggio sul tavolo"),
     ],
     "kit-gomma-ruota": [("poi WhatsApp e Stefano */", "poi WhatsApp e l'agente */")],
+    "ts900-rinnovi": [("poi WhatsApp e Stefano */", "poi WhatsApp e l'agente */")],
 }
 
 
