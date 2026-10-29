@@ -134,3 +134,12 @@ Rigenera: `python3 _build/build.py`
 - Modulo: voci con prezzo (Full SGW esclude FCA), «controllamelo tu», numero di serie con controllo delle 12 cifre, foto dell'etichetta (menu Condividi: foto + testo verso WhatsApp, nessun server), officina, totale + IVA → messaggio WhatsApp con codici.
 - `index.html` scritto a mano (nessun dato incorporato). Anteprima: `_build/anteprima-ts900-rinnovi.html`; icona: `_build/icona-ts900-rinnovi.html`; prova a 390 px: `_build/prova-ts900.html`.
 
+
+## cavalletto-ez-jack-45s (cavalletto ruota universale, 239,00 € + IVA, cod. 7600000CRU, senza scadenza)
+
+- `locandina.jpg`: da `../Locandine/cavalletto-ez-jack-45s/locandina.html` (PNG/PDF clienti e colleghi nella stessa cartella).
+- `index.html` scritto a mano; `dati.js` generato da `../Locandine/cavalletto-ez-jack-45s/genera_dati.py` (Fitment MAK: marca → modello, tipo, PCD, mozzo; PCD solo dalle righe senza bulloni flottanti «BV»).
+- «Monta sulla vettura?»: vettura dal Fitment o PCD + mozzo a mano → verde (in tabella del costruttore e mozzo ≤ 77), giallo (dentro 98–130 ma fuori tabella, 4×135/137, più versioni), rosso (6 fori, fuori campo, mozzo > 77).
+- «Regge il peso?»: massa a pieno carico (F.2) + quota dell'asse più carico (50–70%, 60% di base) → kg per ruota contro 1.587 kg.
+- Ordine con pezzi e totale; il messaggio WhatsApp riporta anche vettura verificata e carico.
+- Anteprima: `_build/anteprima-cavalletto-ez-jack-45s.html`; icona: `_build/icona-cavalletto-ez-jack-45s.html`; prova a 390 px: `_build/prova-cavalletto.html`.

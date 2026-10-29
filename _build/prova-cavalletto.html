@@ -1,0 +1,15 @@
+<!doctype html><html><body style="margin:0;background:#ccc">
+<iframe id="f" src="../cavalletto-ez-jack-45s/index.html" style="width:390px;height:5600px;border:0;display:block"></iframe>
+<script>
+document.getElementById('f').onload=()=>{const d=document.getElementById('f').contentDocument, w=document.getElementById('f').contentWindow;
+const set=(id,v,ev)=>{const e=d.getElementById(id);e.value=v;e.dispatchEvent(new w.Event(ev||'change'))};
+set('marca','Fiat'); const o=[...d.getElementById('modello').options].find(x=>x.text.startsWith('PANDA · 312'));
+set('modello',o.value);
+set('massa','2600','input');
+const log=[d.getElementById('esito').innerText, d.getElementById('carico').innerText, decodeURIComponent(d.getElementById('wa').href)];
+// casi a mano
+const casi=[['5x118','65.1'],['5x160','65.1'],['4x137','57.1'],['5x112','78.1']].map(([p,z])=>{set('pcd',p);set('mozzo',z,'input');return p+' '+z+' -> '+d.getElementById('esito').querySelector('.tit b').innerText});
+// riporta panda per lo screenshot
+set('marca','Fiat'); set('modello',o.value);
+document.title=JSON.stringify(log.concat(casi));
+}</script></body></html>
