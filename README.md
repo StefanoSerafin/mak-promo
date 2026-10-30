@@ -121,7 +121,7 @@ Rigenera: `python3 _build/build.py`
 ## Copie per i colleghi agenti (`<agente>/<campagna>/`)
 
 - `_build/agenti.py` copia ogni campagna in `<agente>/<campagna>/` con nome, numero, link `tel:` e `wa.me` dell'agente (anche «Ciao <nome>» nei messaggi WhatsApp) e rifà `locandina.jpg` con il suo nome dalla sorgente in `../Locandine/` (fix-pack e halloween-ruotino si copiano: l'immagine non ha nome né numero).
-- Agenti in `AGENTI` dentro lo script. Primo: Angelo Magnotta (+39 392 450 1782) → `stefanoserafin.github.io/mak-promo/angelo/<campagna>/`; elenco in `angelo/`.
+- Agenti in `AGENTI` dentro lo script: Angelo Magnotta (+39 392 450 1782) → `…/mak-promo/angelo/`, Alberto Pianta (+39 335 522 3011) → `…/mak-promo/alberto/`. La pagina dell'agente (`<agente>/index.html`) elenca tutte le campagne con anteprima, titolo, link, «Copia link» e «Manda su WhatsApp».
 - Le copie non si modificano a mano: dopo ogni cambio a una campagna, o per una campagna nuova, `python3 _build/agenti.py` e push. Lo script si ferma se in una pagina resta il nome o il numero di Stefano.
 - Frasi valide solo per Stefano (es. «il mio video») in `FRASI`.
 
