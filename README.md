@@ -132,7 +132,8 @@ Rigenera: `python3 _build/build.py`
 - Vademecum «Controlla la scadenza»: Supporto › Il mio account › Informazioni personali › Informazioni dispositivo (numero di serie, scadenza = «Expired time»), dal manuale MATE del TS900, con la schermata del manuale e i riquadri rossi. La scadenza SGW non è sullo strumento: la controlla Stefano dal seriale.
 - `etichetta.jpg` (foto dell'etichetta sul retro, se c'è): il riquadro si nasconde da solo se manca.
 - Modulo: voci con prezzo (Full SGW esclude FCA), «controllamelo tu», numero di serie con controllo delle 12 cifre, foto dell'etichetta (menu Condividi: foto + testo verso WhatsApp, nessun server), officina, totale + IVA → messaggio WhatsApp con codici.
-- `index.html` scritto a mano (nessun dato incorporato). Anteprima: `_build/anteprima-ts900-rinnovi.html`; icona: `_build/icona-ts900-rinnovi.html`; prova a 390 px: `_build/prova-ts900.html`.
+- «Le tue scadenze» (dal 2026-10-30): il cliente scrive il numero di serie e vede aggiornamento, Full SGW e FCA con stato (scaduto / tra N giorni / attivo); le voci da rinnovare si spuntano da sole nel modulo. Dati in `scadenze.js`, generato da `../scadenze-ts900/seriali.py` (licenze DIAGMOTIVE + 24 mesi compresi dagli ordini): niente nomi né codici cliente, seriali solo come impronta SHA-256. Per aggiornarlo: nuovo export DIAGMOTIVE in `../scadenze-ts900/dati/diagmotive-licenze.xlsx`, poi `/usr/bin/python3 ../scadenze-ts900/seriali.py` e push.
+- `index.html` scritto a mano. Anteprima: `_build/anteprima-ts900-rinnovi.html`; icona: `_build/icona-ts900-rinnovi.html`; prova a 390 px: `_build/prova-ts900.html`.
 
 
 ## cavalletto-ez-jack-45s (cavalletto ruota universale, 239,00 € + IVA, cod. 7600000CRU, senza scadenza)
