@@ -14,6 +14,7 @@ Si rilancia dopo ogni modifica a una campagna o quando se ne aggiunge una:
 import re
 import shutil
 import subprocess
+import tempfile
 import sys
 from urllib.parse import quote
 from pathlib import Path
@@ -26,6 +27,7 @@ BASE_URL = "https://stefanoserafin.github.io/mak-promo/"
 AGENTI = {
     "angelo": {"nome": "Angelo", "cognome": "Magnotta", "tel": "393924501782", "tel_vis": "392 450 1782"},
     "alberto": {"nome": "Alberto", "cognome": "Pianta", "tel": "393355223011", "tel_vis": "335 522 3011"},
+    "federico": {"nome": "Federico", "cognome": "Gorgoglione", "tel": "393356384363", "tel_vis": "335 638 4363"},
 }
 
 # Sorgente della locandina con nome e numero; None = l'immagine non li ha, si copia com'è.
@@ -74,27 +76,50 @@ def pagina(chiave, a, c):
     return t
 
 
+def scrivi(path, dati):
+    """Scrive solo se il contenuto cambia: su iCloud cancellare e ricreare file crea doppioni « 2»."""
+    if isinstance(dati, str):
+        dati = dati.encode("utf-8")
+    if path.exists() and path.read_bytes() == dati:
+        return False
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_bytes(dati)
+    return True
+
+
+def sincronizza(src, dest):
+    """Copia i file della campagna nella cartella dell'agente senza cancellare la cartella."""
+    salta = {"index.template.html", ".DS_Store", "index.html", "locandina.jpg"}
+    presenti = set()
+    for f in src.rglob("*"):
+        if f.is_file() and f.name not in salta:
+            rel = f.relative_to(src)
+            presenti.add(rel)
+            scrivi(dest / rel, f.read_bytes())
+    for f in dest.rglob("*"):
+        if f.is_file() and f.name not in {"index.html", "locandina.jpg"} and f.relative_to(dest) not in presenti:
+            f.unlink()
+
+
 def locandina(a, c, dest):
     rel = SORGENTE_LOCANDINA.get(c, f"{c}/locandina.html")
     if rel is None:
-        return "copiata"
+        return "copiata" if scrivi(dest / "locandina.jpg", (PROMO / c / "locandina.jpg").read_bytes()) else "invariata"
     src = LOCANDINE / rel
-    tmp = src.with_name("_agente_tmp.html")
-    png = src.with_name("_agente_tmp.png")
     testo = src.read_text(encoding="utf-8")
     assert STEFANO["tel_vis"] in testo, f"{c}: la locandina non ha il numero di Stefano"
-    tmp.write_text(sostituisci(testo, a, c, frasi=False), encoding="utf-8")
-    try:
-        subprocess.run([CHROME, "--headless=new", "--disable-gpu", "--hide-scrollbars",
+    testo = sostituisci(testo, a, c, frasi=False).replace("<head>", f'<head><base href="{src.parent.as_uri()}/">', 1)
+    # file temporanei fuori da iCloud; <base> fa trovare foto e loghi della cartella sorgente
+    with tempfile.TemporaryDirectory() as d:
+        tmp, png, jpg = Path(d) / "l.html", Path(d) / "l.png", Path(d) / "l.jpg"
+        tmp.write_text(testo, encoding="utf-8")
+        subprocess.run([CHROME, "--headless=new", "--disable-gpu", "--hide-scrollbars", "--allow-file-access-from-files",
                         "--force-device-scale-factor=2", "--window-size=1080,1350",
                         "--virtual-time-budget=3000", f"--screenshot={png}", tmp.as_uri()],
                        check=True, capture_output=True)
         subprocess.run(["sips", "-Z", "1620", "-s", "format", "jpeg", "-s", "formatOptions", "85",
-                        str(png), "--out", str(dest / "locandina.jpg")], check=True, capture_output=True)
-    finally:
-        tmp.unlink(missing_ok=True)
-        png.unlink(missing_ok=True)
-    return "rifatta"
+                        str(png), "--out", str(jpg)], check=True, capture_output=True)
+        return "rifatta" if scrivi(dest / "locandina.jpg", jpg.read_bytes()) else "invariata"
 
 
 def genera(chiave):
@@ -102,10 +127,8 @@ def genera(chiave):
     radice = PROMO / chiave
     for c in campagne():
         dest = radice / c
-        if dest.exists():
-            shutil.rmtree(dest)
-        shutil.copytree(PROMO / c, dest, ignore=shutil.ignore_patterns("index.template.html", ".DS_Store"))
-        (dest / "index.html").write_text(pagina(chiave, a, c), encoding="utf-8")
+        sincronizza(PROMO / c, dest)
+        scrivi(dest / "index.html", pagina(chiave, a, c))
         print(f"{chiave}/{c}: pagina ok, locandina {locandina(a, c, dest)}")
     elenco(chiave, a, radice)
 
@@ -126,7 +149,7 @@ def elenco(chiave, a, radice):
             f'<div class="bt"><button type="button" data-url="{url}">Copia link</button>'
             f'<a class="wa" href="https://wa.me/?text={quote(url)}" target="_blank" rel="noopener">Manda su WhatsApp</a></div></div></div>')
     n = len(voci)
-    (radice / "index.html").write_text(f"""<!doctype html>
+    scrivi(radice / "index.html", f"""<!doctype html>
 <html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex"><title>Locandine MAK · {a["nome"]} {a["cognome"]}</title>
 <style>
@@ -165,7 +188,7 @@ document.addEventListener("DOMContentLoaded", () => {{
   function vecchio(u, fatto) {{ const t = document.createElement("textarea"); t.value = u; document.body.appendChild(t); t.select(); try {{ document.execCommand("copy"); fatto(); }} catch (e) {{}} t.remove(); }}
 }});
 </script></body></html>
-""", encoding="utf-8")
+""")
 
 if __name__ == "__main__":
     for k in (sys.argv[1:] or AGENTI):
