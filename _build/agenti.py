@@ -36,6 +36,7 @@ AGENTI = {
     "marco": {"nome": "Marco", "cognome": "Mazzotti", "tel": "393341133956", "tel_vis": "334 113 3956"},
     "marco-cesarini": {"nome": "Marco", "cognome": "Cesarini", "tel": "393459443886", "tel_vis": "345 944 3886"},
     "michele": {"nome": "Michele", "cognome": "Bracchi", "tel": "393475406935", "tel_vis": "347 540 6935"},
+    "emil": {"nome": "Emil", "cognome": "Colombani", "tel": "393333140092", "tel_vis": "333 314 0092"},
 }
 
 # Sorgente della locandina con nome e numero; None = l'immagine non li ha, si copia com'è.
