@@ -75,9 +75,9 @@ Rigenera: `python3 _build/build.py`
 - Foto vere: espositore da `Video Avatar/Immagini/NPK/espositore calze.jpg` (le altre due foto dell'espositore in quella cartella sono generate e non vanno usate), ruota con la Light ritagliata dalla promo push NPK di ottobre 2025 (eBook).
 - Anteprima: `_build/anteprima-calze-light.html`; icona: `_build/icona-calze-light.html`.
 
-## calze-neve (calze da neve NPK, tutte le linee, senza promo e senza prezzi)
+## calze-neve (calze da neve NPK, tutte le linee, senza promo, con i prezzi netti al paio)
 
-- `dati.js` generato da `../Locandine/calze-neve/genera_dati.py` dalle tabelle di `../mak-calze-neve/data/socks.json`: 685 misure → taglia di The Original (TG.69–97, `73000SS0xx`), Re-Grip (1–9, `73000SSE0x`), Multigrip Light (1–9, `73000SSL0x`), EZ Urban (XS–XXXL, `73000EZ…`, XXXL `7300EZXXXL`). Codici verificati sul database ordini. Grip 3D esclusa: NPK la dà «fine linea». Dopo averlo rigenerato, ricopiarlo qui.
+- `dati.js` generato da `../Locandine/calze-neve/genera_dati.py` dalle tabelle di `../mak-calze-neve/data/socks.json`: 685 misure → taglia di The Original (TG.69–97, `73000SS0xx`), Re-Grip (1–9, `73000SSE0x`), Multigrip Light (1–9, `73000SSL0x`), EZ Urban (XS–XXXL, `73000EZ…`, XXXL `7300EZXXXL`). Codici verificati sul database ordini. Grip 3D esclusa: NPK la dà «fine linea». Prezzo netto al paio + IVA per linea (dal 2026-11-02, scelto da Stefano: listino al rivenditore −38%, come negli ordini da un paio): Original 32,24 €, Re-Grip 24,80 €, Light 18,60 €, EZ Urban 15,50 € (XXXL compresa). Dopo averlo rigenerato, ricopiarlo qui.
 - Ricerca larghezza → serie → diametro con taglia e codice di tutte e 4 le linee e «+ Aggiungi» (due bottoni dove la tabella EZ dà XXL o XXXL); ordine a righe con paia, «+ Aggiungi» a mano (linea + taglia), officina, «Svuota l'ordine» → WhatsApp con linea, taglia, codice, paia e misura.
 - Foto: prodotti ritagliati dalle schede del sito NPK (`../mak-calze-neve/assets/`), The Original grande da `Video Avatar/Immagini/NPK/NPK-calza da neve.png`.
 - Locandina: `../Locandine/calze-neve/locandina.html` (PNG/PDF clienti e colleghi). Anteprima: `_build/anteprima-calze-neve.html`; icona: `_build/icona-calze-neve.html`.
