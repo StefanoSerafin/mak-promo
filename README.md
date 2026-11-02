@@ -57,15 +57,16 @@ Rigenera: `python3 _build/build.py`
 ## riempicarrello (12 articoli «riempicarrello» del B2B, senza scadenza)
 
 - Dati degli articoli in `prodotti.js` (codice, nome, descrizione, prezzo netto, listino barrato): la fonte è `../Locandine/riempicarrello/prodotti.js`, usata anche dalla locandina; se cambia, ricopiarla qui insieme alle foto.
-- `foto/<codice>.png` ritagliate dagli screenshot del carrello B2B del 2026-10-26.
+- `foto/<codice>.png` ritagliate dagli screenshot del carrello B2B del 2026-10-26; dal 2026-11-02 anche il fustino AdBlue 10 L (9400000016, `largo:true` = riga larga in fondo alla locandina).
 - Una scheda per articolo con quantità, riepilogo con totale + IVA e risparmio sui listini, messaggio WhatsApp con quantità, codici e prezzi.
 - Anteprima: `_build/anteprima-riempicarrello.html`; icona: `_build/icona-riempicarrello.html`.
 
-## adblue (AdBlue by Azotal, 4 confezioni, senza scadenza)
+## adblue (AdBlue by Azotal, fustino singolo + 4 confezioni a bancale, senza scadenza)
 
 - Dati in `prodotti.js` (codice, litri, confezione, prezzo, trasporto 30 € a bancale Nord e Toscana): la fonte è `../Locandine/adblue/prodotti.js`, presi dalla locandina MAK ufficiale nell'eBook agenti (copia del 2026-10-03); se cambia, ricopiarla qui.
 - `foto/`: fustino, fusto e cisterna da `Video Avatar/Immagini/MAK/` senza la scritta «ordine min.», più la foto di gruppo.
-- Scala del prezzo al litro animata, una scheda per confezione con i bancali, riepilogo con merce, trasporto e totale + IVA, messaggio WhatsApp con codici, litri e totale; scheda «Perché Azotal» dalla scheda tecnica SP10.
+- Fustino singolo da 10 L (`SINGOLO` in `prodotti.js`, 9400000016, 7,20 € + IVA dal 2026-11-02): sezione a parte con i pezzi, entra nel totale e nel messaggio ma non paga il trasporto a bancale.
+- Scala del prezzo al litro animata (solo bancali), una scheda per confezione con i bancali, riepilogo con merce, trasporto e totale + IVA, messaggio WhatsApp con codici, litri e totale; scheda «Perché Azotal» dalla scheda tecnica SP10.
 - Anteprima: `_build/anteprima-adblue.html`; icona: `_build/icona-adblue.html`.
 
 ## calze-light-espositore (starter kit 10 paia Multigrip Light + espositore da banco, 188,40 € + IVA)
@@ -123,7 +124,7 @@ Rigenera: `python3 _build/build.py`
 - `_build/agenti.py` copia ogni campagna in `<agente>/<campagna>/` con nome, numero, link `tel:` e `wa.me` dell'agente (anche «Ciao <nome>» nei messaggi WhatsApp) e rifà `locandina.jpg` con il suo nome dalla sorgente in `../Locandine/` (fix-pack e halloween-ruotino si copiano: l'immagine non ha nome né numero).
 - Agenti in `AGENTI` dentro lo script: Angelo Magnotta (+39 392 450 1782) → `…/mak-promo/angelo/`, Alberto Pianta (+39 335 522 3011) → `…/mak-promo/alberto/`, Federico Gorgoglione (+39 335 638 4363) → `…/mak-promo/federico/`, Davide Mattaliano (+39 349 051 2550) → `…/mak-promo/davide/`, Oscar Padova (+39 349 071 7481) → `…/mak-promo/oscar/`, Gianluca Giamberardino (+39 339 143 6270) → `…/mak-promo/gianluca/`, Silvana Rinaldi (+39 338 680 0250) → `…/mak-promo/silvana/`, Francesco Parisi (+39 338 259 4763) → `…/mak-promo/francesco/`, Marco Mazzotti (+39 334 113 3956) → `…/mak-promo/marco/`, Marco Cesarini (+39 345 944 3886) → `…/mak-promo/marco-cesarini/`, Michele Bracchi (+39 347 540 6935) → `…/mak-promo/michele/`, Emil Colombani (+39 333 314 0092) → `…/mak-promo/emil/`, Gerardo Giacco (+39 320 223 2932) → `…/mak-promo/gerardo/`, Enrico Galante (+39 349 772 0865) → `…/mak-promo/enrico/`, Stefania Santiglia (+39 327 902 0929) → `…/mak-promo/stefania/`. Per un collega nuovo basta una riga in `AGENTI` e `python3 _build/agenti.py <chiave>`.
 - Lo script non cancella le cartelle: riscrive solo i file cambiati e tiene i file temporanei della locandina fuori dalla Scrivania (su iCloud cancellare e ricreare crea doppioni « 2»). La pagina dell'agente (`<agente>/index.html`) elenca tutte le campagne con anteprima, titolo, link, «Copia link» e «Manda su WhatsApp».
-- Le copie non si modificano a mano: dopo ogni cambio a una campagna, o per una campagna nuova, `python3 _build/agenti.py` e push. Lo script si ferma se in una pagina resta il nome o il numero di Stefano.
+- Le copie non si modificano a mano: dopo ogni cambio a una campagna, o per una campagna nuova, `python3 _build/agenti.py` e push (per rifare solo le campagne toccate: `python3 _build/agenti.py --solo=adblue,riempicarrello`, ~1,5 minuti per tutti). Lo script si ferma se in una pagina resta il nome o il numero di Stefano.
 - Frasi valide solo per Stefano (es. «il mio video») in `FRASI`.
 
 ## ts900-rinnovi (rinnovi AUTEL TS900, senza scadenza)
