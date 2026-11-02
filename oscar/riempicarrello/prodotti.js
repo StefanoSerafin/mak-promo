@@ -1,4 +1,5 @@
-/* Articoli «riempicarrello» del B2B MAK (screenshot di Stefano del 2026-10-26).
+/* Articoli «riempicarrello» del B2B MAK (screenshot di Stefano del 2026-10-26;
+   AdBlue fustino 10 L aggiunto il 2026-11-02, prezzo dato da Stefano).
    Prezzi netti IVA esclusa; listino = prezzo barrato, 0 se non c'è. Unica fonte per locandina e pagina web. */
 const PRODOTTI = [
   {cod:"7600000013", nome:"Sacchi per ruote MAK", sub:"Confezione da 100 sacchi", prezzo:60.00, listino:0},
@@ -12,6 +13,7 @@ const PRODOTTI = [
   {cod:"93000TR414", nome:"Valvole TR414", sub:"Confezione da 100 valvole", prezzo:12.50, listino:0},
   {cod:"9300000335", nome:"Pesi adesivi silver", sub:"50 strisce da 12 pesi da 5 g", prezzo:7.80, listino:9.00},
   {cod:"9300000336", nome:"Pesi adesivi black", sub:"50 strisce da 12 pesi da 5 g", prezzo:9.80, listino:12.70},
-  {cod:"9300000337", nome:"Set 5 bussole impact", sub:"Rivestite in teflon, con valigetta", prezzo:18.00, listino:0}
+  {cod:"9300000337", nome:"Set 5 bussole impact", sub:"Rivestite in teflon, con valigetta", prezzo:18.00, listino:0},
+  {cod:"9400000016", nome:"AdBlue fustino 10 L", sub:"AdBlue by Azotal, ISO 22241 · fustino singolo", prezzo:7.20, listino:0, largo:true}
 ];
 const euro = n => n.toFixed(2).replace(".", ",") + " €";

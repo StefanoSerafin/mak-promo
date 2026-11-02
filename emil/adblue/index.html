@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>AdBlue MAK</title>
-<meta name="description" content="AdBlue by Azotal da MAK: confezioni da 200, 750, 800 e 1.000 litri, da 215 € a 645 € + IVA. Scegli i bancali e mandami l'ordine su WhatsApp.">
+<meta name="description" content="AdBlue by Azotal da MAK: fustino singolo da 10 litri a 7,20 € e bancali da 200, 750, 800 e 1.000 litri, da 215 € a 645 € + IVA. Scegli e mandami l'ordine su WhatsApp.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="AdBlue by Azotal · dal fustino alla cisterna">
-<meta property="og:description" content="200, 750, 800 e 1.000 litri: più litri, meno costa al litro. Scegli i bancali e ordina su WhatsApp.">
+<meta property="og:description" content="Fustino singolo da 10 litri a 7,20 € + IVA, o bancali da 200 a 1.000 litri. Scegli e ordina su WhatsApp.">
 <meta property="og:image" content="https://stefanoserafin.github.io/mak-promo/emil/adblue/anteprima.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -113,12 +113,12 @@ footer b{color:var(--ink)}
 </head>
 <body>
 <a class="avviso" id="avviso" href="#secOrdine">
-  <span><b>Ti serve AdBlue?</b> Scegli i bancali: l'ordine me lo mandi su WhatsApp</span><i>↓</i>
+  <span><b>Ti serve AdBlue?</b> Scegli fustini o bancali: l'ordine me lo mandi su WhatsApp</span><i>↓</i>
 </a>
 <div class="wrap">
 
 <div class="hero">
-  <img src="locandina.jpg" alt="AdBlue by Azotal da MAK: confezioni da 200 litri a 215 euro, 750 litri a 585 euro, 800 litri a 600 euro, 1000 litri a 645 euro, IVA esclusa; trasporto Nord e Toscana 30 euro a bancale" width="1620" height="2025">
+  <img src="locandina.jpg" alt="AdBlue by Azotal da MAK: fustino singolo da 10 litri a 7,20 euro al pezzo; confezioni da 200 litri a 215 euro, 750 litri a 585 euro, 800 litri a 600 euro, 1000 litri a 645 euro, IVA esclusa; trasporto Nord e Toscana 30 euro a bancale" width="1620" height="2025">
 </div>
 
 <section>
@@ -129,7 +129,13 @@ footer b{color:var(--ink)}
 </section>
 
 <section id="secOrdine">
-  <h2>Scegli le <em>confezioni</em></h2>
+  <h2>Anche il <em>fustino singolo</em></h2>
+  <p class="sub">Un fustino da 10 litri da aggiungere al tuo ordine: si paga a pezzo, senza trasporto a bancale.</p>
+  <div class="lista" id="singolo"></div>
+</section>
+
+<section>
+  <h2>Oppure a <em>bancale</em></h2>
   <p class="sub">Ogni confezione è un bancale. Metti quanti bancali ti servono.</p>
   <div class="lista" id="lista"></div>
 </section>
@@ -146,7 +152,7 @@ footer b{color:var(--ink)}
     <label class="f" for="officina">Officina (facoltativo)</label>
     <input type="text" id="officina" placeholder="Nome dell'officina" autocomplete="organization">
   </div>
-  <p class="nota">Trasporto Nord e Toscana: 30 € a bancale. Prezzi IVA esclusa.</p>
+  <p class="nota">Trasporto Nord e Toscana: 30 € a bancale. Il fustino singolo viaggia con il resto del tuo ordine. Prezzi IVA esclusa.</p>
 </section>
 
 <section>
@@ -181,6 +187,7 @@ const TELEFONO = "393333140092";
 document.addEventListener("DOMContentLoaded", () => {
   const $ = id => document.getElementById(id);
   const n = CONFEZIONI.map(() => 0);
+  let ns = 0; /* fustini singoli */
   const campi = [];
   const litri = v => String(v).replace(/\B(?=(\d{3})+(?!\d))/g, ".") + " L";
 
@@ -213,6 +220,19 @@ document.addEventListener("DOMContentLoaded", () => {
     campi.push({conf: d, campo});
     $("lista").appendChild(d);
   });
+  /* fustino singolo, a pezzo */
+  const sd = document.createElement("div");
+  sd.className = "conf";
+  sd.innerHTML = '<div class="foto"><img alt="" src="foto/' + SINGOLO.foto + '"></div>' +
+    '<div><h3>' + SINGOLO.nome + '</h3><div class="d">' + SINGOLO.dett + '</div><div class="c">Cod. ' + SINGOLO.cod + '</div></div>' +
+    '<div class="giu"><span class="pr"><b>' + euro(SINGOLO.prezzo) + '</b><small>al pezzo</small></span>' +
+    '<div><div class="qta"><button type="button" aria-label="Meno">−</button><input type="number" inputmode="numeric" min="0" max="999" value="0" aria-label="Fustini singoli"><button type="button" aria-label="Più">+</button></div><div class="unita">pezzi</div></div></div>';
+  const [sMeno, sCampo, sPiu] = sd.querySelector(".qta").children;
+  sMeno.addEventListener("click", () => { if (ns > 0) { ns--; aggiorna(); } });
+  sPiu.addEventListener("click", () => { if (ns < 999) { ns++; aggiorna(); } });
+  sCampo.addEventListener("focus", () => sCampo.select());
+  sCampo.addEventListener("input", () => { ns = Math.min(999, Math.max(0, parseInt(sCampo.value, 10) || 0)); aggiorna(true); });
+  $("singolo").appendChild(sd);
   $("officina").addEventListener("input", aggiornaWa);
 
   const scelte = () => CONFEZIONI.map((c, i) => ({c, n: n[i]})).filter(x => x.n);
@@ -220,8 +240,8 @@ document.addEventListener("DOMContentLoaded", () => {
   function conti() {
     const s = scelte();
     const bancali = s.reduce((a, x) => a + x.n, 0);
-    const merce = s.reduce((a, x) => a + x.n * x.c.prezzo, 0);
-    return {s, bancali, merce, tr: bancali * TRASPORTO, l: s.reduce((a, x) => a + x.n * x.c.litri, 0)};
+    const merce = s.reduce((a, x) => a + x.n * x.c.prezzo, 0) + ns * SINGOLO.prezzo;
+    return {s, bancali, merce, tr: bancali * TRASPORTO, l: s.reduce((a, x) => a + x.n * x.c.litri, 0) + ns * SINGOLO.litri, vuoto: !s.length && !ns};
   }
 
   function aggiorna(daTastiera) {
@@ -229,20 +249,23 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!daTastiera || document.activeElement !== c.campo) c.campo.value = n[i];
       c.conf.classList.toggle("on", n[i] > 0);
     });
+    if (!daTastiera || document.activeElement !== sCampo) sCampo.value = ns;
+    sd.classList.toggle("on", ns > 0);
     const k = conti();
-    if (k.s.length) {
-      $("riep").textContent = k.s.map(x => x.n + " × " + x.c.nome + " (" + x.c.dett + ") · " + euro(x.n * x.c.prezzo)).join("\n");
+    if (!k.vuoto) {
+      $("riep").textContent = (ns ? [ns + " × " + SINGOLO.nome + " singolo · " + euro(ns * SINGOLO.prezzo)] : [])
+        .concat(k.s.map(x => x.n + " × " + x.c.nome + " (" + x.c.dett + ") · " + euro(x.n * x.c.prezzo))).join("\n");
       $("conti").hidden = false;
       $("merce").textContent = euro(k.merce);
-      $("trTesto").textContent = "Trasporto Nord e Toscana (" + k.bancali + " × 30 €)";
-      $("tr").textContent = euro(k.tr);
+      $("trTesto").textContent = k.bancali ? "Trasporto Nord e Toscana (" + k.bancali + " × 30 €)" : "Trasporto a bancale";
+      $("tr").textContent = k.bancali ? euro(k.tr) : "–";
       $("tot").textContent = euro(k.merce + k.tr);
       $("totTesto").textContent = litri(k.l) + " · totale + IVA";
       $("ordine").classList.remove("salta");
       void $("ordine").offsetWidth;
       $("ordine").classList.add("salta");
     } else {
-      $("riep").textContent = "Nessuna confezione scelta: metti i bancali qui sopra.";
+      $("riep").textContent = "Nessuna confezione scelta: metti i fustini o i bancali qui sopra.";
       $("conti").hidden = true;
       $("tot").textContent = "–";
       $("totTesto").textContent = "Totale + IVA";
@@ -253,11 +276,13 @@ document.addEventListener("DOMContentLoaded", () => {
   function aggiornaWa() {
     const k = conti();
     let testo, etichetta;
-    if (k.s.length) {
+    if (!k.vuoto) {
       testo = "Ciao Emil, vorrei ordinare *AdBlue by Azotal*:\n" +
-        k.s.map(x => "• " + x.n + " × " + x.c.cod + " " + x.c.nome + " (" + x.c.dett + ") · " + euro(x.c.prezzo)).join("\n") +
-        "\nTotale: " + litri(k.l) + ", " + k.bancali + (k.bancali === 1 ? " bancale" : " bancali") +
-        ", merce " + euro(k.merce) + " + trasporto " + euro(k.tr) + " = " + euro(k.merce + k.tr) + " + IVA" +
+        (ns ? ["• " + ns + " × " + SINGOLO.cod + " " + SINGOLO.nome + " singolo · " + euro(SINGOLO.prezzo)] : [])
+          .concat(k.s.map(x => "• " + x.n + " × " + x.c.cod + " " + x.c.nome + " (" + x.c.dett + ") · " + euro(x.c.prezzo))).join("\n") +
+        "\nTotale: " + litri(k.l) +
+        (k.bancali ? ", " + k.bancali + (k.bancali === 1 ? " bancale" : " bancali") + ", merce " + euro(k.merce) + " + trasporto " + euro(k.tr) + " = " + euro(k.merce + k.tr)
+                   : ", " + euro(k.merce)) + " + IVA" +
         "\n\nOfficina: " + $("officina").value.trim();
       etichetta = "Invia l'ordine su WhatsApp";
     } else {

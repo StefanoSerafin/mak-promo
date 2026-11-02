@@ -7,6 +7,9 @@ const CONFEZIONI = [
   {cod:"9400000011", litri:800,  nome:"800 litri",   dett:"4 fusti da 200 L",   foto:"fusto.jpg",   prezzo:600.00},
   {cod:"9400000010", litri:1000, nome:"1.000 litri", dett:"1 cisterna da 1.000 L", nota:"imballo a perdere", foto:"cisterna.jpg", prezzo:645.00}
 ];
+/* Fustino singolo: prezzo dato da Stefano il 2026-11-02, IVA esclusa. Si vende a pezzo e si aggiunge
+   a un ordine: niente trasporto a bancale. */
+const SINGOLO = {cod:"9400000016", litri:10, nome:"Fustino 10 litri", dett:"Singolo, da aggiungere al tuo ordine", foto:"fustino.jpg", prezzo:7.20};
 const TRASPORTO = 30; /* € a bancale, Nord e Toscana */
 const euro = n => n.toFixed(2).replace(".", ",").replace(/\B(?=(\d{3})+(?!\d))/g, ".") + " €";
 const alLitro = c => (c.prezzo / c.litri).toFixed(3).replace(".", ",") + " €/L";

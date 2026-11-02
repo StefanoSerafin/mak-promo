@@ -10,6 +10,7 @@ Link: stefanoserafin.github.io/mak-promo/<agente>/<campagna>/
 Si rilancia dopo ogni modifica a una campagna o quando se ne aggiunge una:
     python3 _build/agenti.py            # tutti gli agenti
     python3 _build/agenti.py angelo     # uno solo
+    python3 _build/agenti.py --solo=adblue,riempicarrello   # solo le campagne cambiate, per tutti
 """
 import re
 import shutil
@@ -134,10 +135,15 @@ def locandina(a, c, dest):
         return "rifatta" if scrivi(dest / "locandina.jpg", jpg.read_bytes()) else "invariata"
 
 
+SOLO = None  # campagne da rifare (--solo=a,b); None = tutte
+
+
 def genera(chiave):
     a = AGENTI[chiave]
     radice = PROMO / chiave
     for c in campagne():
+        if SOLO and c not in SOLO:
+            continue
         dest = radice / c
         sincronizza(PROMO / c, dest)
         scrivi(dest / "index.html", pagina(chiave, a, c))
@@ -203,5 +209,10 @@ document.addEventListener("DOMContentLoaded", () => {{
 """)
 
 if __name__ == "__main__":
-    for k in (sys.argv[1:] or AGENTI):
+    args = [x for x in sys.argv[1:] if not x.startswith("--solo=")]
+    for x in sys.argv[1:]:
+        if x.startswith("--solo="):
+            SOLO = set(x[7:].split(","))
+            assert SOLO <= set(campagne()), f"campagne sconosciute: {SOLO - set(campagne())}"
+    for k in (args or AGENTI):
         genera(k)
