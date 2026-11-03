@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Assistenza telefonica MATE</title>
-<meta name="description" content="Assistenza telefonica gratuita per i clienti MAK con strumenti TPMS MATE e Autel: Servizio Clienti MATE 392 098 1064, dal lunedì al venerdì. Procedure di apprendimento per 44 marche e richiesta già pronta su WhatsApp.">
+<meta name="description" content="Assistenza telefonica gratuita per i clienti MAK con strumenti TPMS MATE e Autel: Servizio Clienti MATE 392 098 1064, dal lunedì al venerdì. Procedura di apprendimento della tua auto e richiesta già pronta su WhatsApp.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Assistenza MATE gratuita · 392 098 1064">
 <meta property="og:description" content="Hai uno strumento MATE o Autel? Un tecnico ti segue al telefono, gratis. Trovi anche la procedura di apprendimento della tua auto.">
@@ -126,7 +126,7 @@ footer b{color:var(--ink)}
 
 <section>
   <h2>La procedura della <em>tua auto</em></h2>
-  <p class="sub">Prima di chiamare: le procedure di apprendimento MATE per 44 marche.</p>
+  <p class="sub">Prima di chiamare verifica la procedura di apprendimento della tua auto.</p>
   <div class="card">
     <div class="due">
       <select id="marca" aria-label="Marca"></select>
@@ -142,9 +142,6 @@ footer b{color:var(--ink)}
   <div class="card">
     <label class="f" for="strumento">Strumento</label>
     <select id="strumento"></select>
-    <label class="f" for="seriale">Seriale dello strumento</label>
-    <input type="text" id="seriale" placeholder="Numero di serie" autocomplete="off" autocapitalize="characters">
-    <div class="aiuto">È la prima cosa che ti chiedono. Autel: 12 cifre, in Impostazioni → Info.</div>
     <label class="f" for="problema">Di cosa hai bisogno</label>
     <select id="problema"></select>
     <label class="f" for="officina">Officina</label>
@@ -204,7 +201,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   $("modello").addEventListener("change", () => { mostra(); aggiornaWa(); });
   ["strumento", "problema"].forEach(id => $(id).addEventListener("change", aggiornaWa));
-  ["seriale", "officina"].forEach(id => $(id).addEventListener("input", aggiornaWa));
+  $("officina").addEventListener("input", aggiornaWa);
 
   function mostra() {
     const m = marca(), mod = $("modello").value, box = $("proc");
@@ -220,7 +217,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function aggiornaWa() {
     const v = [$("marca").value, $("modello").value].filter(Boolean).join(" ");
     const righe = [
-      ["Strumento", $("strumento").value], ["Seriale", $("seriale").value.trim()], ["Vettura", v],
+      ["Strumento", $("strumento").value], ["Vettura", v],
       ["Mi serve aiuto per", $("problema").value], ["Officina", $("officina").value.trim()]
     ].filter(r => r[1]).map(r => r[0] + ": " + r[1]);
     const testo = "Buongiorno, sono un cliente MAK con uno strumento MATE/Autel e mi serve assistenza." +
