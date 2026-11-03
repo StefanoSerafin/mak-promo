@@ -166,7 +166,7 @@ footer b{color:var(--ink)}
   </div>
 </section>
 
-<footer><img src="logo-mate-nero.svg" alt="MATE"><b>Davide Mattaliano</b> · Agente MAK · 349 051 2550<br>Procedure dalle schede MATE, app <a href="https://stefanoserafin.github.io/mak-tpms-relearn/" style="color:inherit">Apprendimento TPMS</a>.</footer>
+<footer><img src="logo-mate-nero.svg" alt="MATE"><b>Davide Mattaliano</b> · Agente MAK · 349 051 2550<br>Procedure dalle schede MATE, app <a href="https://stefanoserafin.github.io/mak-tpms-relearn/" style="color:inherit">Apprendimento TPMS</a>.<br><small>Conteggio anonimo delle visite, senza cookie.</small></footer>
 </div>
 
 <div class="cta"><a id="wa" href="#" target="_blank" rel="noopener">
@@ -238,5 +238,17 @@ document.addEventListener("DOMContentLoaded", () => {
   aggiornaWa();
 });
 </script>
+<script>/* ricerche per il contatore anonimo (conta.js) */
+document.addEventListener("DOMContentLoaded", () => {
+  const el = id => document.getElementById(id);
+  const testo = id => { const e = el(id); return e && e.value ? (e.tagName === "SELECT" ? e.options[e.selectedIndex].text : e.value).trim() : ""; };
+  const quando = (ids, f) => ids.forEach(id => el(id) && el(id).addEventListener("change", () => { const t = f(); if (t && window.conta) window.conta("ricerca", t); }));
+  const misura = (l, s, d) => quando([l, s, d], () => el(l).value && el(s).value && el(d).value ? el(l).value + "/" + el(s).value + " R" + el(d).value : "");
+  const vettura = (m, mo) => quando([mo], () => testo(m) && testo(mo) ? testo(m) + " " + testo(mo) : "");
+  vettura("marca","modello");
+  quando(["marca"], () => testo("marca"));
+});
+</script>
+<script src="/mak-promo/conta.js" defer></script>
 </body>
 </html>

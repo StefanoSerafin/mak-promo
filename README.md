@@ -153,3 +153,10 @@ Rigenera: `python3 _build/build.py`
 - «La procedura della tua auto»: marca → modello → tipi di procedura e link all'app Apprendimento TPMS (`…/mak-tpms-relearn/#/<marca>/<modello>`) e alla scheda MATE in PDF. Dati in `marche.js`, generato da `_build/assistenza-mate-dati.py` da `../mak-tpms-relearn/data/brands.json`: rilanciarlo quando cambia l'app.
 - «Prepara la richiesta»: strumento, di cosa hai bisogno, officina (il seriale non serve, tolto il 2026-11-03) → messaggio WhatsApp all'assistenza con anche la vettura e l'agente.
 - Locandina: `../Locandine/assistenza-mate/locandina.html` (foto vera MA41 + TS508 da `Video Avatar/Immagini/MATE/`). Anteprima: `_build/anteprima-assistenza-mate.html`; icona: `_build/icona-assistenza-mate.html`.
+
+## Monitoraggio (dal 2026-11-03)
+
+- Ogni pagina include `conta.js` (`<script src="/mak-promo/conta.js" defer></script>` prima di `</body>`) e la riga «Conteggio anonimo delle visite, senza cookie.» nel footer. Le copie dei colleghi lo ereditano; la pagina elenco del collega lo include con `data-elenco`.
+- Conta aperture e tocchi su WhatsApp, Chiama, B2B e mail. Le ricerche arrivano dal blocco «ricerche per il contatore anonimo» in fondo alle pagine che ne hanno una: calze-neve, calze-light-espositore, canali-etrto, anelli-centraggio, distanziali-xilema, halloween-ruotino, kit-gomma-ruota, cavalletto-ez-jack-45s, assistenza-mate.
+- Il server è il Worker in `../mak-promo-conta/` (README con cosa si salva e cosa no). I numeri si leggono nel briefing del lunedì.
+- Campagna nuova: script e riga nel footer, più l'aggancio della ricerca se c'è. `_build/agenti.py` si ferma se manca `conta.js`.

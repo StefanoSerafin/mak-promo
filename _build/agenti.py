@@ -85,6 +85,7 @@ def pagina(chiave, a, c):
     t = sostituisci((PROMO / c / "index.html").read_text(encoding="utf-8"), a, c)
     t = t.replace(f"{BASE_URL}{c}/", f"{BASE_URL}{chiave}/{c}/")  # og:url e og:image
     rimasti = re.findall(r"Stefano|Serafin|3316798961|331 679 8961", t)
+    assert "/mak-promo/conta.js" in t, f"{c}: manca il contatore conta.js"
     assert not rimasti, f"{c}: restano riferimenti a Stefano: {set(rimasti)}"
     return t
 
@@ -205,7 +206,8 @@ document.addEventListener("DOMContentLoaded", () => {{
   }}));
   function vecchio(u, fatto) {{ const t = document.createElement("textarea"); t.value = u; document.body.appendChild(t); t.select(); try {{ document.execCommand("copy"); fatto(); }} catch (e) {{}} t.remove(); }}
 }});
-</script></body></html>
+</script>
+<script src="/mak-promo/conta.js" data-elenco defer></script></body></html>
 """)
 
 if __name__ == "__main__":

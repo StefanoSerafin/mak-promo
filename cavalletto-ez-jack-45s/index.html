@@ -244,7 +244,7 @@ footer b{color:var(--ink)}
   </div>
 </section>
 
-<footer><img src="logo-mak-nero.svg" alt="MAK"><b>Stefano Serafin</b> · Agente MAK · 331 679 8961</footer>
+<footer><img src="logo-mak-nero.svg" alt="MAK"><b>Stefano Serafin</b> · Agente MAK · 331 679 8961<br><small>Conteggio anonimo delle visite, senza cookie.</small></footer>
 </div>
 
 <div class="cta"><a id="wa" href="#" target="_blank" rel="noopener">
@@ -397,5 +397,17 @@ document.addEventListener("DOMContentLoaded", () => {
   ordine();
 });
 </script>
+<script>/* ricerche per il contatore anonimo (conta.js) */
+document.addEventListener("DOMContentLoaded", () => {
+  const el = id => document.getElementById(id);
+  const testo = id => { const e = el(id); return e && e.value ? (e.tagName === "SELECT" ? e.options[e.selectedIndex].text : e.value).trim() : ""; };
+  const quando = (ids, f) => ids.forEach(id => el(id) && el(id).addEventListener("change", () => { const t = f(); if (t && window.conta) window.conta("ricerca", t); }));
+  const misura = (l, s, d) => quando([l, s, d], () => el(l).value && el(s).value && el(d).value ? el(l).value + "/" + el(s).value + " R" + el(d).value : "");
+  const vettura = (m, mo) => quando([mo], () => testo(m) && testo(mo) ? testo(m) + " " + testo(mo) : "");
+  vettura("marca","modello");
+  quando(["pcd"], () => testo("pcd") && "PCD " + testo("pcd"));
+});
+</script>
+<script src="/mak-promo/conta.js" defer></script>
 </body>
 </html>
