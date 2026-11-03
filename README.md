@@ -145,3 +145,11 @@ Rigenera: `python3 _build/build.py`
 - «Regge il peso?»: massa a pieno carico (F.2) + quota dell'asse più carico (50–70%, 60% di base) → kg per ruota contro 1.587 kg.
 - Ordine con pezzi e totale; il messaggio WhatsApp riporta anche vettura verificata e carico.
 - Anteprima: `_build/anteprima-cavalletto-ez-jack-45s.html`; icona: `_build/icona-cavalletto-ez-jack-45s.html`; prova a 390 px: `_build/prova-cavalletto.html`.
+
+## assistenza-mate (assistenza telefonica gratuita per i clienti con strumenti MATE e Autel, senza prezzi)
+
+- Servizio Clienti MATE **392 098 1064**, dal lunedì al venerdì in orario d'ufficio, support@mate-tech.it (scelta di Stefano del 2026-11-03; il cellulare di Pepe non va pubblicato).
+- **Chiama e WhatsApp vanno all'assistenza, non all'agente** («non facciamo assistenza»): `tel:+393920981064` e `wa.me/393920981064`. Nelle copie dei colleghi il numero resta quello; cambiano solo la firma e la riga «Il mio agente MAK» del messaggio.
+- «La procedura della tua auto»: marca → modello → tipi di procedura e link all'app Apprendimento TPMS (`…/mak-tpms-relearn/#/<marca>/<modello>`) e alla scheda MATE in PDF. Dati in `marche.js`, generato da `_build/assistenza-mate-dati.py` da `../mak-tpms-relearn/data/brands.json`: rilanciarlo quando cambia l'app.
+- «Prepara la richiesta»: strumento, seriale (Autel 12 cifre), di cosa hai bisogno, officina → messaggio WhatsApp all'assistenza con anche la vettura e l'agente.
+- Locandina: `../Locandine/assistenza-mate/locandina.html` (foto vera MA41 + TS508 da `Video Avatar/Immagini/MATE/`). Anteprima: `_build/anteprima-assistenza-mate.html`; icona: `_build/icona-assistenza-mate.html`.
