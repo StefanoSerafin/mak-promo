@@ -167,5 +167,5 @@ Rigenera: `python3 _build/build.py`
 - 14,00 € + IVA a sensore, minimo 40 pezzi (560,00 € + IVA, spedizione inclusa); Rubber, Metal Silver e Metal Black miscelabili a multipli di 10. Sul B2B dal 9/11, sezione Promozioni.
 - Conto alla rovescia: prima del 9/11 conta alla partenza («lo inserisci appena parte»), poi alla fine del 22/11; dopo diventa «Chiedimi le offerte attive».
 - Ordine a passi di 10 per versione, barra verso i 40, mix rapidi; messaggio WhatsApp con le versioni (i codici articolo non sono ancora stati comunicati).
-- Immagini dalla presentazione ufficiale MATE: sensore (scontornato), MA41 e VT57. Sezione «Prima aggiorna l'ATEQ» e link all'assistenza MATE.
+- Dal 2026-11-04 (richiesta di Stefano) la pagina mostra il **volantino ufficiale MAK/MATE** (`../Locandine/multisens-plus/volantino-mate-multisens-plus.png` → `locandina.jpg`, copiato com'è anche nelle copie dei colleghi: `SORGENTE_LOCANDINA` = None). Le foto di Rubber, Metal Silver e Metal Black (`ms-*.png`) sono ritagliate dal volantino. MA41 e VT57 dalla presentazione. Sezione «Prima aggiorna l'ATEQ» e link all'assistenza MATE.
 - Anteprima: `_build/anteprima-multisens-plus.html`; icona: `_build/icona-multisens-plus.html`.

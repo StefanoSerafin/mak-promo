@@ -40,7 +40,7 @@ section{padding:28px 16px 6px}
 
 .hero{position:relative;overflow:hidden;line-height:0}
 .hero img{width:100%;height:auto;display:block}
-.hero::after{content:"";position:absolute;top:0;bottom:0;width:40%;left:-60%;pointer-events:none;
+.hero::after{display:none;content:"";position:absolute;top:0;bottom:0;width:40%;left:-60%;pointer-events:none;
   background:linear-gradient(100deg,transparent,rgba(255,255,255,.5),transparent);transform:skewX(-18deg);animation:riflesso 5s 1s infinite}
 @keyframes riflesso{0%{left:-60%}35%,100%{left:130%}}
 #secOrdine{scroll-margin-top:70px}
@@ -59,7 +59,7 @@ section{padding:28px 16px 6px}
 /* ordine */
 .card{background:var(--card);border-radius:16px;padding:6px 14px 14px}
 .riga{display:grid;grid-template-columns:64px 1fr auto;gap:10px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}
-.riga img{width:64px;height:auto;display:block}
+.riga img{width:64px;height:auto;display:block;mix-blend-mode:multiply}
 .riga h3{margin:0;font-family:var(--titolo);font-size:24px;line-height:1;text-transform:uppercase;padding-top:3px}
 .riga .c{font-size:13px;color:var(--mute)}
 .qta{display:flex;align-items:center;background:#fff;border:1px solid var(--line);border-radius:12px}
@@ -127,15 +127,8 @@ footer b{color:var(--ink)}
 <div class="wrap">
 
 <div class="hero">
-  <img src="locandina.jpg" alt="Nuovo sensore TPMS universale MATE MULTIsens+, progettato da HUF, copre il 95% del parco auto: promo lancio dal 9 al 22 novembre a 14,00 euro più IVA a sensore, minimo 40 pezzi, 560 euro più IVA spedizione inclusa; versioni Rubber, Metal Silver e Metal Black anche miste a multipli di 10" width="1296" height="1620">
+  <img src="locandina.jpg" alt="Volantino MAK e MATE: MULTIsens+, il nuovo sensore TPMS universale MATE nelle versioni Rubber, Metal Silver e Metal Black; promo lancio dal 9 al 22 novembre 2026 a 14,00 euro al sensore IVA esclusa, ordine minimo 40 pezzi, totale 560 euro più IVA con spese di spedizione incluse, ordini in multipli di 10 per ciascuna valvola; programmabili con strumenti ATEQ con l'ultimo aggiornamento" width="1067" height="1474">
 </div>
-
-<section>
-  <div class="prezzo">
-    <div class="p"><small>Prezzo di lancio</small><b>€ 14,00<i>cad.</i></b><em>+ IVA a sensore</em></div>
-    <div class="m"><small>Ordine minimo</small><b>40 pezzi</b><em>€ 560,00 + IVA, spedizione inclusa</em></div>
-  </div>
-</section>
 
 <section id="secOrdine">
   <h2>Il tuo <em>ordine</em></h2>
@@ -198,9 +191,9 @@ footer b{color:var(--ink)}
 <script>
 /* Promo dalla email di Salvatore Pepe del 4/11/2026. Codici articolo non ancora comunicati: nel messaggio vanno le versioni. */
 const VERSIONI = [
-  {nome: "Rubber", desc: "valvola in gomma"},
-  {nome: "Metal Silver", desc: "valvola in metallo silver"},
-  {nome: "Metal Black", desc: "valvola in metallo nera"}
+  {nome: "Rubber", desc: "valvola in gomma", img: "ms-rubber.png"},
+  {nome: "Metal Silver", desc: "valvola in metallo silver", img: "ms-silver.png"},
+  {nome: "Metal Black", desc: "valvola in metallo nera", img: "ms-black.png"}
 ];
 const PROMO = {
   prezzo: 14.00, minimo: 40, passo: 10, telefono: "393391436270",
@@ -243,7 +236,7 @@ document.addEventListener("DOMContentLoaded", () => {
   VERSIONI.forEach((v, i) => {
     const d = document.createElement("div");
     d.className = "riga";
-    d.innerHTML = '<img alt="" src="sensore.png"><div><h3>' + v.nome + '</h3><div class="c">' + v.desc + '</div></div>' +
+    d.innerHTML = '<img alt="" src="' + v.img + '"><div><h3>' + v.nome + '</h3><div class="c">' + v.desc + '</div></div>' +
       '<div class="qta"><button type="button" aria-label="Meno 10">−10</button><b>0</b><button type="button" aria-label="Più 10">+10</button></div>';
     const [meno, num, piu] = d.querySelector(".qta").children;
     meno.addEventListener("click", () => { if (pz[i] >= PROMO.passo) { pz[i] -= PROMO.passo; aggiorna(); } });

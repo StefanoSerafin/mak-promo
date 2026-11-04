@@ -47,6 +47,7 @@ AGENTI = {
 SORGENTE_LOCANDINA = {
     "fix-pack": None,
     "halloween-ruotino": None,
+    "multisens-plus": None,   # volantino ufficiale MATE, senza nome né numero dell'agente
     "kit-gomma-ruota": "kit-gomma-ruota-inverno/locandina-flash.html",
     "ts900-rinnovi": "ts900-rinnovi/locandina.html",
 }
