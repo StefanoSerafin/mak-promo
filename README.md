@@ -160,3 +160,12 @@ Rigenera: `python3 _build/build.py`
 - Conta aperture e tocchi su WhatsApp, Chiama, B2B e mail. Le ricerche arrivano dal blocco «ricerche per il contatore anonimo» in fondo alle pagine che ne hanno una: calze-neve, calze-light-espositore, canali-etrto, anelli-centraggio, distanziali-xilema, halloween-ruotino, kit-gomma-ruota, cavalletto-ez-jack-45s, assistenza-mate.
 - Il server è il Worker in `../mak-promo-conta/` (README con cosa si salva e cosa no). I numeri si leggono nel briefing del lunedì.
 - Campagna nuova: script e riga nel footer, più l'aggancio della ricerca se c'è. `_build/agenti.py` si ferma se manca `conta.js`.
+
+## multisens-plus (promo lancio MATE MULTIsens+, 9–22 novembre 2026)
+
+- Fonte: email di Salvatore Pepe del 2026-11-04 «Arriva MATE MULTIsens+ e PROMO LANCIO 9–22 novembre» (Mail Mak 2026, id 106944) + presentazione PDF allegata (`../Locandine/multisens-plus/presentazione-mate-multisens-plus.pdf`).
+- 14,00 € + IVA a sensore, minimo 40 pezzi (560,00 € + IVA, spedizione inclusa); Rubber, Metal Silver e Metal Black miscelabili a multipli di 10. Sul B2B dal 9/11, sezione Promozioni.
+- Conto alla rovescia: prima del 9/11 conta alla partenza («lo inserisci appena parte»), poi alla fine del 22/11; dopo diventa «Chiedimi le offerte attive».
+- Ordine a passi di 10 per versione, barra verso i 40, mix rapidi; messaggio WhatsApp con le versioni (i codici articolo non sono ancora stati comunicati).
+- Immagini dalla presentazione ufficiale MATE: sensore (scontornato), MA41 e VT57. Sezione «Prima aggiorna l'ATEQ» e link all'assistenza MATE.
+- Anteprima: `_build/anteprima-multisens-plus.html`; icona: `_build/icona-multisens-plus.html`.
