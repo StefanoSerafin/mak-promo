@@ -41,6 +41,15 @@ AGENTI = {
     "gerardo": {"nome": "Gerardo", "cognome": "Giacco", "tel": "393202232932", "tel_vis": "320 223 2932"},
     "enrico": {"nome": "Enrico", "cognome": "Galante", "tel": "393497720865", "tel_vis": "349 772 0865"},
     "stefania": {"nome": "Stefania", "cognome": "Santiglia", "tel": "393279020929", "tel_vis": "327 902 0929"},
+    "matteo": {"nome": "Matteo", "cognome": "Colzani", "tel": "393932505569", "tel_vis": "393 250 5569"},
+    "elisa": {"nome": "Elisa", "cognome": "Rampon", "tel": "393316674100", "tel_vis": "331 667 4100"},
+    "mauro-galante": {"nome": "Mauro", "cognome": "Galante", "tel": "393420923719", "tel_vis": "342 092 3719"},
+    "marco-podda": {"nome": "Marco", "cognome": "Podda", "tel": "393398605989", "tel_vis": "339 860 5989"},
+    "domenico": {"nome": "Domenico", "cognome": "Sorrentino", "tel": "393894632818", "tel_vis": "389 463 2818"},
+    "francesco-dicesare": {"nome": "Francesco", "cognome": "Di Cesare", "tel": "393458503816", "tel_vis": "345 850 3816"},
+    "sebastiano": {"nome": "Sebastiano", "cognome": "Fabrotti", "tel": "393423535576", "tel_vis": "342 353 5576"},
+    "mauro-pallini": {"nome": "Mauro", "cognome": "Pallini", "tel": "393398781190", "tel_vis": "339 878 1190"},
+    "ivan": {"nome": "Ivan", "cognome": "Parisi", "tel": "393338012609", "tel_vis": "333 801 2609"},
 }
 
 # Sorgente della locandina con nome e numero; None = l'immagine non li ha, si copia com'è.
