@@ -171,3 +171,12 @@ Rigenera: `python3 _build/build.py`
 - Ordine a passi di 10 per versione, barra verso i 40, mix rapidi; messaggio WhatsApp con le versioni (i codici articolo non sono ancora stati comunicati).
 - Dal 2026-11-04 (richiesta di Stefano) la pagina mostra il **volantino ufficiale MAK/MATE** (`../Locandine/multisens-plus/volantino-mate-multisens-plus.png` → `locandina.jpg`, copiato com'è anche nelle copie dei colleghi: `SORGENTE_LOCANDINA` = None). Le foto di Rubber, Metal Silver e Metal Black (`ms-*.png`) sono ritagliate dal volantino. MA41 e VT57 dalla presentazione. Sezione «Prima aggiorna l'ATEQ» e link all'assistenza MATE.
 - Anteprima: `_build/anteprima-multisens-plus.html`; icona: `_build/icona-multisens-plus.html`.
+
+## cap-originali (cap originali e cap neutro da 60 mm, senza prezzi)
+
+- `dati.js` generato da `../Locandine/cap-originali/genera_dati.py` (dopo averlo rigenerato, ricopiarlo qui insieme a `foto/`). Fonti: «Codici Cap Originali.xlsx» di Stefano (`../Fitment List/`, 51 cap con la sede del cap MAK tra parentesi) + 8010008133 Fiat 51884863 dal PDF «cap OE per BSF Italy» dell'eBook; cap di serie di ogni codice ruota da `../NotebookLM/ETRTO/makart.csv` (dic 2024), poi dal file «RUOTE MAK - DATI TECNICI» dell'eBook per i codici fuori produzione, poi da `../Sito Mak/ricambi/ricambi.csv` per i modelli solo sul sito; vetture dalla Fitment più recente. Le funzioni di lettura stanno in `../Fitment List/estrazioni/cap_originali.py`. Prezzi e giacenze non escono mai (lo script lo controlla).
+- `foto/<codice>.jpg`: foto vere dal B2B (`https://b2bshop.makwheels.it/SysInf/MAK/Prodotti/<codice>.jpg`), scaricate con `../Locandine/cap-originali/scarica_foto.py` e portate a 400 px.
+- Tre ricerche: modello ruota → misura · PCD · foro; codice articolo (anche senza F, in minuscolo o incompleto: elenco di 10 codici); marca → modello dell'auto (cap originali della marca e ruote MAK omologate che li montano).
+- Regola del cap neutro **8010002525** (CAP C001 MM60 CONVEX, grigio senza logo, decisa da Stefano il 2026-11-06): si propone quando nessun cap originale entra nella sede e il nome del cap di serie dice 60 mm (`MM60`, `60MM`, `CAP 60`).
+- Richiesta a righe (pezzi predefiniti 4, 1 per gli emblemi) + officina → messaggio WhatsApp che chiede prezzo e disponibilità.
+- Locandina: `../Locandine/cap-originali/locandina.html` (PNG e PDF nella stessa cartella). Anteprima: `_build/anteprima-cap-originali.html`; icona: `_build/icona-cap-originali.html` (cap neutro, nessun marchio d'auto).
