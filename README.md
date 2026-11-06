@@ -180,3 +180,10 @@ Rigenera: `python3 _build/build.py`
 - Regola del cap neutro **8010002525** (CAP C001 MM60 CONVEX, grigio senza logo, decisa da Stefano il 2026-11-06): si propone quando nessun cap originale entra nella sede e il nome del cap di serie dice 60 mm (`MM60`, `60MM`, `CAP 60`).
 - Richiesta a righe (pezzi predefiniti 4, 1 per gli emblemi) + officina → messaggio WhatsApp che chiede prezzo e disponibilità.
 - Locandina: `../Locandine/cap-originali/locandina.html` (PNG e PDF nella stessa cartella). Anteprima: `_build/anteprima-cap-originali.html`; icona: `_build/icona-cap-originali.html` (cap neutro, nessun marchio d'auto).
+
+## copriruota (kit da 4, prezzi netti + IVA)
+
+- `prodotti.js`: 10 copriruota del B2B (sezione Copriruota, letta il 2026-11-06), prezzi dagli ordini 2025-26; `prezzo: null` = su richiesta (FARAD 233 17"). LAMPA Spark 14" escluso perché non disponibile.
+- `foto/<codice>.jpg`: foto vere dal B2B, una per modello e colore (le misure dello stesso modello hanno la stessa foto).
+- Bottoni delle misure che filtrano le schede (la misura va al contatore come ricerca), quantità in kit, totale, officina → WhatsApp.
+- Locandina: `../Locandine/copriruota/locandina.html` (PNG e PDF nella stessa cartella). Anteprima: `_build/anteprima-copriruota.html`; icona: `_build/icona-copriruota.html`.
