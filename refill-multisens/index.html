@@ -161,7 +161,7 @@ footer b{color:var(--ink)}
 
 <section>
   <h2>Valvole di <em>ricambio</em></h2>
-  <p class="sub">Le scatoline con 4 valvole per cambiare la valvola al sensore, una per versione. Non contano per i 20 pezzi del refill.</p>
+  <p class="sub">Le scatoline con 4 valvole per cambiare la valvola al sensore, una per versione. 10,00 € + IVA a kit. Non contano per i 20 pezzi del refill.</p>
   <div class="card ric" id="ricambi"></div>
 </section>
 
@@ -196,9 +196,9 @@ const SENSORI = [
   {cod:"930000MP6M", nome:"Metal Silver", desc:"valvola metallo silver", img:"mp6-silver.png"}
 ];
 const RICAMBI = [
-  {cod:"9300000RKR", nome:"Rubber", desc:"kit 4 valvole in gomma", img:"9300000RKR.jpg"},
-  {cod:"930000KMTB", nome:"Metal Black", desc:"kit 4 valvole clip nera", img:"930000KMTB.jpg"},
-  {cod:"9300000RKM", nome:"Metal Silver", desc:"kit 4 valvole metallo", img:"9300000RKM.jpg"}
+  {cod:"9300000RKR", nome:"Rubber", desc:"kit 4 valvole in gomma · 10,00 € + IVA", img:"9300000RKR.jpg"},
+  {cod:"930000KMTB", nome:"Metal Black", desc:"kit 4 valvole clip nera · 10,00 € + IVA", img:"930000KMTB.jpg"},
+  {cod:"9300000RKM", nome:"Metal Silver", desc:"kit 4 valvole metallo · 10,00 € + IVA", img:"9300000RKM.jpg"}
 ];
 const PROMO = {minimo: 20, refill: 15.90, singolo: 20.40, telefono: "393316798961"};
 
@@ -239,7 +239,8 @@ document.addEventListener("DOMContentLoaded", () => {
     campiR.push({riga: d, campo});
     $("ricambi").appendChild(d);
   });
-  const righeKit = () => RICAMBI.map((s, i) => kit[i] ? "• " + s.cod + " ricambio " + s.nome + " (kit 4 valvole): " + kit[i] + " conf." : "").filter(Boolean);
+  const righeKit = () => RICAMBI.map((s, i) => kit[i] ? "• " + s.cod + " ricambio " + s.nome + " (kit 4 valvole): " + kit[i] + " conf. × 10,00 €" : "").filter(Boolean);
+  const totKit = () => kit.reduce((a, b) => a + b, 0) * 10;
 
   document.querySelectorAll("[data-i]").forEach(b => b.addEventListener("click", () => { pz[+b.dataset.i] += 20; aggiorna(); }));
   document.querySelector("[data-azzera]").addEventListener("click", () => { pz.fill(0); aggiorna(); });
@@ -286,11 +287,11 @@ document.addEventListener("DOMContentLoaded", () => {
         SENSORI.map((s, i) => pz[i] ? "• " + s.cod + " " + s.nome + ": " + pz[i] + " pz" : "").filter(Boolean).join("\n") +
         "\nTotale: " + n + " pz" +
         (n >= PROMO.minimo ? " a 15,90 € cad. + IVA" : " (sotto il minimo di 20 per il prezzo refill)") +
-        (rk.length ? "\n\nValvole di ricambio:\n" + rk.join("\n") : "") +
+        (rk.length ? "\n\nValvole di ricambio:\n" + rk.join("\n") + "\nTotale ricambi: " + euro(totKit()) + " + IVA" : "") +
         "\n\nOfficina: " + off;
       etichetta = n >= PROMO.minimo ? "Invia l'ordine su WhatsApp" : "Invia (ne mancano " + (PROMO.minimo - n) + " al refill)";
     } else if (rk.length) {
-      testo = "Ciao Stefano, vorrei ordinare le valvole di ricambio MATE MULTIsens:\n" + rk.join("\n") + "\n\nOfficina: " + $("officina").value.trim();
+      testo = "Ciao Stefano, vorrei ordinare le valvole di ricambio MATE MULTIsens:\n" + rk.join("\n") + "\nTotale: " + euro(totKit()) + " + IVA\n\nOfficina: " + $("officina").value.trim();
       etichetta = "Invia l'ordine su WhatsApp";
     } else {
       testo = "Ciao Stefano, ho visto la promo Refill MATE MULTIsens a 15,90 €. Mi dai qualche informazione?";
