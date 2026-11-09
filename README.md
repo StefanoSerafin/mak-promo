@@ -187,3 +187,11 @@ Rigenera: `python3 _build/build.py`
 - `foto/<codice>.jpg`: foto vere dal B2B, una per modello e colore (le misure dello stesso modello hanno la stessa foto).
 - Bottoni delle misure che filtrano le schede (la misura va al contatore come ricerca), quantità in kit, totale, officina → WhatsApp.
 - Locandina: `../Locandine/copriruota/locandina.html` (PNG e PDF nella stessa cartella). Anteprima: `_build/anteprima-copriruota.html`; icona: `_build/icona-copriruota.html`.
+
+## accesso-b2b (primo accesso al B2B per i clienti nuovi, senza prezzi)
+
+- Percorso vero da telefono: makwheels.it (banner cookie) → tre lineette in alto a destra → «Area rivenditori B2B» → banner cookie del B2B → Username e Password → password nuova al primo accesso (dato da Stefano, schermata non disponibile).
+- `schermate/*.png` e `schermate/punti.json` (posizione in % dei punti da toccare) si rifanno con `../Locandine/accesso-b2b/schermate.py` (venv di `mak_quote_automation`) quando MAK cambia il sito; poi si aggiornano le percentuali dei cerchi in `index.html` e nella locandina. Lo script non scrive mai nei campi di accesso.
+- Codice utente d'esempio **inventato**: `cl012345.xx` (tutto minuscolo, seconda lettera elle). Il campo «Prova a scriverlo qui» controlla la forma solo nel browser: il valore non va né a `conta.js` né su WhatsApp.
+- «Non riesci a entrare?»: il messaggio WhatsApp contiene solo il passo e l'officina, mai codice o password. Il passo scelto va al contatore come ricerca («passo N»).
+- Locandina: `../Locandine/accesso-b2b/locandina.html` (PNG e PDF nella stessa cartella). Anteprima: `_build/anteprima-accesso-b2b.html`; icona: `_build/icona-accesso-b2b.html` (tre lineette).
