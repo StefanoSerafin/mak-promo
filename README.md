@@ -195,3 +195,11 @@ Rigenera: `python3 _build/build.py`
 - Codice utente d'esempio **inventato**: `cl012345.xx` (tutto minuscolo, seconda lettera elle). Il campo «Prova a scriverlo qui» controlla la forma solo nel browser: il valore non va né a `conta.js` né su WhatsApp.
 - «Non riesci a entrare?»: il messaggio WhatsApp contiene solo il passo e l'officina, mai codice o password. Il passo scelto va al contatore come ricerca («passo N»).
 - Locandina: `../Locandine/accesso-b2b/locandina.html` (PNG e PDF nella stessa cartella). Anteprima: `_build/anteprima-accesso-b2b.html`; icona: `_build/icona-accesso-b2b.html` (tre lineette).
+
+## bulloneria-auto (bulloneria originale e kit di montaggio per auto, prezzi netti SD + IVA)
+
+- Marca → modello → anno (menu nativi) e due sezioni: **bulloneria originale** (sezione B2B «search-kitoe») e **kit di montaggio** aftermarket («search-kitm»), raggruppati per tipo con la riga «quando serve» e il PCD della ruota.
+- `marche.json` (indice: marche, modelli, anni con tipo) e `dati/<codice marca>.json` (vetture → codici, articoli con descrizione, prezzo, foto, componenti), caricato solo quando si sceglie la marca. `foto/<codice>.jpg`: foto vere del B2B con lo sfondo ritagliato; le foto generiche (stessa foto su più di 3 codici) sono scartate.
+- **I dati si rifanno da `../Locandine/bulloneria-auto/`** (README lì): `scarica_b2b.py` con l'account CLIENTE della webapp preventivi (listino SD, mai l'account da agente), `scarica_foto.py`, `genera_dati.py`. Poi commit e push di questa cartella.
+- Quantità → riepilogo → WhatsApp con vettura, codici e quantità; la vettura scelta va al contatore come ricerca. Le quantità si azzerano quando cambia l'auto.
+- Locandina: `../Locandine/bulloneria-auto/locandina.html` (PNG e PDF nella stessa cartella). Anteprima: `_build/anteprima-bulloneria-auto.html`; icona: `_build/icona-bulloneria-auto.html`.
