@@ -97,6 +97,13 @@ Rigenera: `python3 _build/build.py`
 - La foto `Video Avatar/Immagini/MAK/Espositore Tergi.png` (espositore a terra Tergiplus) non va usata: tolta su indicazione di Stefano il 2026-10-26.
 - Anteprima: `_build/anteprima-tergi-cora.html`; icona: `_build/icona-tergi-cora.html`.
 
+## tergi-cora-sciolte (spazzole tergi CO.RA. TotalFit senza espositore, −60%)
+
+- `dati.js` (fonte: `../Locandine/tergi-cora-sciolte/dati.js`): 16 codici TF300–TF800 con il listino CO.RA. del 1/5/2025; netto = listino × 0,40 (−60%), come in tutte le conferme d'ordine CO.RA. 2026 (`Mail Mak 2026/_estratti/CoRa`), anche a 5 pezzi per misura. TF300 e TF800 ci sono solo qui.
+- Una riga per misura con quantità libera (anche 1), fasce di prezzo, totale, risparmio sul listino, stima del contributo trasporto CO.RA. (2,8%, minimo 11,20 €) e WhatsApp con codici, pezzi e prezzi. Link alla campagna con espositore (`../tergi-cora/`).
+- Foto: la spazzola ritagliata da `Mak/Tergi Cora.png` (tabella promo CO.RA.), l'unica foto vera della spazzola sciolta.
+- Locandina: `../Locandine/tergi-cora-sciolte/locandina.html` (PNG e PDF). Anteprima: `_build/anteprima-tergi-cora-sciolte.html`; icona: `_build/icona-tergi-cora-sciolte.html` (la stessa di tergi-cora).
+
 ## canali-etrto (verifica pneumatico → canali ETRTO, senza prezzi)
 
 - `dati.js` generato da `../Locandine/canali-etrto/genera_dati.py`, che usa la lettura dell'app `../mak-etrto-canali/data/build.py` su `Mak/Canali XLS.xlsx` (684 misure); il canale «9» senza lettera di 285/45 R19–R22 diventa «9J».
