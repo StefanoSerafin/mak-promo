@@ -112,6 +112,22 @@ footer b{color:var(--ink)}
 .cta a svg{width:24px;height:24px;fill:currentColor;flex:none}
 @keyframes pulsa{0%,100%{box-shadow:0 0 0 0 rgba(37,211,102,.55)}60%{box-shadow:0 0 0 14px rgba(37,211,102,0)}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.art{opacity:1;transform:none}}
+/* vocale di Stefano */
+.voce{padding:16px 16px 0}
+.voce button{width:100%;display:grid;grid-template-columns:52px 1fr auto;align-items:center;gap:12px;font:inherit;text-align:left;
+  background:var(--ink);color:#fff;border:0;border-radius:18px;padding:12px 16px 12px 12px;position:relative;overflow:hidden;box-shadow:0 10px 24px rgba(0,0,0,.18)}
+.voce .ic{width:52px;height:52px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;position:relative;z-index:1}
+.voce .ic svg{width:24px;height:24px;fill:#fff}
+.voce .ic::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:2px solid rgba(218,33,40,.6);animation:onda 1.8s infinite}
+.voce.va .ic::after{animation:none;opacity:0}
+@keyframes onda{0%{transform:scale(.9);opacity:1}100%{transform:scale(1.35);opacity:0}}
+.voce b{display:block;font-family:var(--titolo);font-size:26px;line-height:1;text-transform:uppercase;padding-top:3px;position:relative;z-index:1}
+.voce small{display:block;font-size:13px;opacity:.8;position:relative;z-index:1}
+.voce .dur{font-family:var(--titolo);font-size:22px;padding-top:3px;position:relative;z-index:1}
+.voce .pr{position:absolute;left:0;top:0;bottom:0;width:0;background:rgba(218,33,40,.35);transition:width .25s linear}
+.voce details{margin-top:8px;font-size:14px;color:var(--mute)}
+.voce summary{cursor:pointer;font-weight:600;color:var(--ink);padding:4px 2px}
+.voce details p{margin:6px 2px 0;font-style:italic}
 </style>
 </head>
 <body>
@@ -122,6 +138,17 @@ footer b{color:var(--ink)}
 
 <div class="hero">
   <img src="locandina.jpg" alt="Bulloneria per la tua auto: bulloneria originale e kit di montaggio aftermarket MAK, scegli marca, modello e anno" width="1620" height="2025">
+</div>
+
+<div class="voce" id="voce">
+  <button type="button" id="voceBtn" aria-label="Ascolta Stefano che spiega come cercare la bulloneria">
+    <span class="pr" id="voceBar"></span>
+    <span class="ic" id="voceIc"><svg viewBox="0 0 24 24"><path id="voceIcona" d="M8 5v14l11-7z"/></svg></span>
+    <span><b>Spiegami come</b><small>Stefano ti spiega come cercare in un minuto</small></span>
+    <span class="dur" id="voceDur">0:54</span>
+  </button>
+  <audio id="voceAudio" src="vocale.mp3" preload="metadata"></audio>
+  <details><summary>Leggi il testo</summary><p>«Ciao, per trovare la bulloneria giusta, hai due strade. La prima: parti dall'auto. Scegli la marca, il modello e l'anno. Sotto ti escono due sezioni. La prima è la bulloneria originale: le stesse misure della casa, per le ruote originali o per le nostre ruote dedicate. La seconda sono i kit di montaggio per le ruote aftermarket. Oppure la seconda strada: selezionando le caratteristiche del dado o del bullone. Vai su «Cerca per misura». Scegli dado o bullone, poi diametro per passo, e la chiave. Ti escono tutti i kit che hanno quella misura, con le marche su cui sono montati. Poi è semplice. Metti le quantità e in fondo vedi il totale. Infine tocca il bottone verde: mi arriva l'ordine su WhatsApp, già scritto. Se non trovi la tua auto o hai un dubbio sulla misura, scrivimi. La cerco io.»</p></details>
 </div>
 
 <section id="secAuto">
@@ -440,6 +467,31 @@ document.addEventListener("DOMContentLoaded", () => {
       .observe($("secAuto"));
   }
   aggiornaWa();
+});
+</script>
+<script>/* vocale: play/pausa, barra, durata; avvio e ascolto completo vanno al contatore come ricerche */
+document.addEventListener("DOMContentLoaded", () => {
+  const a = document.getElementById("voceAudio"), btn = document.getElementById("voceBtn"), box = document.getElementById("voce");
+  const bar = document.getElementById("voceBar"), dur = document.getElementById("voceDur"), ico = document.getElementById("voceIcona");
+  const mmss = s => Math.floor(s / 60) + ":" + String(Math.floor(s % 60)).padStart(2, "0");
+  let contato = false;
+  btn.addEventListener("click", () => {
+    if (a.paused) {
+      a.play();
+      if (!contato && window.conta) { window.conta("ricerca", "vocale avviato"); contato = true; }
+    } else a.pause();
+  });
+  a.addEventListener("play", () => { box.classList.add("va"); ico.setAttribute("d", "M6 5h4v14H6zM14 5h4v14h-4z"); });
+  a.addEventListener("pause", () => { box.classList.remove("va"); ico.setAttribute("d", "M8 5v14l11-7z"); });
+  a.addEventListener("timeupdate", () => {
+    if (!a.duration) return;
+    bar.style.width = (a.currentTime / a.duration * 100) + "%";
+    dur.textContent = mmss(Math.max(0, a.duration - a.currentTime));
+  });
+  a.addEventListener("ended", () => {
+    bar.style.width = "0"; dur.textContent = mmss(a.duration); a.currentTime = 0;
+    if (window.conta) window.conta("ricerca", "vocale ascoltato tutto");
+  });
 });
 </script>
 <script src="/mak-promo/conta.js" defer></script>
