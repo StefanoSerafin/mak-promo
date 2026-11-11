@@ -156,6 +156,11 @@ Rigenera: `python3 _build/build.py`
 - «Prepara la richiesta»: strumento, di cosa hai bisogno, officina (il seriale non serve, tolto il 2026-11-03) → messaggio WhatsApp all'assistenza con anche la vettura e l'agente.
 - Locandina: `../Locandine/assistenza-mate/locandina.html` (foto vera MA41 + TS508 da `Video Avatar/Immagini/MATE/`). Anteprima: `_build/anteprima-assistenza-mate.html`; icona: `_build/icona-assistenza-mate.html`.
 
+## Vocali «Spiegamelo a voce»
+
+- Bottone uguale su ogni pagina (stile e script copiati da `multisens-plus`), con `vocale.mp3` (o `vocale.m4a` su multisens-plus) e il testo in «Leggi il testo». Dal 2026-11-11 gli audio si generano con la voce clonata di Stefano su HeyGen («Stefano Voice»), testi in `../Locandine/testi-vocali.md`.
+- Ce l'hanno: multisens-plus, calze-neve, assistenza-mate, bulloneria-auto («Spiegami come»), ts900-rinnovi, trasformazioni-nad, riempicarrello, kit-gomma-ruota (anche nel template), fix-pack, distanziali-xilema, canali-etrto, anelli-centraggio.
+
 ## Monitoraggio (dal 2026-11-03)
 
 - Ogni pagina include `conta.js` (`<script src="/mak-promo/conta.js" defer></script>` prima di `</body>`) e la riga «Conteggio anonimo delle visite, senza cookie.» nel footer. Le copie dei colleghi lo ereditano; la pagina elenco del collega lo include con `data-elenco`.
