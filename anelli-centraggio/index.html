@@ -152,6 +152,22 @@ footer b{color:var(--ink)}
 @keyframes pulsa{0%,100%{box-shadow:0 0 0 0 rgba(37,211,102,.55)}60%{box-shadow:0 0 0 14px rgba(37,211,102,0)}}
 
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.hero .gira{display:none}}
+/* vocale di Stefano */
+.voce{padding:16px 16px 0}
+.voce button{width:100%;display:grid;grid-template-columns:52px 1fr auto;align-items:center;gap:12px;font:inherit;text-align:left;
+  background:var(--ink);color:#fff;border:0;border-radius:18px;padding:12px 16px 12px 12px;position:relative;overflow:hidden;box-shadow:0 10px 24px rgba(0,0,0,.18)}
+.voce .ic{width:52px;height:52px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;position:relative;z-index:1}
+.voce .ic svg{width:24px;height:24px;fill:#fff}
+.voce .ic::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:2px solid rgba(218,33,40,.6);animation:onda 1.8s infinite}
+.voce.va .ic::after{animation:none;opacity:0}
+@keyframes onda{0%{transform:scale(.9);opacity:1}100%{transform:scale(1.35);opacity:0}}
+.voce b{display:block;font-family:var(--titolo);font-size:26px;line-height:1;text-transform:uppercase;padding-top:3px;position:relative;z-index:1}
+.voce small{display:block;font-size:13px;opacity:.8;position:relative;z-index:1}
+.voce .dur{font-family:var(--titolo);font-size:22px;padding-top:3px;position:relative;z-index:1}
+.voce .pr{position:absolute;left:0;top:0;bottom:0;width:0;background:rgba(218,33,40,.35);transition:width .25s linear}
+.voce details{margin-top:8px;font-size:14px;color:var(--mute)}
+.voce summary{cursor:pointer;font-weight:600;color:var(--ink);padding:4px 2px}
+.voce details p{margin:6px 2px 0;font-style:italic}
 </style>
 </head>
 <body>
@@ -163,6 +179,17 @@ footer b{color:var(--ink)}
 <div class="hero">
   <img src="locandina.jpg" alt="Anelli di centraggio aftermarket in plastica: 48 misure, diametri esterni 60,1, 65,1, 67,1, 70,1, 72,6, 73,1 e 74,1, novità 70,1" width="1620" height="2025">
   <div class="gira"></div>
+
+<div class="voce" id="voce">
+  <button type="button" id="voceBtn" aria-label="Ascolta Stefano che spiega la pagina">
+    <span class="pr" id="voceBar"></span>
+    <span class="ic" id="voceIc"><svg viewBox="0 0 24 24"><path id="voceIcona" d="M8 5v14l11-7z"/></svg></span>
+    <span><b>Spiegamelo a voce</b><small>Stefano ti spiega come funziona in 24 secondi</small></span>
+    <span class="dur" id="voceDur">0:24</span>
+  </button>
+  <audio id="voceAudio" src="vocale.mp3" preload="metadata"></audio>
+  <details><summary>Leggi il testo</summary><p>«Ciao, per trovare l'anello di centraggio giusto ti servono due misure. La prima è il foro della ruota, che è l'esterno dell'anello. La seconda è il mozzo della vettura, che è l'interno dell'anello. Scegli le due misure e ti esce il codice. Se lo sai già, scorri la gamma completa: 48 misure, e metti le quantità direttamente lì. Poi tocca il bottone verde e l'ordine mi arriva su WhatsApp.»</p></details>
+</div>
 </div>
 
 <section id="secTrova">
@@ -425,6 +452,31 @@ document.addEventListener("DOMContentLoaded", () => {
   const misura = (l, s, d) => quando([l, s, d], () => el(l).value && el(s).value && el(d).value ? el(l).value + "/" + el(s).value + " R" + el(d).value : "");
   const vettura = (m, mo) => quando([mo], () => testo(m) && testo(mo) ? testo(m) + " " + testo(mo) : "");
   vettura("marca","modello");
+});
+</script>
+<script>/* vocale: play/pausa, barra, durata; avvio e ascolto completo vanno al contatore come ricerche */
+document.addEventListener("DOMContentLoaded", () => {
+  const a = document.getElementById("voceAudio"), btn = document.getElementById("voceBtn"), box = document.getElementById("voce");
+  const bar = document.getElementById("voceBar"), dur = document.getElementById("voceDur"), ico = document.getElementById("voceIcona");
+  const mmss = s => Math.floor(s / 60) + ":" + String(Math.floor(s % 60)).padStart(2, "0");
+  let contato = false;
+  btn.addEventListener("click", () => {
+    if (a.paused) {
+      a.play();
+      if (!contato && window.conta) { window.conta("ricerca", "vocale avviato"); contato = true; }
+    } else a.pause();
+  });
+  a.addEventListener("play", () => { box.classList.add("va"); ico.setAttribute("d", "M6 5h4v14H6zM14 5h4v14h-4z"); });
+  a.addEventListener("pause", () => { box.classList.remove("va"); ico.setAttribute("d", "M8 5v14l11-7z"); });
+  a.addEventListener("timeupdate", () => {
+    if (!a.duration) return;
+    bar.style.width = (a.currentTime / a.duration * 100) + "%";
+    dur.textContent = mmss(Math.max(0, a.duration - a.currentTime));
+  });
+  a.addEventListener("ended", () => {
+    bar.style.width = "0"; dur.textContent = mmss(a.duration); a.currentTime = 0;
+    if (window.conta) window.conta("ricerca", "vocale ascoltato tutto");
+  });
 });
 </script>
 <script src="/mak-promo/conta.js" defer></script>
