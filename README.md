@@ -101,6 +101,7 @@ Rigenera: `python3 _build/build.py`
 
 - `dati.js` (fonte: `../Locandine/tergi-cora-sciolte/dati.js`): 16 codici TF300–TF800 con il listino CO.RA. del 1/5/2025; netto = listino × 0,40 (−60%), come in tutte le conferme d'ordine CO.RA. 2026 (`Mail Mak 2026/_estratti/CoRa`), anche a 5 pezzi per misura. TF300 e TF800 ci sono solo qui.
 - Una riga per misura con quantità libera (anche 1), fasce di prezzo, totale, risparmio sul listino, stima del contributo trasporto CO.RA. (2,8%, minimo 11,20 €) e WhatsApp con codici, pezzi e prezzi. Link alla campagna con espositore (`../tergi-cora/`).
+- Ricerca per vettura (dal 2026-11-12): marca → modello → anno → misure TotalFit lato guida, lato passeggero e posteriore, con «Aggiungi 1 per posizione all'ordine» e la vettura nel messaggio WhatsApp. Dati in `vetture.json` (67 marche, 2.383 vetture con almeno una TotalFit) generati da `_dati/vetture.py` dal prontuario pubblico CO.RA. (`../cora-portale/grezzi/prontuario-CORA.json`, scaricato con `cora-portale/scarica_prontuario.py`).
 - Foto: la spazzola ritagliata da `Mak/Tergi Cora.png` (tabella promo CO.RA.), l'unica foto vera della spazzola sciolta.
 - Locandina: `../Locandine/tergi-cora-sciolte/locandina.html` (PNG e PDF). Anteprima: `_build/anteprima-tergi-cora-sciolte.html`; icona: `_build/icona-tergi-cora-sciolte.html` (la stessa di tergi-cora).
 

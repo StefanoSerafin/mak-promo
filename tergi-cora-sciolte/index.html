@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Spazzole tergi CO.RA. a misura</title>
-<meta name="description" content="Spazzole tergi CO.RA. TotalFit universali, senza espositore: 16 misure da 300 a 800 mm a −60% sul listino. Metti le quantità di ogni misura e ordina su WhatsApp.">
+<meta name="description" content="Spazzole tergi CO.RA. TotalFit universali, senza espositore: 16 misure da 300 a 800 mm a −60% sul listino. Cerca le misure della tua auto, metti le quantità e ordina su WhatsApp.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Spazzole tergi CO.RA. TotalFit · −60% sul listino">
 <meta property="og:description" content="16 misure da 300 a 800 mm, da 4,40 € a spazzola + IVA. Prendi solo le misure che ti servono e ordina su WhatsApp.">
@@ -96,6 +96,22 @@ footer b{color:var(--ink)}
 .cta a svg{width:24px;height:24px;fill:currentColor;flex:none}
 @keyframes pulsa{0%,100%{box-shadow:0 0 0 0 rgba(37,211,102,.55)}60%{box-shadow:0 0 0 14px rgba(37,211,102,0)}}
 
+/* ricerca per vettura */
+label.f{display:block;font-size:13px;color:var(--mute);margin:12px 0 6px;text-transform:uppercase;letter-spacing:1px}
+label.f:first-child{margin-top:0}
+select{width:100%;font:inherit;font-size:17px;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:12px;padding:13px 28px 13px 12px;
+  -webkit-appearance:none;appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--mute) 50%),linear-gradient(135deg,var(--mute) 50%,transparent 50%);
+  background-position:calc(100% - 16px) 50%,calc(100% - 11px) 50%;background-size:5px 5px;background-repeat:no-repeat}
+select:disabled{opacity:.45}
+.esito{margin-top:14px}
+.esito .pos{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center;background:#fff;border-radius:12px;padding:10px 12px;margin-top:6px}
+.esito .pos small{display:block;font-size:12px;color:var(--mute);text-transform:uppercase;letter-spacing:.5px}
+.esito .pos b{font-family:var(--titolo);font-size:26px;line-height:1;padding-top:3px;display:inline-block}
+.esito .pos span{font-size:13px;color:var(--mute)}
+.esito .pos strong{font-family:var(--titolo);font-size:22px;color:var(--red);padding-top:3px}
+.esito .nessuna{font-size:14px;color:var(--mute);background:#fff;border-radius:12px;padding:10px 12px;margin-top:6px}
+.aggiungi{margin-top:10px;width:100%;font:inherit;font-weight:700;font-size:16px;border:0;border-radius:12px;padding:14px;background:var(--red);color:#fff}
+
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.pioggia{display:none}}
 /* vocale di Stefano */
 .voce{padding:16px 16px 0}
@@ -137,6 +153,21 @@ footer b{color:var(--ink)}
   <details><summary>Leggi il testo</summary><p>«Ciao, qui trovi le spazzole tergi CO.RA. TotalFit, universali. Ci sono sedici misure, da 300 a 800 millimetri, al 60 per cento di sconto sul listino. Metti quante ne vuoi per ogni misura, anche una sola, e in fondo vedi il totale, più il trasporto. Poi tocca il bottone verde e l'ordine mi arriva su WhatsApp.»</p></details>
 </div>
 
+
+<section id="secAuto">
+  <h2>La tua <em>auto</em></h2>
+  <p class="sub">Non sai la misura? Scegli marca, modello e anno: ti dico quali TotalFit montare.</p>
+  <div class="card">
+    <label class="f" for="marca">Marca</label>
+    <select id="marca"><option value="">Caricamento…</option></select>
+    <label class="f" for="modello">Modello</label>
+    <select id="modello" disabled><option value="">Prima la marca</option></select>
+    <label class="f" for="anno">Anno</label>
+    <select id="anno" disabled><option value="">Prima il modello</option></select>
+    <div class="esito" id="esito"></div>
+  </div>
+  <p class="nota" id="fonteVett">Misure dal prontuario CO.RA. Non trovi la tua auto? Scrivimi e la cerco io.</p>
+</section>
 
 <section id="secOrdine">
   <h2>Scegli le <em>misure</em></h2>
@@ -215,7 +246,7 @@ document.addEventListener("DOMContentLoaded", () => {
     righe[c[0]] = {d, campo, prezzo: d.querySelector("small")};
     $("righe").appendChild(d);
   });
-  $("azzera").addEventListener("click", () => { CODICI.forEach(c => q[c[0]] = 0); disegna(true); });
+  $("azzera").addEventListener("click", () => { CODICI.forEach(c => q[c[0]] = 0); vetture.length = 0; disegna(true); });
   $("officina").addEventListener("input", aggiornaWa);
 
   const scelte = () => CODICI.filter(c => q[c[0]] > 0);
@@ -248,6 +279,7 @@ document.addEventListener("DOMContentLoaded", () => {
       testo = "Ciao Stefano, vorrei le *spazzole tergi CO.RA. TotalFit* (−60% sul listino):\n" +
         s.map(c => "• " + c[0] + " (" + c[1] + " mm, " + c[2] + "\"): " + q[c[0]] + " pz × " + euro(netto(c))).join("\n") +
         "\nTotale: " + n + (n === 1 ? " spazzola, " : " spazzole, ") + euro(totale()) + " + IVA, più il contributo trasporto CO.RA." +
+        (vetture.length ? "\nPer: " + vetture.join(", ") : "") +
         "\n\nOfficina: " + $("officina").value.trim();
       etichetta = "Invia l'ordine su WhatsApp";
     } else {
@@ -256,6 +288,59 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     $("wa").href = "https://wa.me/" + TELEFONO + "?text=" + encodeURIComponent(testo);
     $("waTesto").textContent = etichetta;
+  }
+
+  /* ricerca per vettura: prontuario CO.RA. → misure TotalFit (vetture.json, da _dati/vetture.py) */
+  const esc = s => String(s).replace(/[&<>"]/g, ch => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[ch]));
+  const opzioni = (sel, voci, vuota) => {
+    sel.innerHTML = '<option value="">' + vuota + '</option>' + voci.map(([v, t]) => '<option value="' + esc(v) + '">' + esc(t) + '</option>').join("");
+  };
+  const POSIZ = ["Lato guida", "Lato passeggero", "Posteriore"];
+  let VETT = null, MARCA = null, MOD = null, AUTO = null;
+  const vetture = [];
+  fetch("vetture.json").then(r => r.json()).then(j => {
+    VETT = j;
+    opzioni($("marca"), j.marche.map((m, i) => [String(i), m.n]), "Scegli la marca");
+    $("fonteVett").textContent = "Misure dal prontuario CO.RA. al " + j.data.split("-").reverse().join("/") + ". Non trovi la tua auto? Scrivimi e la cerco io.";
+  }).catch(() => { $("marca").innerHTML = '<option value="">Errore di caricamento: ricarica la pagina</option>'; });
+
+  $("marca").addEventListener("change", () => {
+    MARCA = $("marca").value === "" ? null : VETT.marche[+$("marca").value];
+    MOD = null; AUTO = null; esito();
+    $("anno").disabled = true; opzioni($("anno"), [], "Prima il modello");
+    $("modello").disabled = !MARCA;
+    opzioni($("modello"), MARCA ? MARCA.m.map((m, i) => [String(i), m[0]]) : [], MARCA ? "Scegli il modello" : "Prima la marca");
+  });
+  $("modello").addEventListener("change", () => {
+    MOD = MARCA && $("modello").value !== "" ? MARCA.m[+$("modello").value] : null;
+    AUTO = null; esito();
+    $("anno").disabled = !MOD;
+    opzioni($("anno"), MOD ? MOD[1].map((y, i) => [String(i), y[0]]) : [], MOD ? (MOD[1].length > 1 ? "Scegli l'anno" : "Scegli") : "Prima il modello");
+    if (MOD && MOD[1].length === 1) { $("anno").value = "0"; $("anno").dispatchEvent(new Event("change")); }
+  });
+  $("anno").addEventListener("change", () => {
+    const y = MOD && $("anno").value !== "" ? MOD[1][+$("anno").value] : null;
+    AUTO = y ? {nome: MARCA.n + " " + MOD[0] + " (" + y[0] + ")", mm: [y[1], y[2], y[3]]} : null;
+    esito();
+    if (AUTO && window.conta) window.conta("ricerca", AUTO.nome.slice(0, 120));
+  });
+  const codice = mm => CODICI.find(c => c[1] === mm);
+  function esito() {
+    if (!AUTO) { $("esito").innerHTML = ""; return; }
+    let h = "", n = 0;
+    AUTO.mm.forEach((lista, i) => lista.forEach(mm => {
+      const c = codice(mm); if (!c) return; n++;
+      h += '<div class="pos"><div><small>' + POSIZ[i] + '</small><b>' + mm + ' mm</b> <span>' + c[2] + '" · ' + c[0] + '</span></div><strong>' + euro(netto(c)) + '</strong></div>';
+    }));
+    if (!AUTO.mm[2].length) h += '<div class="nessuna">Lunotto: nessuna TotalFit a prontuario per questa vettura. Chiedimi la spazzola posteriore.</div>';
+    if (n) h += '<button type="button" class="aggiungi" id="aggiungi">Aggiungi 1 per posizione all\'ordine</button>';
+    $("esito").innerHTML = h;
+    if (n) $("aggiungi").addEventListener("click", () => {
+      AUTO.mm.forEach(lista => { const c = lista.length && codice(lista[0]); if (c && q[c[0]] < 999) q[c[0]]++; });
+      if (!vetture.includes(AUTO.nome)) vetture.push(AUTO.nome);
+      disegna();
+      $("secOrdine").scrollIntoView({behavior: "smooth", block: "start"});
+    });
   }
 
   $("avviso").addEventListener("click", e => { e.preventDefault(); $("secOrdine").scrollIntoView({behavior: "smooth", block: "start"}); });
