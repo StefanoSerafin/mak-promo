@@ -227,4 +227,4 @@ Rigenera: `python3 _build/build.py`
 - Ordine: due righe con i pezzi, bottoni «4 Silver», «4 Black», «Azzera», totale a 40,00 €, officina. Poi «Come si montano» (relearn TESLA01: ferma 15 minuti, poi sopra i 32 km/h fino a 20 minuti) e i dati tecnici del sito MATE (Bluetooth 2,4 GHz: il sito scrive 433 MHz per errore).
 - Foto: ufficiali del B2B (`SysInf/MAK/Prodotti/<codice>.jpg`, pubbliche), scontornate con `../Locandine/refill-multisens/scontorna.py`.
 - Anteprima: `_build/anteprima-tpms-tesla.html`; icona: `_build/icona-tpms-tesla.html`.
-- Bottone «Spiegamelo a voce» (dal 2026-11-12): `vocale.mp3`, 22 s, voce clonata di Stefano su HeyGen.
+- Bottone «Spiegamelo a voce» (dal 2026-11-12): `vocale.mp3`, 21 s, voce clonata di Stefano su HeyGen; rifatto lo stesso giorno con «tipiemmesse» attaccato, punti esclamativi ed espressività al massimo, poi accelerato del 6% con ffmpeg (atempo 1.06) per più brio.
