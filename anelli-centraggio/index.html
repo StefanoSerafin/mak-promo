@@ -7,7 +7,7 @@
 <meta name="description" content="Anelli di centraggio aftermarket in plastica: 63 misure con diametro esterno da 60,1 a 74,1, novità 70,1. Trova il codice dal foro della ruota e dal mozzo della vettura e ordina su WhatsApp.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Anelli di centraggio · 63 misure, novità Ø 70,1">
-<meta property="og:description" content="Foro della ruota + mozzo della vettura = il codice giusto. Scegli la vettura o la misura e ordina su WhatsApp.">
+<meta property="og:description" content="Foro della ruota + mozzo della vettura = il codice giusto. Scegli la vettura o la misura: prezzi netti e ordine su WhatsApp.">
 <meta property="og:image" content="https://stefanoserafin.github.io/mak-promo/anelli-centraggio/anteprima.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -77,6 +77,9 @@ select:disabled{opacity:.45}
 .ris .cod{font-family:var(--titolo);font-size:30px;line-height:1;padding-top:3px}
 .ris .mis{font-size:14px;color:var(--mute)}
 .ris .mis b{color:var(--ink)}
+.ris .prz{font-size:13px;color:var(--mute);margin-top:2px}
+.ris .prz b{font-family:var(--titolo);font-size:22px;color:var(--red);font-weight:700}
+.riga .x small b.pz{color:var(--red)}
 .ris .az{display:flex;gap:8px;align-items:center;margin-top:10px}
 .ris p{margin:0;font-size:14px;color:var(--mute)}
 .ris p b{color:var(--ink)}
@@ -114,6 +117,8 @@ summary .tag{font-style:normal;font-size:10px;font-weight:700;background:var(--r
 .ord li b{font-family:var(--titolo);font-size:20px;padding-top:2px}
 .ord li span{color:var(--mute);font-size:13px}
 .ord li em{font-style:normal;font-family:var(--titolo);font-size:22px;white-space:nowrap}
+.ord li em{text-align:right}
+.ord li em small{display:block;font-family:var(--testo);font-size:13px;color:var(--mute)}
 .tot{display:flex;justify-content:space-between;align-items:flex-end;margin-top:8px;padding-top:10px;border-top:1px dashed #b9bdc4}
 .tot span{font-size:13px;color:var(--mute)}
 .tot b{font-family:var(--titolo);font-size:34px;line-height:1}
@@ -227,7 +232,7 @@ footer b{color:var(--ink)}
     <input type="text" id="officina" placeholder="Nome dell'officina" autocomplete="organization">
     <button type="button" class="azzera" id="azzera" hidden>Svuota l'ordine</button>
   </div>
-  <p class="nota">Gli anelli li trovi anche sul portale B2B. Disponibilità e prezzi te li confermo io.</p>
+  <p class="nota">Prezzi netti cadauno + IVA del portale B2B, aggiornati al 12/11/2026. Gli anelli li trovi anche lì; la disponibilità te la confermo io.</p>
 </section>
 
 <section>
@@ -270,6 +275,7 @@ const TELEFONO = "393316798961";
 document.addEventListener("DOMContentLoaded", () => {
   const $ = id => document.getElementById(id);
   const v = n => String(n).replace(".", ",");
+  const eur = n => n.toFixed(2).replace(".", ",") + " €";
   const ESTERNI = [...new Set(ANELLI.map(a => a[1]))].sort((a, b) => a - b);
   const PER = {};
   ANELLI.forEach(a => (PER[a[1]] = PER[a[1]] || []).push(a));
@@ -352,7 +358,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     box.className = "ris ok";
     box.innerHTML = disegnoAnello(est, intr) +
-      '<div><div class="cod">' + a[0] + '</div><div class="mis">Anello <b>' + v(est) + ' × ' + v(intr) + '</b> · plastica</div>' +
+      '<div><div class="cod">' + a[0] + '</div><div class="mis">Anello <b>' + v(est) + ' × ' + v(intr) + '</b> · plastica</div><div class="prz"><b>' + eur(a[3]) + '</b> cad. netto + IVA</div>' +
       '<div class="az"><div class="qta"><button type="button" aria-label="Meno">−</button><input type="number" inputmode="numeric" min="1" max="999" value="' + qRis + '" aria-label="Pezzi"><button type="button" aria-label="Più">+</button></div>' +
       '<button type="button" class="agg">Aggiungi</button></div></div>';
     const [meno, campo, piu] = box.querySelector(".qta").children, agg = box.querySelector(".agg");
@@ -368,15 +374,16 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* gamma completa */
+  function daPrezzo(e) { const p = PER[e].map(a => a[3]), m = Math.min(...p); return (m === Math.max(...p) ? "" : "da ") + eur(m); }
   const righe = {}, badge = {};
   ESTERNI.forEach(e => {
     const d = document.createElement("details");
-    d.innerHTML = '<summary><b>Ø ' + v(e) + '</b>' + (e === 70.1 ? '<em class="tag">NUOVO</em>' : '') + '<span>' + PER[e].length + ' misure · interni ' + v(PER[e][0][2]) + '–' + v(PER[e][PER[e].length - 1][2]) + '</span><i></i></summary>';
+    d.innerHTML = '<summary><b>Ø ' + v(e) + '</b>' + (e === 70.1 ? '<em class="tag">NUOVO</em>' : '') + '<span>' + PER[e].length + ' misure · interni ' + v(PER[e][0][2]) + '–' + v(PER[e][PER[e].length - 1][2]) + ' · ' + daPrezzo(e) + '</span><i></i></summary>';
     badge[e] = d.querySelector("summary i");
     PER[e].forEach(a => {
       const r = document.createElement("div");
       r.className = "riga";
-      r.innerHTML = '<div class="x"><b>' + v(a[1]) + ' × ' + v(a[2]) + '</b><small>' + a[0] + '</small></div>' +
+      r.innerHTML = '<div class="x"><b>' + v(a[1]) + ' × ' + v(a[2]) + '</b><small>' + a[0] + ' · <b class="pz">' + eur(a[3]) + '</b> cad.</small></div>' +
         '<div class="qta"><button type="button" aria-label="Meno">−</button><input type="number" inputmode="numeric" min="0" max="999" aria-label="Pezzi ' + a[0] + '"><button type="button" aria-label="Più">+</button></div>';
       const [meno, campo, piu] = r.querySelector(".qta").children;
       meno.addEventListener("click", () => { if (q[a[0]] > 0) { q[a[0]]--; disegna(); } });
@@ -404,10 +411,10 @@ document.addEventListener("DOMContentLoaded", () => {
       const n = PER[e].reduce((s, a) => s + q[a[0]], 0);
       badge[e].textContent = n + " pz"; badge[e].classList.toggle("on", n > 0);
     });
-    const s = scelti(), n = s.reduce((t, a) => t + q[a[0]], 0);
+    const s = scelti(), n = s.reduce((t, a) => t + q[a[0]], 0), tot = s.reduce((t, a) => t + q[a[0]] * a[3], 0);
     $("lista").innerHTML = s.length
-      ? "<ul>" + s.map(a => "<li><span><b>" + v(a[1]) + " × " + v(a[2]) + "</b><br><span>" + a[0] + "</span></span><em>" + q[a[0]] + " pz</em></li>").join("") + "</ul>" +
-        '<div class="tot"><span>' + s.length + (s.length === 1 ? " misura" : " misure") + '</span><b>' + n + ' pz</b></div>'
+      ? "<ul>" + s.map(a => "<li><span><b>" + v(a[1]) + " × " + v(a[2]) + "</b><br><span>" + a[0] + " · " + eur(a[3]) + " cad.</span></span><em>" + q[a[0]] + " pz<br><small>" + eur(q[a[0]] * a[3]) + "</small></em></li>").join("") + "</ul>" +
+        '<div class="tot"><span>' + s.length + (s.length === 1 ? " misura" : " misure") + " · " + n + ' pz<br>netto + IVA</span><b>' + eur(tot) + '</b></div>'
       : '<div class="vuoto">Ancora niente: trova l\'anello qui sopra e tocca «Aggiungi», oppure metti le quantità nella gamma.</div>';
     $("azzera").hidden = !s.length;
     if (!primo) { $("ordine").classList.remove("salta"); void $("ordine").offsetWidth; $("ordine").classList.add("salta"); }
@@ -420,7 +427,8 @@ document.addEventListener("DOMContentLoaded", () => {
     let testo, etichetta;
     if (s.length) {
       testo = "Ciao Stefano, vorrei questi *anelli di centraggio*:\n" +
-        s.map(a => "• " + a[0] + " (" + v(a[1]) + "x" + v(a[2]) + "): " + q[a[0]] + " pz").join("\n") +
+        s.map(a => "• " + a[0] + " (" + v(a[1]) + "x" + v(a[2]) + "): " + q[a[0]] + " pz x " + eur(a[3]) + " = " + eur(q[a[0]] * a[3])).join("\n") +
+        "\nTotale: " + s.reduce((t, a) => t + q[a[0]], 0) + " pz, " + eur(s.reduce((t, a) => t + q[a[0]] * a[3], 0)) + " + IVA" +
         "\n\nOfficina: " + $("officina").value.trim();
       etichetta = "Ordina su WhatsApp";
     } else if (est && intr !== null) {
