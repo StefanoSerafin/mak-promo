@@ -166,7 +166,7 @@ Rigenera: `python3 _build/build.py`
 ## Vocali «Spiegamelo a voce»
 
 - Bottone uguale su ogni pagina (stile e script copiati da `multisens-plus`), con `vocale.mp3` (o `vocale.m4a` su multisens-plus) e il testo in «Leggi il testo». Dal 2026-11-11 gli audio si generano con la voce clonata di Stefano su HeyGen («Stefano Voice»), testi in `../Locandine/testi-vocali.md`.
-- Ce l'hanno: multisens-plus, calze-neve, assistenza-mate, bulloneria-auto («Spiegami come»), ts900-rinnovi, trasformazioni-nad, riempicarrello, kit-gomma-ruota (anche nel template), fix-pack, distanziali-xilema, canali-etrto, anelli-centraggio; dal 2026-11-12 anche adblue, calze-light-espositore, cap-originali, refill-autel-mx, refill-multisens, tergi-cora.
+- Ce l'hanno: multisens-plus, calze-neve, assistenza-mate, bulloneria-auto («Spiegami come»), ts900-rinnovi, trasformazioni-nad, riempicarrello, kit-gomma-ruota (anche nel template), fix-pack, distanziali-xilema, canali-etrto, anelli-centraggio; dal 2026-11-12 anche adblue, calze-light-espositore, cap-originali, refill-autel-mx, refill-multisens, tergi-cora, tergi-cora-sciolte.
 - Su calze-light-espositore e tergi-cora c'è un elemento `id="conta"` (contatore delle paia): il bottone controlla `typeof window.conta === "function"`, altrimenti senza `conta.js` darebbe errore.
 
 ## Monitoraggio (dal 2026-11-03)
