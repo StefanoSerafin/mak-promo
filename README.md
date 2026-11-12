@@ -121,9 +121,9 @@ Rigenera: `python3 _build/build.py`
 
 ## anelli-centraggio (anelli di centraggio aftermarket in plastica, senza prezzi)
 
-- `dati.js` generato da `../Locandine/anelli-centraggio/genera_dati.py` (va lanciato con il venv di `mak-preventivi`): 48 anelli da «Anelli di Centraggio.xlsx» (codice, esterno × interno) e 5.282 vetture con il mozzo, ricavato dal Fitment MAK (`mak-preventivi/data/fitment.sqlite`: diametro interno dell'anello indicato, o foro ruota se l'anello non serve). Dalla pagina escono solo marca, modello, tipo e mozzo.
+- `dati.js` generato da `../Locandine/anelli-centraggio/genera_dati.py` (va lanciato con il venv di `mak-preventivi`): 63 anelli: i 48 della sezione «Anelli di centraggio Aftermarket» del B2B da «Anelli di Centraggio.xlsx» (codice, esterno × interno) più 15 da `anelli-72-b2b.csv` (14 da Ø 72 e il 72,6 × 63,4, sul B2B solo con la ricerca per codice; aggiunti il 2026-11-12, esclusi i «Non disponibile») e 5.282 vetture con il mozzo, ricavato dal Fitment MAK (`mak-preventivi/data/fitment.sqlite`: diametro interno dell'anello indicato, o foro ruota se l'anello non serve). Dalla pagina escono solo marca, modello, tipo e mozzo.
 - Testo e foto dalla bozza Mailchimp «ANELLI CENTRAGGIO 26» (novità Ø 70,1, gamma completa), video YouTube shorts/1F4fZmop28o.
-- Foro del cerchio (7 esterni) → mozzo dalla vettura o dai bottoni → codice con quantità e «Aggiungi»; gamma completa per esterno con le quantità; ordine su WhatsApp con codici e pezzi. Se l'anello non c'è o non serve, la pagina lo dice e il messaggio chiede a Stefano.
+- Foro della ruota (8 esterni; dal 2026-11-12 nei testi «ruota», mai «cerchio») → mozzo dalla vettura o dai bottoni → codice con quantità e «Aggiungi»; gamma completa per esterno con le quantità; ordine su WhatsApp con codici e pezzi. Se l'anello non c'è o non serve, la pagina lo dice e il messaggio chiede a Stefano.
 - Anteprima: `_build/anteprima-anelli-centraggio.html`; icona: `_build/icona-anelli-centraggio.html`.
 
 ## Copie per i colleghi agenti (`<agente>/<campagna>/`)
