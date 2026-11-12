@@ -219,3 +219,11 @@ Rigenera: `python3 _build/build.py`
 - **Cerca per misura** (dal 2026-11-11): dado o bullone → diametro × passo → chiave (o «a stella») → lunghezza per i bulloni; mostra tutti i kit che contengono quella misura, originali e aftermarket, con le marche abbinate sul portale. Dati in `misure.json` (caricato al primo uso). Gli articoli presi per misura restano nell'ordine anche cambiando ricerca o auto e nel WhatsApp sono segnati «cercato per misura»; la ricerca va al contatore («misura dado M14 × 1,5 CH21»).
 - Bottone **«Spiegami come»** (dal 2026-11-11): `vocale.mp3`, 54 s, generato con la voce clonata di Stefano su HeyGen («Stefano Voice»), stesso bottone di multisens-plus con «Leggi il testo»; avvio e ascolto completo vanno al contatore.
 - Locandina: `../Locandine/bulloneria-auto/locandina.html` (PNG e PDF nella stessa cartella). Anteprima: `_build/anteprima-bulloneria-auto.html`; icona: `_build/icona-bulloneria-auto.html`.
+
+## tpms-tesla (sensori TPMS HUF Bluetooth per Tesla, 40,00 € cad. + IVA, senza scadenza)
+
+- `locandina.jpg`: da `../Locandine/tpms-tesla/locandina.html` (PNG e PDF nella stessa cartella). Solo gli HUF (scelta di Stefano del 2026-11-12): 930HUFBLEM Metal Silver e 930HUFBLEB Metal Black a 40,00 €, prezzo del listino MATE B2B set-dic 2026. L'AUTEL Tesla BLE (45,00 €) non c'è.
+- `index.html` scritto a mano: controllo «la tua Tesla ha il Bluetooth?» (modello con radio + label, periodo con select) dalla coverage list MATE di luglio 2026: Model 3 da 11/2020, Model Y dal 2020, Model S dal 2022, Model X da 10/2021; le altre → MULTIsens MP6 con link a `../refill-multisens/`. La scelta va al contatore come ricerca ed entra nel messaggio WhatsApp come «Vettura».
+- Ordine: due righe con i pezzi, bottoni «4 Silver», «4 Black», «Azzera», totale a 40,00 €, officina. Poi «Come si montano» (relearn TESLA01: ferma 15 minuti, poi sopra i 32 km/h fino a 20 minuti) e i dati tecnici del sito MATE (Bluetooth 2,4 GHz: il sito scrive 433 MHz per errore).
+- Foto: ufficiali del B2B (`SysInf/MAK/Prodotti/<codice>.jpg`, pubbliche), scontornate con `../Locandine/refill-multisens/scontorna.py`.
+- Anteprima: `_build/anteprima-tpms-tesla.html`; icona: `_build/icona-tpms-tesla.html`. Vocale non ancora fatto.
