@@ -5,6 +5,8 @@ Versione web delle locandine promo: una cartella per campagna, pubblicata su Git
 dell'immagine: l'anteprima mostra la locandina (`anteprima.jpg`, 1200×630, tag `og:image`),
 il tocco apre la pagina con bottoni e ricerca.
 
+> **File di dati con la versione.** Le pagine caricano `dati.js` come `dati.js?v=AAAAMMGG` (o `-2`, `-3`…): a ogni modifica dei dati si cambia il numero nella pagina. Senza, Safari su iPhone può tenere il `dati.js` vecchio con la pagina nuova; il 2026-11-12 la pagina degli anelli non dava risultati per questo, perché il codice nuovo leggeva prezzi che nel file in cache non c'erano.
+
 ## halloween-ruotino (25 ott – 1 nov 2026)
 
 - `locandina.jpg`: la locandina originale (estratta dal PDF sulla Scrivania).
