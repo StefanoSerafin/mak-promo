@@ -1,11 +1,13 @@
 /* Consumo d'officina CO.RA.: prodotti di uso quotidiano da riordinare insieme ai tergi.
    Fonte: portale CO.RA. (bottone «CORA» del B2B MAK) letto il 12/11/2026 con un account cliente MAK, listino CO.RA. del 1/5/2026
    (Mak/cora-portale/ANALISI-PRODOTTI.md). Prezzi netti + IVA. Ogni ordine CO.RA. ha il contributo trasporto del 2,8% (minimo 11,20 €).
+   Quantità (verificato il 12/11/2026): il kit auto pulita va a multipli di 50 (collo da 50 sul portale, conferme d'ordine dei clienti MAK solo a 50 e 100);
+   gli altri si ordinano a pezzo (conferme con 1 pasta lavamani, 5 box di guanti; il multiplo del listino è il collo, non un minimo).
    Unica fonte per locandina e pagina web: si copia in mak-promo/consumo-officina-cora/dati.js. */
 const AGGIORNATO = "12/11/2026";
-const PRODOTTI = [ /* id, nome, descrizione, foto, unità, sconto, varianti: [codice, etichetta, listino, netto] */
+const PRODOTTI = [ /* id, nome, descrizione, foto, unità, sconto, passo (multiplo d'ordine, se manca 1), varianti: [codice, etichetta, listino, netto] */
   {id: "kit", nome: "Kit auto pulita", desc: "5 protezioni monouso: sedile, volante, pomello, tappetino, leva del freno a mano.",
-   foto: "kit-volante", unita: "kit", sconto: 46, varianti: [["000120869", "", 1.80, 0.97]]},
+   foto: "kit-volante", unita: "kit", sconto: 46, passo: 50, varianti: [["000120869", "", 1.80, 0.97]]},
   {id: "karbon", nome: "Guanti nitrile Karbon", desc: "Box da 100, neri.", foto: "50nk-m", unita: "box", sconto: 50,
    varianti: [["50NK-S", "S", 8.80, 4.40], ["50NK-M", "M", 8.80, 4.40], ["50NK-L", "L", 8.80, 4.40], ["50NK-XL", "XL", 8.80, 4.40]]},
   {id: "onyx", nome: "Guanti nitrile Onyx", desc: "Box da 100, neri, i più economici.", foto: "35nk-m", unita: "box", sconto: 50,

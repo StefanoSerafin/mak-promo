@@ -123,7 +123,7 @@ footer b{color:var(--ink)}
 <div class="wrap">
 
 <div class="hero">
-  <img src="locandina.jpg" alt="Scorte d'officina CO.RA., fino a −50% sul listino: kit auto pulita 0,97 euro al kit, guanti in nitrile da 3,45 euro il box da 100, pasta lavamani 3,15 euro, pulitore freni 5,20 euro, sbloccante 6,30 euro, prezzi netti più IVA" width="1620" height="2025">
+  <img src="locandina.jpg" alt="Scorte d'officina CO.RA., fino a −50% sul listino: kit auto pulita 0,97 euro al kit in confezione da 50, guanti in nitrile da 3,45 euro il box da 100, pasta lavamani 3,15 euro, pulitore freni 5,20 euro, sbloccante 6,30 euro, prezzi netti più IVA" width="1620" height="2025">
 </div>
 
 <div class="voce" id="voce">
@@ -139,7 +139,7 @@ footer b{color:var(--ink)}
 
 <section id="secOrdine">
   <h2>Cosa ti <em>serve</em></h2>
-  <p class="sub">Metti le quantità di ogni prodotto e, per i guanti, la taglia. Prezzi netti + IVA dal catalogo CO.RA.</p>
+  <p class="sub">Metti le quantità di ogni prodotto e, per i guanti, la taglia. Il kit auto pulita va a confezioni da 50. Prezzi netti + IVA dal catalogo CO.RA.</p>
   <div id="prodotti"></div>
   <div class="card" id="ordine">
     <button type="button" class="azzera" id="azzera">Azzera</button>
@@ -176,7 +176,7 @@ footer b{color:var(--ink)}
   <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.7a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.2-.2-.5-.3z"/></svg>
   <span id="waTesto">Scrivimi su WhatsApp</span></a></div>
 
-<script src="dati.js?v=20261112b"></script>
+<script src="dati.js?v=20261112c"></script>
 <script>
 const TELEFONO = "393316798961";
 
@@ -198,16 +198,19 @@ document.addEventListener("DOMContentLoaded", () => {
     vv.forEach(v => {
       const cod = v[0];
       q[cod] = 0;
+      const passo = p.passo || 1;
       const r = document.createElement("div");
       r.className = "riga";
-      r.innerHTML = '<div class="x">' + (v[1] ? '<b>Taglia ' + v[1] + '</b>' : '<b>Quantità</b>') + cod + '<br><span class="tot"></span></div>' +
-        '<div class="qta"><button type="button" aria-label="Meno">−</button><input type="number" inputmode="numeric" min="0" max="999" value="0" aria-label="Pezzi ' + cod + '"><button type="button" aria-label="Più">+</button></div>';
+      r.innerHTML = '<div class="x">' + (v[1] ? '<b>Taglia ' + v[1] + '</b>' : '<b>' + (passo > 1 ? 'Kit, a multipli di ' + passo : 'Quantità') + '</b>') + cod + '<br><span class="tot"></span></div>' +
+        '<div class="qta"><button type="button" aria-label="Meno">−</button><input type="number" inputmode="numeric" min="0" max="9999" step="' + passo + '" value="0" aria-label="Pezzi ' + cod + '"><button type="button" aria-label="Più">+</button></div>';
       const [meno, campo, piu] = r.querySelector(".qta").children;
-      meno.addEventListener("click", () => { if (q[cod] > 0) { q[cod]--; disegna(); } });
-      piu.addEventListener("click", () => { if (q[cod] < 999) { q[cod]++; disegna(); } });
+      meno.addEventListener("click", () => { if (q[cod] > 0) { q[cod] = Math.max(0, q[cod] - passo); disegna(); } });
+      piu.addEventListener("click", () => { if (q[cod] + passo <= 9999) { q[cod] += passo; disegna(); } });
       campo.addEventListener("focus", () => campo.select());
-      campo.addEventListener("input", () => { q[cod] = Math.min(999, Math.max(0, parseInt(campo.value, 10) || 0)); disegna(false, true); });
-      righe[cod] = {r, campo, tot: r.querySelector(".tot"), v};
+      campo.addEventListener("input", () => { q[cod] = Math.min(9999, Math.max(0, parseInt(campo.value, 10) || 0)); disegna(false, true); });
+      /* a fine digitazione la quantità sale al multiplo d'ordine (es. 30 kit → 50) */
+      campo.addEventListener("change", () => { if (q[cod] % passo) { q[cod] = Math.min(9999, Math.ceil(q[cod] / passo) * passo); disegna(); } });
+      righe[cod] = {r, campo, tot: r.querySelector(".tot"), v, passo};
       d.appendChild(r);
     });
     schede[p.id] = d;
@@ -219,7 +222,7 @@ document.addEventListener("DOMContentLoaded", () => {
   } else Object.values(schede).forEach(d => d.classList.add("vista"));
 
   $("fonte").textContent = "Prezzi netti + IVA dal portale CO.RA. al " + (typeof AGGIORNATO !== "undefined" ? AGGIORNATO : "") +
-    ", listino CO.RA. del 1/5/2026. Ogni ordine CO.RA. ha il contributo trasporto del 2,8% (minimo 11,20 €), calcolato in bolla. Disponibilità e confezioni te le confermo io.";
+    ", listino CO.RA. del 1/5/2026. Ogni ordine CO.RA. ha il contributo trasporto del 2,8% (minimo 11,20 €), calcolato in bolla. Il kit auto pulita si ordina a confezioni da 50; il resto anche a pezzo. La disponibilità te la confermo io.";
 
   $("azzera").addEventListener("click", () => { Object.keys(q).forEach(k => q[k] = 0); disegna(true); });
   $("officina").addEventListener("input", aggiornaWa);
@@ -233,8 +236,10 @@ document.addEventListener("DOMContentLoaded", () => {
       const r = righe[v[0]], k = q[v[0]];
       if (!daTastiera || document.activeElement !== r.campo) r.campo.value = k;
       r.r.classList.toggle("on", k > 0);
-      r.tot.textContent = euro(v[3]) + (p.unita ? " al " + p.unita : "") + (k ? " · " + euro(v[3] * k) : "");
-      n += k; list += v[2] * k;
+      r.tot.textContent = r.passo > 1
+        ? (k ? k + " kit · " + euro(v[3] * k) : euro(v[3] * r.passo) + " la confezione da " + r.passo)
+        : euro(v[3]) + (p.unita ? " al " + p.unita : "") + (k ? " · " + euro(v[3] * k) : "");
+      n += k / r.passo; list += v[2] * k;  /* una confezione da 50 kit conta come un pezzo */
     });
     PRODOTTI.forEach(p => schede[p.id] && schede[p.id].classList.toggle("on", (p.varianti || []).some(v => q[v[0]] > 0)));
     const tot = totale();
