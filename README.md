@@ -107,6 +107,13 @@ Rigenera: `python3 _build/build.py`
 - Foto: la spazzola ritagliata da `Mak/Tergi Cora.png` (tabella promo CO.RA.), l'unica foto vera della spazzola sciolta.
 - Locandina: `../Locandine/tergi-cora-sciolte/locandina.html` (PNG e PDF). Anteprima: `_build/anteprima-tergi-cora-sciolte.html`; icona: `_build/icona-tergi-cora-sciolte.html` (la stessa di tergi-cora).
 
+## consumo-officina-cora (scorte d'officina dal catalogo CO.RA., fino a −50%)
+
+- `dati.js` (fonte: `../Locandine/consumo-officina-cora/dati.js`): 10 prodotti, 17 codici (kit auto pulita, guanti nitrile Karbon/Onyx/Dynamite per taglia, pasta lavamani, pulitore freni, sbloccante e grasso spray Sigill, WD-40 Professionale, bobine Papernet) con listino CO.RA. del 1/5/2026 e **netti letti sul portale CO.RA. il 12/11/2026** con l'account cliente (`../cora-portale/ANALISI-PRODOTTI.md`, punto 4). Nuovi netti: rileggere il portale con `cora-portale/analizza_catalogo.py --cerca CODICE` e cambiare la versione `?v=` in `index.html`.
+- Una scheda per prodotto con foto, netto, listino barrato e sconto; una riga per taglia o per quantità; totale, risparmio sul listino, stima del contributo trasporto CO.RA. e WhatsApp con codici, pezzi e prezzi. Link a `../tergi-cora-sciolte/` (stesso ordine CO.RA., un solo trasporto).
+- Foto: quelle del catalogo CO.RA. (`coraweb.coraitaly.com/dbweb/local/articoli/img/<codice>.jpg`, pubbliche), ridotte a 700 px; `kit-volante.jpg` è il riquadro del volante ritagliato dalla striscia del kit auto pulita.
+- Locandina: `../Locandine/consumo-officina-cora/locandina.html` (PNG e PDF). Anteprima: `_build/anteprima-consumo-officina-cora.html`; icona: `_build/icona-consumo-officina-cora.html`. Vocale «Spiegamelo a voce» di 33 s con la voce clonata (testo in `../Locandine/testi-vocali.md`).
+
 ## canali-etrto (verifica pneumatico → canali ETRTO, senza prezzi)
 
 - `dati.js` generato da `../Locandine/canali-etrto/genera_dati.py`, che usa la lettura dell'app `../mak-etrto-canali/data/build.py` su `Mak/Canali XLS.xlsx` (684 misure); il canale «9» senza lettera di 285/45 R19–R22 diventa «9J».
@@ -170,7 +177,7 @@ Rigenera: `python3 _build/build.py`
 ## Vocali «Spiegamelo a voce»
 
 - Bottone uguale su ogni pagina (stile e script copiati da `multisens-plus`), con `vocale.mp3` (o `vocale.m4a` su multisens-plus) e il testo in «Leggi il testo». Dal 2026-11-11 gli audio si generano con la voce clonata di Stefano su HeyGen («Stefano Voice»), testi in `../Locandine/testi-vocali.md`.
-- Ce l'hanno: multisens-plus, calze-neve, assistenza-mate, bulloneria-auto («Spiegami come»), ts900-rinnovi, trasformazioni-nad, riempicarrello, kit-gomma-ruota (anche nel template), fix-pack, distanziali-xilema, canali-etrto, anelli-centraggio; dal 2026-11-12 anche adblue, calze-light-espositore, cap-originali, refill-autel-mx, refill-multisens, tergi-cora, tergi-cora-sciolte, tpms-tesla.
+- Ce l'hanno: multisens-plus, calze-neve, assistenza-mate, bulloneria-auto («Spiegami come»), ts900-rinnovi, trasformazioni-nad, riempicarrello, kit-gomma-ruota (anche nel template), fix-pack, distanziali-xilema, canali-etrto, anelli-centraggio; dal 2026-11-12 anche adblue, calze-light-espositore, cap-originali, refill-autel-mx, refill-multisens, tergi-cora, tergi-cora-sciolte, tpms-tesla, consumo-officina-cora.
 - Su calze-light-espositore e tergi-cora c'è un elemento `id="conta"` (contatore delle paia): il bottone controlla `typeof window.conta === "function"`, altrimenti senza `conta.js` darebbe errore.
 
 ## Monitoraggio (dal 2026-11-03)

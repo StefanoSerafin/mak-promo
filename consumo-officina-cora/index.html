@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Scorte d'officina CO.RA.</title>
+<meta name="description" content="Il consumo d'officina dal catalogo CO.RA.: kit auto pulita, guanti in nitrile, pasta lavamani, pulitore freni, sbloccante, grasso spray, WD-40 e carta, fino a −50% sul listino. Metti le quantità e ordina su WhatsApp.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Scorte d'officina CO.RA. · fino a −50% sul listino">
+<meta property="og:description" content="Kit auto pulita 0,97 €, guanti in nitrile da 3,45 € il box da 100, pasta lavamani 3,15 €. Prezzi netti + IVA, ordine su WhatsApp.">
+<meta property="og:image" content="https://stefanoserafin.github.io/mak-promo/consumo-officina-cora/anteprima.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://stefanoserafin.github.io/mak-promo/consumo-officina-cora/">
+<meta name="theme-color" content="#da2128">
+<link rel="apple-touch-icon" href="icona.png">
+<style>
+:root{
+  --red:#da2128; --ink:#14161a; --mute:#5d626b; --card:#f3f4f6; --line:#e2e4e8; --bg:#fff; --verde:#25d366; --ok:#14833b;
+  --titolo:"DIN Condensed","Avenir Next Condensed","Arial Narrow",system-ui,sans-serif;
+  --testo:"Avenir Next",-apple-system,system-ui,sans-serif;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--testo);font-size:16px;line-height:1.4}
+body{padding-top:calc(56px + env(safe-area-inset-top));padding-bottom:calc(96px + env(safe-area-inset-bottom))}
+.wrap{max-width:540px;margin:0 auto;overflow:hidden}
+h2{font-family:var(--titolo);font-weight:700;font-size:32px;letter-spacing:.5px;margin:0 0 4px;text-transform:uppercase;line-height:1}
+h2 em{font-style:normal;color:var(--red)}
+.sub{color:var(--mute);margin:0 0 16px;font-size:15px}
+section{padding:28px 16px 6px}
+
+.hero{line-height:0}
+.hero img{width:100%;height:auto;display:block}
+
+.avviso{position:fixed;top:0;left:0;right:0;z-index:25;display:flex;align-items:center;justify-content:center;gap:10px;
+  padding:calc(10px + env(safe-area-inset-top)) 16px 10px;background:var(--ink);color:#fff;text-decoration:none;font-size:14px;line-height:1.3;
+  box-shadow:0 4px 16px rgba(0,0,0,.25);transition:transform .35s}
+.avviso span{max-width:470px}
+.avviso i{flex:none;font-style:normal;width:30px;height:30px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:700;animation:giu 1.6s infinite}
+@keyframes giu{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
+.avviso.via{transform:translateY(-110%)}
+#secOrdine{scroll-margin-top:10px}
+
+.prodotto{background:var(--card);border-radius:16px;padding:12px;margin-bottom:10px;opacity:0;transform:translateY(14px);transition:opacity .5s,transform .5s}
+.prodotto.vista{opacity:1;transform:none}
+.prodotto.on{box-shadow:inset 0 0 0 2px var(--red)}
+.testa{display:grid;grid-template-columns:76px 1fr;gap:12px;align-items:center}
+.testa img{width:76px;height:76px;object-fit:contain;background:#fff;border-radius:12px;padding:4px}
+.testa b{display:block;font-family:var(--titolo);font-size:22px;line-height:1;text-transform:uppercase;padding-top:3px}
+.testa small{display:block;font-size:13px;color:var(--mute);line-height:1.25;margin-top:2px}
+.testa .p{margin-top:4px;font-size:13px;color:var(--mute)}
+.testa .p strong{font-family:var(--titolo);font-size:22px;color:var(--red);padding-top:2px;margin-right:4px}
+.testa .p s{margin-left:4px}
+.testa .p em{font-style:normal;background:var(--red);color:#fff;border-radius:6px;padding:1px 6px;font-weight:700;font-size:12px;margin-left:4px}
+.riga{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center;padding:8px 0 0;margin-top:8px;border-top:1px solid var(--line)}
+.riga .x{line-height:1.2;min-width:0;font-size:13px;color:var(--mute)}
+.riga .x b{font-family:var(--titolo);font-size:20px;color:var(--ink);padding-top:3px;display:inline-block;margin-right:4px}
+.qta{display:flex;align-items:center;background:#fff;border:1px solid var(--line);border-radius:12px}
+.qta button{width:36px;height:42px;border:0;background:none;color:var(--ink);font-size:21px}
+.qta input{width:40px;height:42px;border:0;background:none;color:var(--ink);text-align:center;font-family:var(--titolo);font-size:24px;padding:5px 0 0;-moz-appearance:textfield}
+.qta input::-webkit-outer-spin-button,.qta input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.riga.on .qta{border-color:var(--red)}
+
+.card{background:var(--card);border-radius:16px;padding:14px}
+.azzera{width:100%;font:inherit;font-weight:600;font-size:14px;border-radius:12px;padding:11px 6px;border:1px dashed #b9bdc4;background:#fff;color:var(--ink)}
+.totale{margin-top:12px;padding-top:12px;border-top:1px dashed #b9bdc4;display:flex;justify-content:space-between;align-items:flex-end;gap:10px}
+.totale span{font-size:13px;color:var(--mute);line-height:1.3}
+.totale span em{font-style:normal;color:var(--ok);font-weight:600}
+.totale b{font-family:var(--titolo);font-size:38px;line-height:1;white-space:nowrap}
+.trasp{font-size:13px;color:var(--mute);margin-top:6px}
+label.f2{display:block;font-size:13px;color:var(--mute);margin:16px 0 6px;text-transform:uppercase;letter-spacing:1px}
+input[type=text]{width:100%;font:inherit;font-size:17px;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:12px;padding:13px 14px}
+.nota{font-size:13px;color:var(--mute);margin-top:8px}
+.salta{animation:salta .45s}
+@keyframes salta{30%{transform:scale(1.02)}60%{transform:scale(.995)}}
+
+.punti{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.punti div{background:var(--card);border-radius:12px;padding:12px;font-size:14px}
+.punti b{display:block;font-family:var(--titolo);font-size:21px;line-height:1;text-transform:uppercase;padding-top:2px;margin-bottom:3px}
+.link{font-size:14px;margin-top:12px}
+.link a{color:var(--red);font-weight:600}
+
+.btns{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;color:var(--ink);background:var(--card);border-radius:14px;padding:15px 10px;font-weight:600}
+.btn.b2b{background:var(--ink);color:#fff}
+footer{padding:26px 16px 10px;text-align:center;color:var(--mute);font-size:13px}
+footer img{width:130px;display:block;margin:0 auto 10px}
+footer b{color:var(--ink)}
+
+.cta{position:fixed;left:0;right:0;bottom:0;z-index:30;padding:10px 16px calc(10px + env(safe-area-inset-bottom));
+  background:linear-gradient(rgba(255,255,255,0),rgba(255,255,255,.96) 30%)}
+.cta a{display:flex;align-items:center;justify-content:center;gap:10px;max-width:508px;margin:0 auto;
+  background:var(--verde);color:#062e16;text-decoration:none;font-weight:800;font-size:18px;border-radius:16px;padding:16px;
+  animation:pulsa 2.4s infinite}
+.cta a svg{width:24px;height:24px;fill:currentColor;flex:none}
+@keyframes pulsa{0%,100%{box-shadow:0 0 0 0 rgba(37,211,102,.55)}60%{box-shadow:0 0 0 14px rgba(37,211,102,0)}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.prodotto{opacity:1;transform:none}}
+/* vocale di Stefano */
+.voce{padding:16px 16px 0}
+.voce button{width:100%;display:grid;grid-template-columns:52px 1fr auto;align-items:center;gap:12px;font:inherit;text-align:left;
+  background:var(--ink);color:#fff;border:0;border-radius:18px;padding:12px 16px 12px 12px;position:relative;overflow:hidden;box-shadow:0 10px 24px rgba(0,0,0,.18)}
+.voce .ic{width:52px;height:52px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;position:relative;z-index:1}
+.voce .ic svg{width:24px;height:24px;fill:#fff}
+.voce .ic::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:2px solid rgba(218,33,40,.6);animation:onda 1.8s infinite}
+.voce.va .ic::after{animation:none;opacity:0}
+@keyframes onda{0%{transform:scale(.9);opacity:1}100%{transform:scale(1.35);opacity:0}}
+.voce b{display:block;font-family:var(--titolo);font-size:26px;line-height:1;text-transform:uppercase;padding-top:3px;position:relative;z-index:1}
+.voce small{display:block;font-size:13px;opacity:.8;position:relative;z-index:1}
+.voce .dur{font-family:var(--titolo);font-size:22px;padding-top:3px;position:relative;z-index:1}
+.voce .pr{position:absolute;left:0;top:0;bottom:0;width:0;background:rgba(218,33,40,.35);transition:width .25s linear}
+.voce details{margin-top:8px;font-size:14px;color:var(--mute)}
+.voce summary{cursor:pointer;font-weight:600;color:var(--ink);padding:4px 2px}
+.voce details p{margin:6px 2px 0;font-style:italic}
+</style>
+</head>
+<body>
+<a class="avviso" id="avviso" href="#secOrdine">
+  <span><b>Cosa ti manca?</b> Metti le quantità e ordina su WhatsApp</span><i>↓</i>
+</a>
+<div class="wrap">
+
+<div class="hero">
+  <img src="locandina.jpg" alt="Scorte d'officina CO.RA., fino a −50% sul listino: kit auto pulita 0,97 euro al kit, guanti in nitrile da 3,45 euro il box da 100, pasta lavamani 3,15 euro, pulitore freni 5,20 euro, sbloccante 6,30 euro, prezzi netti più IVA" width="1620" height="2025">
+</div>
+
+<div class="voce" id="voce">
+  <button type="button" id="voceBtn" aria-label="Ascolta Stefano che spiega la pagina">
+    <span class="pr" id="voceBar"></span>
+    <span class="ic" id="voceIc"><svg viewBox="0 0 24 24"><path id="voceIcona" d="M8 5v14l11-7z"/></svg></span>
+    <span><b>Spiegamelo a voce</b><small>Stefano ti spiega come funziona in 33 secondi</small></span>
+    <span class="dur" id="voceDur">0:33</span>
+  </button>
+  <audio id="voceAudio" src="vocale.mp3" preload="metadata"></audio>
+  <details><summary>Leggi il testo</summary><p>«Ciao, qui trovi le scorte d'officina dal catalogo CO.RA.: il kit auto pulita a 97 centesimi, i guanti in nitrile da 3 euro e 45 il box da cento, la pasta lavamani, il pulitore freni, lo sbloccante, il WD-40 e la carta, fino al 50 per cento di sconto sul listino. Metti le quantità, per i guanti scegli la taglia, e in fondo vedi il totale. Conviene ordinarli insieme ai tergi: paghi un solo trasporto. Poi tocca il bottone verde e l'ordine mi arriva su WhatsApp.»</p></details>
+</div>
+
+<section id="secOrdine">
+  <h2>Cosa ti <em>serve</em></h2>
+  <p class="sub">Metti le quantità di ogni prodotto e, per i guanti, la taglia. Prezzi netti + IVA dal catalogo CO.RA.</p>
+  <div id="prodotti"></div>
+  <div class="card" id="ordine">
+    <button type="button" class="azzera" id="azzera">Azzera</button>
+    <div class="totale"><span id="totTesto"></span><b id="tot"></b></div>
+    <div class="trasp" id="trasp"></div>
+    <label class="f2" for="officina">Officina (facoltativo)</label>
+    <input type="text" id="officina" placeholder="Nome dell'officina" autocomplete="organization">
+  </div>
+  <p class="nota" id="fonte"></p>
+  <p class="link">Ti servono anche i tergi? <a href="../tergi-cora-sciolte/">Spazzole TotalFit a misura, da 4,40 € →</a></p>
+</section>
+
+<section>
+  <h2>Perché <em>insieme</em></h2>
+  <div class="punti">
+    <div><b>Un solo trasporto</b>Il contributo CO.RA. è del 2,8% con un minimo di 11,20 €: più cose metti nello stesso ordine, meno pesa.</div>
+    <div><b>Auto pulita</b>Il cliente ritrova l'auto come l'ha lasciata: sedile, volante e tappetino protetti.</div>
+    <div><b>Sempre a scaffale</b>Guanti, pasta e spray finiscono ogni mese: riordinali con il resto.</div>
+    <div><b>Dal portale MAK</b>Li trovi anche da solo dal B2B MAK, bottone CORA.</div>
+  </div>
+</section>
+
+<section>
+  <div class="btns">
+    <a class="btn" href="tel:+393316798961">📞 Chiamami</a>
+    <a class="btn b2b" href="https://b2bshop.makwheels.it/" target="_blank" rel="noopener">🛒 Portale B2B</a>
+  </div>
+</section>
+
+<footer><img src="logo-mak-nero.svg" alt="MAK"><b>Stefano Serafin</b> · Agente MAK · 331 679 8961<br><small>Conteggio anonimo delle visite, senza cookie.</small></footer>
+</div>
+
+<div class="cta"><a id="wa" href="#" target="_blank" rel="noopener">
+  <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.7a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.2-.2-.5-.3z"/></svg>
+  <span id="waTesto">Scrivimi su WhatsApp</span></a></div>
+
+<script src="dati.js?v=20261112"></script>
+<script>
+const TELEFONO = "393316798961";
+
+document.addEventListener("DOMContentLoaded", () => {
+  const $ = id => document.getElementById(id);
+  const q = {}, righe = {}, schede = {};
+  const tutte = [];
+  PRODOTTI.forEach(p => (p.varianti || []).forEach(v => tutte.push({p, v})));
+
+  /* una scheda per prodotto, una riga per variante (taglia) */
+  PRODOTTI.forEach(p => {
+    const vv = p.varianti || [];
+    if (!vv.length) return;
+    const d = document.createElement("div");
+    d.className = "prodotto";
+    const min = Math.min(...vv.map(v => v[3])), lis = vv[0][2];
+    d.innerHTML = '<div class="testa"><img src="foto/' + p.foto + '.jpg" alt="" loading="lazy"><div><b>' + p.nome + '</b><small>' + (p.desc || "") + '</small>' +
+      '<div class="p"><strong>' + euro(min) + '</strong>' + (p.unita ? "al " + p.unita : "") + ' <s>' + euro(lis) + '</s>' + (p.sconto ? '<em>−' + p.sconto + '%</em>' : '') + '</div></div></div>';
+    vv.forEach(v => {
+      const cod = v[0];
+      q[cod] = 0;
+      const r = document.createElement("div");
+      r.className = "riga";
+      r.innerHTML = '<div class="x">' + (v[1] ? '<b>Taglia ' + v[1] + '</b>' : '<b>Quantità</b>') + cod + '<br><span class="tot"></span></div>' +
+        '<div class="qta"><button type="button" aria-label="Meno">−</button><input type="number" inputmode="numeric" min="0" max="999" value="0" aria-label="Pezzi ' + cod + '"><button type="button" aria-label="Più">+</button></div>';
+      const [meno, campo, piu] = r.querySelector(".qta").children;
+      meno.addEventListener("click", () => { if (q[cod] > 0) { q[cod]--; disegna(); } });
+      piu.addEventListener("click", () => { if (q[cod] < 999) { q[cod]++; disegna(); } });
+      campo.addEventListener("focus", () => campo.select());
+      campo.addEventListener("input", () => { q[cod] = Math.min(999, Math.max(0, parseInt(campo.value, 10) || 0)); disegna(false, true); });
+      righe[cod] = {r, campo, tot: r.querySelector(".tot"), v};
+      d.appendChild(r);
+    });
+    schede[p.id] = d;
+    $("prodotti").appendChild(d);
+  });
+  if ("IntersectionObserver" in window) {
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("vista"); io.unobserve(e.target); } }), {threshold: .15});
+    Object.values(schede).forEach(d => io.observe(d));
+  } else Object.values(schede).forEach(d => d.classList.add("vista"));
+
+  $("fonte").textContent = "Prezzi netti + IVA dal portale CO.RA. al " + (typeof AGGIORNATO !== "undefined" ? AGGIORNATO : "") +
+    ", listino CO.RA. del 1/5/2026. Ogni ordine CO.RA. ha il contributo trasporto del 2,8% (minimo 11,20 €), calcolato in bolla. Disponibilità e confezioni te le confermo io.";
+
+  $("azzera").addEventListener("click", () => { Object.keys(q).forEach(k => q[k] = 0); disegna(true); });
+  $("officina").addEventListener("input", aggiornaWa);
+
+  const scelte = () => tutte.filter(x => q[x.v[0]] > 0);
+  const totale = () => Math.round(scelte().reduce((a, x) => a + x.v[3] * q[x.v[0]], 0) * 100) / 100;
+  let primo = true;
+  function disegna(tutto, daTastiera) {
+    let n = 0, list = 0;
+    tutte.forEach(({p, v}) => {
+      const r = righe[v[0]], k = q[v[0]];
+      if (!daTastiera || document.activeElement !== r.campo) r.campo.value = k;
+      r.r.classList.toggle("on", k > 0);
+      r.tot.textContent = euro(v[3]) + (p.unita ? " al " + p.unita : "") + (k ? " · " + euro(v[3] * k) : "");
+      n += k; list += v[2] * k;
+    });
+    PRODOTTI.forEach(p => schede[p.id] && schede[p.id].classList.toggle("on", (p.varianti || []).some(v => q[v[0]] > 0)));
+    const tot = totale();
+    $("tot").textContent = n ? euro(tot) : "–";
+    $("totTesto").innerHTML = n ? n + (n === 1 ? " pezzo" : " pezzi") + ", + IVA<br><em>Risparmi " + euro(list - tot) + " sul listino</em>" : "Niente nell'ordine: usa + e −";
+    $("trasp").textContent = n ? "Contributo trasporto CO.RA. in bolla: circa " + euro(Math.max(tot * TRASPORTO.perc / 100, TRASPORTO.minimo)) + " + IVA (uno solo se ordini anche i tergi)." : "";
+    if (!primo && !tutto) { $("ordine").classList.remove("salta"); void $("ordine").offsetWidth; $("ordine").classList.add("salta"); }
+    primo = false;
+    aggiornaWa();
+  }
+
+  function aggiornaWa() {
+    const s = scelte();
+    let testo, etichetta;
+    if (s.length) {
+      testo = "Ciao Stefano, vorrei dal catalogo *CO.RA.* (scorte d'officina):\n" +
+        s.map(({p, v}) => "• " + v[0] + " " + p.nome + (v[1] ? " taglia " + v[1] : "") + ": " + q[v[0]] + " × " + euro(v[3])).join("\n") +
+        "\nTotale: " + euro(totale()) + " + IVA, più il contributo trasporto CO.RA." +
+        "\n\nOfficina: " + $("officina").value.trim();
+      etichetta = "Invia l'ordine su WhatsApp";
+    } else {
+      testo = "Ciao Stefano, mi interessano le scorte d'officina CO.RA. (guanti, pasta lavamani, spray). Mi dai qualche informazione?";
+      etichetta = "Scrivimi su WhatsApp";
+    }
+    $("wa").href = "https://wa.me/" + TELEFONO + "?text=" + encodeURIComponent(testo);
+    $("waTesto").textContent = etichetta;
+  }
+
+  $("avviso").addEventListener("click", e => { e.preventDefault(); $("secOrdine").scrollIntoView({behavior: "smooth", block: "start"}); });
+  if ("IntersectionObserver" in window) {
+    new IntersectionObserver(es => es.forEach(e => $("avviso").classList.toggle("via", e.isIntersecting || e.boundingClientRect.top < 0)), {threshold: [0, .1]})
+      .observe($("secOrdine"));
+  }
+  disegna(true);
+});
+</script>
+<script>/* vocale: play/pausa, barra, durata; avvio e ascolto completo vanno al contatore come ricerche */
+document.addEventListener("DOMContentLoaded", () => {
+  const a = document.getElementById("voceAudio"), btn = document.getElementById("voceBtn"), box = document.getElementById("voce");
+  const bar = document.getElementById("voceBar"), dur = document.getElementById("voceDur"), ico = document.getElementById("voceIcona");
+  const mmss = s => Math.floor(s / 60) + ":" + String(Math.floor(s % 60)).padStart(2, "0");
+  let contato = false;
+  btn.addEventListener("click", () => {
+    if (a.paused) {
+      a.play();
+      if (!contato && window.conta) { window.conta("ricerca", "vocale avviato"); contato = true; }
+    } else a.pause();
+  });
+  a.addEventListener("play", () => { box.classList.add("va"); ico.setAttribute("d", "M6 5h4v14H6zM14 5h4v14h-4z"); });
+  a.addEventListener("pause", () => { box.classList.remove("va"); ico.setAttribute("d", "M8 5v14l11-7z"); });
+  a.addEventListener("timeupdate", () => {
+    if (!a.duration) return;
+    bar.style.width = (a.currentTime / a.duration * 100) + "%";
+    dur.textContent = mmss(Math.max(0, a.duration - a.currentTime));
+  });
+  a.addEventListener("ended", () => {
+    bar.style.width = "0"; dur.textContent = mmss(a.duration); a.currentTime = 0;
+    if (window.conta) window.conta("ricerca", "vocale ascoltato tutto");
+  });
+});
+</script>
+<script src="/mak-promo/conta.js" defer></script>
+</body>
+</html>
