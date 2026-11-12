@@ -167,7 +167,7 @@ Rigenera: `python3 _build/build.py`
 ## Vocali «Spiegamelo a voce»
 
 - Bottone uguale su ogni pagina (stile e script copiati da `multisens-plus`), con `vocale.mp3` (o `vocale.m4a` su multisens-plus) e il testo in «Leggi il testo». Dal 2026-11-11 gli audio si generano con la voce clonata di Stefano su HeyGen («Stefano Voice»), testi in `../Locandine/testi-vocali.md`.
-- Ce l'hanno: multisens-plus, calze-neve, assistenza-mate, bulloneria-auto («Spiegami come»), ts900-rinnovi, trasformazioni-nad, riempicarrello, kit-gomma-ruota (anche nel template), fix-pack, distanziali-xilema, canali-etrto, anelli-centraggio; dal 2026-11-12 anche adblue, calze-light-espositore, cap-originali, refill-autel-mx, refill-multisens, tergi-cora, tergi-cora-sciolte.
+- Ce l'hanno: multisens-plus, calze-neve, assistenza-mate, bulloneria-auto («Spiegami come»), ts900-rinnovi, trasformazioni-nad, riempicarrello, kit-gomma-ruota (anche nel template), fix-pack, distanziali-xilema, canali-etrto, anelli-centraggio; dal 2026-11-12 anche adblue, calze-light-espositore, cap-originali, refill-autel-mx, refill-multisens, tergi-cora, tergi-cora-sciolte, tpms-tesla.
 - Su calze-light-espositore e tergi-cora c'è un elemento `id="conta"` (contatore delle paia): il bottone controlla `typeof window.conta === "function"`, altrimenti senza `conta.js` darebbe errore.
 
 ## Monitoraggio (dal 2026-11-03)
@@ -226,4 +226,5 @@ Rigenera: `python3 _build/build.py`
 - `index.html` scritto a mano: controllo «la tua Tesla ha il Bluetooth?» (modello con radio + label, periodo con select) dalla coverage list MATE di luglio 2026: Model 3 da 11/2020, Model Y dal 2020, Model S dal 2022, Model X da 10/2021; le altre → MULTIsens MP6 con link a `../refill-multisens/`. La scelta va al contatore come ricerca ed entra nel messaggio WhatsApp come «Vettura».
 - Ordine: due righe con i pezzi, bottoni «4 Silver», «4 Black», «Azzera», totale a 40,00 €, officina. Poi «Come si montano» (relearn TESLA01: ferma 15 minuti, poi sopra i 32 km/h fino a 20 minuti) e i dati tecnici del sito MATE (Bluetooth 2,4 GHz: il sito scrive 433 MHz per errore).
 - Foto: ufficiali del B2B (`SysInf/MAK/Prodotti/<codice>.jpg`, pubbliche), scontornate con `../Locandine/refill-multisens/scontorna.py`.
-- Anteprima: `_build/anteprima-tpms-tesla.html`; icona: `_build/icona-tpms-tesla.html`. Vocale non ancora fatto.
+- Anteprima: `_build/anteprima-tpms-tesla.html`; icona: `_build/icona-tpms-tesla.html`.
+- Bottone «Spiegamelo a voce» (dal 2026-11-12): `vocale.mp3`, 22 s, voce clonata di Stefano su HeyGen.
