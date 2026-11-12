@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Spese di trasporto MAK</title>
+<meta name="description" content="Spese di trasporto MAK, zona Nord: 12 € + IVA fino a 199,99 €, 10 € + IVA da 200 a 549,99 €, gratis da 550 € + IVA. Calcola quanto ti manca alla spedizione gratis.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Spese di trasporto MAK · gratis da 550 € + IVA">
+<meta property="og:description" content="Scrivi quanto hai nel carrello: ti dico quanto paghi di trasporto e quanto ti manca alla spedizione gratis.">
+<meta property="og:image" content="https://stefanoserafin.github.io/mak-promo/spese-trasporto/anteprima.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://stefanoserafin.github.io/mak-promo/spese-trasporto/">
+<meta name="theme-color" content="#da2128">
+<link rel="apple-touch-icon" href="icona.png">
+<style>
+:root{
+  --red:#da2128; --ink:#14161a; --mute:#5d626b; --card:#f3f4f6; --line:#e2e4e8; --bg:#fff; --verde:#25d366; --ok:#14833b;
+  --titolo:"DIN Condensed","Avenir Next Condensed","Arial Narrow",system-ui,sans-serif;
+  --testo:"Avenir Next",-apple-system,system-ui,sans-serif;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--testo);font-size:16px;line-height:1.4}
+body{padding-top:calc(56px + env(safe-area-inset-top));padding-bottom:calc(96px + env(safe-area-inset-bottom))}
+.wrap{max-width:540px;margin:0 auto;overflow:hidden}
+h2{font-family:var(--titolo);font-weight:700;font-size:32px;letter-spacing:.5px;margin:0 0 4px;text-transform:uppercase;line-height:1}
+h2 em{font-style:normal;color:var(--red)}
+.sub{color:var(--mute);margin:0 0 16px;font-size:15px}
+section{padding:28px 16px 6px}
+
+.hero{position:relative;overflow:hidden;line-height:0}
+.hero img{width:100%;height:auto;display:block}
+.hero::after{content:"";position:absolute;top:0;bottom:0;width:40%;left:-60%;pointer-events:none;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-18deg);animation:riflesso 5s 1s infinite}
+@keyframes riflesso{0%{left:-60%}35%,100%{left:130%}}
+
+.avviso{position:fixed;top:0;left:0;right:0;z-index:25;display:flex;align-items:center;justify-content:center;gap:10px;
+  padding:calc(10px + env(safe-area-inset-top)) 16px 10px;background:var(--ink);color:#fff;text-decoration:none;font-size:14px;line-height:1.3;
+  box-shadow:0 4px 16px rgba(0,0,0,.25);transition:transform .35s}
+.avviso span{max-width:470px}
+.avviso i{flex:none;font-style:normal;width:30px;height:30px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:700;animation:giu 1.6s infinite}
+@keyframes giu{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
+.avviso.via{transform:translateY(-110%)}
+#secCalcola{scroll-margin-top:10px}
+
+/* calcolatore */
+.card{background:var(--card);border-radius:16px;padding:14px}
+label.f{display:block;font-size:13px;color:var(--mute);margin:0 0 6px;text-transform:uppercase;letter-spacing:1px}
+.importo{display:flex;align-items:center;background:#fff;border:2px solid var(--line);border-radius:14px;padding:0 14px}
+.importo:focus-within{border-color:var(--red)}
+.importo input{flex:1;min-width:0;border:0;background:none;font-family:var(--titolo);font-size:44px;line-height:1;padding:12px 0 6px;color:var(--ink);outline:none}
+.importo span{font-size:15px;color:var(--mute);white-space:nowrap}
+.veloci{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:8px}
+.veloci button{font:inherit;font-weight:600;font-size:14px;border-radius:12px;padding:10px 4px;border:1px dashed #b9bdc4;background:#fff;color:var(--ink)}
+.tipo{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:14px}
+.tipo input{position:absolute;opacity:0;pointer-events:none}
+.tipo label{display:block;text-align:center;background:#fff;border:2px solid var(--line);border-radius:12px;padding:10px 6px;font-size:14px;font-weight:600;cursor:pointer;line-height:1.25}
+.tipo input:checked + label{border-color:var(--red);color:var(--red)}
+
+.esito{margin-top:14px;background:#fff;border-radius:16px;padding:16px;border:2px solid var(--line)}
+.esito.gratis{background:var(--ok);border-color:var(--ok);color:#fff}
+.esito small{display:block;font-size:13px;text-transform:uppercase;letter-spacing:1px;color:var(--mute)}
+.esito.gratis small{color:#d6f2df}
+.esito .cifra{font-family:var(--titolo);font-size:64px;line-height:1;padding-top:6px}
+.esito .cifra i{font-style:normal;font-size:24px;margin-left:4px}
+.esito p{margin:6px 0 0;font-size:15px}
+.esito.salta{animation:salta .45s}
+@keyframes salta{30%{transform:scale(1.03)}60%{transform:scale(.99)}}
+
+.barra{position:relative;height:14px;border-radius:7px;background:var(--line);margin:22px 0 30px}
+.barra .pieno{position:absolute;left:0;top:0;bottom:0;border-radius:7px;background:var(--red);width:0;transition:width .4s}
+.esito.gratis .barra{background:rgba(255,255,255,.3)}
+.esito.gratis .barra .pieno{background:#fff}
+.barra .t{position:absolute;top:-4px;width:3px;height:22px;background:var(--ink);border-radius:2px}
+.barra .t span{position:absolute;top:24px;left:50%;transform:translateX(-50%);font-size:12px;font-weight:600;white-space:nowrap;color:var(--mute)}
+.barra .t.fine span{left:auto;right:0;transform:none}
+.esito.gratis .barra .t{background:#fff}
+.esito.gratis .barra .t span{color:#d6f2df}
+.manca{margin-top:4px;background:var(--card);border-radius:12px;padding:12px 14px;font-size:15px}
+.manca b{color:var(--red)}
+.manca a{display:inline-block;margin-top:8px;font-weight:700;color:var(--red)}
+.nota{font-size:13px;color:var(--mute);margin-top:8px}
+
+/* fasce */
+.fasce{width:100%;border-collapse:collapse;font-size:15px}
+.fasce td{padding:12px 0;border-bottom:1px solid var(--line)}
+.fasce td:last-child{text-align:right;font-family:var(--titolo);font-size:26px;padding-top:15px;white-space:nowrap}
+.fasce tr.on td{color:var(--red)}
+.fasce tr.on td:first-child{font-weight:700}
+.extra{display:grid;gap:8px;margin-top:14px}
+.extra div{border:2px solid var(--line);border-radius:14px;padding:12px 14px;font-size:14px;color:var(--mute)}
+.extra b{display:block;font-family:var(--titolo);font-size:22px;line-height:1;color:var(--ink);text-transform:uppercase;padding-top:2px;margin-bottom:2px}
+.extra b span{color:var(--red)}
+
+.btns{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;color:var(--ink);background:var(--card);border-radius:14px;padding:15px 10px;font-weight:600}
+.btn.b2b{background:var(--ink);color:#fff}
+footer{padding:26px 16px 10px;text-align:center;color:var(--mute);font-size:13px}
+footer img{width:150px;display:block;margin:0 auto 10px}
+footer b{color:var(--ink)}
+
+.cta{position:fixed;left:0;right:0;bottom:0;z-index:30;padding:10px 16px calc(10px + env(safe-area-inset-bottom));
+  background:linear-gradient(rgba(255,255,255,0),rgba(255,255,255,.96) 30%)}
+.cta a{display:flex;align-items:center;justify-content:center;gap:10px;max-width:508px;margin:0 auto;
+  background:var(--verde);color:#062e16;text-decoration:none;font-weight:800;font-size:18px;border-radius:16px;padding:16px;
+  animation:pulsa 2.4s infinite}
+.cta a svg{width:24px;height:24px;fill:currentColor;flex:none}
+@keyframes pulsa{0%,100%{box-shadow:0 0 0 0 rgba(37,211,102,.55)}60%{box-shadow:0 0 0 14px rgba(37,211,102,0)}}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+<a class="avviso" id="avviso" href="#secCalcola">
+  <span><b>Quanto paghi di trasporto?</b> Scrivi quanto hai nel carrello e te lo dico subito</span><i>↓</i>
+</a>
+<div class="wrap">
+
+<div class="hero">
+  <img src="locandina.jpg" alt="MAK, spese di trasporto zona Nord da ottobre 2026: ordine fino a 199,99 euro più IVA, contributo 12 euro più IVA; da 200 a 549,99 euro, 10 euro più IVA; da 550 euro più IVA in su spedizione gratis. Calze e ruotini sotto le soglie 8 euro; su bancale più 7 euro" width="1620" height="2025">
+</div>
+
+<section id="secCalcola">
+  <h2>Quanto <em>paghi</em> di trasporto?</h2>
+  <p class="sub">Scrivi il totale del tuo ordine, IVA esclusa: ti dico il contributo e quanto ti manca per la spedizione gratis.</p>
+  <div class="card">
+    <label class="f" for="importo">Totale dell'ordine</label>
+    <div class="importo"><input type="text" id="importo" inputmode="decimal" placeholder="0" autocomplete="off" aria-label="Totale dell'ordine in euro, IVA esclusa"><span>€ + IVA</span></div>
+    <div class="veloci">
+      <button type="button" data-v="150">150 €</button>
+      <button type="button" data-v="350">350 €</button>
+      <button type="button" data-v="500">500 €</button>
+      <button type="button" data-v="600">600 €</button>
+    </div>
+    <div class="tipo">
+      <input type="radio" name="tipo" id="tNormale" value="normale" checked><label for="tNormale">Ordine normale</label>
+      <input type="radio" name="tipo" id="tCalze" value="calze"><label for="tCalze">Solo calze o ruotini</label>
+    </div>
+    <div class="esito" id="esito" aria-live="polite"></div>
+  </div>
+  <p class="nota">Zona Nord (fino a Toscana, Marche e Umbria). Regole del portale B2B in vigore da ottobre 2026.</p>
+</section>
+
+<section>
+  <h2>Le <em>fasce</em></h2>
+  <p class="sub">Importi dell'ordine e contributi IVA esclusa.</p>
+  <table class="fasce" id="fasce">
+    <tr><td>Fino a 199,99 €</td><td>12 €</td></tr>
+    <tr><td>Da 200 a 549,99 €</td><td>10 €</td></tr>
+    <tr><td>Da 550 € in su</td><td>Gratis</td></tr>
+  </table>
+  <div class="extra">
+    <div><b>Calze e ruotini <span>8 €</span></b>Sotto le soglie hanno sempre il contributo ridotto a 8 € + IVA.</div>
+    <div><b>Su bancale <span>+ 7 €</span></b>Se per la quantità di merce la spedizione va su bancale: 7 € + IVA in più (non per le ruote truck).</div>
+  </div>
+</section>
+
+<section>
+  <div class="btns">
+    <a class="btn" href="tel:+393316798961">📞 Chiamami</a>
+    <a class="btn b2b" href="https://b2bshop.makwheels.it/" target="_blank" rel="noopener">🛒 Portale B2B</a>
+  </div>
+</section>
+
+<footer><img src="logo-mak-nero.svg" alt="MAK"><b>Stefano Serafin</b> · Agente MAK · 331 679 8961<br><small>Conteggio anonimo delle visite, senza cookie.</small></footer>
+</div>
+
+<div class="cta"><a id="wa" href="#" target="_blank" rel="noopener">
+  <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.7a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.2-.2-.5-.3z"/></svg>
+  <span id="waTesto">Scrivimi su WhatsApp</span></a></div>
+
+<script>
+/* Fonte: banner «Spese di spedizione Italia» della home B2B (SPESEDISPEDIZIONE_202610), zona Nord, letto il 2026-11-12.
+   Fasce: [da, a (escluso), contributo € + IVA]. Calze e ruotini sotto 550 €: 8 €. */
+const FASCE = [[0, 200, 12], [200, 550, 10], [550, Infinity, 0]];
+const CALZE = 8, GRATIS = 550, TELEFONO = "393316798961";
+
+document.addEventListener("DOMContentLoaded", () => {
+  const $ = id => document.getElementById(id);
+  const euro = n => n.toFixed(2).replace(".", ",").replace(/\B(?=(\d{3})+(?!\d))/g, ".") + " €";
+  const leggi = () => {
+    let t = $("importo").value.trim().replace(/[^\d.,]/g, "");
+    if (t.includes(",")) t = t.replace(/\./g, "").replace(",", ".");          // 1.234,50
+    else if (/^\d{1,3}(\.\d{3})+$/.test(t)) t = t.replace(/\./g, "");        // 1.234
+    const n = parseFloat(t);
+    return isNaN(n) ? null : n;
+  };
+  const tipo = () => document.querySelector("input[name=tipo]:checked").value;
+  const fasciaDi = n => FASCE.findIndex(f => n >= f[0] && n < f[1]);
+  const contributo = n => n >= GRATIS ? 0 : (tipo() === "calze" ? CALZE : FASCE[fasciaDi(n)][2]);
+  let ultimo = "", tConta = null;
+
+  function calcola() {
+    const n = leggi(), box = $("esito");
+    document.querySelectorAll("#fasce tr").forEach((r, i) => r.classList.toggle("on", n !== null && fasciaDi(n) === i));
+    if (n === null) {
+      box.className = "esito";
+      box.innerHTML = "<small>Il tuo trasporto</small><p>Scrivi il totale dell'ordine qui sopra, oppure tocca uno degli importi.</p>";
+      aggiornaWa(null, null); return;
+    }
+    const c = contributo(n), gratis = c === 0;
+    let manca = "";
+    if (!gratis) {
+      const prossima = tipo() === "calze" ? GRATIS : FASCE[fasciaDi(n)][1];
+      const nuovo = prossima >= GRATIS ? 0 : FASCE[fasciaDi(prossima)][2];
+      const diff = prossima - n;
+      manca = '<div class="manca">Ti mancano <b>' + euro(diff) + "</b> per " +
+        (nuovo === 0 ? "la <b>spedizione gratis</b>" : "scendere a <b>" + euro(nuovo) + "</b>") +
+        ": risparmi " + euro(c - nuovo) + " + IVA." +
+        (nuovo === 0 ? '<br><a href="../riempicarrello/">Idee per arrivarci: gli articoli che finiscono sempre →</a>' : "") + "</div>";
+    }
+    const pct = Math.min(100, n / GRATIS * 100);
+    box.className = "esito" + (gratis ? " gratis" : "");
+    box.innerHTML = "<small>" + (gratis ? "Ordine da " + euro(n) + " + IVA" : "Contributo spese per " + euro(n) + " + IVA") + "</small>" +
+      '<div class="cifra">' + (gratis ? "Spedizione gratis" : euro(c) + "<i>+ IVA</i>") + "</div>" +
+      (tipo() === "calze" && !gratis ? "<p>Contributo ridotto per calze e ruotini.</p>" : "") +
+      '<div class="barra"><div class="pieno" style="width:' + pct + '%"></div>' +
+      '<div class="t" style="left:' + (200 / GRATIS * 100) + '%"><span>200 €</span></div>' +
+      '<div class="t fine" style="left:calc(100% - 3px)"><span>550 €</span></div></div>' + manca;
+    if (ultimo !== box.className + c) { box.classList.remove("salta"); void box.offsetWidth; box.classList.add("salta"); }
+    ultimo = box.className + c;
+    /* contatore anonimo: solo la fascia, non l'importo */
+    clearTimeout(tConta);
+    tConta = setTimeout(() => window.conta && window.conta("ricerca", (gratis ? "da 550" : n < 200 ? "fino a 199,99" : "200-549,99") + (tipo() === "calze" ? " · calze/ruotini" : "")), 1500);
+    aggiornaWa(n, c);
+  }
+
+  function aggiornaWa(n, c) {
+    let testo, etichetta;
+    if (n === null) {
+      testo = "Ciao Stefano, ho una domanda sulle spese di trasporto.";
+      etichetta = "Scrivimi su WhatsApp";
+    } else if (c === 0) {
+      testo = "Ciao Stefano, ho un ordine da circa " + euro(n) + " + IVA: la spedizione è gratis. Mi aiuti a completarlo?";
+      etichetta = "Scrivimi su WhatsApp";
+    } else {
+      testo = "Ciao Stefano, ho un ordine da circa " + euro(n) + " + IVA (" + (tipo() === "calze" ? "solo calze o ruotini, " : "") +
+        "trasporto " + euro(c) + " + IVA). Mi suggerisci cosa aggiungere per arrivare a 550 € e non pagare la spedizione?";
+      etichetta = "Aiutami ad arrivare a 550 €";
+    }
+    $("wa").href = "https://wa.me/" + TELEFONO + "?text=" + encodeURIComponent(testo);
+    $("waTesto").textContent = etichetta;
+  }
+
+  $("importo").addEventListener("input", calcola);
+  $("importo").addEventListener("focus", () => $("importo").select());
+  document.querySelectorAll("[data-v]").forEach(b => b.addEventListener("click", () => { $("importo").value = b.dataset.v; calcola(); }));
+  document.querySelectorAll("input[name=tipo]").forEach(r => r.addEventListener("change", calcola));
+
+  $("avviso").addEventListener("click", e => { e.preventDefault(); $("secCalcola").scrollIntoView({behavior: "smooth", block: "start"}); });
+  if ("IntersectionObserver" in window) {
+    new IntersectionObserver(es => es.forEach(e => $("avviso").classList.toggle("via", e.isIntersecting || e.boundingClientRect.top < 0)), {threshold: [0, .15]})
+      .observe($("secCalcola"));
+  }
+  calcola();
+});
+</script>
+<script src="/mak-promo/conta.js" defer></script>
+</body>
+</html>

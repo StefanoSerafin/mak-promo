@@ -239,3 +239,11 @@ Rigenera: `python3 _build/build.py`
 - Foto: ufficiali del B2B (`SysInf/MAK/Prodotti/<codice>.jpg`, pubbliche), scontornate con `../Locandine/refill-multisens/scontorna.py`.
 - Anteprima: `_build/anteprima-tpms-tesla.html`; icona: `_build/icona-tpms-tesla.html`.
 - Bottone «Spiegamelo a voce» (dal 2026-11-12): `vocale.mp3`, 21 s, voce clonata di Stefano su HeyGen; rifatto lo stesso giorno con «tipiemmesse» attaccato, punti esclamativi ed espressività al massimo, poi montato con ffmpeg: «Ciao» −5 dB, pausa di 0,3 s dopo «l'anno», accelerato del 4% (atempo 1.039); 22 s.
+
+## spese-trasporto (spese di trasporto zona Nord, regole B2B da ottobre 2026, senza scadenza)
+
+- Fonte: banner «Spese di spedizione Italia» della home B2B (`SPESEDISPEDIZIONE_202610`, letto il 2026-11-12, copia in `../Locandine/spese-trasporto/`). Solo zona Nord: è quella di tutti i clienti di Stefano. Fasce IVA esclusa: fino a 199,99 € → 12 €; 200–549,99 € → 10 €; da 550 € gratis; calze e ruotini sotto le soglie 8 €; bancale + 7 € (non ruote truck).
+- Calcolatore: totale dell'ordine (accetta «1.234,50») o bottoni 150/350/500/600, «Ordine normale» o «Solo calze o ruotini» → contributo, barra fino a 550 € con la tacca a 200, quanto manca alla fascia dopo e quanto si risparmia, link a `../riempicarrello/`. Le fasce sono nella costante `FASCE` dentro la pagina: se MAK cambia le regole si cambiano lì e nella locandina.
+- Calze e ruotini: interpretato come ordine di sole calze o ruotini sotto 550 € → 8 €; un ordine misto lo conferma Stefano.
+- WhatsApp: con un importo sotto 550 € il bottone diventa «Aiutami ad arrivare a 550 €» con importo e contributo nel messaggio. Al contatore va solo la fascia, mai l'importo.
+- Anteprima: `_build/anteprima-spese-trasporto.html`; icona: `_build/icona-spese-trasporto.html`. Niente vocale per ora.
