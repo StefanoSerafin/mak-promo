@@ -255,3 +255,13 @@ Rigenera: `python3 _build/build.py`
 - Calze e ruotini: interpretato come ordine di sole calze o ruotini sotto 550 € → 8 €; un ordine misto lo conferma Stefano.
 - WhatsApp: con un importo sotto 550 € il bottone diventa «Aiutami ad arrivare a 550 €» con importo e contributo nel messaggio. Al contatore va solo la fascia, mai l'importo.
 - Anteprima: `_build/anteprima-spese-trasporto.html`; icona: `_build/icona-spese-trasporto.html`. Niente vocale per ora.
+
+## bulloni-antifurto (kit bulloni antifurto NPK by Farad, 14,90 € + IVA, espositore con 10 kit, senza scadenza)
+
+- Ricerca marca → modello → anno (menu nativi) sui dati della sezione B2B «Bulloneria Antifurto NPK by Farad» (`dati.js`, 2.045 vetture, 23 codici): scheda del kit con foto, filetto e lunghezza in parole, sede, chiave, scelta Cromato/Black (radio + label) quando ci sono le due finiture, netto + IVA e prezzo al pubblico IVA inclusa del listino NPK di ottobre 2026.
+- **I dati si rifanno da `../Locandine/bulloni-antifurto/`** (README lì): `scarica_b2b.py` con l'account CLIENTE, poi `genera_dati.py`, poi alzare `dati.js?v=`.
+- Avvisi: riquadro giallo sulle Mercedes con kit conico (le originali sono sferiche R14), nota verde sul kit M15 sferico R14 delle GLE/GLS tipo 167, «va su ruote con sede conica 60°» sugli altri, nota «abbinamento dal sito NPK, te lo confermo io» sulle 5 vetture che il B2B non ha.
+- Gamma completa divisa bulloni/dadi, ordine con quantità e totale, barra «ti mancano N kit» fino all'espositore da banco in omaggio a 10 kit anche diversi (`SOGLIA_ESP`). WhatsApp con codici, quantità, totale, espositore, vettura, nota Mercedes e officina. La vettura va al contatore come ricerca.
+- Obiezioni tolte dalla pagina (scelta di Stefano del 2026-11-13); «Perché proporli» con 4 punti.
+- `foto/<codice>.jpg`: foto pubbliche del B2B (8050009180/185 non hanno foto e non sono nella sezione). `espositore.png` dal catalogo NPK 09-2026.
+- Locandina: `../Locandine/bulloni-antifurto/locandina.html`. Anteprima: `_build/anteprima-bulloni-antifurto.html`; icona: `_build/icona-bulloni-antifurto.html`. Vocale non ancora generato (testo in `../Locandine/testi-vocali.md`).
