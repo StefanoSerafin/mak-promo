@@ -265,3 +265,15 @@ Rigenera: `python3 _build/build.py`
 - Obiezioni tolte dalla pagina (scelta di Stefano del 2026-11-13); «Perché proporli» con 4 punti.
 - `foto/<codice>.jpg`: foto pubbliche del B2B (8050009180/185 non hanno foto e non sono nella sezione). `espositore.png` dal catalogo NPK 09-2026.
 - Locandina: `../Locandine/bulloni-antifurto/locandina.html`. Anteprima: `_build/anteprima-bulloni-antifurto.html`; icona: `_build/icona-bulloni-antifurto.html`. Bottone «Spiegamelo a voce» (dal 2026-11-13): `vocale.mp3`, 24 s, voce clonata di Stefano su HeyGen; testo in `../Locandine/testi-vocali.md`.
+
+## diagnosi-autel (quale tablet di diagnosi AUTEL, dalla TS900 alla MS Ultra S2, senza scadenza)
+
+- Test a 4 domande (radio/checkbox + label): lavoro, usi (anche più di uno), quante marche, diagnosi attuale. Il consiglio si aggiorna a ogni risposta: un solo modello con «Perché te lo consiglio», cosa fa, prezzo B2B + IVA, più «Se ti basta meno» / «Se vuoi di più» (assenti ai due estremi). Regole in chiaro nella tabella `REGOLE` in cima allo script: gradino più alto tra lavoro (gommista TS900, officina ed elettrauto MS 906 MAX, concessionaria MS 908S PRO3) e usi (codifiche → 908S PRO3, ADAS ed elettriche → 909 S2, oscilloscopio → 919 S2, «il massimo» → Ultra S2).
+- 6 modelli (niente MS 906 PRO 2 TS e MS 909 EV, niente strumenti TPMS): gamma con «Scegli questo», «Tutte le caratteristiche» a scomparsa e scheda PDF `pdf/scheda-<modello>.pdf`; link a manuale TS900, catalogo MATE 2026 (pagine 12–17) e schede del sito MATE.
+- **I dati dei modelli non si toccano qui**: blocco `/*DATI*/` scritto da `../Locandine/diagnosi-autel/genera_schede.py` (unica fonte per pagina e PDF; si ferma se un prezzo non coincide con `prezzi-b2b.csv`). Prezzi dal B2B con `leggi_prezzi_b2b.py` (account CLIENTE, sola lettura). README lì.
+- Servizi da aggiungere: Full SGW (toglie FCA), FCA + Maserati, assistenza AUTEL, Haynes PRO (uno a scelta); totale indicativo + IVA. WhatsApp «Chiedimi l'offerta» con risposte, modello consigliato, eventuale modello scelto, servizi, totale e officina: chiede offerta o prova, non è un ordine.
+- Bottone **«Info tecniche: scrivi a Salvatore Pepe»** (`wa.me/393270888678`, numero pubblicato su richiesta esplicita di Stefano del 2026-11-13) nel risultato e in ogni scheda, con il modello nel testo.
+- Contatore: il modello consigliato come ricerca, «scelto <modello>» quando il cliente sceglie un altro modello, «Pepe <modello>» sul bottone di Pepe (il Worker accetta solo i suoi 6 tipi; lo stesso tocco conta anche come «whatsapp» senza righe d'ordine).
+- Rimandi a `../ts900-rinnovi/` (anche nel risultato se «ho già la TS900») e `../assistenza-mate/`.
+- Foto: B2B `SysInf/MAK/Prodotti/<codice>.jpg` ritagliate ai bordi (`foto/<modello>.jpg`, 480 px).
+- Locandina: `../Locandine/diagnosi-autel/locandina.html`. Anteprima: `_build/anteprima-diagnosi-autel.html`; icona: `_build/icona-diagnosi-autel.html`. Vocale: testo proposto in `../Locandine/testi-vocali.md`, da generare dopo l'ok di Stefano.

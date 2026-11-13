@@ -120,6 +120,15 @@ const CAMPAGNE = [
   "url": "https://stefanoserafin.github.io/mak-promo/copriruota/"
  },
  {
+  "c": "diagnosi-autel",
+  "titolo": "Quale diagnosi AUTEL fa per te? · 4 domande, il tablet giusto",
+  "desc": "Dalla TS900 alla MS Ultra S2: rispondi a 4 domande e ti dico il tablet giusto, con prezzo e scheda completa.",
+  "argomento": "TPMS e diagnosi",
+  "archiviata": false,
+  "dal": "2026-11-13",
+  "url": "https://stefanoserafin.github.io/mak-promo/diagnosi-autel/"
+ },
+ {
   "c": "distanziali-xilema",
   "titolo": "Distanziali Xilema · trova il codice per la tua vettura",
   "desc": "54 marche, oltre 870 modelli, spessori da 5 a 30 mm: scegli la vettura e mandami i codici su WhatsApp.",
