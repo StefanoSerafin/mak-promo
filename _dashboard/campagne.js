@@ -1,5 +1,5 @@
 /* Generato da _build/dashboard.py: non modificare a mano. */
-const GENERATO = "2026-11-13";
+const GENERATO = "2026-11-14";
 const ARGOMENTI = ["TPMS e diagnosi", "Ruote e montaggio", "Inverno e soccorso NPK", "Officina e consumo", "Portale e servizio"];
 const CAMPAGNE = [
  {
@@ -235,6 +235,15 @@ const CAMPAGNE = [
   "archiviata": false,
   "dal": "2026-11-12",
   "url": "https://stefanoserafin.github.io/mak-promo/tergi-cora-sciolte/"
+ },
+ {
+  "c": "tool8-ma41",
+  "titolo": "Tool 8 · MA41 + 8 sensori MULTIsens a 280 € + IVA",
+  "desc": "Strumento TPMS MATE MA41 più 8 sensori MULTIsens: 280 € invece di 363,20 €. Risparmi 83,20 €. Scegli le valvole e ordina su WhatsApp.",
+  "argomento": "TPMS e diagnosi",
+  "archiviata": false,
+  "dal": "2026-11-14",
+  "url": "https://stefanoserafin.github.io/mak-promo/tool8-ma41/"
  },
  {
   "c": "tpms-tesla",

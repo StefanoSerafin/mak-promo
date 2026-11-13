@@ -279,3 +279,10 @@ Rigenera: `python3 _build/build.py`
 - Rimandi a `../ts900-rinnovi/` (anche nel risultato se «ho già la TS900») e `../assistenza-mate/`.
 - Foto: B2B `SysInf/MAK/Prodotti/<codice>.jpg` ritagliate ai bordi (`foto/<modello>.jpg`, 480 px).
 - Locandina: `../Locandine/diagnosi-autel/locandina.html`. Anteprima: `_build/anteprima-diagnosi-autel.html`; icona: `_build/icona-diagnosi-autel.html`. Bottone «Spiegamelo a voce» (dal 2026-11-14): `vocale.mp3`, 27 s, voce clonata di Stefano su HeyGen; testo in `../Locandine/testi-vocali.md`.
+
+## tool8-ma41 (Tool 8: strumento MATE MA41 + 8 sensori MULTIsens, 280 € + IVA, senza scadenza)
+
+- Fonte: portale B2B, Promozioni › Promozioni Tool › MATE MULTIsens › Tool 8 (letto il 2026-11-14 con l'account cliente, carrello invariato): MA41 a 160 € (listino 200) + 8 MULTIsens a 15,00 € (listino 20,40) = 280 € invece di 363,20 € (−83,20 €, −23%). Sul B2B ci sono anche Tool 16/30 e le versioni HUF ECS e AUTEL: per scelta di Stefano solo il Tool 8 MULTIsens.
+- Pagina: salto di prezzo animato, 6 vantaggi (MA41 −40 €, sensori a 15 € meno del Refill 20, valvole miste, copertura 94%, 5 anni di aggiornamenti, assistenza MATE), «Cosa c'è dentro» listino contro promo, scelta delle valvole degli 8 sensori (+ si blocca a 8, mix rapidi), «Da sapere» (modulo OBDII a parte, 60–80 vetture a carica, aggiornamento da PC, niente Tesla Bluetooth), rimandi a refill-multisens e assistenza-mate.
+- WhatsApp con MA41 e righe dei sensori per codice (le valvole non scelte: «decidiamo insieme»), totale 280 € + IVA e officina. Al contatore il mix di valvole quando arriva a 8.
+- Foto: MA41 e sensori MP6 scontornati della campagna refill-multisens. Locandina: `../Locandine/tool8-ma41/locandina.html`. Anteprima: `_build/anteprima-tool8-ma41.html`; icona: `_build/icona-tool8-ma41.html`. Nessun vocale per ora.
