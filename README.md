@@ -264,4 +264,4 @@ Rigenera: `python3 _build/build.py`
 - Gamma completa divisa bulloni/dadi, ordine con quantità e totale, barra «ti mancano N kit» fino all'espositore da banco in omaggio a 10 kit anche diversi (`SOGLIA_ESP`). WhatsApp con codici, quantità, totale, espositore, vettura, nota Mercedes e officina. La vettura va al contatore come ricerca.
 - Obiezioni tolte dalla pagina (scelta di Stefano del 2026-11-13); «Perché proporli» con 4 punti.
 - `foto/<codice>.jpg`: foto pubbliche del B2B (8050009180/185 non hanno foto e non sono nella sezione). `espositore.png` dal catalogo NPK 09-2026.
-- Locandina: `../Locandine/bulloni-antifurto/locandina.html`. Anteprima: `_build/anteprima-bulloni-antifurto.html`; icona: `_build/icona-bulloni-antifurto.html`. Vocale non ancora generato (testo in `../Locandine/testi-vocali.md`).
+- Locandina: `../Locandine/bulloni-antifurto/locandina.html`. Anteprima: `_build/anteprima-bulloni-antifurto.html`; icona: `_build/icona-bulloni-antifurto.html`. Bottone «Spiegamelo a voce» (dal 2026-11-13): `vocale.mp3`, 24 s, voce clonata di Stefano su HeyGen; testo in `../Locandine/testi-vocali.md`.
