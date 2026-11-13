@@ -217,7 +217,7 @@ footer b{color:var(--ink)}
         <input type="checkbox" id="u_err" value="err"><label for="u_err"><span class="sp"></span><span>Leggere e cancellare errori su tutte le centraline</span></label>
         <input type="checkbox" id="u_cod" value="cod"><label for="u_cod"><span class="sp"></span><span>Codifiche e programmazione delle centraline<small>Pass-Thru, online con la casa madre</small></span></label>
         <input type="checkbox" id="u_ada" value="ada"><label for="u_ada"><span class="sp"></span><span>Calibrazione ADAS<small>telecamere e radar</small></span></label>
-        <input type="checkbox" id="u_osc" value="osc"><label for="u_osc"><span class="sp"></span><span>Test dei componenti<small>oscilloscopio e multimetro</small></span></label>
+        <input type="checkbox" id="u_osc" value="osc"><label for="u_osc"><span class="sp"></span><span>Test dei componenti<small>da elettrauto, con la guida diagnostica</small></span></label>
         <input type="checkbox" id="u_ev" value="ev"><label for="u_ev"><span class="sp"></span><span>Tante auto elettriche e ibride</span></label>
         <input type="checkbox" id="u_max" value="max"><label for="u_max"><span class="sp"></span><span>Voglio il massimo<small>schermo grande, guida diagnostica</small></span></label>
       </div>
@@ -246,6 +246,12 @@ footer b{color:var(--ink)}
   <div class="alt" id="alt" hidden></div>
 </section>
 
+<section id="secGamma">
+  <h2>Tutta la <em>gamma</em></h2>
+  <p class="sub">Dal più semplice al più completo. Tocca «Scegli questo» per chiedermi l'offerta su un altro modello, poi aggiungi gli abbonamenti qui sotto.</p>
+  <div class="gamma" id="gamma"></div>
+</section>
+
 <section>
   <h2>Da <em>aggiungere</em></h2>
   <p class="sub">Abbonamenti di 12 mesi per il tablet che scegli.</p>
@@ -271,11 +277,6 @@ footer b{color:var(--ink)}
   </div>
 </section>
 
-<section id="secGamma">
-  <h2>Tutta la <em>gamma</em></h2>
-  <p class="sub">Dal più semplice al più completo. Tocca «Scegli questo» per chiedermi l'offerta su un altro modello.</p>
-  <div class="gamma" id="gamma"></div>
-</section>
 
 <footer><div class="loghi"><img src="logo-mate-nero.svg" alt="MATE"><img src="logo-mak.svg" alt="MAK"></div><b>Stefano Serafin</b> · Agente MAK · 331 679 8961<br>Prezzi B2B MATE IVA esclusa. Dati tecnici dal sito e dal catalogo MATE 2026.<br><small>Conteggio anonimo delle visite, senza cookie.</small></footer>
 </div>
@@ -580,78 +581,6 @@ const MODELLI = [
 ]
 },
 {
-"slug": "ms919s2",
-"nome": "MS 919 S2",
-"esteso": "AUTEL MaxiSys MS 919 S2",
-"codice": "7200000033",
-"prezzo": 5200,
-"livello": "Elettrauto",
-"per": "l'elettrauto che prova i componenti",
-"frase": "Diagnosi e strumenti di misura in uno: oscilloscopio e multimetro nella VCMI.",
-"cosa": [
-"Interfaccia MaxiFlash VCMI 5 in 1: comunica con la vettura e misura (oscilloscopio, multimetro)",
-"Scanner bidirezionale: comanda i componenti e controlla la risposta",
-"Mappa topologica della rete CAN con le centraline",
-"Copertura OE per oltre 53 marchi, anche ibride ed elettriche"
-],
-"in_piu": "Interfaccia VCMI 5 in 1 con gli strumenti di misura per provare i componenti",
-"tecnica": [
-[
-"Display",
-"9,7\" TFT-LCD 1536×2048, touch capacitivo"
-],
-[
-"Sistema",
-"Android 10, processore octa-core"
-],
-[
-"Memoria",
-"4 GB RAM + 128 GB, SD fino a 256 GB"
-],
-[
-"Comunicazione",
-"MaxiFlash VCMI 5 in 1: DoIP, D-PDU, Mega CAN, CAN FD"
-],
-[
-"Connessioni",
-"doppio Wi-Fi, Bluetooth 5.0, GPS, 2 USB-A + mini USB, HDMI"
-],
-[
-"Fotocamere",
-"16 MP posteriore con flash e autofocus, 16 MP anteriore"
-],
-[
-"Batteria",
-"15.000 mAh 3,8 V, 8 ore di uso continuo"
-],
-[
-"Misure e peso",
-"30,4 × 22,8 × 4,3 cm · 1,66 kg"
-]
-],
-"valigia": [
-"Tablet MS 919 S2",
-"Interfaccia MaxiFlash VCMI",
-"Cavi e alimentatore",
-"Valigia"
-],
-"rinnovo": {
-"codice": "7200000031",
-"prezzo": 1200
-},
-"garanzia": "",
-"documenti": [
-[
-"Catalogo MATE 2026, pagina 17",
-"https://online.flippingbook.com/view/206043/17/"
-],
-[
-"Scheda sul sito MATE",
-"https://www.mate-tech.it/prodotto/strumento-diagnosi-autel-ms-919-s2/"
-]
-]
-},
-{
 "slug": "msultras2",
 "nome": "MS Ultra S2",
 "esteso": "AUTEL MaxiSys MS Ultra S2",
@@ -666,7 +595,7 @@ const MODELLI = [
 "Mappa topologica della rete CAN con le centraline",
 "Copertura OE per oltre 53 marchi, anche ibride ed elettriche"
 ],
-"in_piu": "Schermo da 12,7\" a schermo diviso, guida diagnostica, 256 GB, batteria più grande",
+"in_piu": "Schermo da 12,7\" a schermo diviso, guida diagnostica e test dei componenti, 256 GB, batteria più grande",
 "tecnica": [
 [
 "Display",
@@ -747,24 +676,7 @@ const SERVIZI = [
 "nota": "Assistenza telefonica e da remoto."
 },
 {
-"id": "hs",
-"gruppo": "haynes",
-"nome": "Haynes PRO Smart 12 mesi",
-"codice": "7200000044",
-"prezzo": 190,
-"nota": "Banca dati tecnica Haynes PRO."
-},
-{
-"id": "he",
-"gruppo": "haynes",
-"nome": "Haynes PRO Electronic 12 mesi",
-"codice": "7200000019",
-"prezzo": 390,
-"nota": "Banca dati tecnica Haynes PRO."
-},
-{
 "id": "ht",
-"gruppo": "haynes",
 "nome": "Haynes PRO Electronic + Tech 12 mesi",
 "codice": "7200000035",
 "prezzo": 630,
@@ -778,7 +690,7 @@ const PEPE = "393270888678";
 
 /* REGOLE DEL CONSIGLIO (decise da Stefano il 2026-11-13). Il modello è il gradino più alto tra
    quello del lavoro e quelli degli usi spuntati. Gradini: 0 TS900 · 1 MS 906 MAX · 2 MS 908S PRO3 ·
-   3 MS 909 S2 · 4 MS 919 S2 · 5 MS Ultra S2. */
+   3 MS 909 S2 · 4 MS Ultra S2. MS 919 S2 tolta il 2026-11-13 su indicazione di Salvatore Pepe (MATE). */
 const REGOLE = {
   lavoro: {
     gom: {g: 0, nome: "Gommista", perche: "Sei gommista: ti serve il service e il TPMS completo"},
@@ -792,8 +704,8 @@ const REGOLE = {
     cod: {g: 2, nome: "Codifiche e programmazione", perche: "Codifiche e programmazione in Pass-Thru, online con la casa madre"},
     ada: {g: 3, nome: "Calibrazione ADAS", perche: "Calibrazione ADAS (con il kit ADAS a parte)"},
     ev:  {g: 3, nome: "Auto elettriche e ibride", perche: "Tante elettriche e ibride: mappa della rete CAN e copertura OE"},
-    osc: {g: 4, nome: "Test dei componenti", perche: "Test dei componenti con oscilloscopio e multimetro nella VCMI"},
-    max: {g: 5, nome: "Il massimo", perche: "Vuoi il massimo: schermo da 12,7\", schermo diviso e guida diagnostica"}
+    osc: {g: 4, nome: "Test dei componenti", perche: "Test dei componenti con la guida diagnostica dell'Ultra S2"},
+    max: {g: 4, nome: "Il massimo", perche: "Vuoi il massimo: schermo da 12,7\", schermo diviso e guida diagnostica"}
   },
   volume: {poc: "Poche, sempre le stesse marche", tan: "Tante, di tutte le marche"},
   attuale: {no: "No", ts: "Sì, una TS900", alt: "Sì, di un'altra marca"}
@@ -871,8 +783,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* servizi da aggiungere */
   $("voci").innerHTML = SERVIZI.map((s, i) => {
-    const testa = s.gruppo && (i === 0 || SERVIZI[i - 1].gruppo !== s.gruppo) ? '<p class="gr">Banca dati Haynes PRO (una a scelta)</p>' : "";
-    return testa + '<input type="checkbox" id="s_' + s.id + '" value="' + s.id + '"' + (s.gruppo ? ' data-gruppo="' + s.gruppo + '"' : "") + '>' +
+    return '<input type="checkbox" id="s_' + s.id + '" value="' + s.id + '"' + (s.gruppo ? ' data-gruppo="' + s.gruppo + '"' : "") + '>' +
       '<label for="s_' + s.id + '"><span class="sp"></span><span class="t"><b>' + esc(s.nome) + '</b><small>' + esc(s.nota) + ' · cod. ' + s.codice + '</small></span><span class="p">' + euro(s.prezzo) + '<i>+IVA</i></span></label>';
   }).join("");
 
