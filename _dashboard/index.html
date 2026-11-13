@@ -75,9 +75,23 @@ h2 small{font-family:var(--testo);font-size:13px;font-weight:600;color:var(--mut
 .sch img{width:104px;height:auto;aspect-ratio:1200/630;object-fit:cover;border-radius:10px;display:block;background:#e6e8eb}
 .sch b{display:block;font-size:15px;line-height:1.25}
 .sch .dal{font-size:12px;color:var(--mute);margin-top:2px}
-.sch .num{font-size:13px;margin-top:4px;color:var(--ink)}
-.sch .num span{color:var(--mute)}
-.bt{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr 70px;gap:6px}
+.mini{grid-column:1/-1;display:grid;grid-template-columns:repeat(5,1fr);gap:4px;background:#fff;border-radius:12px;padding:7px 4px 5px;text-align:center}
+.mini b{display:block;font-family:var(--titolo);font-size:22px;line-height:1;padding-top:2px}
+.mini small{display:block;font-size:10px;color:var(--mute);letter-spacing:.2px}
+.mini .ap b{color:var(--red)} .mini .wa b{color:var(--blu)}
+.bt{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr 58px 76px;gap:6px}
+.bt .nu{background:#fff;color:var(--red);border:1px solid var(--red)}
+/* tabella locandina per locandina */
+.conf{margin-top:12px;border:1px solid var(--line);border-radius:16px;padding:10px 8px 4px;overflow-x:auto}
+.conf h3{margin:2px 2px 6px;font-family:var(--titolo);font-size:22px;text-transform:uppercase;line-height:1;padding-top:2px}
+.conf table{width:100%;border-collapse:collapse;font-size:13px}
+.conf th{font-size:11px;color:var(--mute);font-weight:600;text-align:right;padding:4px 3px;cursor:pointer;white-space:nowrap;user-select:none}
+.conf th:first-child{text-align:left}
+.conf th.on{color:var(--red)}
+.conf td{padding:7px 3px;border-top:1px solid var(--line);text-align:right;font-variant-numeric:tabular-nums}
+.conf td:first-child{text-align:left;max-width:140px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.conf tr[data-c]{cursor:pointer}
+.conf tr.zero td{color:#9aa0a8}
 .bt button,.bt a{font:inherit;font-size:14px;font-weight:700;border:0;border-radius:12px;padding:11px 6px;text-align:center;text-decoration:none;cursor:pointer}
 .bt .cp{background:var(--ink);color:#fff}
 .bt .cp.ok{background:var(--ok)}
@@ -124,6 +138,7 @@ details.arch summary{cursor:pointer;font-family:var(--titolo);font-size:24px;tex
     <div id="statistiche" hidden>
       <div class="kpi" id="kpi"></div>
       <div class="graf" id="graf"></div>
+      <div class="conf" id="conf"></div>
       <p class="nota" id="notaTel"></p>
     </div>
     <div id="catalogo"></div>
@@ -177,6 +192,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let periodo = mem.get("dash-periodo") || "7g";
   let gruppo = mem.get("dash-gruppo") || "giorno";
   let SERIE = null, aperta = null, oraAgg = null;
+  let ordConf = mem.get("dash-ord") || "apertura";
 
   $("generato").textContent = ggm(GENERATO) + " " + GENERATO.slice(0, 4);
   $("intro").textContent = CAMPAGNE.length + " locandine interattive, " + ARGOMENTI.length + " argomenti. Copia il link o mandalo su WhatsApp.";
@@ -311,17 +327,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* ---------- catalogo ---------- */
   function scheda(c, num) {
-    const n = num ? '<div class="num">' + num.apertura + " <span>aperture</span> · " + num.whatsapp + " <span>WhatsApp</span> · " + num.ricerca + " <span>ricerche</span></div>" : "";
+    const n = num ? '<div class="mini"><div class="ap"><b>' + (num.apertura || 0) + '</b><small>aperture</small></div><div><b>' + (num.tel || 0) + '</b><small>telefoni</small></div>' +
+      '<div class="wa"><b>' + (num.whatsapp || 0) + '</b><small>WhatsApp</small></div><div><b>' + (num.ricerca || 0) + '</b><small>ricerche</small></div><div><b>' + (num.vocale || 0) + '</b><small>vocale</small></div></div>' : "";
     const wa = "https://wa.me/?text=" + encodeURIComponent(FRASE_WA + "\n" + c.url);
     return '<div class="sch" data-c="' + c.c + '"><img src="../' + c.c + '/anteprima.jpg" alt="" loading="lazy" width="1200" height="630">' +
-      "<div><b>" + esc(c.titolo) + '</b><div class="dal">online dal ' + ggm(c.dal) + "</div>" + n + "</div>" +
+      "<div><b>" + esc(c.titolo) + '</b><div class="dal">online dal ' + ggm(c.dal) + "</div></div>" + n +
       '<div class="bt"><button type="button" class="cp" data-url="' + c.url + '">Copia link</button>' +
       '<a class="wa" href="' + wa + '" target="_blank" rel="noopener">WhatsApp</a>' +
-      '<a class="ap" href="' + c.url + '" target="_blank" rel="noopener">Apri</a></div></div>';
+      '<a class="ap" href="' + c.url + '" target="_blank" rel="noopener">Apri</a>' +
+      (SERIE ? '<button type="button" class="nu" data-c="' + c.c + '">Numeri ›</button>' : "") + "</div></div>";
   }
   function catalogo(per) {
     const ordina = l => l.slice().sort((a, b) => per ? ((per[b.c] || {}).apertura || 0) - ((per[a.c] || {}).apertura || 0) || (b.dal > a.dal ? 1 : -1) : (b.dal > a.dal ? 1 : -1));
-    const num = c => per ? (per[c] || {apertura: 0, whatsapp: 0, ricerca: 0}) : null;
+    const num = c => per ? (per[c] || {}) : null;
     let h = ARGOMENTI.map(a => {
       const l = ordina(CAMPAGNE.filter(c => c.argomento === a && !c.archiviata));
       return l.length ? "<h2>" + esc(a) + "<small>" + l.length + "</small></h2>" + l.map(c => scheda(c, num(c.c))).join("") : "";
@@ -340,6 +358,10 @@ document.addEventListener("DOMContentLoaded", () => {
   document.body.addEventListener("click", e => {
     const b = e.target.closest("button.cp");
     if (b) { e.preventDefault(); copia(b); return; }
+    const nu = e.target.closest("button.nu, tr[data-c]");
+    if (nu) { apri(nu.dataset.c); return; }
+    const th = e.target.closest(".conf th[data-k]");
+    if (th) { ordConf = th.dataset.k; mem.set("dash-ord", ordConf); disegna(); return; }
     if (e.target.closest("a, button, summary")) return;
     const s = e.target.closest(".sch");
     if (s) apri(s.dataset.c);
@@ -364,7 +386,7 @@ document.addEventListener("DOMContentLoaded", () => {
   async function disegnaDettaglio() {
     const c = PER_C[aperta], [dal, al] = intervallo(), prec = precedente([dal, al]);
     let h = '<div class="det-testa"><img src="../' + c.c + '/anteprima.jpg" alt="" width="1200" height="630"><b>' + esc(c.titolo) + "</b><p>" + esc(c.desc) + "</p><p>" + esc(c.argomento) + " · online dal " + ggm(c.dal) + "</p></div>" +
-      scheda(c, null).replace(/^<div class="sch"[^>]*>.*?(<div class="bt">)/s, '<div class="sch" style="cursor:default;grid-template-columns:1fr">$1');
+      scheda(c, null).replace(/^<div class="sch"[^>]*>.*?(<div class="bt">)/s, '<div class="sch" style="cursor:default;grid-template-columns:1fr">$1').replace(/<button type="button" class="nu"[^>]*>[^<]*<\/button>/, "");
     if (!SERIE) { $("dettaglio").innerHTML = h + '<p class="vuoto">Inserisci la chiave per vedere i numeri.</p>'; return; }
     const {t} = somma(dal, al, c.c), p = periodo === "sempre" ? null : somma(prec[0], prec[1], c.c).t;
     h += '<h2>Numeri<small>' + descr(dal, al) + '</small></h2><div class="kpi" id="kpiD"></div><div class="graf" id="grafD"></div>' +
@@ -391,6 +413,17 @@ document.addEventListener("DOMContentLoaded", () => {
     return dal === al ? ggm(dal) : ggm(dal) + " – " + ggm(al);
   }
 
+  /* ---------- tabella locandina per locandina ---------- */
+  function confronto(per) {
+    const col = [["apertura", "Apert."], ["tel", "Tel."], ["whatsapp", "WA"], ["ricerca", "Ric."], ["vocale", "Voc."]];
+    const v = (c, k) => (per[c] || {})[k] || 0;
+    const l = CAMPAGNE.slice().sort((a, b) => v(b.c, ordConf) - v(a.c, ordConf) || v(b.c, "apertura") - v(a.c, "apertura") || (a.titolo > b.titolo ? 1 : -1));
+    $("conf").innerHTML = "<h3>Locandina per locandina</h3><table><tr><th>Locandina</th>" +
+      col.map(([k, t]) => '<th data-k="' + k + '"' + (k === ordConf ? ' class="on"' : "") + ">" + t + (k === ordConf ? " ▼" : "") + "</th>").join("") + "</tr>" +
+      l.map(c => '<tr data-c="' + c.c + '"' + (v(c.c, "apertura") ? "" : ' class="zero"') + "><td>" + esc(c.titolo.split(" · ")[0]) + "</td>" + col.map(([k]) => "<td>" + v(c.c, k) + "</td>").join("") + "</tr>").join("") +
+      '</table><p class="nota">WA = WhatsApp, Ric. = ricerche, Voc. = vocale avviato. Tocca una colonna per ordinare, una riga per aprire la locandina.</p>';
+  }
+
   /* ---------- disegno della vista elenco ---------- */
   function disegna() {
     if (aperta) { disegnaDettaglio(); return; }
@@ -400,6 +433,7 @@ document.addEventListener("DOMContentLoaded", () => {
     $("statistiche").hidden = false;
     kpi($("kpi"), cur.t, p, diff(dal, al) + 1);
     grafico($("graf"), serieGrafico(dal, al), "il periodo");
+    confronto(cur.per);
     $("notaTel").textContent = descr(dal, al) + (p ? " · confronto con " + descr(prec[0], prec[1]) : "") +
       ". «WhatsApp» = il cliente ha aperto WhatsApp col messaggio pronto, non vuol dire che l'ha inviato." +
       (diff(dal, al) > 0 ? " I telefoni si riconoscono solo nello stesso giorno: «telefoni-giorno» è la somma dei giorni." : "");
