@@ -5,6 +5,14 @@ Versione web delle locandine promo: una cartella per campagna, pubblicata su Git
 dell'immagine: l'anteprima mostra la locandina (`anteprima.jpg`, 1200×630, tag `og:image`),
 il tocco apre la pagina con bottoni e ricerca.
 
+## Dashboard (`_dashboard/`)
+
+https://stefanoserafin.github.io/mak-promo/_dashboard/ — tutte le locandine di Stefano divise per argomento, con «Copia link», «WhatsApp» (testo «Ti mando questo modulo interattivo che spiega tutto:» + link) e «Apri», più i numeri del contatore per oggi, 7 giorni, settimana, mese, mese scorso e da sempre, con grafico per giorno, settimana o mese e dettaglio di ogni campagna. Solo le pagine di Stefano: i colleghi restano fuori.
+
+- **Campagna nuova:** argomento in `_build/argomenti.json`, poi `python3 _build/dashboard.py` (scrive `_dashboard/campagne.js` e aggiorna `campagne.js?v=` nella pagina; si ferma se manca l'argomento o l'anteprima), commit insieme alla campagna.
+- **Numeri:** in diretta dal Worker `mak-promo-conta` (`GET /serie` e `/riepilogo`). Servono la chiave di lettura, incollata una volta sul telefono e salvata solo lì (`localStorage`), mai nel codice.
+- `_dashboard/` non ha `conta.js` di proposito (non conta sé stessa); `noindex`; icona da `_build/icona-dashboard.html`.
+
 > **File di dati con la versione.** Le pagine caricano `dati.js` come `dati.js?v=AAAAMMGG` (o `-2`, `-3`…): a ogni modifica dei dati si cambia il numero nella pagina. Senza, Safari su iPhone può tenere il `dati.js` vecchio con la pagina nuova; il 2026-11-12 la pagina degli anelli non dava risultati per questo, perché il codice nuovo leggeva prezzi che nel file in cache non c'erano.
 
 ## halloween-ruotino (25 ott – 1 nov 2026)
