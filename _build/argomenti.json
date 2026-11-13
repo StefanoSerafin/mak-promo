@@ -1,0 +1,94 @@
+{
+  "_nota": "Argomento di ogni locandina per la dashboard (_dashboard/). Campagna nuova = una riga qui + python3 _build/dashboard.py. «archiviata»: promo scaduta, in fondo alla dashboard.",
+  "argomenti": [
+    "TPMS e diagnosi",
+    "Ruote e montaggio",
+    "Inverno e soccorso NPK",
+    "Officina e consumo",
+    "Portale e servizio"
+  ],
+  "campagne": {
+    "accesso-b2b": {
+      "argomento": "Portale e servizio"
+    },
+    "adblue": {
+      "argomento": "Officina e consumo"
+    },
+    "anelli-centraggio": {
+      "argomento": "Ruote e montaggio"
+    },
+    "assistenza-mate": {
+      "argomento": "TPMS e diagnosi"
+    },
+    "bulloneria-auto": {
+      "argomento": "Ruote e montaggio"
+    },
+    "calze-light-espositore": {
+      "argomento": "Inverno e soccorso NPK"
+    },
+    "calze-neve": {
+      "argomento": "Inverno e soccorso NPK"
+    },
+    "canali-etrto": {
+      "argomento": "Ruote e montaggio"
+    },
+    "cap-originali": {
+      "argomento": "Ruote e montaggio"
+    },
+    "cavalletto-ez-jack-45s": {
+      "argomento": "Officina e consumo"
+    },
+    "consumo-officina-cora": {
+      "argomento": "Officina e consumo"
+    },
+    "copriruota": {
+      "argomento": "Ruote e montaggio"
+    },
+    "distanziali-xilema": {
+      "argomento": "Ruote e montaggio"
+    },
+    "fix-pack": {
+      "argomento": "Ruote e montaggio"
+    },
+    "halloween-ruotino": {
+      "argomento": "Inverno e soccorso NPK",
+      "archiviata": true
+    },
+    "kit-gomma-ruota": {
+      "argomento": "Ruote e montaggio"
+    },
+    "multisens-plus": {
+      "argomento": "TPMS e diagnosi"
+    },
+    "prossima-fermata-futuro": {
+      "argomento": "Portale e servizio"
+    },
+    "refill-autel-mx": {
+      "argomento": "TPMS e diagnosi"
+    },
+    "refill-multisens": {
+      "argomento": "TPMS e diagnosi"
+    },
+    "riempicarrello": {
+      "argomento": "Officina e consumo"
+    },
+    "spese-trasporto": {
+      "argomento": "Portale e servizio"
+    },
+    "tergi-cora": {
+      "argomento": "Officina e consumo"
+    },
+    "tergi-cora-sciolte": {
+      "argomento": "Officina e consumo"
+    },
+    "tpms-tesla": {
+      "argomento": "TPMS e diagnosi"
+    },
+    "trasformazioni-nad": {
+      "argomento": "Ruote e montaggio"
+    },
+    "ts900-rinnovi": {
+      "argomento": "TPMS e diagnosi"
+    }
+  }
+}
