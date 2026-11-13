@@ -278,4 +278,4 @@ Rigenera: `python3 _build/build.py`
 - Contatore: il modello consigliato come ricerca, «scelto <modello>» quando il cliente sceglie un altro modello, «Pepe <modello>» sul bottone di Pepe (il Worker accetta solo i suoi 6 tipi; lo stesso tocco conta anche come «whatsapp» senza righe d'ordine).
 - Rimandi a `../ts900-rinnovi/` (anche nel risultato se «ho già la TS900») e `../assistenza-mate/`.
 - Foto: B2B `SysInf/MAK/Prodotti/<codice>.jpg` ritagliate ai bordi (`foto/<modello>.jpg`, 480 px).
-- Locandina: `../Locandine/diagnosi-autel/locandina.html`. Anteprima: `_build/anteprima-diagnosi-autel.html`; icona: `_build/icona-diagnosi-autel.html`. Vocale: testo proposto in `../Locandine/testi-vocali.md`, da generare dopo l'ok di Stefano.
+- Locandina: `../Locandine/diagnosi-autel/locandina.html`. Anteprima: `_build/anteprima-diagnosi-autel.html`; icona: `_build/icona-diagnosi-autel.html`. Bottone «Spiegamelo a voce» (dal 2026-11-14): `vocale.mp3`, 27 s, voce clonata di Stefano su HeyGen; testo in `../Locandine/testi-vocali.md`.
