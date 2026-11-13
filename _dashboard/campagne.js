@@ -48,6 +48,15 @@ const CAMPAGNE = [
   "url": "https://stefanoserafin.github.io/mak-promo/bulloneria-auto/"
  },
  {
+  "c": "bulloni-antifurto",
+  "titolo": "Bulloni antifurto NPK by Farad · da 14,90 € + IVA",
+  "desc": "Scegli l'auto e trovi il kit giusto. Con 10 kit, anche diversi, l'espositore da banco è in omaggio. Ordina su WhatsApp.",
+  "argomento": "Ruote e montaggio",
+  "archiviata": false,
+  "dal": "2026-11-13",
+  "url": "https://stefanoserafin.github.io/mak-promo/bulloni-antifurto/"
+ },
+ {
   "c": "calze-light-espositore",
   "titolo": "Starter kit calze NPK · 10 paia Light + espositore a 188,40 € + IVA",
   "desc": "Metti la misura del pneumatico, trovi la taglia, componi il tuo kit da 10 paia e me lo mandi su WhatsApp.",
