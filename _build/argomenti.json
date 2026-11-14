@@ -1,5 +1,5 @@
 {
-  "_nota": "Argomento di ogni locandina per la dashboard (_dashboard/). Campagna nuova = una riga qui + python3 _build/dashboard.py. «archiviata»: promo scaduta, in fondo alla dashboard.",
+  "_nota": "Argomento di ogni locandina per la dashboard (_dashboard/). Campagna nuova = una riga qui + python3 _build/dashboard.py. «archiviata»: promo scaduta, in fondo alla dashboard. «parole» (facoltativo): sinonimi per la ricerca della dashboard, solo quelli che non stanno già nel titolo o nella descrizione.",
   "argomenti": [
     "TPMS e diagnosi",
     "Ruote e montaggio",
@@ -9,101 +9,271 @@
   ],
   "campagne": {
     "accesso-b2b": {
-      "argomento": "Portale e servizio"
+      "argomento": "Portale e servizio",
+      "parole": [
+        "portale",
+        "bitubì",
+        "password",
+        "login",
+        "registrazione"
+      ]
     },
     "adblue": {
-      "argomento": "Officina e consumo"
+      "argomento": "Officina e consumo",
+      "parole": [
+        "urea",
+        "gasolio",
+        "diesel"
+      ]
     },
     "air-check-camper": {
-      "argomento": "TPMS e diagnosi"
+      "argomento": "TPMS e diagnosi",
+      "parole": [
+        "sensori",
+        "valvole",
+        "caravan",
+        "rimorchio"
+      ]
     },
     "anelli-centraggio": {
-      "argomento": "Ruote e montaggio"
+      "argomento": "Ruote e montaggio",
+      "parole": [
+        "mozzo",
+        "centraggio",
+        "foro centrale"
+      ]
     },
     "assistenza-mate": {
-      "argomento": "TPMS e diagnosi"
+      "argomento": "TPMS e diagnosi",
+      "parole": [
+        "supporto",
+        "tecnico",
+        "telefono",
+        "help"
+      ]
     },
     "autel-tool12": {
-      "argomento": "TPMS e diagnosi"
+      "argomento": "TPMS e diagnosi",
+      "parole": [
+        "strumento",
+        "sensori",
+        "valvole"
+      ]
     },
     "bulloneria-auto": {
-      "argomento": "Ruote e montaggio"
+      "argomento": "Ruote e montaggio",
+      "parole": [
+        "bulloni",
+        "dadi",
+        "colonnette",
+        "viti"
+      ]
     },
     "bulloni-antifurto": {
-      "argomento": "Ruote e montaggio"
+      "argomento": "Ruote e montaggio",
+      "parole": [
+        "dadi",
+        "antifurto",
+        "chiave"
+      ]
     },
     "calze-light-espositore": {
-      "argomento": "Inverno e soccorso NPK"
+      "argomento": "Inverno e soccorso NPK",
+      "parole": [
+        "catene",
+        "neve",
+        "inverno",
+        "Ennepicappa"
+      ]
     },
     "calze-neve": {
-      "argomento": "Inverno e soccorso NPK"
+      "argomento": "Inverno e soccorso NPK",
+      "parole": [
+        "catene",
+        "neve",
+        "inverno",
+        "Ennepicappa"
+      ]
     },
     "canali-etrto": {
-      "argomento": "Ruote e montaggio"
+      "argomento": "Ruote e montaggio",
+      "parole": [
+        "cerchio",
+        "larghezza",
+        "omologazione"
+      ]
     },
     "cap-originali": {
-      "argomento": "Ruote e montaggio"
+      "argomento": "Ruote e montaggio",
+      "parole": [
+        "coprimozzo",
+        "tappi",
+        "borchie"
+      ]
     },
     "cavalletto-ez-jack-45s": {
-      "argomento": "Officina e consumo"
+      "argomento": "Officina e consumo",
+      "parole": [
+        "sollevatore",
+        "crick",
+        "martinetto"
+      ]
     },
     "consumo-officina-cora": {
-      "argomento": "Officina e consumo"
+      "argomento": "Officina e consumo",
+      "parole": [
+        "guanti",
+        "pulizia",
+        "lavamani",
+        "materiale di consumo"
+      ]
     },
     "copriruota": {
-      "argomento": "Ruote e montaggio"
+      "argomento": "Ruote e montaggio",
+      "parole": [
+        "copricerchi",
+        "borchie",
+        "coprimozzo"
+      ]
     },
     "diagnosi-autel": {
-      "argomento": "TPMS e diagnosi"
+      "argomento": "TPMS e diagnosi",
+      "parole": [
+        "tablet",
+        "MaxiSys",
+        "strumento"
+      ]
     },
     "distanziali-xilema": {
-      "argomento": "Ruote e montaggio"
+      "argomento": "Ruote e montaggio",
+      "parole": [
+        "spessori",
+        "carreggiata",
+        "mozzo"
+      ]
     },
     "fix-pack": {
-      "argomento": "Ruote e montaggio"
+      "argomento": "Ruote e montaggio",
+      "parole": [
+        "bulloneria",
+        "colonnette",
+        "valigetta"
+      ]
     },
     "halloween-ruotino": {
       "argomento": "Inverno e soccorso NPK",
-      "archiviata": true
+      "archiviata": true,
+      "parole": [
+        "ruota di scorta",
+        "kit emergenza",
+        "Ennepicappa",
+        "NPK"
+      ]
     },
     "kit-gomma-ruota": {
-      "argomento": "Ruote e montaggio"
+      "argomento": "Ruote e montaggio",
+      "parole": [
+        "ruote",
+        "pneumatici",
+        "gomme",
+        "montate",
+        "TPMS"
+      ]
     },
     "multisens-plus": {
-      "argomento": "TPMS e diagnosi"
+      "argomento": "TPMS e diagnosi",
+      "parole": [
+        "sensori",
+        "valvole",
+        "MATE"
+      ]
     },
     "prossima-fermata-futuro": {
-      "argomento": "Portale e servizio"
+      "argomento": "Portale e servizio",
+      "parole": [
+        "intelligenza artificiale",
+        "IA",
+        "storia"
+      ]
     },
     "refill-autel-mx": {
-      "argomento": "TPMS e diagnosi"
+      "argomento": "TPMS e diagnosi",
+      "parole": [
+        "valvole"
+      ]
     },
     "refill-multisens": {
-      "argomento": "TPMS e diagnosi"
+      "argomento": "TPMS e diagnosi",
+      "parole": [
+        "valvole",
+        "MP6"
+      ]
     },
     "riempicarrello": {
-      "argomento": "Officina e consumo"
+      "argomento": "Officina e consumo",
+      "parole": [
+        "valvole",
+        "pesi",
+        "equilibratura"
+      ]
     },
     "spese-trasporto": {
-      "argomento": "Portale e servizio"
+      "argomento": "Portale e servizio",
+      "parole": [
+        "spedizione",
+        "franco",
+        "porto",
+        "portale"
+      ]
     },
     "tergi-cora": {
-      "argomento": "Officina e consumo"
+      "argomento": "Officina e consumo",
+      "parole": [
+        "tergicristalli",
+        "spazzole",
+        "wiper"
+      ]
     },
     "tergi-cora-sciolte": {
-      "argomento": "Officina e consumo"
+      "argomento": "Officina e consumo",
+      "parole": [
+        "tergicristalli",
+        "spazzole",
+        "wiper"
+      ]
     },
     "tool8-ma41": {
-      "argomento": "TPMS e diagnosi"
+      "argomento": "TPMS e diagnosi",
+      "parole": [
+        "strumento",
+        "sensori",
+        "valvole",
+        "ATEQ"
+      ]
     },
     "tpms-tesla": {
-      "argomento": "TPMS e diagnosi"
+      "argomento": "TPMS e diagnosi",
+      "parole": [
+        "sensori",
+        "valvole"
+      ]
     },
     "trasformazioni-nad": {
-      "argomento": "Ruote e montaggio"
+      "argomento": "Ruote e montaggio",
+      "parole": [
+        "libretto",
+        "omologazione",
+        "motorizzazione",
+        "collaudo"
+      ]
     },
     "ts900-rinnovi": {
-      "argomento": "TPMS e diagnosi"
+      "argomento": "TPMS e diagnosi",
+      "parole": [
+        "abbonamento",
+        "diagnosi",
+        "scadenza"
+      ]
     }
   }
 }

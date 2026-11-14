@@ -9,7 +9,14 @@ const CAMPAGNE = [
   "argomento": "Portale e servizio",
   "archiviata": false,
   "dal": "2026-11-09",
-  "url": "https://stefanoserafin.github.io/mak-promo/accesso-b2b/"
+  "url": "https://stefanoserafin.github.io/mak-promo/accesso-b2b/",
+  "parole": [
+   "portale",
+   "bitubì",
+   "password",
+   "login",
+   "registrazione"
+  ]
  },
  {
   "c": "adblue",
@@ -18,7 +25,12 @@ const CAMPAGNE = [
   "argomento": "Officina e consumo",
   "archiviata": false,
   "dal": "2026-10-26",
-  "url": "https://stefanoserafin.github.io/mak-promo/adblue/"
+  "url": "https://stefanoserafin.github.io/mak-promo/adblue/",
+  "parole": [
+   "urea",
+   "gasolio",
+   "diesel"
+  ]
  },
  {
   "c": "air-check-camper",
@@ -27,7 +39,13 @@ const CAMPAGNE = [
   "argomento": "TPMS e diagnosi",
   "archiviata": false,
   "dal": "2026-11-14",
-  "url": "https://stefanoserafin.github.io/mak-promo/air-check-camper/"
+  "url": "https://stefanoserafin.github.io/mak-promo/air-check-camper/",
+  "parole": [
+   "sensori",
+   "valvole",
+   "caravan",
+   "rimorchio"
+  ]
  },
  {
   "c": "anelli-centraggio",
@@ -36,7 +54,12 @@ const CAMPAGNE = [
   "argomento": "Ruote e montaggio",
   "archiviata": false,
   "dal": "2026-10-27",
-  "url": "https://stefanoserafin.github.io/mak-promo/anelli-centraggio/"
+  "url": "https://stefanoserafin.github.io/mak-promo/anelli-centraggio/",
+  "parole": [
+   "mozzo",
+   "centraggio",
+   "foro centrale"
+  ]
  },
  {
   "c": "assistenza-mate",
@@ -45,7 +68,13 @@ const CAMPAGNE = [
   "argomento": "TPMS e diagnosi",
   "archiviata": false,
   "dal": "2026-11-03",
-  "url": "https://stefanoserafin.github.io/mak-promo/assistenza-mate/"
+  "url": "https://stefanoserafin.github.io/mak-promo/assistenza-mate/",
+  "parole": [
+   "supporto",
+   "tecnico",
+   "telefono",
+   "help"
+  ]
  },
  {
   "c": "autel-tool12",
@@ -54,7 +83,12 @@ const CAMPAGNE = [
   "argomento": "TPMS e diagnosi",
   "archiviata": false,
   "dal": "2026-11-14",
-  "url": "https://stefanoserafin.github.io/mak-promo/autel-tool12/"
+  "url": "https://stefanoserafin.github.io/mak-promo/autel-tool12/",
+  "parole": [
+   "strumento",
+   "sensori",
+   "valvole"
+  ]
  },
  {
   "c": "bulloneria-auto",
@@ -63,7 +97,13 @@ const CAMPAGNE = [
   "argomento": "Ruote e montaggio",
   "archiviata": false,
   "dal": "2026-11-10",
-  "url": "https://stefanoserafin.github.io/mak-promo/bulloneria-auto/"
+  "url": "https://stefanoserafin.github.io/mak-promo/bulloneria-auto/",
+  "parole": [
+   "bulloni",
+   "dadi",
+   "colonnette",
+   "viti"
+  ]
  },
  {
   "c": "bulloni-antifurto",
@@ -72,7 +112,12 @@ const CAMPAGNE = [
   "argomento": "Ruote e montaggio",
   "archiviata": false,
   "dal": "2026-11-13",
-  "url": "https://stefanoserafin.github.io/mak-promo/bulloni-antifurto/"
+  "url": "https://stefanoserafin.github.io/mak-promo/bulloni-antifurto/",
+  "parole": [
+   "dadi",
+   "antifurto",
+   "chiave"
+  ]
  },
  {
   "c": "calze-light-espositore",
@@ -81,7 +126,13 @@ const CAMPAGNE = [
   "argomento": "Inverno e soccorso NPK",
   "archiviata": false,
   "dal": "2026-10-26",
-  "url": "https://stefanoserafin.github.io/mak-promo/calze-light-espositore/"
+  "url": "https://stefanoserafin.github.io/mak-promo/calze-light-espositore/",
+  "parole": [
+   "catene",
+   "neve",
+   "inverno",
+   "Ennepicappa"
+  ]
  },
  {
   "c": "calze-neve",
@@ -90,7 +141,13 @@ const CAMPAGNE = [
   "argomento": "Inverno e soccorso NPK",
   "archiviata": false,
   "dal": "2026-10-29",
-  "url": "https://stefanoserafin.github.io/mak-promo/calze-neve/"
+  "url": "https://stefanoserafin.github.io/mak-promo/calze-neve/",
+  "parole": [
+   "catene",
+   "neve",
+   "inverno",
+   "Ennepicappa"
+  ]
  },
  {
   "c": "canali-etrto",
@@ -99,7 +156,12 @@ const CAMPAGNE = [
   "argomento": "Ruote e montaggio",
   "archiviata": false,
   "dal": "2026-10-26",
-  "url": "https://stefanoserafin.github.io/mak-promo/canali-etrto/"
+  "url": "https://stefanoserafin.github.io/mak-promo/canali-etrto/",
+  "parole": [
+   "cerchio",
+   "larghezza",
+   "omologazione"
+  ]
  },
  {
   "c": "cap-originali",
@@ -108,7 +170,12 @@ const CAMPAGNE = [
   "argomento": "Ruote e montaggio",
   "archiviata": false,
   "dal": "2026-11-06",
-  "url": "https://stefanoserafin.github.io/mak-promo/cap-originali/"
+  "url": "https://stefanoserafin.github.io/mak-promo/cap-originali/",
+  "parole": [
+   "coprimozzo",
+   "tappi",
+   "borchie"
+  ]
  },
  {
   "c": "cavalletto-ez-jack-45s",
@@ -117,7 +184,12 @@ const CAMPAGNE = [
   "argomento": "Officina e consumo",
   "archiviata": false,
   "dal": "2026-10-29",
-  "url": "https://stefanoserafin.github.io/mak-promo/cavalletto-ez-jack-45s/"
+  "url": "https://stefanoserafin.github.io/mak-promo/cavalletto-ez-jack-45s/",
+  "parole": [
+   "sollevatore",
+   "crick",
+   "martinetto"
+  ]
  },
  {
   "c": "consumo-officina-cora",
@@ -126,16 +198,27 @@ const CAMPAGNE = [
   "argomento": "Officina e consumo",
   "archiviata": false,
   "dal": "2026-11-12",
-  "url": "https://stefanoserafin.github.io/mak-promo/consumo-officina-cora/"
+  "url": "https://stefanoserafin.github.io/mak-promo/consumo-officina-cora/",
+  "parole": [
+   "guanti",
+   "pulizia",
+   "lavamani",
+   "materiale di consumo"
+  ]
  },
  {
   "c": "copriruota",
   "titolo": "Copriruota MAK · kit da 4 da 22 € + IVA",
-  "desc": "Dal 13\\",
+  "desc": "Dal 13\" al 17\", argento o nero opaco: scegli la misura e ordina su WhatsApp.",
   "argomento": "Ruote e montaggio",
   "archiviata": false,
   "dal": "2026-11-06",
-  "url": "https://stefanoserafin.github.io/mak-promo/copriruota/"
+  "url": "https://stefanoserafin.github.io/mak-promo/copriruota/",
+  "parole": [
+   "copricerchi",
+   "borchie",
+   "coprimozzo"
+  ]
  },
  {
   "c": "diagnosi-autel",
@@ -144,7 +227,12 @@ const CAMPAGNE = [
   "argomento": "TPMS e diagnosi",
   "archiviata": false,
   "dal": "2026-11-13",
-  "url": "https://stefanoserafin.github.io/mak-promo/diagnosi-autel/"
+  "url": "https://stefanoserafin.github.io/mak-promo/diagnosi-autel/",
+  "parole": [
+   "tablet",
+   "MaxiSys",
+   "strumento"
+  ]
  },
  {
   "c": "distanziali-xilema",
@@ -153,7 +241,12 @@ const CAMPAGNE = [
   "argomento": "Ruote e montaggio",
   "archiviata": false,
   "dal": "2026-10-26",
-  "url": "https://stefanoserafin.github.io/mak-promo/distanziali-xilema/"
+  "url": "https://stefanoserafin.github.io/mak-promo/distanziali-xilema/",
+  "parole": [
+   "spessori",
+   "carreggiata",
+   "mozzo"
+  ]
  },
  {
   "c": "fix-pack",
@@ -162,7 +255,12 @@ const CAMPAGNE = [
   "argomento": "Ruote e montaggio",
   "archiviata": false,
   "dal": "2026-10-26",
-  "url": "https://stefanoserafin.github.io/mak-promo/fix-pack/"
+  "url": "https://stefanoserafin.github.io/mak-promo/fix-pack/",
+  "parole": [
+   "bulloneria",
+   "colonnette",
+   "valigetta"
+  ]
  },
  {
   "c": "halloween-ruotino",
@@ -171,7 +269,13 @@ const CAMPAGNE = [
   "argomento": "Inverno e soccorso NPK",
   "archiviata": true,
   "dal": "2026-10-25",
-  "url": "https://stefanoserafin.github.io/mak-promo/halloween-ruotino/"
+  "url": "https://stefanoserafin.github.io/mak-promo/halloween-ruotino/",
+  "parole": [
+   "ruota di scorta",
+   "kit emergenza",
+   "Ennepicappa",
+   "NPK"
+  ]
  },
  {
   "c": "kit-gomma-ruota",
@@ -180,7 +284,14 @@ const CAMPAGNE = [
   "argomento": "Ruote e montaggio",
   "archiviata": false,
   "dal": "2026-10-25",
-  "url": "https://stefanoserafin.github.io/mak-promo/kit-gomma-ruota/"
+  "url": "https://stefanoserafin.github.io/mak-promo/kit-gomma-ruota/",
+  "parole": [
+   "ruote",
+   "pneumatici",
+   "gomme",
+   "montate",
+   "TPMS"
+  ]
  },
  {
   "c": "multisens-plus",
@@ -189,7 +300,12 @@ const CAMPAGNE = [
   "argomento": "TPMS e diagnosi",
   "archiviata": false,
   "dal": "2026-11-04",
-  "url": "https://stefanoserafin.github.io/mak-promo/multisens-plus/"
+  "url": "https://stefanoserafin.github.io/mak-promo/multisens-plus/",
+  "parole": [
+   "sensori",
+   "valvole",
+   "MATE"
+  ]
  },
  {
   "c": "prossima-fermata-futuro",
@@ -198,7 +314,12 @@ const CAMPAGNE = [
   "argomento": "Portale e servizio",
   "archiviata": false,
   "dal": "2026-10-26",
-  "url": "https://stefanoserafin.github.io/mak-promo/prossima-fermata-futuro/"
+  "url": "https://stefanoserafin.github.io/mak-promo/prossima-fermata-futuro/",
+  "parole": [
+   "intelligenza artificiale",
+   "IA",
+   "storia"
+  ]
  },
  {
   "c": "refill-autel-mx",
@@ -207,7 +328,10 @@ const CAMPAGNE = [
   "argomento": "TPMS e diagnosi",
   "archiviata": false,
   "dal": "2026-10-26",
-  "url": "https://stefanoserafin.github.io/mak-promo/refill-autel-mx/"
+  "url": "https://stefanoserafin.github.io/mak-promo/refill-autel-mx/",
+  "parole": [
+   "valvole"
+  ]
  },
  {
   "c": "refill-multisens",
@@ -216,7 +340,11 @@ const CAMPAGNE = [
   "argomento": "TPMS e diagnosi",
   "archiviata": false,
   "dal": "2026-10-26",
-  "url": "https://stefanoserafin.github.io/mak-promo/refill-multisens/"
+  "url": "https://stefanoserafin.github.io/mak-promo/refill-multisens/",
+  "parole": [
+   "valvole",
+   "MP6"
+  ]
  },
  {
   "c": "riempicarrello",
@@ -225,7 +353,12 @@ const CAMPAGNE = [
   "argomento": "Officina e consumo",
   "archiviata": false,
   "dal": "2026-10-26",
-  "url": "https://stefanoserafin.github.io/mak-promo/riempicarrello/"
+  "url": "https://stefanoserafin.github.io/mak-promo/riempicarrello/",
+  "parole": [
+   "valvole",
+   "pesi",
+   "equilibratura"
+  ]
  },
  {
   "c": "spese-trasporto",
@@ -234,7 +367,13 @@ const CAMPAGNE = [
   "argomento": "Portale e servizio",
   "archiviata": false,
   "dal": "2026-11-12",
-  "url": "https://stefanoserafin.github.io/mak-promo/spese-trasporto/"
+  "url": "https://stefanoserafin.github.io/mak-promo/spese-trasporto/",
+  "parole": [
+   "spedizione",
+   "franco",
+   "porto",
+   "portale"
+  ]
  },
  {
   "c": "tergi-cora",
@@ -243,7 +382,12 @@ const CAMPAGNE = [
   "argomento": "Officina e consumo",
   "archiviata": false,
   "dal": "2026-10-26",
-  "url": "https://stefanoserafin.github.io/mak-promo/tergi-cora/"
+  "url": "https://stefanoserafin.github.io/mak-promo/tergi-cora/",
+  "parole": [
+   "tergicristalli",
+   "spazzole",
+   "wiper"
+  ]
  },
  {
   "c": "tergi-cora-sciolte",
@@ -252,7 +396,12 @@ const CAMPAGNE = [
   "argomento": "Officina e consumo",
   "archiviata": false,
   "dal": "2026-11-12",
-  "url": "https://stefanoserafin.github.io/mak-promo/tergi-cora-sciolte/"
+  "url": "https://stefanoserafin.github.io/mak-promo/tergi-cora-sciolte/",
+  "parole": [
+   "tergicristalli",
+   "spazzole",
+   "wiper"
+  ]
  },
  {
   "c": "tool8-ma41",
@@ -261,7 +410,13 @@ const CAMPAGNE = [
   "argomento": "TPMS e diagnosi",
   "archiviata": false,
   "dal": "2026-11-14",
-  "url": "https://stefanoserafin.github.io/mak-promo/tool8-ma41/"
+  "url": "https://stefanoserafin.github.io/mak-promo/tool8-ma41/",
+  "parole": [
+   "strumento",
+   "sensori",
+   "valvole",
+   "ATEQ"
+  ]
  },
  {
   "c": "tpms-tesla",
@@ -270,7 +425,11 @@ const CAMPAGNE = [
   "argomento": "TPMS e diagnosi",
   "archiviata": false,
   "dal": "2026-11-12",
-  "url": "https://stefanoserafin.github.io/mak-promo/tpms-tesla/"
+  "url": "https://stefanoserafin.github.io/mak-promo/tpms-tesla/",
+  "parole": [
+   "sensori",
+   "valvole"
+  ]
  },
  {
   "c": "trasformazioni-nad",
@@ -279,7 +438,13 @@ const CAMPAGNE = [
   "argomento": "Ruote e montaggio",
   "archiviata": false,
   "dal": "2026-10-26",
-  "url": "https://stefanoserafin.github.io/mak-promo/trasformazioni-nad/"
+  "url": "https://stefanoserafin.github.io/mak-promo/trasformazioni-nad/",
+  "parole": [
+   "libretto",
+   "omologazione",
+   "motorizzazione",
+   "collaudo"
+  ]
  },
  {
   "c": "ts900-rinnovi",
@@ -288,6 +453,11 @@ const CAMPAGNE = [
   "argomento": "TPMS e diagnosi",
   "archiviata": false,
   "dal": "2026-10-28",
-  "url": "https://stefanoserafin.github.io/mak-promo/ts900-rinnovi/"
+  "url": "https://stefanoserafin.github.io/mak-promo/ts900-rinnovi/",
+  "parole": [
+   "abbonamento",
+   "diagnosi",
+   "scadenza"
+  ]
  }
 ];

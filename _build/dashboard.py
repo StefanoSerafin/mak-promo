@@ -6,7 +6,7 @@ Va lanciato a ogni campagna nuova (o quando cambia un og:title), dalla cartella 
 
 Prende le campagne con la stessa regola di agenti.campagne() (cartelle con index.html, senza «_»/«.»,
 escluse le copie dei colleghi), legge og:title e og:description, la data del primo commit e
-l'argomento da _build/argomenti.json. Si ferma se una campagna non ha l'argomento, se manca
+l'argomento (e le «parole» facoltative per la ricerca) da _build/argomenti.json. Si ferma se una campagna non ha l'argomento, se manca
 l'anteprima o se argomenti.json cita una campagna che non c'è più. Aggiorna anche il numero di
 versione di campagne.js dentro _dashboard/index.html (cache di Safari).
 """
@@ -53,6 +53,9 @@ def main():
             errori.append(f"«{c}»: argomento «{mappa[c].get('argomento')}» non è fra {argomenti}")
         if not (PROMO / c / "anteprima.jpg").exists():
             errori.append(f"«{c}» non ha anteprima.jpg")
+        parole = mappa.get(c, {}).get("parole", [])
+        if not isinstance(parole, list) or not all(isinstance(x, str) and x.strip() for x in parole):
+            errori.append(f"«{c}»: «parole» deve essere una lista di parole, es. [\"ruotino\", \"npk\"]")
     for c in mappa:
         if c not in elenco:
             errori.append(f"«{c}» è in argomenti.json ma la cartella non c'è più")
@@ -64,7 +67,8 @@ def main():
         h = (PROMO / c / "index.html").read_text(encoding="utf-8")
         voci.append({"c": c, "titolo": meta(h, "title") or c, "desc": meta(h, "description"),
                      "argomento": mappa[c]["argomento"], "archiviata": bool(mappa[c].get("archiviata")),
-                     "dal": primo_commit(c), "url": BASE_URL + c + "/"})
+                     "dal": primo_commit(c), "url": BASE_URL + c + "/",
+                     "parole": [x.strip() for x in mappa[c].get("parole", [])]})
 
     vecchie = set(re.findall(r'"c":\s*"([^"]+)"', OUT.read_text(encoding="utf-8"))) if OUT.exists() else set()
     corpo = ("const ARGOMENTI = " + json.dumps(argomenti, ensure_ascii=False) + ";\n"
