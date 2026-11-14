@@ -21,6 +21,15 @@ const CAMPAGNE = [
   "url": "https://stefanoserafin.github.io/mak-promo/adblue/"
  },
  {
+  "c": "air-check-camper",
+  "titolo": "TPMS per il camper · kit AirCheck BLE 360,00 € + IVA",
+  "desc": "Pressione e temperatura delle gomme di camper, caravan e rimorchi sullo smartphone. Si monta in officina. Ordina su WhatsApp.",
+  "argomento": "TPMS e diagnosi",
+  "archiviata": false,
+  "dal": "2026-11-14",
+  "url": "https://stefanoserafin.github.io/mak-promo/air-check-camper/"
+ },
+ {
   "c": "anelli-centraggio",
   "titolo": "Anelli di centraggio · 63 misure, novità Ø 70,1",
   "desc": "Foro della ruota + mozzo della vettura = il codice giusto. Scegli la vettura o la misura: prezzi netti e ordine su WhatsApp.",
@@ -41,7 +50,7 @@ const CAMPAGNE = [
  {
   "c": "autel-tool12",
   "titolo": "Autel Tool 12 · TS508 + 12 sensori MX a 320 € + IVA",
-  "desc": "Strumento TPMS AUTEL TS508 + 12 sensori AUTEL MX: 320 € + IVA tutto compreso, aggiornamenti gratuiti per sempre. Scegli le valvole e ordina su WhatsApp.",
+  "desc": "Strumento TPMS AUTEL TS508 con cavo OBD + 12 sensori AUTEL MX: 320 € + IVA tutto compreso, aggiornamenti gratuiti per sempre. Scegli le valvole e ordina su WhatsApp.",
   "argomento": "TPMS e diagnosi",
   "archiviata": false,
   "dal": "2026-11-14",
