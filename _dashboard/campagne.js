@@ -294,6 +294,23 @@ const CAMPAGNE = [
   ]
  },
  {
+  "c": "lavoriamo-insieme",
+  "titolo": "Lavoriamo insieme: MAK, NPK e MATE da un solo fornitore",
+  "desc": "Ruote, ruotino e TPMS, un agente in zona da 10 anni e le credenziali B2B gratuite. Nessun minimo, nessun vincolo.",
+  "argomento": "Portale e servizio",
+  "archiviata": false,
+  "dal": "2026-11-14",
+  "url": "https://stefanoserafin.github.io/mak-promo/lavoriamo-insieme/",
+  "parole": [
+   "nuovo cliente",
+   "prospect",
+   "presentazione",
+   "credenziali",
+   "apertura",
+   "collaborazione"
+  ]
+ },
+ {
   "c": "multisens-plus",
   "titolo": "MATE MULTIsens+ · promo lancio 14,00 € + IVA",
   "desc": "Il nuovo sensore TPMS universale MATE, dal 9 al 22 novembre: minimo 40 pezzi, spedizione inclusa. Scegli le versioni e ordina su WhatsApp.",
