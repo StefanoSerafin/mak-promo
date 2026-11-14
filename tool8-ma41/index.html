@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Tool 8 MATE MA41</title>
-<meta name="description" content="Promo Tool 8: strumento TPMS MATE MA41 più 8 sensori MULTIsens a 280 euro più IVA invece di 363,20. Scegli le valvole e mandami l'ordine su WhatsApp.">
+<meta name="description" content="Promo Tool 8: strumento TPMS MATE MA41 con cavo OBD più 8 sensori MULTIsens a 280 euro più IVA, tutto compreso. Scegli le valvole e mandami l'ordine su WhatsApp.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Tool 8 · MA41 + 8 sensori MULTIsens a 280 € + IVA">
-<meta property="og:description" content="Strumento TPMS MATE MA41 più 8 sensori MULTIsens: 280 € invece di 363,20 €. Risparmi 83,20 €. Scegli le valvole e ordina su WhatsApp.">
+<meta property="og:description" content="Strumento TPMS MATE MA41 con cavo OBD + 8 sensori MULTIsens: 280 € + IVA tutto compreso. Scegli le valvole e ordina su WhatsApp.">
 <meta property="og:image" content="https://stefanoserafin.github.io/mak-promo/tool8-ma41/anteprima.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -45,6 +45,22 @@ section{padding:28px 16px 6px}
 .avviso.via{transform:translateY(-110%)}
 #secOrdine{scroll-margin-top:10px}
 
+/* prezzo unico */
+.unico{display:grid;grid-template-columns:1fr auto;border-radius:16px;overflow:hidden;transform:scale(.94);opacity:.4;transition:transform .45s .2s,opacity .45s .2s}
+.unico.vis{transform:none;opacity:1}
+.unico .sx{background:var(--ink);color:#fff;padding:14px 16px}
+.unico .sx small{display:block;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;font-weight:700;color:#ff7a7f}
+.unico .sx p{margin:6px 0 0;font-size:16px;font-weight:600;line-height:1.3}
+.unico .dx{background:var(--red);color:#fff;padding:12px 16px;display:flex;flex-direction:column;justify-content:center;align-items:flex-end}
+.unico .dx b{font-family:var(--titolo);font-size:58px;line-height:.9;padding-top:6px;white-space:nowrap}
+.unico .dx em{font-style:normal;font-size:14px;font-weight:600}
+/* video tutorial */
+.video{display:block;position:relative;border-radius:16px;overflow:hidden;text-decoration:none;color:#fff;line-height:0;background:#000}
+.video img{width:100%;height:auto;display:block;opacity:.85}
+.video .play{position:absolute;left:50%;top:50%;width:72px;height:72px;margin:-36px 0 0 -36px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px rgba(0,0,0,.4)}
+.video .play svg{width:30px;height:30px;fill:#fff;margin-left:4px}
+.video .tit{position:absolute;left:0;right:0;bottom:0;padding:24px 14px 12px;background:linear-gradient(transparent,rgba(0,0,0,.8));line-height:1.3;font-size:14px}
+.video .tit b{display:block;font-size:16px}
 /* da comprati a parte a Tool 8 */
 .salto{display:grid;grid-template-columns:1fr 36px 1.25fr;align-items:stretch}
 .salto .box{border-radius:14px;padding:12px 14px}
@@ -140,29 +156,27 @@ footer b{color:var(--ink)}
 </head>
 <body>
 <a class="avviso" id="avviso" href="#secOrdine">
-  <span><b>Tool 8 a 280 € + IVA:</b> scegli le valvole e mandami l'ordine</span><i>↓</i>
+  <span><b>Tool 8 a 280 € + IVA tutto compreso:</b> scegli le valvole</span><i>↓</i>
 </a>
 <div class="wrap">
 
 <div class="hero">
-  <img src="locandina.jpg" alt="Promo Tool 8 MATE: strumento MA41 più 8 sensori MULTIsens a 280 euro più IVA invece di 363,20. Risparmi 83,20 euro" width="1620" height="2025">
+  <img src="locandina.jpg" alt="Promo Tool 8 MATE: strumento MA41 con cavo OBD più 8 sensori MULTIsens a 280 euro più IVA, tutto compreso" width="1620" height="2025">
 </div>
 
 <section>
-  <div class="salto" id="salto">
-    <div class="box singolo"><small>Comprati a parte</small><b>€ 363,20</b><em>+ IVA, listino</em></div>
-    <div class="fr">→</div>
-    <div class="box pacchetto"><small>Tool 8 in promo</small><b>€ 280<i>+ IVA</i></b><em>MA41 + 8 sensori MULTIsens</em></div>
+  <div class="unico" id="salto">
+    <div class="sx"><small>Tool 8 · tutto compreso</small><p>Strumento MA41<br>+ cavo OBD<br>+ 8 sensori MULTIsens</p></div>
+    <div class="dx"><b>€ 280</b><em>+ IVA</em></div>
   </div>
-  <p class="risp">Risparmi <b>83,20 €</b> (−23%)</p>
 </section>
 
 <section>
   <h2>Perché <em>conviene</em></h2>
   <p class="sub">Tutto quello che serve per partire con il TPMS, in un solo pacchetto.</p>
   <div class="vant" id="vant">
-    <div class="va"><span class="ic">−40</span><div><h3>MA41 a 160 €</h3><p>Lo strumento TPMS più venduto della gamma MATE costa <strong>40 € in meno</strong> del listino (200 €).</p></div></div>
-    <div class="va"><span class="ic">15</span><div><h3>Sensori a 15 €</h3><p>Gli 8 MULTIsens ti costano <strong>15,00 € l'uno invece di 20,40</strong>: meno anche del Refill da 20 pezzi (15,90 €).</p></div></div>
+    <div class="va"><span class="ic">280</span><div><h3>Tutto in un prezzo</h3><p>Strumento, cavo OBD e 8 sensori a <strong>280 € + IVA</strong>: parti con il TPMS senza altre spese.</p></div></div>
+    <div class="va"><span class="ic">OBD</span><div><h3>Cavo OBD compreso</h3><p>Per il <strong>riapprendimento dalla presa diagnosi</strong>: con il Tool 8 è già nella confezione.</p></div></div>
     <div class="va"><span class="ic">3</span><div><h3>Valvole a scelta</h3><p>Gomma, metallo silver o metallo black: <strong>le mischi come vuoi</strong>, contano gli 8 in totale.</p></div></div>
     <div class="va"><span class="ic">94%</span><div><h3>Un sensore, quasi tutte le auto</h3><p>MULTIsens MP6 è <strong>universale</strong>: copre il 94% delle vetture con TPMS diretto. Lo programmi con l'MA41, <strong>4 sensori insieme</strong>.</p></div></div>
     <div class="va"><span class="ic">5</span><div><h3>5 anni di aggiornamenti</h3><p>Lo strumento riceve le nuove vetture e i nuovi sensori per <strong>5 anni</strong>, dal computer via USB.</p></div></div>
@@ -172,12 +186,23 @@ footer b{color:var(--ink)}
 
 <section>
   <h2>Cosa c'è <em>dentro</em></h2>
-  <p class="sub">I prezzi di listino del portale B2B e quelli del Tool 8.</p>
+  <p class="sub">Un pacchetto, un prezzo: 280 € + IVA.</p>
   <div class="conto">
-    <div class="r"><span>Strumento MATE MA41<small>cod. 9300000330</small></span><s>200,00 €</s><b>160,00 €</b></div>
-    <div class="r"><span>8 sensori MULTIsens MP6<small>8 × 20,40 € → 8 × 15,00 €</small></span><s>163,20 €</s><b>120,00 €</b></div>
-    <div class="r tot"><span><b style="font-size:22px;color:var(--ink)">Tool 8</b><small>IVA esclusa</small></span><s>363,20 €</s><b>280,00 €</b></div>
+    <div class="r"><span>Strumento TPMS MATE MA41<small>cod. 9300000330 · con cavo USB e caricabatterie</small></span><span></span><b>1</b></div>
+    <div class="r"><span>Cavo OBD<small>per il riapprendimento dalla presa diagnosi</small></span><span></span><b>1</b></div>
+    <div class="r"><span>Sensori MULTIsens MP6<small>valvole a scelta, anche miste</small></span><span></span><b>8</b></div>
+    <div class="r tot"><span><b style="font-size:22px;color:var(--ink)">Tool 8</b><small>tutto compreso, IVA esclusa</small></span><span></span><b>280,00 €</b></div>
   </div>
+</section>
+
+<section>
+  <h2>Guarda come <em>funziona</em></h2>
+  <p class="sub">Il video tutorial dello strumento, dal canale YouTube di Salvatore Pepe (MATE).</p>
+  <a class="video" href="https://youtu.be/Hncp8_1w31w" target="_blank" rel="noopener" id="video">
+    <img src="video-tutorial.jpg" alt="Video tutorial dello strumento di diagnosi TPMS ATEQ" width="720" height="405" loading="lazy">
+    <span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+    <span class="tit"><b>Strumento di diagnosi TPMS ATEQ</b>Video tutorial su YouTube</span>
+  </a>
 </section>
 
 <section id="secOrdine">
@@ -193,7 +218,7 @@ footer b{color:var(--ink)}
     </div>
     <div class="barra" id="barra"><i></i></div>
     <div class="stato" id="stato"></div>
-    <div class="totale"><span>Tool 8: MA41 + 8 sensori<br>tutto compreso, IVA esclusa</span><b>280,00 €<i>+ IVA</i></b></div>
+    <div class="totale"><span>Tool 8: MA41, cavo OBD<br>e 8 sensori, IVA esclusa</span><b>280,00 €<i>+ IVA</i></b></div>
     <label class="f" for="officina">Officina</label>
     <input type="text" id="officina" placeholder="Nome dell'officina" autocomplete="organization">
   </div>
@@ -203,10 +228,10 @@ footer b{color:var(--ink)}
 <section>
   <h2>Da <em>sapere</em></h2>
   <ul class="sapere">
-    <li>Nella confezione dell'MA41 ci sono strumento, cavo USB e caricabatterie. Il <b>modulo OBDII</b> per il riapprendimento dalla presa diagnosi è a parte: chiedimelo se ti serve.</li>
+    <li>Nel Tool 8 ci sono strumento, <b>cavo OBD</b>, cavo USB e caricabatterie: per il riapprendimento dalla presa diagnosi hai già tutto.</li>
     <li>Con una carica fai circa <b>60–80 vetture</b>.</li>
     <li>Gli aggiornamenti si fanno dal computer con il programma ATEQ, via USB.</li>
-    <li>Il MULTIsens si riapprende come il sensore originale; sulle Tesla con sensori Bluetooth non va.</li>
+    <li>Il MULTIsens si riapprende come il sensore originale.</li>
   </ul>
   <div class="rim">
     <a href="../refill-multisens/"><span><b>Dopo il Tool 8:</b> riordina i MULTIsens con il Refill 20</span><span>›</span></a>
@@ -279,8 +304,8 @@ document.addEventListener("DOMContentLoaded", () => {
   function messaggio() {
     const n = totale(), off = $("officina").value.trim();
     const righeS = SENSORI.map((s, i) => pz[i] ? "• " + s.cod + " MULTIsens " + s.nome + ": " + pz[i] + " pz" : "").filter(Boolean);
-    const testo = "Ciao Stefano, vorrei il *Tool 8 MATE*: MA41 + 8 sensori MULTIsens a 280 € + IVA\n" +
-      "• 9300000330 MATE MA41: 1 pz\n" +
+    const testo = "Ciao Stefano, vorrei il *Tool 8 MATE*: MA41 con cavo OBD + 8 sensori MULTIsens a 280 € + IVA\n" +
+      "• 9300000330 MATE MA41 con cavo OBD: 1 pz\n" +
       (righeS.length ? righeS.join("\n") + "\n" : "") +
       (n < PROMO.sensori ? (n ? "Gli altri " + (PROMO.sensori - n) + " sensori: decidiamo insieme le valvole\n" : "Valvole degli 8 sensori: decidiamo insieme\n") : "") +
       "Totale 280,00 € + IVA\n\nOfficina: " + off;
@@ -288,6 +313,7 @@ document.addEventListener("DOMContentLoaded", () => {
     $("waTesto").textContent = n ? "Ordina il Tool 8 su WhatsApp" : "Voglio il Tool 8: scrivimi";
   }
 
+  $("video").addEventListener("click", () => window.conta && window.conta("ricerca", "video tutorial"));
   const io = "IntersectionObserver" in window;
   if (io) {
     const a = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { $("salto").classList.add("vis"); a.disconnect(); } }), {threshold: .4});
