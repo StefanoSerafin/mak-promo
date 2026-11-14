@@ -80,13 +80,13 @@ section{padding:28px 16px 6px}
 
 /* vantaggi */
 .vant{display:grid;gap:10px}
-.va{display:flex;gap:14px;align-items:flex-start;background:var(--card);border-top:4px solid var(--red);border-radius:4px 4px 14px 14px;padding:14px;
+.vg{display:flex;gap:14px;align-items:flex-start;background:var(--card);border-top:4px solid var(--red);border-radius:4px 4px 14px 14px;padding:14px;
   opacity:0;transform:translateX(-24px);transition:opacity .5s,transform .5s}
-.va.vis{opacity:1;transform:none}
-.va .ic{flex:none;width:46px;height:46px;border-radius:50%;background:var(--red);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--titolo);font-weight:700;font-size:22px;padding-top:3px}
-.va h3{margin:2px 0 4px;font-family:var(--titolo);font-size:25px;line-height:1;text-transform:uppercase}
-.va p{margin:0;color:var(--mute);font-size:15px}
-.va p strong{color:var(--ink)}
+.vg.vis{opacity:1;transform:none}
+.vg .ic{flex:none;width:46px;height:46px;border-radius:50%;background:var(--red);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--titolo);font-weight:700;font-size:22px;padding-top:3px}
+.vg h3{margin:2px 0 4px;font-family:var(--titolo);font-size:25px;line-height:1;text-transform:uppercase}
+.vg p{margin:0;color:var(--mute);font-size:15px}
+.vg p strong{color:var(--ink)}
 
 /* cosa c'è dentro */
 .conto{background:var(--card);border-radius:16px;padding:6px 14px 14px}
@@ -149,7 +149,7 @@ footer b{color:var(--ink)}
 @keyframes pulsa{0%,100%{box-shadow:0 0 0 0 rgba(37,211,102,.55)}60%{box-shadow:0 0 0 14px rgba(37,211,102,0)}}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
-  .salto .pacchetto,.va{transform:none;opacity:1}
+  .salto .pacchetto,.vg{transform:none;opacity:1}
   .salto .singolo b::after{transform:rotate(-8deg)}
 }
 /* vocale di Stefano */
@@ -202,13 +202,13 @@ footer b{color:var(--ink)}
   <h2>Perché <em>conviene</em></h2>
   <p class="sub">Tutto quello che serve per partire con il TPMS, in un solo pacchetto.</p>
   <div class="vant" id="vant">
-    <div class="va"><span class="ic">320</span><div><h3>Tutto in un prezzo</h3><p>Strumento, cavo OBD e 12 sensori a <strong>320 € + IVA</strong>: parti con il TPMS senza altre spese.</p></div></div>
-    <div class="va"><span class="ic">OBD</span><div><h3>Cavo OBD compreso</h3><p>Per il <strong>riapprendimento dalla presa diagnosi</strong>: con il Tool 12 è già nella confezione.</p></div></div>
-    <div class="va"><span class="ic" style="font-size:30px;padding-top:0">∞</span><div><h3>Aggiornamenti gratuiti per sempre</h3><p>Il TS508 riceve le nuove vetture e i nuovi sensori <strong>senza abbonamento e senza rinnovi</strong>, via Wi-Fi o dal computer.</p></div></div>
-    <div class="va"><span class="ic">3</span><div><h3>Valvole a scelta</h3><p>Gomma, metallo silver o metallo black: <strong>le mischi come vuoi</strong>, contano i 12 in totale.</p></div></div>
-    <div class="va"><span class="ic">96%</span><div><h3>Un sensore, quasi tutte le auto</h3><p>AUTEL MX è <strong>universale</strong>: copertura dichiarata del 96% delle vetture. Lo programmi con il TS508.</p></div></div>
-    <div class="va"><span class="ic">TS</span><div><h3>Facile da usare</h3><p>Il TS508 <strong>riconosce da solo</strong> se il TPMS è diretto o indiretto e ti mostra la procedura giusta.</p></div></div>
-    <div class="va"><span class="ic">☎</span><div><h3>Assistenza telefonica gratuita</h3><p>Per ogni dubbio su programmazione e riapprendimento c'è <strong>la nostra assistenza telefonica gratuita</strong>, in italiano, e ci sono io.</p></div></div>
+    <div class="vg"><span class="ic">320</span><div><h3>Tutto in un prezzo</h3><p>Strumento, cavo OBD e 12 sensori a <strong>320 € + IVA</strong>: parti con il TPMS senza altre spese.</p></div></div>
+    <div class="vg"><span class="ic">OBD</span><div><h3>Cavo OBD compreso</h3><p>Per il <strong>riapprendimento dalla presa diagnosi</strong>: con il Tool 12 è già nella confezione.</p></div></div>
+    <div class="vg"><span class="ic" style="font-size:30px;padding-top:0">∞</span><div><h3>Aggiornamenti gratuiti per sempre</h3><p>Il TS508 riceve le nuove vetture e i nuovi sensori <strong>senza abbonamento e senza rinnovi</strong>, via Wi-Fi o dal computer.</p></div></div>
+    <div class="vg"><span class="ic">3</span><div><h3>Valvole a scelta</h3><p>Gomma, metallo silver o metallo black: <strong>le mischi come vuoi</strong>, contano i 12 in totale.</p></div></div>
+    <div class="vg"><span class="ic">96%</span><div><h3>Un sensore, quasi tutte le auto</h3><p>AUTEL MX è <strong>universale</strong>: copertura dichiarata del 96% delle vetture. Lo programmi con il TS508.</p></div></div>
+    <div class="vg"><span class="ic">TS</span><div><h3>Facile da usare</h3><p>Il TS508 <strong>riconosce da solo</strong> se il TPMS è diretto o indiretto e ti mostra la procedura giusta.</p></div></div>
+    <div class="vg"><span class="ic">☎</span><div><h3>Assistenza telefonica gratuita</h3><p>Per ogni dubbio su programmazione e riapprendimento c'è <strong>la nostra assistenza telefonica gratuita</strong>, in italiano, e ci sono io.</p></div></div>
   </div>
 </section>
 
@@ -345,14 +345,14 @@ document.addEventListener("DOMContentLoaded", () => {
   if (io) {
     const a = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { $("salto").classList.add("vis"); a.disconnect(); } }), {threshold: .4});
     a.observe($("salto"));
-    const voci = document.querySelectorAll("#vant .va");
+    const voci = document.querySelectorAll("#vant .vg");
     const b = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { voci.forEach((v, i) => setTimeout(() => v.classList.add("vis"), i * 150)); b.disconnect(); } }), {threshold: .15});
     b.observe($("vant"));
     new IntersectionObserver(es => es.forEach(e => $("avviso").classList.toggle("via", e.isIntersecting || e.boundingClientRect.top < 0)), {threshold: [0, .15]})
       .observe($("secOrdine"));
   } else {
     $("salto").classList.add("vis");
-    document.querySelectorAll("#vant .va").forEach(v => v.classList.add("vis"));
+    document.querySelectorAll("#vant .vg").forEach(v => v.classList.add("vis"));
   }
   $("avviso").addEventListener("click", e => { e.preventDefault(); $("secOrdine").scrollIntoView({behavior: "smooth", block: "start"}); });
 
