@@ -39,6 +39,15 @@ const CAMPAGNE = [
   "url": "https://stefanoserafin.github.io/mak-promo/assistenza-mate/"
  },
  {
+  "c": "autel-tool12",
+  "titolo": "Autel Tool 12 · TS508 + 12 sensori MX a 320 € + IVA",
+  "desc": "Strumento TPMS AUTEL TS508 + 12 sensori AUTEL MX: 320 € + IVA tutto compreso, aggiornamenti gratuiti per sempre. Scegli le valvole e ordina su WhatsApp.",
+  "argomento": "TPMS e diagnosi",
+  "archiviata": false,
+  "dal": "2026-11-14",
+  "url": "https://stefanoserafin.github.io/mak-promo/autel-tool12/"
+ },
+ {
   "c": "bulloneria-auto",
   "titolo": "Bulloneria e kit di montaggio per la tua auto · MAK",
   "desc": "Originale o aftermarket: scegli marca, modello e anno e ordina su WhatsApp.",
@@ -239,7 +248,7 @@ const CAMPAGNE = [
  {
   "c": "tool8-ma41",
   "titolo": "Tool 8 · MA41 + 8 sensori MULTIsens a 280 € + IVA",
-  "desc": "Strumento TPMS MATE MA41 più 8 sensori MULTIsens: 280 € invece di 363,20 €. Risparmi 83,20 €. Scegli le valvole e ordina su WhatsApp.",
+  "desc": "Strumento TPMS MATE MA41 con cavo OBD + 8 sensori MULTIsens: 280 € + IVA tutto compreso. Scegli le valvole e ordina su WhatsApp.",
   "argomento": "TPMS e diagnosi",
   "archiviata": false,
   "dal": "2026-11-14",
