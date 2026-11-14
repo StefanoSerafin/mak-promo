@@ -109,7 +109,14 @@ footer b{color:var(--ink)}
 @keyframes onda{0%{transform:scale(.9);opacity:1}100%{transform:scale(1.35);opacity:0}}
 .voce b{display:block;font-family:var(--titolo);font-size:26px;line-height:1;text-transform:uppercase;padding-top:3px;position:relative;z-index:1}
 .voce small{display:block;font-size:13px;opacity:.8;position:relative;z-index:1}
-.voce .dur{font-family:var(--titolo);font-size:22px;padding-top:3px;position:relative;z-index:1}
+.voce button{grid-template-columns:52px 1fr 116px;gap:10px;padding:10px 10px 10px 12px}
+/* volto di Stefano che parla, con l'anello rosso dell'avanzamento */
+.voce .volto{width:116px;height:116px;position:relative;z-index:1}
+.voce .volto video{position:absolute;inset:7px;width:102px;height:102px;border-radius:50%;object-fit:cover;background:#2a2c31}
+.voce .volto svg{position:absolute;inset:0;width:116px;height:116px;transform:rotate(-90deg)}
+.voce .volto circle{fill:none;stroke-width:5}
+.voce .volto .tr{stroke:rgba(255,255,255,.18)}
+.voce .volto .av{stroke:var(--red);stroke-linecap:round;transition:stroke-dashoffset .25s linear}
 .voce .pr{position:absolute;left:0;top:0;bottom:0;width:0;background:rgba(218,33,40,.35);transition:width .25s linear}
 .voce details{margin-top:8px;font-size:14px;color:var(--mute)}
 .voce summary{cursor:pointer;font-weight:600;color:var(--ink);padding:4px 2px}
@@ -131,9 +138,11 @@ footer b{color:var(--ink)}
     <span class="pr" id="voceBar"></span>
     <span class="ic" id="voceIc"><svg viewBox="0 0 24 24"><path id="voceIcona" d="M8 5v14l11-7z"/></svg></span>
     <span><b>Spiegamelo a voce</b><small>Stefano ti spiega come funziona in 33 secondi</small></span>
-    <span class="dur" id="voceDur">0:33</span>
+    <span class="volto">
+      <video id="voceAudio" src="volto.mp4?v=20261114" poster="volto.jpg?v=20261114" playsinline preload="metadata"></video>
+      <svg viewBox="0 0 116 116" aria-hidden="true"><circle class="tr" cx="58" cy="58" r="55"/><circle class="av" id="voceAnello" cx="58" cy="58" r="55" stroke-dasharray="345.6" stroke-dashoffset="345.6"/></svg>
+    </span>
   </button>
-  <audio id="voceAudio" src="vocale.mp3" preload="metadata"></audio>
   <details><summary>Leggi il testo</summary><p>«Ciao, qui trovi le scorte d'officina dal catalogo CO.RA.: il kit auto pulita a 97 centesimi, i guanti in nitrile da 3 euro e 45 il box da cento, la pasta lavamani, il pulitore freni, lo sbloccante, il WD-40 e la carta, fino al 50 per cento di sconto sul listino. Metti le quantità, per i guanti scegli la taglia, e in fondo vedi il totale. Conviene ordinarli insieme ai tergi: paghi un solo trasporto. Poi tocca il bottone verde e l'ordine mi arriva su WhatsApp.»</p></details>
 </div>
 
@@ -279,8 +288,8 @@ document.addEventListener("DOMContentLoaded", () => {
 <script>/* vocale: play/pausa, barra, durata; avvio e ascolto completo vanno al contatore come ricerche */
 document.addEventListener("DOMContentLoaded", () => {
   const a = document.getElementById("voceAudio"), btn = document.getElementById("voceBtn"), box = document.getElementById("voce");
-  const bar = document.getElementById("voceBar"), dur = document.getElementById("voceDur"), ico = document.getElementById("voceIcona");
-  const mmss = s => Math.floor(s / 60) + ":" + String(Math.floor(s % 60)).padStart(2, "0");
+  const bar = document.getElementById("voceBar"), anello = document.getElementById("voceAnello"), ico = document.getElementById("voceIcona");
+  const GIRO = 345.6; /* circonferenza dell'anello: 2π × 55 */
   let contato = false;
   btn.addEventListener("click", () => {
     if (a.paused) {
@@ -292,11 +301,12 @@ document.addEventListener("DOMContentLoaded", () => {
   a.addEventListener("pause", () => { box.classList.remove("va"); ico.setAttribute("d", "M8 5v14l11-7z"); });
   a.addEventListener("timeupdate", () => {
     if (!a.duration) return;
-    bar.style.width = (a.currentTime / a.duration * 100) + "%";
-    dur.textContent = mmss(Math.max(0, a.duration - a.currentTime));
+    const f = a.currentTime / a.duration;
+    bar.style.width = (f * 100) + "%";
+    anello.style.strokeDashoffset = GIRO * (1 - f);
   });
   a.addEventListener("ended", () => {
-    bar.style.width = "0"; dur.textContent = mmss(a.duration); a.currentTime = 0;
+    bar.style.width = "0"; anello.style.strokeDashoffset = GIRO; a.currentTime = 0;
     if (window.conta) window.conta("ricerca", "vocale ascoltato tutto");
   });
 });
