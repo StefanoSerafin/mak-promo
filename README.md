@@ -7,9 +7,12 @@ il tocco apre la pagina con bottoni e ricerca.
 
 ## Dashboard (`_dashboard/`)
 
-https://stefanoserafin.github.io/mak-promo/_dashboard/ — tutte le locandine di Stefano divise per argomento, con «Copia link», «WhatsApp» (testo «Ti mando questo modulo interattivo che spiega tutto:» + link) e «Apri», più i numeri del contatore per oggi, 7 giorni, settimana, mese, mese scorso e da sempre, con grafico per giorno, settimana o mese e dettaglio di ogni campagna. Solo le pagine di Stefano: i colleghi restano fuori.
+https://stefanoserafin.github.io/mak-promo/_dashboard/ — tutte le locandine di Stefano. Solo le sue pagine: i colleghi restano fuori. Dal 2026-11-14 ha due schermate:
 
-- **Campagna nuova:** argomento in `_build/argomenti.json`, poi `python3 _build/dashboard.py` (scrive `_dashboard/campagne.js` e aggiorna `campagne.js?v=` nella pagina; si ferma se manca l'argomento o l'anteprima), commit insieme alla campagna.
+- **Locandine** (si apre qui, senza chiave): ricerca fissa in alto (senza accenti, più parole insieme; cerca in titolo, descrizione, argomento, nome cartella e `parole`), filtri per argomento, ordine Recenti/A–Z, una riga per locandina con «Copia link» e «WhatsApp» (testo «Ti mando questo modulo interattivo che spiega tutto:» + link) ed etichetta «NUOVA» per 7 giorni. Tocco sulla riga = scheda (`#l/<campagna>`) con anteprima, «Apri» e «Numeri di questa locandina».
+- **Numeri** (`#numeri`, `#numeri/<campagna>`): periodo, grafico per giorno/settimana/mese, tabella locandina per locandina, dettaglio di ogni campagna. Il contatore si legge solo quando si apre questa schermata.
+
+- **Campagna nuova:** argomento in `_build/argomenti.json` (più `"parole": [...]` facoltative, sinonimi per la ricerca che non stanno già nel titolo o nella descrizione), poi `python3 _build/dashboard.py` (scrive `_dashboard/campagne.js` e aggiorna `campagne.js?v=` nella pagina; si ferma se manca l'argomento o l'anteprima), commit insieme alla campagna.
 - **Numeri:** in diretta dal Worker `mak-promo-conta` (`GET /serie` e `/riepilogo`). Servono la chiave di lettura, incollata una volta sul telefono e salvata solo lì (`localStorage`), mai nel codice.
 - `_dashboard/` non ha `conta.js` di proposito (non conta sé stessa); `noindex`; icona da `_build/icona-dashboard.html`.
 
