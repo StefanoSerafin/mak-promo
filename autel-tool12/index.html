@@ -180,6 +180,16 @@ footer b{color:var(--ink)}
   <img src="locandina.jpg" alt="Promo Autel Tool 12: strumento TS508 con cavo OBD più 12 sensori AUTEL MX a 320 euro più IVA, tutto compreso" width="1620" height="2025">
 </div>
 
+<div class="voce" id="voce">
+  <button type="button" id="voceBtn" aria-label="Ascolta Stefano che spiega la pagina">
+    <span class="pr" id="voceBar"></span>
+    <span class="ic" id="voceIc"><svg viewBox="0 0 24 24"><path id="voceIcona" d="M8 5v14l11-7z"/></svg></span>
+    <span><b>Spiegamelo a voce</b><small>Stefano ti spiega il Tool 12 in 30 secondi</small></span>
+    <span class="dur" id="voceDur">0:30</span>
+  </button>
+  <audio id="voceAudio" src="vocale.mp3?v=20261114" preload="metadata"></audio>
+  <details><summary>Leggi il testo</summary><p>«Ciao! Vuoi partire con il TPMS? Con l'Autel Tool 12 hai tutto: lo strumento Autel TS508, il cavo OBD e dodici sensori Autel MX, a 320 euro più IVA, tutto compreso. Le valvole le scegli tu: gomma, silver o black, anche miste. Gli aggiornamenti sono gratuiti per sempre e hai la nostra assistenza telefonica gratuita. Se vuoi vedere come funziona, c'è il video tutorial. Poi tocca il bottone verde: mi arriva l'ordine su WhatsApp.»</p></details>
+</div>
 
 <section>
   <div class="unico" id="salto">
@@ -347,6 +357,31 @@ document.addEventListener("DOMContentLoaded", () => {
   $("avviso").addEventListener("click", e => { e.preventDefault(); $("secOrdine").scrollIntoView({behavior: "smooth", block: "start"}); });
 
   aggiorna();
+});
+</script>
+<script>/* vocale: play/pausa, barra, durata; avvio e ascolto completo vanno al contatore come ricerche */
+document.addEventListener("DOMContentLoaded", () => {
+  const a = document.getElementById("voceAudio"), btn = document.getElementById("voceBtn"), box = document.getElementById("voce");
+  const bar = document.getElementById("voceBar"), dur = document.getElementById("voceDur"), ico = document.getElementById("voceIcona");
+  const mmss = s => Math.floor(s / 60) + ":" + String(Math.floor(s % 60)).padStart(2, "0");
+  let contato = false;
+  btn.addEventListener("click", () => {
+    if (a.paused) {
+      a.play();
+      if (!contato && window.conta) { window.conta("ricerca", "vocale avviato"); contato = true; }
+    } else a.pause();
+  });
+  a.addEventListener("play", () => { box.classList.add("va"); ico.setAttribute("d", "M6 5h4v14H6zM14 5h4v14h-4z"); });
+  a.addEventListener("pause", () => { box.classList.remove("va"); ico.setAttribute("d", "M8 5v14l11-7z"); });
+  a.addEventListener("timeupdate", () => {
+    if (!a.duration) return;
+    bar.style.width = (a.currentTime / a.duration * 100) + "%";
+    dur.textContent = mmss(Math.max(0, a.duration - a.currentTime));
+  });
+  a.addEventListener("ended", () => {
+    bar.style.width = "0"; dur.textContent = mmss(a.duration); a.currentTime = 0;
+    if (window.conta) window.conta("ricerca", "vocale ascoltato tutto");
+  });
 });
 </script>
 <script src="/mak-promo/conta.js" defer></script>
