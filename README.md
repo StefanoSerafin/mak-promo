@@ -291,6 +291,6 @@ Rigenera: `python3 _build/build.py`
 ## autel-tool12 (Autel Tool 12: strumento AUTEL TS508 + 12 sensori AUTEL MX, 320 € + IVA, senza scadenza)
 
 - Gemella di tool8-ma41, con le stesse scelte di Stefano: solo il totale di 320 € tutto compreso, niente prezzi separati, niente Tesla, video tutorial con anteprima (https://youtu.be/u7vXaYhk6bs «Autel TPMS TS508 — Tutorial», canale di Salvatore Pepe; `video-tutorial.jpg`).
-- Fonte: B2B › Promozioni › Promozioni Tool › Autel › Tool 12 (letto il 2026-11-14, account cliente, carrello invariato): TS508 (`9300000309`) + 12 sensori universali, valvole a scelta.
+- Fonte: B2B › Promozioni › Promozioni Tool › Autel › Tool 12 (letto il 2026-11-14, account cliente, carrello invariato): TS508 (`9300000309`) + 12 sensori universali, valvole a scelta. **Cavo OBD compreso** (confermato da Stefano il 2026-11-14).
 - Vantaggi: tutto in un prezzo, **aggiornamenti gratuiti per sempre** (richiesta di Stefano), valvole miste, copertura MX dichiarata 96%, TS508 che riconosce TPMS diretto/indiretto, assistenza telefonica gratuita. Scelta delle valvole dei 12 sensori AUTEL MX (93000000MXG / 9300000MXB / 93000000MX) con blocco a 12; WhatsApp con codici e pezzi. Rimandi a refill-autel-mx e assistenza-mate.
 - Foto: TS508 e sensori MX scontornati della campagna refill-autel-mx. Locandina: `../Locandine/autel-tool12/locandina.html`. Anteprima: `_build/anteprima-autel-tool12.html`; icona: `_build/icona-autel-tool12.html`. Nessun vocale per ora.
