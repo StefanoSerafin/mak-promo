@@ -1,10 +1,14 @@
 /* conta.js — conteggio anonimo delle locandine interattive (mak-promo).
  * Manda al Worker mak-promo-conta: apertura, tocchi su WhatsApp / Chiama / B2B / mail, ricerche.
- * Niente cookie, niente localStorage, niente dati del cliente: dal messaggio WhatsApp partono
+ * Niente cookie, niente dati del cliente: dal messaggio WhatsApp partono
  * solo le righe d'ordine («•», «Totale») e quelle tecniche dell'assistenza (strumento, vettura, richiesta).
  * Le pagine agganciano le ricerche con:  window.conta && window.conta("ricerca", "205/55 R16")
  * La pagina elenco di un collega include lo script con  data-elenco  (campagna «_elenco»).
  * Se qualcosa va storto non succede niente: la pagina funziona lo stesso.
+ * Prove (dal 2026-11-15): se nel browser c'è il segno «mak-promo-mio» (messo dalla dashboard, voce
+ * «Non contare questo dispositivo», sui dispositivi di Stefano) o se il browser è automatico
+ * (navigator.webdriver), gli eventi partono con m: 1: si salvano ma non entrano nei numeri.
+ * Il localStorage si legge soltanto, non si scrive mai da qui.
  */
 (function () {
   var ENDPOINT = "https://mak-promo-conta.serafin-stefano72.workers.dev/e";
@@ -19,9 +23,12 @@
   else { campagna = parti[0] || ""; }
   if (!/^[a-z0-9_-]{2,40}$/.test(campagna)) return;
 
+  var mio = false;
+  try { mio = navigator.webdriver === true || localStorage.getItem("mak-promo-mio") === "1"; } catch (e) {}
+
   function invia(t, d) {
     try {
-      var corpo = JSON.stringify({ c: campagna, a: agente, t: t, d: d == null ? undefined : String(d).slice(0, 500) });
+      var corpo = JSON.stringify({ c: campagna, a: agente, t: t, d: d == null ? undefined : String(d).slice(0, 500), m: mio ? 1 : undefined });
       if (navigator.sendBeacon && navigator.sendBeacon(ENDPOINT, corpo)) return;
       fetch(ENDPOINT, { method: "POST", body: corpo, keepalive: true, mode: "no-cors" }).catch(function () {});
     } catch (e) {}

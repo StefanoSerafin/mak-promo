@@ -1,0 +1,415 @@
+{
+ "generato": "2026-11-15",
+ "regola": "Conta dal giorno dopo la pubblicazione (le locandine mandate in massa dal giorno dell'invio); prima di «mio_dal» si saltano anche i giorni di modifica; dal primo invio WhatsApp dalla dashboard le aperture contano comunque; mai gli eventi «mio».",
+ "mio_dal": "2026-11-16",
+ "inizio_contatore": "2026-11-03",
+ "campagne": {
+  "accesso-b2b": {
+   "pubblicata": "2026-11-09",
+   "conta_dal": "2026-11-10",
+   "invio_massa": null,
+   "giorni_modifica": []
+  },
+  "adblue": {
+   "pubblicata": "2026-10-26",
+   "conta_dal": "2026-10-27",
+   "invio_massa": null,
+   "giorni_modifica": [
+    "2026-11-02"
+   ]
+  },
+  "air-check-camper": {
+   "pubblicata": "2026-11-14",
+   "conta_dal": "2026-11-15",
+   "invio_massa": null,
+   "giorni_modifica": []
+  },
+  "anelli-centraggio": {
+   "pubblicata": "2026-10-27",
+   "conta_dal": "2026-10-28",
+   "invio_massa": null,
+   "giorni_modifica": [
+    "2026-11-12"
+   ]
+  },
+  "assistenza-mate": {
+   "pubblicata": "2026-11-03",
+   "conta_dal": "2026-11-10",
+   "invio_massa": "2026-11-10",
+   "giorni_modifica": [
+    "2026-11-09",
+    "2026-11-11"
+   ]
+  },
+  "autel-tool12": {
+   "pubblicata": "2026-11-14",
+   "conta_dal": "2026-11-15",
+   "invio_massa": null,
+   "giorni_modifica": []
+  },
+  "bulloneria-auto": {
+   "pubblicata": "2026-11-10",
+   "conta_dal": "2026-11-11",
+   "invio_massa": null,
+   "giorni_modifica": [
+    "2026-11-11"
+   ]
+  },
+  "bulloni-antifurto": {
+   "pubblicata": "2026-11-13",
+   "conta_dal": "2026-11-14",
+   "invio_massa": null,
+   "giorni_modifica": []
+  },
+  "calze-light-espositore": {
+   "pubblicata": "2026-10-26",
+   "conta_dal": "2026-10-27",
+   "invio_massa": null,
+   "giorni_modifica": [
+    "2026-11-12"
+   ]
+  },
+  "calze-neve": {
+   "pubblicata": "2026-10-29",
+   "conta_dal": "2026-10-30",
+   "invio_massa": null,
+   "giorni_modifica": [
+    "2026-11-02",
+    "2026-11-07",
+    "2026-11-11"
+   ]
+  },
+  "canali-etrto": {
+   "pubblicata": "2026-10-26",
+   "conta_dal": "2026-10-27",
+   "invio_massa": null,
+   "giorni_modifica": []
+  },
+  "cap-originali": {
+   "pubblicata": "2026-11-06",
+   "conta_dal": "2026-11-07",
+   "invio_massa": null,
+   "giorni_modifica": []
+  },
+  "cavalletto-ez-jack-45s": {
+   "pubblicata": "2026-10-29",
+   "conta_dal": "2026-10-30",
+   "invio_massa": null,
+   "giorni_modifica": []
+  },
+  "consumo-officina-cora": {
+   "pubblicata": "2026-11-12",
+   "conta_dal": "2026-11-13",
+   "invio_massa": null,
+   "giorni_modifica": [
+    "2026-11-14"
+   ]
+  },
+  "copriruota": {
+   "pubblicata": "2026-11-06",
+   "conta_dal": "2026-11-07",
+   "invio_massa": null,
+   "giorni_modifica": [
+    "2026-11-14"
+   ]
+  },
+  "diagnosi-autel": {
+   "pubblicata": "2026-11-13",
+   "conta_dal": "2026-11-14",
+   "invio_massa": null,
+   "giorni_modifica": [
+    "2026-11-14"
+   ]
+  },
+  "distanziali-xilema": {
+   "pubblicata": "2026-10-26",
+   "conta_dal": "2026-10-27",
+   "invio_massa": null,
+   "giorni_modifica": []
+  },
+  "fix-pack": {
+   "pubblicata": "2026-10-26",
+   "conta_dal": "2026-10-27",
+   "invio_massa": null,
+   "giorni_modifica": [
+    "2026-11-12"
+   ]
+  },
+  "halloween-ruotino": {
+   "pubblicata": "2026-10-25",
+   "conta_dal": "2026-10-26",
+   "invio_massa": null,
+   "giorni_modifica": []
+  },
+  "kit-gomma-ruota": {
+   "pubblicata": "2026-10-25",
+   "conta_dal": "2026-10-26",
+   "invio_massa": null,
+   "giorni_modifica": [
+    "2026-10-27",
+    "2026-11-12"
+   ]
+  },
+  "lavoriamo-insieme": {
+   "pubblicata": "2026-11-14",
+   "conta_dal": "2026-11-15",
+   "invio_massa": null,
+   "giorni_modifica": []
+  },
+  "multisens-plus": {
+   "pubblicata": "2026-11-04",
+   "conta_dal": "2026-11-11",
+   "invio_massa": "2026-11-11",
+   "giorni_modifica": [
+    "2026-11-10"
+   ]
+  },
+  "prossima-fermata-futuro": {
+   "pubblicata": "2026-10-26",
+   "conta_dal": "2026-10-27",
+   "invio_massa": null,
+   "giorni_modifica": []
+  },
+  "refill-autel-mx": {
+   "pubblicata": "2026-10-26",
+   "conta_dal": "2026-10-27",
+   "invio_massa": null,
+   "giorni_modifica": [
+    "2026-11-09"
+   ]
+  },
+  "refill-multisens": {
+   "pubblicata": "2026-10-26",
+   "conta_dal": "2026-10-27",
+   "invio_massa": null,
+   "giorni_modifica": [
+    "2026-11-09",
+    "2026-11-14"
+   ]
+  },
+  "riempicarrello": {
+   "pubblicata": "2026-10-26",
+   "conta_dal": "2026-10-27",
+   "invio_massa": null,
+   "giorni_modifica": [
+    "2026-11-02"
+   ]
+  },
+  "spese-trasporto": {
+   "pubblicata": "2026-11-12",
+   "conta_dal": "2026-11-13",
+   "invio_massa": null,
+   "giorni_modifica": []
+  },
+  "tergi-cora": {
+   "pubblicata": "2026-10-26",
+   "conta_dal": "2026-10-27",
+   "invio_massa": null,
+   "giorni_modifica": [
+    "2026-11-12"
+   ]
+  },
+  "tergi-cora-sciolte": {
+   "pubblicata": "2026-11-12",
+   "conta_dal": "2026-11-13",
+   "invio_massa": null,
+   "giorni_modifica": []
+  },
+  "tool8-ma41": {
+   "pubblicata": "2026-11-14",
+   "conta_dal": "2026-11-15",
+   "invio_massa": null,
+   "giorni_modifica": []
+  },
+  "tpms-tesla": {
+   "pubblicata": "2026-11-12",
+   "conta_dal": "2026-11-13",
+   "invio_massa": null,
+   "giorni_modifica": []
+  },
+  "trasformazioni-nad": {
+   "pubblicata": "2026-10-26",
+   "conta_dal": "2026-10-27",
+   "invio_massa": null,
+   "giorni_modifica": []
+  },
+  "ts900-rinnovi": {
+   "pubblicata": "2026-10-28",
+   "conta_dal": "2026-10-29",
+   "invio_massa": null,
+   "giorni_modifica": [
+    "2026-10-30"
+   ]
+  }
+ },
+ "esclusi": [
+  "accesso-b2b|2026-11-03",
+  "accesso-b2b|2026-11-04",
+  "accesso-b2b|2026-11-05",
+  "accesso-b2b|2026-11-06",
+  "accesso-b2b|2026-11-07",
+  "accesso-b2b|2026-11-08",
+  "accesso-b2b|2026-11-09",
+  "adblue|2026-11-02",
+  "air-check-camper|2026-11-03",
+  "air-check-camper|2026-11-04",
+  "air-check-camper|2026-11-05",
+  "air-check-camper|2026-11-06",
+  "air-check-camper|2026-11-07",
+  "air-check-camper|2026-11-08",
+  "air-check-camper|2026-11-09",
+  "air-check-camper|2026-11-10",
+  "air-check-camper|2026-11-11",
+  "air-check-camper|2026-11-12",
+  "air-check-camper|2026-11-13",
+  "air-check-camper|2026-11-14",
+  "anelli-centraggio|2026-11-12",
+  "assistenza-mate|2026-11-03",
+  "assistenza-mate|2026-11-04",
+  "assistenza-mate|2026-11-05",
+  "assistenza-mate|2026-11-06",
+  "assistenza-mate|2026-11-07",
+  "assistenza-mate|2026-11-08",
+  "assistenza-mate|2026-11-09",
+  "assistenza-mate|2026-11-11",
+  "autel-tool12|2026-11-03",
+  "autel-tool12|2026-11-04",
+  "autel-tool12|2026-11-05",
+  "autel-tool12|2026-11-06",
+  "autel-tool12|2026-11-07",
+  "autel-tool12|2026-11-08",
+  "autel-tool12|2026-11-09",
+  "autel-tool12|2026-11-10",
+  "autel-tool12|2026-11-11",
+  "autel-tool12|2026-11-12",
+  "autel-tool12|2026-11-13",
+  "autel-tool12|2026-11-14",
+  "bulloneria-auto|2026-11-03",
+  "bulloneria-auto|2026-11-04",
+  "bulloneria-auto|2026-11-05",
+  "bulloneria-auto|2026-11-06",
+  "bulloneria-auto|2026-11-07",
+  "bulloneria-auto|2026-11-08",
+  "bulloneria-auto|2026-11-09",
+  "bulloneria-auto|2026-11-10",
+  "bulloneria-auto|2026-11-11",
+  "bulloni-antifurto|2026-11-03",
+  "bulloni-antifurto|2026-11-04",
+  "bulloni-antifurto|2026-11-05",
+  "bulloni-antifurto|2026-11-06",
+  "bulloni-antifurto|2026-11-07",
+  "bulloni-antifurto|2026-11-08",
+  "bulloni-antifurto|2026-11-09",
+  "bulloni-antifurto|2026-11-10",
+  "bulloni-antifurto|2026-11-11",
+  "bulloni-antifurto|2026-11-12",
+  "bulloni-antifurto|2026-11-13",
+  "calze-light-espositore|2026-11-12",
+  "calze-neve|2026-11-02",
+  "calze-neve|2026-11-07",
+  "calze-neve|2026-11-11",
+  "cap-originali|2026-11-03",
+  "cap-originali|2026-11-04",
+  "cap-originali|2026-11-05",
+  "cap-originali|2026-11-06",
+  "consumo-officina-cora|2026-11-03",
+  "consumo-officina-cora|2026-11-04",
+  "consumo-officina-cora|2026-11-05",
+  "consumo-officina-cora|2026-11-06",
+  "consumo-officina-cora|2026-11-07",
+  "consumo-officina-cora|2026-11-08",
+  "consumo-officina-cora|2026-11-09",
+  "consumo-officina-cora|2026-11-10",
+  "consumo-officina-cora|2026-11-11",
+  "consumo-officina-cora|2026-11-12",
+  "consumo-officina-cora|2026-11-14",
+  "copriruota|2026-11-03",
+  "copriruota|2026-11-04",
+  "copriruota|2026-11-05",
+  "copriruota|2026-11-06",
+  "copriruota|2026-11-14",
+  "diagnosi-autel|2026-11-03",
+  "diagnosi-autel|2026-11-04",
+  "diagnosi-autel|2026-11-05",
+  "diagnosi-autel|2026-11-06",
+  "diagnosi-autel|2026-11-07",
+  "diagnosi-autel|2026-11-08",
+  "diagnosi-autel|2026-11-09",
+  "diagnosi-autel|2026-11-10",
+  "diagnosi-autel|2026-11-11",
+  "diagnosi-autel|2026-11-12",
+  "diagnosi-autel|2026-11-13",
+  "diagnosi-autel|2026-11-14",
+  "fix-pack|2026-11-12",
+  "kit-gomma-ruota|2026-10-27",
+  "kit-gomma-ruota|2026-11-12",
+  "lavoriamo-insieme|2026-11-03",
+  "lavoriamo-insieme|2026-11-04",
+  "lavoriamo-insieme|2026-11-05",
+  "lavoriamo-insieme|2026-11-06",
+  "lavoriamo-insieme|2026-11-07",
+  "lavoriamo-insieme|2026-11-08",
+  "lavoriamo-insieme|2026-11-09",
+  "lavoriamo-insieme|2026-11-10",
+  "lavoriamo-insieme|2026-11-11",
+  "lavoriamo-insieme|2026-11-12",
+  "lavoriamo-insieme|2026-11-13",
+  "lavoriamo-insieme|2026-11-14",
+  "multisens-plus|2026-11-03",
+  "multisens-plus|2026-11-04",
+  "multisens-plus|2026-11-05",
+  "multisens-plus|2026-11-06",
+  "multisens-plus|2026-11-07",
+  "multisens-plus|2026-11-08",
+  "multisens-plus|2026-11-09",
+  "multisens-plus|2026-11-10",
+  "refill-autel-mx|2026-11-09",
+  "refill-multisens|2026-11-09",
+  "refill-multisens|2026-11-14",
+  "riempicarrello|2026-11-02",
+  "spese-trasporto|2026-11-03",
+  "spese-trasporto|2026-11-04",
+  "spese-trasporto|2026-11-05",
+  "spese-trasporto|2026-11-06",
+  "spese-trasporto|2026-11-07",
+  "spese-trasporto|2026-11-08",
+  "spese-trasporto|2026-11-09",
+  "spese-trasporto|2026-11-10",
+  "spese-trasporto|2026-11-11",
+  "spese-trasporto|2026-11-12",
+  "tergi-cora-sciolte|2026-11-03",
+  "tergi-cora-sciolte|2026-11-04",
+  "tergi-cora-sciolte|2026-11-05",
+  "tergi-cora-sciolte|2026-11-06",
+  "tergi-cora-sciolte|2026-11-07",
+  "tergi-cora-sciolte|2026-11-08",
+  "tergi-cora-sciolte|2026-11-09",
+  "tergi-cora-sciolte|2026-11-10",
+  "tergi-cora-sciolte|2026-11-11",
+  "tergi-cora-sciolte|2026-11-12",
+  "tergi-cora|2026-11-12",
+  "tool8-ma41|2026-11-03",
+  "tool8-ma41|2026-11-04",
+  "tool8-ma41|2026-11-05",
+  "tool8-ma41|2026-11-06",
+  "tool8-ma41|2026-11-07",
+  "tool8-ma41|2026-11-08",
+  "tool8-ma41|2026-11-09",
+  "tool8-ma41|2026-11-10",
+  "tool8-ma41|2026-11-11",
+  "tool8-ma41|2026-11-12",
+  "tool8-ma41|2026-11-13",
+  "tool8-ma41|2026-11-14",
+  "tpms-tesla|2026-11-03",
+  "tpms-tesla|2026-11-04",
+  "tpms-tesla|2026-11-05",
+  "tpms-tesla|2026-11-06",
+  "tpms-tesla|2026-11-07",
+  "tpms-tesla|2026-11-08",
+  "tpms-tesla|2026-11-09",
+  "tpms-tesla|2026-11-10",
+  "tpms-tesla|2026-11-11",
+  "tpms-tesla|2026-11-12",
+  "ts900-rinnovi|2026-10-30"
+ ]
+}

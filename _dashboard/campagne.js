@@ -1,6 +1,7 @@
 /* Generato da _build/dashboard.py: non modificare a mano. */
-const GENERATO = "2026-11-14";
+const GENERATO = "2026-11-15";
 const ARGOMENTI = ["TPMS e diagnosi", "Ruote e montaggio", "Inverno e soccorso NPK", "Officina e consumo", "Portale e servizio"];
+const MIO_DAL = "2026-11-16";
 const CAMPAGNE = [
  {
   "c": "accesso-b2b",
@@ -16,7 +17,9 @@ const CAMPAGNE = [
    "password",
    "login",
    "registrazione"
-  ]
+  ],
+  "invio_massa": null,
+  "conta_dal": "2026-11-10"
  },
  {
   "c": "adblue",
@@ -30,7 +33,9 @@ const CAMPAGNE = [
    "urea",
    "gasolio",
    "diesel"
-  ]
+  ],
+  "invio_massa": null,
+  "conta_dal": "2026-10-27"
  },
  {
   "c": "air-check-camper",
@@ -45,7 +50,9 @@ const CAMPAGNE = [
    "valvole",
    "caravan",
    "rimorchio"
-  ]
+  ],
+  "invio_massa": null,
+  "conta_dal": "2026-11-15"
  },
  {
   "c": "anelli-centraggio",
@@ -59,7 +66,9 @@ const CAMPAGNE = [
    "mozzo",
    "centraggio",
    "foro centrale"
-  ]
+  ],
+  "invio_massa": null,
+  "conta_dal": "2026-10-28"
  },
  {
   "c": "assistenza-mate",
@@ -74,7 +83,9 @@ const CAMPAGNE = [
    "tecnico",
    "telefono",
    "help"
-  ]
+  ],
+  "invio_massa": "2026-11-10",
+  "conta_dal": "2026-11-10"
  },
  {
   "c": "autel-tool12",
@@ -88,7 +99,9 @@ const CAMPAGNE = [
    "strumento",
    "sensori",
    "valvole"
-  ]
+  ],
+  "invio_massa": null,
+  "conta_dal": "2026-11-15"
  },
  {
   "c": "bulloneria-auto",
@@ -103,7 +116,9 @@ const CAMPAGNE = [
    "dadi",
    "colonnette",
    "viti"
-  ]
+  ],
+  "invio_massa": null,
+  "conta_dal": "2026-11-11"
  },
  {
   "c": "bulloni-antifurto",
@@ -117,7 +132,9 @@ const CAMPAGNE = [
    "dadi",
    "antifurto",
    "chiave"
-  ]
+  ],
+  "invio_massa": null,
+  "conta_dal": "2026-11-14"
  },
  {
   "c": "calze-light-espositore",
@@ -132,7 +149,9 @@ const CAMPAGNE = [
    "neve",
    "inverno",
    "Ennepicappa"
-  ]
+  ],
+  "invio_massa": null,
+  "conta_dal": "2026-10-27"
  },
  {
   "c": "calze-neve",
@@ -147,7 +166,9 @@ const CAMPAGNE = [
    "neve",
    "inverno",
    "Ennepicappa"
-  ]
+  ],
+  "invio_massa": null,
+  "conta_dal": "2026-10-30"
  },
  {
   "c": "canali-etrto",
@@ -161,7 +182,9 @@ const CAMPAGNE = [
    "cerchio",
    "larghezza",
    "omologazione"
-  ]
+  ],
+  "invio_massa": null,
+  "conta_dal": "2026-10-27"
  },
  {
   "c": "cap-originali",
@@ -175,7 +198,9 @@ const CAMPAGNE = [
    "coprimozzo",
    "tappi",
    "borchie"
-  ]
+  ],
+  "invio_massa": null,
+  "conta_dal": "2026-11-07"
  },
  {
   "c": "cavalletto-ez-jack-45s",
@@ -189,7 +214,9 @@ const CAMPAGNE = [
    "sollevatore",
    "crick",
    "martinetto"
-  ]
+  ],
+  "invio_massa": null,
+  "conta_dal": "2026-10-30"
  },
  {
   "c": "consumo-officina-cora",
@@ -204,7 +231,9 @@ const CAMPAGNE = [
    "pulizia",
    "lavamani",
    "materiale di consumo"
-  ]
+  ],
+  "invio_massa": null,
+  "conta_dal": "2026-11-13"
  },
  {
   "c": "copriruota",
@@ -218,7 +247,9 @@ const CAMPAGNE = [
    "copricerchi",
    "borchie",
    "coprimozzo"
-  ]
+  ],
+  "invio_massa": null,
+  "conta_dal": "2026-11-07"
  },
  {
   "c": "diagnosi-autel",
@@ -232,7 +263,9 @@ const CAMPAGNE = [
    "tablet",
    "MaxiSys",
    "strumento"
-  ]
+  ],
+  "invio_massa": null,
+  "conta_dal": "2026-11-14"
  },
  {
   "c": "distanziali-xilema",
@@ -246,7 +279,9 @@ const CAMPAGNE = [
    "spessori",
    "carreggiata",
    "mozzo"
-  ]
+  ],
+  "invio_massa": null,
+  "conta_dal": "2026-10-27"
  },
  {
   "c": "fix-pack",
@@ -260,7 +295,9 @@ const CAMPAGNE = [
    "bulloneria",
    "colonnette",
    "valigetta"
-  ]
+  ],
+  "invio_massa": null,
+  "conta_dal": "2026-10-27"
  },
  {
   "c": "halloween-ruotino",
@@ -275,7 +312,9 @@ const CAMPAGNE = [
    "kit emergenza",
    "Ennepicappa",
    "NPK"
-  ]
+  ],
+  "invio_massa": null,
+  "conta_dal": "2026-10-26"
  },
  {
   "c": "kit-gomma-ruota",
@@ -291,12 +330,14 @@ const CAMPAGNE = [
    "gomme",
    "montate",
    "TPMS"
-  ]
+  ],
+  "invio_massa": null,
+  "conta_dal": "2026-10-26"
  },
  {
   "c": "lavoriamo-insieme",
   "titolo": "Lavoriamo insieme: MAK, NPK e MATE da un solo fornitore",
-  "desc": "Ruote, ruotino e TPMS, un agente in zona da 10 anni e le credenziali B2B gratuite. Nessun minimo, nessun vincolo.",
+  "desc": "Ruote, ruotino e TPMS, un consulente in zona da 10 anni e le credenziali B2B gratuite. Nessun minimo, nessun vincolo.",
   "argomento": "Portale e servizio",
   "archiviata": false,
   "dal": "2026-11-14",
@@ -308,7 +349,9 @@ const CAMPAGNE = [
    "credenziali",
    "apertura",
    "collaborazione"
-  ]
+  ],
+  "invio_massa": null,
+  "conta_dal": "2026-11-15"
  },
  {
   "c": "multisens-plus",
@@ -322,7 +365,9 @@ const CAMPAGNE = [
    "sensori",
    "valvole",
    "MATE"
-  ]
+  ],
+  "invio_massa": "2026-11-11",
+  "conta_dal": "2026-11-11"
  },
  {
   "c": "prossima-fermata-futuro",
@@ -336,7 +381,9 @@ const CAMPAGNE = [
    "intelligenza artificiale",
    "IA",
    "storia"
-  ]
+  ],
+  "invio_massa": null,
+  "conta_dal": "2026-10-27"
  },
  {
   "c": "refill-autel-mx",
@@ -348,7 +395,9 @@ const CAMPAGNE = [
   "url": "https://stefanoserafin.github.io/mak-promo/refill-autel-mx/",
   "parole": [
    "valvole"
-  ]
+  ],
+  "invio_massa": null,
+  "conta_dal": "2026-10-27"
  },
  {
   "c": "refill-multisens",
@@ -361,7 +410,9 @@ const CAMPAGNE = [
   "parole": [
    "valvole",
    "MP6"
-  ]
+  ],
+  "invio_massa": null,
+  "conta_dal": "2026-10-27"
  },
  {
   "c": "riempicarrello",
@@ -375,7 +426,9 @@ const CAMPAGNE = [
    "valvole",
    "pesi",
    "equilibratura"
-  ]
+  ],
+  "invio_massa": null,
+  "conta_dal": "2026-10-27"
  },
  {
   "c": "spese-trasporto",
@@ -390,7 +443,9 @@ const CAMPAGNE = [
    "franco",
    "porto",
    "portale"
-  ]
+  ],
+  "invio_massa": null,
+  "conta_dal": "2026-11-13"
  },
  {
   "c": "tergi-cora",
@@ -404,7 +459,9 @@ const CAMPAGNE = [
    "tergicristalli",
    "spazzole",
    "wiper"
-  ]
+  ],
+  "invio_massa": null,
+  "conta_dal": "2026-10-27"
  },
  {
   "c": "tergi-cora-sciolte",
@@ -418,7 +475,9 @@ const CAMPAGNE = [
    "tergicristalli",
    "spazzole",
    "wiper"
-  ]
+  ],
+  "invio_massa": null,
+  "conta_dal": "2026-11-13"
  },
  {
   "c": "tool8-ma41",
@@ -433,7 +492,9 @@ const CAMPAGNE = [
    "sensori",
    "valvole",
    "ATEQ"
-  ]
+  ],
+  "invio_massa": null,
+  "conta_dal": "2026-11-15"
  },
  {
   "c": "tpms-tesla",
@@ -446,7 +507,9 @@ const CAMPAGNE = [
   "parole": [
    "sensori",
    "valvole"
-  ]
+  ],
+  "invio_massa": null,
+  "conta_dal": "2026-11-13"
  },
  {
   "c": "trasformazioni-nad",
@@ -461,7 +524,9 @@ const CAMPAGNE = [
    "omologazione",
    "motorizzazione",
    "collaudo"
-  ]
+  ],
+  "invio_massa": null,
+  "conta_dal": "2026-10-27"
  },
  {
   "c": "ts900-rinnovi",
@@ -475,6 +540,8 @@ const CAMPAGNE = [
    "abbonamento",
    "diagnosi",
    "scadenza"
-  ]
+  ],
+  "invio_massa": null,
+  "conta_dal": "2026-10-29"
  }
 ];

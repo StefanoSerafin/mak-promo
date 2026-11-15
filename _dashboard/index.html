@@ -148,11 +148,20 @@ details.arch summary{cursor:pointer;font-family:var(--titolo);font-size:22px;tex
 .elenco li span{white-space:pre-line}
 .elenco li b{font-family:var(--titolo);font-size:20px;flex:none}
 
+.nota.filtro{font-size:13px;margin:6px 2px 0}
+.nota.filtro.no{color:var(--red);font-weight:600}
+.conta-dal{font-size:13px;color:var(--mute);margin:-4px 0 0}
+.disp{margin-top:18px;background:var(--card);border-radius:16px;padding:14px}
+.disp b{display:block;font-family:var(--titolo);font-size:22px;text-transform:uppercase;line-height:1;padding-top:2px}
+.disp p{margin:6px 0 10px;font-size:14px;color:var(--mute)}
+.disp p.si{color:var(--ok);font-weight:600}
+.disp button{font:inherit;font-weight:700;border:0;border-radius:12px;padding:11px 16px;background:var(--ink);color:#fff;cursor:pointer}
+.disp button.via{background:#fff;color:var(--ink);border:1px solid var(--line)}
 .piede{margin-top:26px;padding-top:12px;border-top:1px solid var(--line);font-size:13px;color:var(--mute);display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center}
 .piede button{font:inherit;font-size:13px;font-weight:700;border:1px solid var(--line);background:#fff;border-radius:10px;padding:7px 12px;cursor:pointer}
 .piede .via{border:0;background:none;color:var(--mute);text-decoration:underline;padding:7px 0;font-weight:500}
 </style>
-<script src="campagne.js?v=dbfe7419"></script>
+<script src="campagne.js?v=7f0fed35"></script>
 </head>
 <body>
 <div class="wrap">
@@ -187,6 +196,8 @@ details.arch summary{cursor:pointer;font-family:var(--titolo);font-size:22px;tex
     <div id="pNumTesta"></div>
     <div class="scelte" id="periodi"></div>
     <div class="scelte piccole" id="gruppi"></div>
+    <div class="scelte piccole" id="fonte"></div>
+    <p class="nota filtro" id="notaFiltro" hidden></p>
 
     <div class="chiave" id="boxChiave" hidden>
       <b>Chiave di lettura</b>
@@ -207,6 +218,7 @@ details.arch summary{cursor:pointer;font-family:var(--titolo);font-size:22px;tex
       <button type="button" id="aggiorna" hidden>Aggiorna i numeri</button>
       <button type="button" class="via" id="dimentica" hidden>Dimentica la chiave su questo telefono</button>
     </div>
+    <div class="disp" id="disp"></div>
   </section>
 </div>
 
@@ -293,7 +305,7 @@ document.addEventListener("DOMContentLoaded", () => {
       '<div class="tx"><b><i>' + esc(c.t1) + "</i>" + (c.nuova && !c.archiviata ? '<span class="tag nuova">nuova</span>' : "") + (c.archiviata ? '<span class="tag arch">archiviata</span>' : "") + "</b>" +
       "<span>" + esc(c.t2) + "</span></div></a>" +
       '<button type="button" class="ico cp" data-url="' + c.url + '" aria-label="Copia link di ' + esc(c.t1) + '">' + ICO_COPIA + "</button>" +
-      '<a class="ico wa" href="' + linkWA(c) + '" target="_blank" rel="noopener" aria-label="Manda su WhatsApp ' + esc(c.t1) + '">' + ICO_WA + "</a></div>";
+      '<a class="ico wa" data-c="' + c.c + '" href="' + linkWA(c) + '" target="_blank" rel="noopener" aria-label="Manda su WhatsApp ' + esc(c.t1) + '">' + ICO_WA + "</a></div>";
   }
   const sezione = (titolo, l) => l.length ? "<h2>" + esc(titolo) + "<small>" + l.length + "</small></h2>" + l.map(riga).join("") : "";
 
@@ -333,7 +345,7 @@ document.addEventListener("DOMContentLoaded", () => {
       '<div class="det-testa"><img src="../' + c.c + '/anteprima.jpg" alt="" width="1200" height="630"><b>' + esc(c.titolo) + "</b><p>" + esc(c.desc) + "</p><p>" +
       esc(c.argomento) + " · online dal " + ggm(c.dal) + (c.archiviata ? " · archiviata" : "") + "</p></div>" +
       '<div class="bt"><button type="button" class="cp" data-url="' + c.url + '">Copia link</button>' +
-      '<a class="wa" href="' + linkWA(c) + '" target="_blank" rel="noopener">WhatsApp</a>' +
+      '<a class="wa" data-c="' + c.c + '" href="' + linkWA(c) + '" target="_blank" rel="noopener">WhatsApp</a>' +
       '<a class="ap" href="' + c.url + '" target="_blank" rel="noopener">Apri</a></div>' +
       '<a class="link" href="#numeri/' + c.c + '">Numeri di questa locandina ›</a>';
   }
@@ -348,7 +360,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const vecchio = () => { const t = document.createElement("textarea"); t.value = u; t.setAttribute("readonly", ""); t.style.position = "fixed"; t.style.opacity = "0"; document.body.appendChild(t); t.select(); try { document.execCommand("copy"); fatto(); } catch (e) {} t.remove(); };
     if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(u).then(fatto, vecchio); else vecchio();
   }
+  /* tocco su WhatsApp = invio a un cliente: da quel momento le aperture di quella locandina contano (evento «mio», non si conta) */
+  function invio(c) {
+    try {
+      const corpo = JSON.stringify({c, a: "stefano", t: "invio", m: 1});
+      if (!(navigator.sendBeacon && navigator.sendBeacon(ENDPOINT + "/e", corpo))) fetch(ENDPOINT + "/e", {method: "POST", body: corpo, keepalive: true, mode: "no-cors"}).catch(() => {});
+    } catch (e) {}
+  }
   document.body.addEventListener("click", e => {
+    const w = e.target.closest("a.wa[data-c]");
+    if (w) { invio(w.dataset.c); return; }
     const b = e.target.closest("button.cp");
     if (b) { e.preventDefault(); if (!b.classList.contains("ok")) copia(b); return; }
     if (e.target.closest("#qVia2")) { cancella(); return; }
@@ -367,6 +388,13 @@ document.addEventListener("DOMContentLoaded", () => {
   let periodo = mem.get("dash-periodo") || "7g";
   let gruppo = mem.get("dash-gruppo") || "giorno";
   let SERIE = null, aperta = null, oraAgg = null, caricati = false;
+  let fonte = "clienti";                 /* «clienti» = senza prove (filtro del Worker); «tutto» = numeri grezzi */
+  const CACHE = {};
+  const conTutto = (perc) => fonte === "tutto" ? perc + (perc.includes("?") ? "&" : "?") + "tutto=1" : perc;
+  radio("fonte", "fon", [["clienti", "Solo clienti"], ["tutto", "Tutto, prove comprese"]], fonte, v => {
+    fonte = v;
+    if (CACHE[v]) { SERIE = CACHE[v]; disegnaNumeri(); } else carica();
+  }, "Numeri");
   let ordConf = mem.get("dash-ord") || "apertura";
 
   radio("periodi", "per", PERIODI, periodo, v => {
@@ -504,14 +532,17 @@ document.addEventListener("DOMContentLoaded", () => {
   async function disegnaDettaglio() {
     const c = PER_C[aperta], [dal, al] = intervallo(), prec = precedente([dal, al]);
     const {t} = somma(dal, al, c.c), p = periodo === "sempre" ? null : somma(prec[0], prec[1], c.c).t;
-    $("numLoc").innerHTML = '<h2>Numeri<small>' + descr(dal, al) + '</small></h2><div class="kpi" id="kpiD"></div><div class="graf" id="grafD"></div>' +
+    const inv = SERIE.invii && SERIE.invii[c.c];
+    const partenza = (c.invio_massa ? "Invio di massa: " + ggm(c.invio_massa) + ", conta da lì" : "Conta dal " + ggm(c.conta_dal || c.dal)) +
+      (inv ? " · primo invio a un cliente: " + new Date(inv).toLocaleString("it-IT", {day: "numeric", month: "short", hour: "2-digit", minute: "2-digit", timeZone: "Europe/Rome"}) : "");
+    $("numLoc").innerHTML = '<h2>Numeri<small>' + descr(dal, al) + '</small></h2>' + (fonte === "clienti" ? '<p class="conta-dal">' + esc(partenza) + "</p>" : "") + '<div class="kpi" id="kpiD"></div><div class="graf" id="grafD"></div>' +
       '<h2>Tutti i tocchi</h2><ul class="elenco">' + TIPI.map(([k, nome]) => "<li><span>" + nome + "</span><b>" + (t[k] || 0) + "</b></li>").join("") + "</ul>" +
       '<h2>Ricerche più fatte</h2><div id="ricD"><p class="vuoto">Carico…</p></div><h2>Righe d\'ordine su WhatsApp</h2><div id="ordD"><p class="vuoto">Carico…</p></div>';
     kpi($("kpiD"), t, p, diff(dal, al) + 1);
     grafico($("grafD"), serieGrafico(dal, al, c.c), c.titolo);
     const mio = ++tokenDett;
     try {
-      const r = await leggi("/riepilogo?dal=" + dal + "&al=" + al);
+      const r = await leggi(conTutto("/riepilogo?dal=" + dal + "&al=" + al));
       if (mio !== tokenDett) return;
       const lista = (arr, id) => {
         const l = arr.filter(x => x.campagna === c.c && x.agente === "stefano" && !/^vocale (avviato|ascoltato tutto)$/.test(x.dettaglio)).slice(0, 15);
@@ -530,6 +561,7 @@ document.addEventListener("DOMContentLoaded", () => {
         '</b><br><a class="link" href="#l/' + c.c + '">Apri la scheda ›</a></div></div>'
       : "";
     $("numLoc").hidden = !c;
+    notaFiltro();
     if (!SERIE) { $("statistiche").hidden = true; $("numLoc").innerHTML = ""; return; }
     if (c) { $("statistiche").hidden = true; disegnaDettaglio(); return; }
     const [dal, al] = intervallo(), prec = precedente([dal, al]);
@@ -543,6 +575,31 @@ document.addEventListener("DOMContentLoaded", () => {
       (diff(dal, al) > 0 ? " I telefoni si riconoscono solo nello stesso giorno: «telefoni-giorno» è la somma dei giorni." : "");
   }
 
+  function notaFiltro() {
+    const n = $("notaFiltro");
+    n.hidden = !SERIE;
+    if (!SERIE) return;
+    const f = SERIE.filtro || {};
+    n.classList.toggle("no", fonte === "clienti" && !f.attivo);
+    n.textContent = fonte === "tutto"
+      ? "Tutto: comprese le tue prove, i giorni di pubblicazione e di modifica."
+      : !f.attivo
+        ? "Attenzione: filtro delle prove non attivo, i numeri comprendono le tue prove."
+        : "Solo clienti: ogni locandina conta dal giorno dopo la pubblicazione, quelle mandate in massa dal giorno dell'invio; dopo un tuo invio da WhatsApp contano subito. Fuori " + (MIO_DAL ? "i giorni di modifica fino al " + ggm(MIO_DAL) + " e " : "i giorni di modifica e ") + "i tuoi dispositivi.";
+  }
+
+  /* questo dispositivo: segno «mak-promo-mio» letto da conta.js (stessa origine stefanoserafin.github.io) */
+  function dispositivo() {
+    const mio = mem.get("mak-promo-mio") === "1";
+    $("disp").innerHTML = "<b>Questo dispositivo</b>" +
+      (mio ? '<p class="si">Le aperture da questo browser non contano: sono le tue prove.</p><button type="button" class="via" id="dispTogli">Torna a contarlo</button>'
+           : '<p>Le aperture da questo browser contano come quelle dei clienti.</p><button type="button" id="dispMetti">Non contare questo dispositivo</button>') +
+      "<p>Va fatto una volta in Safari su iPhone, iPad e Mac (e in Chrome, se lo usi per provare le pagine). L'icona sulla Home ha una memoria sua: apri questo link in Safari, non dall'icona.</p>";
+    const b = $("dispMetti") || $("dispTogli");
+    b.addEventListener("click", () => { if (mio) mem.del("mak-promo-mio"); else mem.set("mak-promo-mio", "1"); dispositivo(); });
+  }
+  dispositivo();
+
   /* lettura dal contatore: solo quando si apre «Numeri» */
   async function leggi(perc) {
     const r = await fetch(ENDPOINT + perc, {headers: {"X-Chiave": chiave}, cache: "no-store"});
@@ -555,7 +612,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!chiave) { mostraChiave(""); disegnaNumeri(); return; }
     $("stato").textContent = "Carico i numeri…";
     try {
-      SERIE = await leggi("/serie");
+      SERIE = CACHE[fonte] = await leggi(conTutto("/serie"));
       oraAgg = new Date();
       $("boxChiave").hidden = true; $("aggiorna").hidden = false; $("dimentica").hidden = false;
       $("stato").textContent = "Numeri aggiornati alle " + oraAgg.toLocaleTimeString("it-IT", {hour: "2-digit", minute: "2-digit"}) + " · dati dal " + ggm(SERIE.partenza || oggi());
@@ -578,11 +635,11 @@ document.addEventListener("DOMContentLoaded", () => {
     carica();
   });
   $("chiave").addEventListener("keydown", e => { if (e.key === "Enter") $("salva").click(); });
-  $("aggiorna").addEventListener("click", carica);
-  $("dimentica").addEventListener("click", () => { chiave = ""; SERIE = null; mem.del("dash-chiave"); mostraChiave(""); disegnaNumeri(); });
+  $("aggiorna").addEventListener("click", () => { delete CACHE.clienti; delete CACHE.tutto; carica(); });
+  $("dimentica").addEventListener("click", () => { chiave = ""; SERIE = null; delete CACHE.clienti; delete CACHE.tutto; mem.del("dash-chiave"); mostraChiave(""); disegnaNumeri(); });
 
   /* =====================================================================
-     INDIRIZZI: «» elenco · #l/<c> scheda · #numeri · #numeri/<c>
+     INDIRIZZI: «» elenco · #l/<c> scheda · #numeri · #numeri/<c> · #mio (pannello «Questo dispositivo»)
      ===================================================================== */
   const scorri = {elenco: 0, numeri: 0};
   let pagina = null, hashPrima = null, hashOra = null;
@@ -591,6 +648,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const [testa, c] = h.split("/");
     let nuova, cc = null;
     if (testa === "numeri") { cc = PER_C[c] ? c : null; nuova = cc ? "numLoc" : "numeri"; }
+    else if (testa === "mio") nuova = "numeri";
     else if (testa === "l" && PER_C[c]) { cc = c; nuova = "scheda"; }
     else nuova = "elenco";
     if (pagina === "elenco" || pagina === "numeri") scorri[pagina] = window.scrollY;
@@ -603,6 +661,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (numeri) { aperta = cc; if (!caricati) carica(); else disegnaNumeri(); }
     pagina = nuova;
     window.scrollTo(0, nuova === "elenco" || nuova === "numeri" ? scorri[nuova] : 0);
+    if (testa === "mio") setTimeout(() => $("disp").scrollIntoView({block: "center"}), 50);
   }
   document.querySelectorAll('input[name="vista"]').forEach(r => r.addEventListener("change", () => {
     location.hash = r.value === "numeri" ? "numeri" : "";

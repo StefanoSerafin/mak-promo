@@ -1,5 +1,6 @@
 {
-  "_nota": "Argomento di ogni locandina per la dashboard (_dashboard/). Campagna nuova = una riga qui + python3 _build/dashboard.py. «archiviata»: promo scaduta, in fondo alla dashboard. «parole» (facoltativo): sinonimi per la ricerca della dashboard, solo quelli che non stanno già nel titolo o nella descrizione.",
+  "_nota": "Argomento di ogni locandina per la dashboard (_dashboard/). Campagna nuova = una riga qui + python3 _build/dashboard.py. «archiviata»: promo scaduta, in fondo alla dashboard. «parole» (facoltativo): sinonimi per la ricerca della dashboard, solo quelli che non stanno già nel titolo o nella descrizione. «invio_massa» (facoltativo): giorno del broadcast WhatsApp + Mailchimp; da quel giorno la locandina conta per le statistiche, prima no. «_mio_dal»: giorno da cui le prove si riconoscono dal marchio «mio» dei dispositivi (prima si saltano i giorni di modifica).",
+  "_mio_dal": "2026-11-16",
   "argomenti": [
     "TPMS e diagnosi",
     "Ruote e montaggio",
@@ -50,7 +51,8 @@
         "tecnico",
         "telefono",
         "help"
-      ]
+      ],
+      "invio_massa": "2026-11-10"
     },
     "autel-tool12": {
       "argomento": "TPMS e diagnosi",
@@ -197,7 +199,8 @@
         "sensori",
         "valvole",
         "MATE"
-      ]
+      ],
+      "invio_massa": "2026-11-11"
     },
     "prossima-fermata-futuro": {
       "argomento": "Portale e servizio",
