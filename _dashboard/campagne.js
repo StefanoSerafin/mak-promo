@@ -1,5 +1,5 @@
 /* Generato da _build/dashboard.py: non modificare a mano. */
-const GENERATO = "2026-11-15";
+const GENERATO = "2026-11-19";
 const ARGOMENTI = ["TPMS e diagnosi", "Ruote e montaggio", "Inverno e soccorso NPK", "Officina e consumo", "Portale e servizio"];
 const MIO_DAL = "2026-11-16";
 const CAMPAGNE = [
@@ -102,6 +102,24 @@ const CAMPAGNE = [
   ],
   "invio_massa": null,
   "conta_dal": "2026-11-15"
+ },
+ {
+  "c": "black-friday-multisens",
+  "titolo": "Black Friday · MULTIsens MP6 a 9,90 € + IVA da 100 pezzi",
+  "desc": "Dal 26 novembre al 6 dicembre: sensori TPMS MATE MULTIsens MP6 a 9,90 € con 100 pezzi anche misti, refill da 20 a 15,90 €. Ordina su WhatsApp.",
+  "argomento": "TPMS e diagnosi",
+  "archiviata": false,
+  "dal": "2026-11-19",
+  "url": "https://stefanoserafin.github.io/mak-promo/black-friday-multisens/",
+  "parole": [
+   "black friday",
+   "sensori",
+   "refill",
+   "100 pezzi",
+   "promo"
+  ],
+  "invio_massa": null,
+  "conta_dal": "2026-11-20"
  },
  {
   "c": "bulloneria-auto",

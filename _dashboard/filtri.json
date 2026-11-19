@@ -1,5 +1,5 @@
 {
- "generato": "2026-11-15",
+ "generato": "2026-11-19",
  "regola": "Conta dal giorno dopo la pubblicazione (le locandine mandate in massa dal giorno dell'invio); prima di «mio_dal» si saltano anche i giorni di modifica; dal primo invio WhatsApp dalla dashboard le aperture contano comunque; mai gli eventi «mio».",
  "mio_dal": "2026-11-16",
  "inizio_contatore": "2026-11-03",
@@ -44,6 +44,12 @@
   "autel-tool12": {
    "pubblicata": "2026-11-14",
    "conta_dal": "2026-11-15",
+   "invio_massa": null,
+   "giorni_modifica": []
+  },
+  "black-friday-multisens": {
+   "pubblicata": "2026-11-19",
+   "conta_dal": "2026-11-20",
    "invio_massa": null,
    "giorni_modifica": []
   },
@@ -284,6 +290,23 @@
   "autel-tool12|2026-11-12",
   "autel-tool12|2026-11-13",
   "autel-tool12|2026-11-14",
+  "black-friday-multisens|2026-11-03",
+  "black-friday-multisens|2026-11-04",
+  "black-friday-multisens|2026-11-05",
+  "black-friday-multisens|2026-11-06",
+  "black-friday-multisens|2026-11-07",
+  "black-friday-multisens|2026-11-08",
+  "black-friday-multisens|2026-11-09",
+  "black-friday-multisens|2026-11-10",
+  "black-friday-multisens|2026-11-11",
+  "black-friday-multisens|2026-11-12",
+  "black-friday-multisens|2026-11-13",
+  "black-friday-multisens|2026-11-14",
+  "black-friday-multisens|2026-11-15",
+  "black-friday-multisens|2026-11-16",
+  "black-friday-multisens|2026-11-17",
+  "black-friday-multisens|2026-11-18",
+  "black-friday-multisens|2026-11-19",
   "bulloneria-auto|2026-11-03",
   "bulloneria-auto|2026-11-04",
   "bulloneria-auto|2026-11-05",
