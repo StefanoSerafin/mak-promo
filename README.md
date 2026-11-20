@@ -311,7 +311,7 @@ Rigenera: `python3 _build/build.py`
 
 - Fonte: B2B › Promozioni › Promozioni Tool › HUF ECS › Tool 8 (letto il 2026-11-20 con l'account cliente via Playwright, sola lettura, carrello invariato): MA41 `9300000330` a 160 € + 8 sensori HUF ECS a 15,00 € = 280 € + IVA. Sensori ammessi: Rubber `930000ECSR`, Metal `930000ECSM`, Metal Black `93000ECSBM`, Antracite `930000ECSA` (giacenza 50 ciascuno al 20/11). Grafica MAK Black Friday: «−15% sui pacchetti tool AUTEL e HUF» → 238 €.
 - Gemella di tool8-ma41 (stesse scelte: solo il totale, cavo OBD compreso, video tutorial), con il conto alla rovescia delle pagine Black Friday: prima del 26/11 il messaggio dice «dal 26 novembre», dopo il 6/12 tornano 280 € e il timer dice «Chiedimi le offerte attive». Quattro valvole, + bloccato a 8, mix rapidi 8 Rubber / 8 Silver / 4+4.
-- Foto HUF dal B2B, scontornate con `../Locandine/refill-autel-mx/scontorna.py`. Vocale: struttura del volto già in pagina, bottone nascosto finché `volto.mp4` non c'è. Locandina: `../Locandine/black-friday-tool8-huf/locandina.html`. Anteprima: `_build/anteprima-black-friday-tool8-huf.html`; icona: `_build/icona-black-friday-tool8-huf.html`.
+- Foto HUF dal B2B, scontornate con `../Locandine/refill-autel-mx/scontorna.py`. Vocale 32 s e volto (video HeyGen 00cec267…) dal 2026-11-20. Locandina: `../Locandine/black-friday-tool8-huf/locandina.html`. Anteprima: `_build/anteprima-black-friday-tool8-huf.html`; icona: `_build/icona-black-friday-tool8-huf.html`.
 
 ## black-friday-autel-mx (Black Friday B2B 26/11–6/12/2026: extra −15% sul refill AUTEL MX, 15,70 € da 20 pezzi)
 
