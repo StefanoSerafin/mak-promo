@@ -162,6 +162,27 @@ const CAMPAGNE = [
   "conta_dal": "2026-11-21"
  },
  {
+  "c": "black-friday-ts900",
+  "titolo": "Black Friday · AUTEL TS900 −40%: 414 € netti, con SGW FULL 804 €",
+  "desc": "Dal 26 novembre al 6 dicembre: TS900 da 690 € a 414 € netti + pacchetto 12 mesi Security Gateway FULL a 390 €. Totale 804 € netti, 24 mesi di aggiornamento inclusi.",
+  "argomento": "TPMS e diagnosi",
+  "archiviata": false,
+  "dal": "2026-11-20",
+  "url": "https://stefanoserafin.github.io/mak-promo/black-friday-ts900/",
+  "parole": [
+   "black friday",
+   "ts900",
+   "autel",
+   "diagnosi",
+   "sgw",
+   "security gateway",
+   "-40%",
+   "promo"
+  ],
+  "invio_massa": null,
+  "conta_dal": "2026-11-21"
+ },
+ {
   "c": "bulloneria-auto",
   "titolo": "Bulloneria e kit di montaggio per la tua auto · MAK",
   "desc": "Originale o aftermarket: scegli marca, modello e anno e ordina su WhatsApp.",
