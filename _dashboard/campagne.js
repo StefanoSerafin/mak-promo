@@ -1,5 +1,5 @@
 /* Generato da _build/dashboard.py: non modificare a mano. */
-const GENERATO = "2026-11-19";
+const GENERATO = "2026-11-20";
 const ARGOMENTI = ["TPMS e diagnosi", "Ruote e montaggio", "Inverno e soccorso NPK", "Officina e consumo", "Portale e servizio"];
 const MIO_DAL = "2026-11-16";
 const CAMPAGNE = [
@@ -102,6 +102,25 @@ const CAMPAGNE = [
   ],
   "invio_massa": null,
   "conta_dal": "2026-11-15"
+ },
+ {
+  "c": "black-friday-autel-mx",
+  "titolo": "Black Friday · Refill AUTEL MX −15%: 15,70 € + IVA da 20 pezzi",
+  "desc": "Dal 26 novembre al 6 dicembre: sensori TPMS AUTEL MX a 15,70 € invece di 18,47 € con il refill da 20 pezzi, anche misti. Ordina su WhatsApp.",
+  "argomento": "TPMS e diagnosi",
+  "archiviata": false,
+  "dal": "2026-11-20",
+  "url": "https://stefanoserafin.github.io/mak-promo/black-friday-autel-mx/",
+  "parole": [
+   "black friday",
+   "sensori",
+   "refill",
+   "autel",
+   "-15%",
+   "promo"
+  ],
+  "invio_massa": null,
+  "conta_dal": "2026-11-21"
  },
  {
   "c": "black-friday-multisens",
