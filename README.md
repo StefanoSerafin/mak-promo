@@ -311,7 +311,7 @@ Rigenera: `python3 _build/build.py`
 
 - Codici e prezzi del refill-autel-mx (93000000MXG, 9300000MXB, 93000000MX; singolo 22,45 €, refill 18,47 €); durante il Black Friday il refill da 20 anche misto va a 15,70 € (18,47 − 15%). Valvole di ricambio a 13,50 € al kit, senza sconto.
 - Conto alla rovescia come black-friday-multisens: prima del 26/11 un refill esce già a 15,70 con «dal 26 novembre»; dopo il 6/12 la fascia Black Friday si spegne e resta il refill a 18,47 €.
-- Il bottone del vocale ha già la struttura del volto (`volto.mp4`) e resta nascosto finché il file non c'è. Locandina: `../Locandine/black-friday-autel-mx/locandina.html`. Anteprima: `_build/anteprima-black-friday-autel-mx.html`; icona: `_build/icona-black-friday-autel-mx.html`.
+- Vocale 28 s e volto (video HeyGen f1a545c6…) dal 2026-11-20. Locandina: `../Locandine/black-friday-autel-mx/locandina.html`. Anteprima: `_build/anteprima-black-friday-autel-mx.html`; icona: `_build/icona-black-friday-autel-mx.html`.
 
 ## black-friday-multisens (Black Friday B2B 26/11–6/12/2026: MULTIsens MP6 a 9,90 € da 100 pezzi, refill da 20 a 15,90 €)
 
