@@ -311,7 +311,7 @@ Rigenera: `python3 _build/build.py`
 
 - Fonte: grafica MAK `../Locandine/black-friday-ts900/grafica/originale-mak.png` (dal Desktop di Stefano, «BLACKFRIDAY TS900.png»): 690 € −40% = 414 € netto, pacchetto 12 mesi Security Gateway FULL 390 €, totale promo 804 € netto, 24 mesi di aggiornamento incluso; funzioni reset angolo di sterzo, apertura pinze freni, reset spie e DTC, service olio, 38 funzioni di diagnosi; «Top vendite 2025 e 2026», «Il miglior strumento 2026 per il gommista». Codici dal B2B (diagnosi-autel/prezzi-b2b.csv): TS900 `7200000027`, Full SGW `7200000046`.
 - Promo come pacchetto unico TS900 + SGW (come la grafica: «Totale promo»); dopo il 6/12 la pagina mostra i listini (690 + 390 = 1.080 €). Conto alla rovescia come le altre Black Friday. Rimandi a diagnosi-autel e ts900-rinnovi.
-- Locandina: `../Locandine/black-friday-ts900/locandina.html` (titolo, date e alloro ritagliati dalla grafica MAK; alloro reso trasparente). Anteprima: `_build/anteprima-black-friday-ts900.html`; icona: `_build/icona-black-friday-ts900.html`. Vocale: struttura del volto già in pagina, bottone nascosto finché `volto.mp4` non c'è.
+- Locandina: `../Locandine/black-friday-ts900/locandina.html` (titolo, date e alloro ritagliati dalla grafica MAK; alloro reso trasparente). Anteprima: `_build/anteprima-black-friday-ts900.html`; icona: `_build/icona-black-friday-ts900.html`. Vocale 35 s e volto (video HeyGen d915030a…) dal 2026-11-20.
 
 ## black-friday-tool8-huf (Black Friday B2B 26/11–6/12/2026: Tool 8 HUF ECS con extra −15%, 238 € invece di 280 €)
 
