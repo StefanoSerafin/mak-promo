@@ -141,6 +141,27 @@ const CAMPAGNE = [
   "conta_dal": "2026-11-20"
  },
  {
+  "c": "black-friday-tool8-huf",
+  "titolo": "Black Friday · Tool 8 HUF a 238 € + IVA (−15%)",
+  "desc": "Dal 26 novembre al 6 dicembre: MATE MA41 con cavo OBD + 8 sensori HUF ECS a 238 € invece di 280 €. Scegli le valvole e ordina su WhatsApp.",
+  "argomento": "TPMS e diagnosi",
+  "archiviata": false,
+  "dal": "2026-11-20",
+  "url": "https://stefanoserafin.github.io/mak-promo/black-friday-tool8-huf/",
+  "parole": [
+   "black friday",
+   "tool 8",
+   "huf",
+   "ecs",
+   "ma41",
+   "strumento",
+   "-15%",
+   "promo"
+  ],
+  "invio_massa": null,
+  "conta_dal": "2026-11-21"
+ },
+ {
   "c": "bulloneria-auto",
   "titolo": "Bulloneria e kit di montaggio per la tua auto · MAK",
   "desc": "Originale o aftermarket: scegli marca, modello e anno e ordina su WhatsApp.",
