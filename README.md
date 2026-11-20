@@ -307,6 +307,12 @@ Rigenera: `python3 _build/build.py`
 - Modulo «Mandami i dati» (ragione sociale, P.IVA con cifra di controllo, CF, SDI/PEC, sede, consegna, referente, cellulare, email; obbligatori ragione sociale, P.IVA e cellulare): compone solo il link wa.me, **non salva e non invia nulla**. Al contatore vanno solo le ricerche «modulo dati inviato» e «passami a trovare», mai i dati (e le righe del messaggio non iniziano con i prefissi che `conta.js` tiene).
 - Foto: ruota APX canna di fucile scontornata dal sito MAK, kit ruotino NPK dal B2B (`78K.jpg`), MA41, kit gomma e ruota, calze Re-Grip. Locandina: `../Locandine/lavoriamo-insieme/locandina.html`. Anteprima: `_build/anteprima-lavoriamo-insieme.html`; icona: `_build/icona-lavoriamo-insieme.html`. Bottone «Spiegamelo a voce»: `vocale.mp3`, 33 s, testo scritto da Stefano, voce clonata HeyGen.
 
+## black-friday-autel-mx (Black Friday B2B 26/11–6/12/2026: extra −15% sul refill AUTEL MX, 15,70 € da 20 pezzi)
+
+- Codici e prezzi del refill-autel-mx (93000000MXG, 9300000MXB, 93000000MX; singolo 22,45 €, refill 18,47 €); durante il Black Friday il refill da 20 anche misto va a 15,70 € (18,47 − 15%). Valvole di ricambio a 13,50 € al kit, senza sconto.
+- Conto alla rovescia come black-friday-multisens: prima del 26/11 un refill esce già a 15,70 con «dal 26 novembre»; dopo il 6/12 la fascia Black Friday si spegne e resta il refill a 18,47 €.
+- Il bottone del vocale ha già la struttura del volto (`volto.mp4`) e resta nascosto finché il file non c'è. Locandina: `../Locandine/black-friday-autel-mx/locandina.html`. Anteprima: `_build/anteprima-black-friday-autel-mx.html`; icona: `_build/icona-black-friday-autel-mx.html`.
+
 ## black-friday-multisens (Black Friday B2B 26/11–6/12/2026: MULTIsens MP6 a 9,90 € da 100 pezzi, refill da 20 a 15,90 €)
 
 - Stessi codici del refill (930000MP6R, 93000MP6BM, 930000MP6M), tre fasce automatiche sul totale anche misto: 20,40 € fino a 19, 15,90 € da 20, 9,90 € da 100. Valvole di ricambio a 10,00 € al kit come nel refill. Fino a esaurimento scorte.
