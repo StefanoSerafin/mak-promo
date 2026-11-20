@@ -119,8 +119,8 @@ const CAMPAGNE = [
    "-15%",
    "promo"
   ],
-  "invio_massa": null,
-  "conta_dal": "2026-11-21"
+  "invio_massa": "2026-11-24",
+  "conta_dal": "2026-11-24"
  },
  {
   "c": "black-friday-multisens",
@@ -137,8 +137,8 @@ const CAMPAGNE = [
    "100 pezzi",
    "promo"
   ],
-  "invio_massa": null,
-  "conta_dal": "2026-11-20"
+  "invio_massa": "2026-11-24",
+  "conta_dal": "2026-11-24"
  },
  {
   "c": "black-friday-tool8-huf",
@@ -158,8 +158,8 @@ const CAMPAGNE = [
    "-15%",
    "promo"
   ],
-  "invio_massa": null,
-  "conta_dal": "2026-11-21"
+  "invio_massa": "2026-11-24",
+  "conta_dal": "2026-11-24"
  },
  {
   "c": "black-friday-ts900",
@@ -179,8 +179,8 @@ const CAMPAGNE = [
    "-40%",
    "promo"
   ],
-  "invio_massa": null,
-  "conta_dal": "2026-11-21"
+  "invio_massa": "2026-11-26",
+  "conta_dal": "2026-11-26"
  },
  {
   "c": "bulloneria-auto",

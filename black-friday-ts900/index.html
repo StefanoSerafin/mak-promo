@@ -269,13 +269,13 @@ footer b{color:var(--ink)}
 
 <section id="secOrdine">
   <h2>Il tuo <em>TS900</em></h2>
-  <p class="sub">Dimmi a quale officina intestarlo: l'ordine mi arriva su WhatsApp.</p>
+  <p class="sub">La TS900 a 414 € la prendi anche da sola: il Security Gateway lo aggiungi se ti serve.</p>
   <div class="card" id="ordine">
     <div class="scelta">
       <label><input type="checkbox" checked disabled><span>AUTEL TS900<small>7200000027 · 24 mesi di aggiornamento</small></span><b id="oTs">414 €</b></label>
-      <label><input type="checkbox" checked disabled><span>Security Gateway FULL 12 mesi<small>7200000046</small></span><b>390 €</b></label>
+      <label><input type="checkbox" id="sgw" checked><span>Security Gateway FULL 12 mesi<small>7200000046 · consigliato: senza, su molte auto recenti non scrivi in centralina</small></span><b>390 €</b></label>
     </div>
-    <div class="totale"><span>Totale promo, netto<br>IVA esclusa</span><b id="tot">804,00 €<i>+ IVA</i></b></div>
+    <div class="totale"><span id="totTesto">Totale promo, netto<br>IVA esclusa</span><b id="tot">804,00 €<i>+ IVA</i></b></div>
     <label class="f" for="officina">Officina</label>
     <input type="text" id="officina" placeholder="Nome dell'officina" autocomplete="organization">
   </div>
@@ -340,19 +340,21 @@ document.addEventListener("DOMContentLoaded", () => {
     $("sTs").textContent = ""; $("pTs").textContent = "690,00 €"; $("oTs").textContent = "690 €";
     $("dentroNota").textContent = "IVA esclusa";
     $("dentroTot").textContent = "1.080,00 €";
-    $("tot").firstChild.textContent = "1.080,00 € ";
   }
 
   function messaggio() {
-    const off = $("officina").value.trim(), bf = fase !== "finita", tot = prezzoTs() + PROMO.sgw;
+    const off = $("officina").value.trim(), bf = fase !== "finita", conSgw = $("sgw").checked, tot = prezzoTs() + (conSgw ? PROMO.sgw : 0);
+    $("tot").firstChild.textContent = euro(tot) + " ";
+    $("totTesto").innerHTML = (conSgw ? "TS900 + Security Gateway" : "Solo TS900") + ", netto<br>IVA esclusa";
     const testo = "Ciao Stefano, vorrei " + (bf ? "il *Black Friday AUTEL TS900* (26/11–6/12)" + (fase === "prima" ? ", dal 26 novembre" : "") : "la *AUTEL TS900*") + ":\n" +
       "• 7200000027 AUTEL TS900" + (bf ? " −40%" : "") + ": 1 pz a " + euro(prezzoTs()) + "\n" +
-      "• 7200000046 Sblocco Security Gateway FULL 12 mesi: 1 pz a 390,00 €\n" +
+      (conSgw ? "• 7200000046 Sblocco Security Gateway FULL 12 mesi: 1 pz a 390,00 €\n" : "") +
       "Totale " + euro(tot) + " netto + IVA\n\nOfficina: " + off;
     $("wa").href = "https://wa.me/" + PROMO.telefono + "?text=" + encodeURIComponent(testo);
     $("waTesto").textContent = off ? "Ordina la TS900 su WhatsApp" : "Voglio la TS900: scrivimi";
   }
   $("officina").addEventListener("input", messaggio);
+  $("sgw").addEventListener("change", messaggio);
 
   const io = "IntersectionObserver" in window;
   if (io) {

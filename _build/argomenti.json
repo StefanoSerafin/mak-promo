@@ -70,7 +70,8 @@
         "refill",
         "100 pezzi",
         "promo"
-      ]
+      ],
+      "invio_massa": "2026-11-24"
     },
     "bulloneria-auto": {
       "argomento": "Ruote e montaggio",
@@ -308,7 +309,8 @@
         "autel",
         "-15%",
         "promo"
-      ]
+      ],
+      "invio_massa": "2026-11-24"
     },
     "black-friday-tool8-huf": {
       "argomento": "TPMS e diagnosi",
@@ -321,7 +323,8 @@
         "strumento",
         "-15%",
         "promo"
-      ]
+      ],
+      "invio_massa": "2026-11-24"
     },
     "black-friday-ts900": {
       "argomento": "TPMS e diagnosi",
@@ -334,7 +337,8 @@
         "security gateway",
         "-40%",
         "promo"
-      ]
+      ],
+      "invio_massa": "2026-11-26"
     }
   }
 }
