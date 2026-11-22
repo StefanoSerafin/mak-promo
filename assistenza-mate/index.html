@@ -59,6 +59,7 @@ section{padding:28px 16px 6px}
 .agg .lk a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;text-align:center;text-decoration:none;border-radius:12px;padding:12px 8px;background:#fff;color:var(--ink);border:1px solid #f0d3a3}
 .agg .lk a b{font-family:var(--titolo);font-size:22px;line-height:1;padding-top:3px}
 .agg .lk a span{font-size:12px;color:var(--mute)}
+.agg.uso{margin-top:10px}
 
 /* vettura e procedure */
 .card{background:var(--card);border-radius:16px;padding:14px}
@@ -167,6 +168,13 @@ footer b{color:var(--ink)}
     <div class="lk">
       <a href="https://www.youtube.com/watch?v=IFMsSr5geL4" target="_blank" rel="noopener"><b>▶ MATE / ATEQ</b><span>Video tutorial</span></a>
       <a href="aggiornamento-autel.pdf" target="_blank" rel="noopener"><b>📄 AUTEL</b><span>Guida PDF TS508 / TS601</span></a>
+    </div>
+  </div>
+  <div class="agg uso">
+    <p><b>Come si usa:</b> guarda il video tutorial del tuo strumento.</p>
+    <div class="lk">
+      <a href="https://youtu.be/Hncp8_1w31w" target="_blank" rel="noopener" data-conta="uso ATEQ"><b>▶ MATE / ATEQ</b><span>Video uso strumento</span></a>
+      <a href="https://youtu.be/u7vXaYhk6bs" target="_blank" rel="noopener" data-conta="uso AUTEL"><b>▶ AUTEL</b><span>Video uso TS508</span></a>
     </div>
   </div>
 </section>
@@ -288,7 +296,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <script>/* tocchi sui tutorial di aggiornamento, contati come ricerche */
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".agg .lk a").forEach(a => a.addEventListener("click", () => {
-    if (window.conta) window.conta("ricerca", "tutorial " + (a.href.indexOf("youtube") >= 0 ? "ATEQ" : "AUTEL"));
+    if (window.conta) window.conta("ricerca", "tutorial " + (a.dataset.conta || (a.href.indexOf("youtube") >= 0 ? "ATEQ" : "AUTEL")));
   }));
 });
 </script>
