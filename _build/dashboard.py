@@ -120,7 +120,7 @@ def main():
             sys.exit(f"dashboard.py si ferma: «{c}» ha invio_massa {massa} prima della pubblicazione {dal}")
         voci.append({"c": c, "titolo": meta(h, "title") or c, "desc": meta(h, "description"),
                      "argomento": mappa[c]["argomento"], "archiviata": bool(mappa[c].get("archiviata")),
-                     "dal": dal, "url": BASE_URL + c + "/",
+                     "dal": dal, "url": mappa[c].get("url") or BASE_URL + c + "/", "privata": bool(mappa[c].get("privata")),
                      "parole": [x.strip() for x in mappa[c].get("parole", [])],
                      "invio_massa": massa,
                      "conta_dal": massa or (date.fromisoformat(dal) + timedelta(days=1)).isoformat()})

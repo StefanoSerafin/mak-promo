@@ -161,7 +161,7 @@ details.arch summary{cursor:pointer;font-family:var(--titolo);font-size:22px;tex
 .piede button{font:inherit;font-size:13px;font-weight:700;border:1px solid var(--line);background:#fff;border-radius:10px;padding:7px 12px;cursor:pointer}
 .piede .via{border:0;background:none;color:var(--mute);text-decoration:underline;padding:7px 0;font-weight:500}
 </style>
-<script src="campagne.js?v=3671dc8c"></script>
+<script src="campagne.js?v=0fcd85b4"></script>
 </head>
 <body>
 <div class="wrap">
@@ -302,10 +302,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function riga(c) {
     return '<div class="riga"><a class="vai" href="#l/' + c.c + '"><img src="../' + c.c + '/icona.png" alt="" width="44" height="44" loading="lazy">' +
-      '<div class="tx"><b><i>' + esc(c.t1) + "</i>" + (c.nuova && !c.archiviata ? '<span class="tag nuova">nuova</span>' : "") + (c.archiviata ? '<span class="tag arch">archiviata</span>' : "") + "</b>" +
+      '<div class="tx"><b><i>' + esc(c.t1) + "</i>" + (c.nuova && !c.archiviata && !c.privata ? '<span class="tag nuova">nuova</span>' : "") + (c.archiviata ? '<span class="tag arch">archiviata</span>' : "") + (c.privata ? '<span class="tag arch">privata</span>' : "") + "</b>" +
       "<span>" + esc(c.t2) + "</span></div></a>" +
       '<button type="button" class="ico cp" data-url="' + c.url + '" aria-label="Copia link di ' + esc(c.t1) + '">' + ICO_COPIA + "</button>" +
-      '<a class="ico wa" data-c="' + c.c + '" href="' + linkWA(c) + '" target="_blank" rel="noopener" aria-label="Manda su WhatsApp ' + esc(c.t1) + '">' + ICO_WA + "</a></div>";
+      (c.privata ? "" : '<a class="ico wa" data-c="' + c.c + '" href="' + linkWA(c) + '" target="_blank" rel="noopener" aria-label="Manda su WhatsApp ' + esc(c.t1) + '">' + ICO_WA + "</a>") + "</div>";
   }
   const sezione = (titolo, l) => l.length ? "<h2>" + esc(titolo) + "<small>" + l.length + "</small></h2>" + l.map(riga).join("") : "";
 
@@ -345,7 +345,7 @@ document.addEventListener("DOMContentLoaded", () => {
       '<div class="det-testa"><img src="../' + c.c + '/anteprima.jpg" alt="" width="1200" height="630"><b>' + esc(c.titolo) + "</b><p>" + esc(c.desc) + "</p><p>" +
       esc(c.argomento) + " · online dal " + ggm(c.dal) + (c.archiviata ? " · archiviata" : "") + "</p></div>" +
       '<div class="bt"><button type="button" class="cp" data-url="' + c.url + '">Copia link</button>' +
-      '<a class="wa" data-c="' + c.c + '" href="' + linkWA(c) + '" target="_blank" rel="noopener">WhatsApp</a>' +
+      (c.privata ? "" : '<a class="wa" data-c="' + c.c + '" href="' + linkWA(c) + '" target="_blank" rel="noopener">WhatsApp</a>') +
       '<a class="ap" href="' + c.url + '" target="_blank" rel="noopener">Apri</a></div>' +
       '<a class="link" href="#numeri/' + c.c + '">Numeri di questa locandina ›</a>';
   }

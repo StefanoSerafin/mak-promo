@@ -339,6 +339,18 @@
         "promo"
       ],
       "invio_massa": "2026-11-26"
+    },
+    "catene-neve": {
+      "argomento": "Inverno e soccorso NPK",
+      "parole": [
+        "catene",
+        "neve",
+        "Lappon",
+        "Ennepicappa",
+        "preventivi"
+      ],
+      "url": "https://stefanoserafin.github.io/mak-catene-neve/",
+      "privata": true
     }
   }
 }

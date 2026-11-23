@@ -1,5 +1,5 @@
 /* Generato da _build/dashboard.py: non modificare a mano. */
-const GENERATO = "2026-11-20";
+const GENERATO = "2026-11-23";
 const ARGOMENTI = ["TPMS e diagnosi", "Ruote e montaggio", "Inverno e soccorso NPK", "Officina e consumo", "Portale e servizio"];
 const MIO_DAL = "2026-11-16";
 const CAMPAGNE = [
@@ -11,6 +11,7 @@ const CAMPAGNE = [
   "archiviata": false,
   "dal": "2026-11-09",
   "url": "https://stefanoserafin.github.io/mak-promo/accesso-b2b/",
+  "privata": false,
   "parole": [
    "portale",
    "bitubì",
@@ -29,6 +30,7 @@ const CAMPAGNE = [
   "archiviata": false,
   "dal": "2026-10-26",
   "url": "https://stefanoserafin.github.io/mak-promo/adblue/",
+  "privata": false,
   "parole": [
    "urea",
    "gasolio",
@@ -45,6 +47,7 @@ const CAMPAGNE = [
   "archiviata": false,
   "dal": "2026-11-14",
   "url": "https://stefanoserafin.github.io/mak-promo/air-check-camper/",
+  "privata": false,
   "parole": [
    "sensori",
    "valvole",
@@ -62,6 +65,7 @@ const CAMPAGNE = [
   "archiviata": false,
   "dal": "2026-10-27",
   "url": "https://stefanoserafin.github.io/mak-promo/anelli-centraggio/",
+  "privata": false,
   "parole": [
    "mozzo",
    "centraggio",
@@ -78,6 +82,7 @@ const CAMPAGNE = [
   "archiviata": false,
   "dal": "2026-11-03",
   "url": "https://stefanoserafin.github.io/mak-promo/assistenza-mate/",
+  "privata": false,
   "parole": [
    "supporto",
    "tecnico",
@@ -95,6 +100,7 @@ const CAMPAGNE = [
   "archiviata": false,
   "dal": "2026-11-14",
   "url": "https://stefanoserafin.github.io/mak-promo/autel-tool12/",
+  "privata": false,
   "parole": [
    "strumento",
    "sensori",
@@ -111,6 +117,7 @@ const CAMPAGNE = [
   "archiviata": false,
   "dal": "2026-11-20",
   "url": "https://stefanoserafin.github.io/mak-promo/black-friday-autel-mx/",
+  "privata": false,
   "parole": [
    "black friday",
    "sensori",
@@ -130,6 +137,7 @@ const CAMPAGNE = [
   "archiviata": false,
   "dal": "2026-11-19",
   "url": "https://stefanoserafin.github.io/mak-promo/black-friday-multisens/",
+  "privata": false,
   "parole": [
    "black friday",
    "sensori",
@@ -148,6 +156,7 @@ const CAMPAGNE = [
   "archiviata": false,
   "dal": "2026-11-20",
   "url": "https://stefanoserafin.github.io/mak-promo/black-friday-tool8-huf/",
+  "privata": false,
   "parole": [
    "black friday",
    "tool 8",
@@ -169,6 +178,7 @@ const CAMPAGNE = [
   "archiviata": false,
   "dal": "2026-11-20",
   "url": "https://stefanoserafin.github.io/mak-promo/black-friday-ts900/",
+  "privata": false,
   "parole": [
    "black friday",
    "ts900",
@@ -190,6 +200,7 @@ const CAMPAGNE = [
   "archiviata": false,
   "dal": "2026-11-10",
   "url": "https://stefanoserafin.github.io/mak-promo/bulloneria-auto/",
+  "privata": false,
   "parole": [
    "bulloni",
    "dadi",
@@ -207,6 +218,7 @@ const CAMPAGNE = [
   "archiviata": false,
   "dal": "2026-11-13",
   "url": "https://stefanoserafin.github.io/mak-promo/bulloni-antifurto/",
+  "privata": false,
   "parole": [
    "dadi",
    "antifurto",
@@ -223,6 +235,7 @@ const CAMPAGNE = [
   "archiviata": false,
   "dal": "2026-10-26",
   "url": "https://stefanoserafin.github.io/mak-promo/calze-light-espositore/",
+  "privata": false,
   "parole": [
    "catene",
    "neve",
@@ -240,6 +253,7 @@ const CAMPAGNE = [
   "archiviata": false,
   "dal": "2026-10-29",
   "url": "https://stefanoserafin.github.io/mak-promo/calze-neve/",
+  "privata": false,
   "parole": [
    "catene",
    "neve",
@@ -257,6 +271,7 @@ const CAMPAGNE = [
   "archiviata": false,
   "dal": "2026-10-26",
   "url": "https://stefanoserafin.github.io/mak-promo/canali-etrto/",
+  "privata": false,
   "parole": [
    "cerchio",
    "larghezza",
@@ -273,6 +288,7 @@ const CAMPAGNE = [
   "archiviata": false,
   "dal": "2026-11-06",
   "url": "https://stefanoserafin.github.io/mak-promo/cap-originali/",
+  "privata": false,
   "parole": [
    "coprimozzo",
    "tappi",
@@ -282,6 +298,25 @@ const CAMPAGNE = [
   "conta_dal": "2026-11-07"
  },
  {
+  "c": "catene-neve",
+  "titolo": "Catene da neve NPK · app per i preventivi",
+  "desc": "Uso personale, con PIN. Vettura e misura: dice se è catenabile e quale catena NPK proporre.",
+  "argomento": "Inverno e soccorso NPK",
+  "archiviata": false,
+  "dal": "2026-11-23",
+  "url": "https://stefanoserafin.github.io/mak-catene-neve/",
+  "privata": true,
+  "parole": [
+   "catene",
+   "neve",
+   "Lappon",
+   "Ennepicappa",
+   "preventivi"
+  ],
+  "invio_massa": null,
+  "conta_dal": "2026-11-24"
+ },
+ {
   "c": "cavalletto-ez-jack-45s",
   "titolo": "Cavalletto EZ JACK 45S · 239,00 € + IVA",
   "desc": "Monta sulla tua vettura? Regge il peso? Verificalo qui e ordina su WhatsApp.",
@@ -289,6 +324,7 @@ const CAMPAGNE = [
   "archiviata": false,
   "dal": "2026-10-29",
   "url": "https://stefanoserafin.github.io/mak-promo/cavalletto-ez-jack-45s/",
+  "privata": false,
   "parole": [
    "sollevatore",
    "crick",
@@ -305,6 +341,7 @@ const CAMPAGNE = [
   "archiviata": false,
   "dal": "2026-11-12",
   "url": "https://stefanoserafin.github.io/mak-promo/consumo-officina-cora/",
+  "privata": false,
   "parole": [
    "guanti",
    "pulizia",
@@ -322,6 +359,7 @@ const CAMPAGNE = [
   "archiviata": false,
   "dal": "2026-11-06",
   "url": "https://stefanoserafin.github.io/mak-promo/copriruota/",
+  "privata": false,
   "parole": [
    "copricerchi",
    "borchie",
@@ -338,6 +376,7 @@ const CAMPAGNE = [
   "archiviata": false,
   "dal": "2026-11-13",
   "url": "https://stefanoserafin.github.io/mak-promo/diagnosi-autel/",
+  "privata": false,
   "parole": [
    "tablet",
    "MaxiSys",
@@ -354,6 +393,7 @@ const CAMPAGNE = [
   "archiviata": false,
   "dal": "2026-10-26",
   "url": "https://stefanoserafin.github.io/mak-promo/distanziali-xilema/",
+  "privata": false,
   "parole": [
    "spessori",
    "carreggiata",
@@ -370,6 +410,7 @@ const CAMPAGNE = [
   "archiviata": false,
   "dal": "2026-10-26",
   "url": "https://stefanoserafin.github.io/mak-promo/fix-pack/",
+  "privata": false,
   "parole": [
    "bulloneria",
    "colonnette",
@@ -386,6 +427,7 @@ const CAMPAGNE = [
   "archiviata": true,
   "dal": "2026-10-25",
   "url": "https://stefanoserafin.github.io/mak-promo/halloween-ruotino/",
+  "privata": false,
   "parole": [
    "ruota di scorta",
    "kit emergenza",
@@ -403,6 +445,7 @@ const CAMPAGNE = [
   "archiviata": false,
   "dal": "2026-10-25",
   "url": "https://stefanoserafin.github.io/mak-promo/kit-gomma-ruota/",
+  "privata": false,
   "parole": [
    "ruote",
    "pneumatici",
@@ -421,6 +464,7 @@ const CAMPAGNE = [
   "archiviata": false,
   "dal": "2026-11-14",
   "url": "https://stefanoserafin.github.io/mak-promo/lavoriamo-insieme/",
+  "privata": false,
   "parole": [
    "nuovo cliente",
    "prospect",
@@ -440,6 +484,7 @@ const CAMPAGNE = [
   "archiviata": false,
   "dal": "2026-11-04",
   "url": "https://stefanoserafin.github.io/mak-promo/multisens-plus/",
+  "privata": false,
   "parole": [
    "sensori",
    "valvole",
@@ -456,6 +501,7 @@ const CAMPAGNE = [
   "archiviata": false,
   "dal": "2026-10-26",
   "url": "https://stefanoserafin.github.io/mak-promo/prossima-fermata-futuro/",
+  "privata": false,
   "parole": [
    "intelligenza artificiale",
    "IA",
@@ -472,6 +518,7 @@ const CAMPAGNE = [
   "archiviata": false,
   "dal": "2026-10-26",
   "url": "https://stefanoserafin.github.io/mak-promo/refill-autel-mx/",
+  "privata": false,
   "parole": [
    "valvole"
   ],
@@ -486,6 +533,7 @@ const CAMPAGNE = [
   "archiviata": false,
   "dal": "2026-10-26",
   "url": "https://stefanoserafin.github.io/mak-promo/refill-multisens/",
+  "privata": false,
   "parole": [
    "valvole",
    "MP6"
@@ -501,6 +549,7 @@ const CAMPAGNE = [
   "archiviata": false,
   "dal": "2026-10-26",
   "url": "https://stefanoserafin.github.io/mak-promo/riempicarrello/",
+  "privata": false,
   "parole": [
    "valvole",
    "pesi",
@@ -517,6 +566,7 @@ const CAMPAGNE = [
   "archiviata": false,
   "dal": "2026-11-12",
   "url": "https://stefanoserafin.github.io/mak-promo/spese-trasporto/",
+  "privata": false,
   "parole": [
    "spedizione",
    "franco",
@@ -534,6 +584,7 @@ const CAMPAGNE = [
   "archiviata": false,
   "dal": "2026-10-26",
   "url": "https://stefanoserafin.github.io/mak-promo/tergi-cora/",
+  "privata": false,
   "parole": [
    "tergicristalli",
    "spazzole",
@@ -550,6 +601,7 @@ const CAMPAGNE = [
   "archiviata": false,
   "dal": "2026-11-12",
   "url": "https://stefanoserafin.github.io/mak-promo/tergi-cora-sciolte/",
+  "privata": false,
   "parole": [
    "tergicristalli",
    "spazzole",
@@ -566,6 +618,7 @@ const CAMPAGNE = [
   "archiviata": false,
   "dal": "2026-11-14",
   "url": "https://stefanoserafin.github.io/mak-promo/tool8-ma41/",
+  "privata": false,
   "parole": [
    "strumento",
    "sensori",
@@ -583,6 +636,7 @@ const CAMPAGNE = [
   "archiviata": false,
   "dal": "2026-11-12",
   "url": "https://stefanoserafin.github.io/mak-promo/tpms-tesla/",
+  "privata": false,
   "parole": [
    "sensori",
    "valvole"
@@ -598,6 +652,7 @@ const CAMPAGNE = [
   "archiviata": false,
   "dal": "2026-10-26",
   "url": "https://stefanoserafin.github.io/mak-promo/trasformazioni-nad/",
+  "privata": false,
   "parole": [
    "libretto",
    "omologazione",
@@ -615,6 +670,7 @@ const CAMPAGNE = [
   "archiviata": false,
   "dal": "2026-10-28",
   "url": "https://stefanoserafin.github.io/mak-promo/ts900-rinnovi/",
+  "privata": false,
   "parole": [
    "abbonamento",
    "diagnosi",
