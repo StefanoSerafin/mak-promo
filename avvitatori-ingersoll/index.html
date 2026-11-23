@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Avvitatori e utensili Ingersoll Rand</title>
+<meta name="description" content="Avvitatori e utensili Ingersoll Rand: pneumatico 231GXP a 110 € + IVA, kit a batteria W7152 a 560 € + IVA e tutta la gamma ordinabile. Ordina su WhatsApp.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Avvitatori Ingersoll Rand · 231GXP 110 € · kit W7152 560 € + IVA">
+<meta property="og:description" content="Aria o batteria? Scegli il tuo tra tutta la gamma Ingersoll Rand e ordina su WhatsApp.">
+<meta property="og:image" content="https://stefanoserafin.github.io/mak-promo/avvitatori-ingersoll/anteprima.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://stefanoserafin.github.io/mak-promo/avvitatori-ingersoll/">
+<meta name="theme-color" content="#da2128">
+<link rel="apple-touch-icon" href="icona.png">
+<style>
+:root{
+  --red:#da2128; --ink:#14161a; --mute:#5d626b; --card:#f3f4f6; --line:#e2e4e8; --bg:#fff; --verde:#25d366;
+  --titolo:"DIN Condensed","Avenir Next Condensed","Arial Narrow",system-ui,sans-serif;
+  --testo:"Avenir Next",-apple-system,system-ui,sans-serif;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--testo);font-size:16px;line-height:1.4}
+body{padding-top:calc(56px + env(safe-area-inset-top));padding-bottom:calc(96px + env(safe-area-inset-bottom))}
+.wrap{max-width:540px;margin:0 auto;overflow:hidden}
+h2{font-family:var(--titolo);font-weight:700;font-size:32px;letter-spacing:.5px;margin:0 0 4px;text-transform:uppercase;line-height:1}
+h2 em{font-style:normal;color:var(--red)}
+.sub{color:var(--mute);margin:0 0 16px;font-size:15px}
+section{padding:28px 16px 6px}
+
+.hero{position:relative;overflow:hidden;line-height:0}
+.hero img{width:100%;height:auto;display:block}
+.hero::after{content:"";position:absolute;top:0;bottom:0;width:40%;left:-60%;pointer-events:none;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-18deg);animation:riflesso 5s 1s infinite}
+@keyframes riflesso{0%{left:-60%}35%,100%{left:130%}}
+
+.avviso{position:fixed;top:0;left:0;right:0;z-index:25;display:flex;align-items:center;justify-content:center;gap:10px;
+  padding:calc(10px + env(safe-area-inset-top)) 16px 10px;background:var(--ink);color:#fff;text-decoration:none;font-size:14px;line-height:1.3;
+  box-shadow:0 4px 16px rgba(0,0,0,.25);transition:transform .35s}
+.avviso span{max-width:470px}
+.avviso i{flex:none;font-style:normal;width:30px;height:30px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:700;animation:giu 1.6s infinite}
+@keyframes giu{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
+.avviso.via{transform:translateY(-110%)}
+#secVeicolo,#secOrdine{scroll-margin-top:10px}
+
+/* scelta veicolo: radio + label (tocco sicuro su iPhone) */
+.veicoli{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.veicoli input{position:absolute;opacity:0;pointer-events:none}
+.veicoli label{display:block;background:var(--card);border:2px solid transparent;border-radius:14px;padding:12px 12px 10px;cursor:pointer}
+.veicoli label svg{width:100%;height:58px;display:block;margin-bottom:6px}
+.veicoli label b{display:block;font-family:var(--titolo);font-size:26px;line-height:1;text-transform:uppercase;padding-top:3px}
+.veicoli label small{display:block;font-size:13px;color:var(--mute);margin-top:2px}
+.veicoli input:checked + label{border-color:var(--red);background:#fff;box-shadow:0 6px 16px rgba(218,33,40,.18)}
+.esito{margin-top:14px;border-radius:16px;padding:16px;display:none;background:var(--red);color:#fff}
+.esito.si{display:block}
+.esito b{display:block;font-family:var(--titolo);font-size:28px;line-height:1;text-transform:uppercase;padding-top:3px}
+.esito p{margin:8px 0 0;font-size:15px}
+.esito a{display:inline-block;margin-top:10px;font-weight:700;background:#fff;color:var(--red);text-decoration:none;border-radius:12px;padding:10px 14px}
+.altro{font-size:14px;color:var(--mute);margin:12px 0 0}
+
+/* ordine */
+.card{background:var(--card);border-radius:16px;padding:6px 14px 14px}
+.riga{display:grid;grid-template-columns:84px 1fr auto;gap:10px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}
+.riga img{width:84px;height:84px;object-fit:contain;display:block}
+.riga h3{margin:0;font-family:var(--titolo);font-size:24px;line-height:1;text-transform:uppercase;padding-top:3px}
+.riga .c{font-size:13px;font-weight:600;color:var(--mute);letter-spacing:.3px}
+.riga .p{font-size:13px;color:var(--mute)}
+.qta{display:flex;align-items:center;background:#fff;border:1px solid var(--line);border-radius:12px}
+.qta button{width:38px;height:46px;border:0;background:none;color:var(--ink);font-size:22px}
+.qta input{width:42px;height:46px;border:0;background:none;color:var(--ink);text-align:center;font-family:var(--titolo);font-size:26px;padding:5px 0 0;-moz-appearance:textfield}
+.qta input::-webkit-outer-spin-button,.qta input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.riga.on .qta{border-color:var(--red)}
+.totale{margin-top:12px;display:flex;justify-content:space-between;align-items:flex-end;gap:10px}
+.totale span{font-size:13px;color:var(--mute);line-height:1.3}
+.totale b{font-family:var(--titolo);font-size:36px;line-height:1;white-space:nowrap}
+.veloci{display:flex;gap:8px;margin-top:12px}
+.veloci button{flex:1 1 0;white-space:nowrap;font:inherit;font-weight:600;font-size:14px;border-radius:12px;padding:11px 6px;border:1px dashed #b9bdc4;background:#fff;color:var(--ink)}
+input[type=text]{width:100%;font:inherit;font-size:17px;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:12px;padding:13px 14px}
+label.f{display:block;font-size:13px;color:var(--mute);margin:16px 0 6px;text-transform:uppercase;letter-spacing:1px}
+.nota{font-size:13px;color:var(--mute);margin-top:8px}
+.salta{animation:salta .45s}
+@keyframes salta{30%{transform:scale(1.03)}60%{transform:scale(.99)}}
+
+/* come funziona */
+.passi{list-style:none;margin:0;padding:0;counter-reset:p}
+.passi li{counter-increment:p;position:relative;padding:12px 0 12px 54px;border-bottom:1px solid var(--line);font-size:15px}
+.passi li::before{content:counter(p);position:absolute;left:0;top:10px;width:38px;height:38px;border-radius:50%;background:var(--red);color:#fff;
+  font-family:var(--titolo);font-size:24px;display:flex;align-items:center;justify-content:center;padding-top:3px}
+.passi li b{display:block;font-family:var(--titolo);font-size:22px;line-height:1;text-transform:uppercase;padding-top:2px}
+.store{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.store a{display:flex;align-items:center;gap:10px;background:#000;color:#fff;text-decoration:none;border-radius:12px;padding:10px 12px}
+.store svg{width:26px;height:26px;fill:#fff;flex:none}
+.store span{font-weight:700;font-size:18px;line-height:1.1}
+.store small{display:block;font-weight:500;font-size:11px;opacity:.85}
+.perche{background:var(--ink);color:#fff;border-radius:16px;padding:16px;margin-top:16px}
+.perche b{display:block;font-family:var(--titolo);font-size:26px;line-height:1;text-transform:uppercase;padding-top:3px;color:#fff}
+.perche b em{font-style:normal;color:var(--red)}
+.perche p{margin:8px 0 0;font-size:15px;opacity:.9}
+.dati{width:100%;border-collapse:collapse;font-size:15px}
+.dati td{padding:10px 0;border-bottom:1px solid var(--line)}
+.dati td:last-child{text-align:right;font-weight:600}
+
+.btns{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;color:var(--ink);background:var(--card);border-radius:14px;padding:15px 10px;font-weight:600}
+.btn.b2b{background:var(--ink);color:#fff}
+footer{padding:26px 16px 10px;text-align:center;color:var(--mute);font-size:13px}
+footer img{width:150px;display:block;margin:0 auto 10px}
+footer b{color:var(--ink)}
+
+.cta{position:fixed;left:0;right:0;bottom:0;z-index:30;padding:10px 16px calc(10px + env(safe-area-inset-bottom));
+  background:linear-gradient(rgba(255,255,255,0),rgba(255,255,255,.96) 30%)}
+.cta a{display:flex;align-items:center;justify-content:center;gap:10px;max-width:508px;margin:0 auto;
+  background:var(--verde);color:#062e16;text-decoration:none;font-weight:800;font-size:18px;border-radius:16px;padding:16px;
+  animation:pulsa 2.4s infinite}
+.cta a svg{width:24px;height:24px;fill:currentColor;flex:none}
+@keyframes pulsa{0%,100%{box-shadow:0 0 0 0 rgba(37,211,102,.55)}60%{box-shadow:0 0 0 14px rgba(37,211,102,0)}}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+/* vocale di Stefano */
+.voce{padding:16px 16px 0}
+.voce[hidden]{display:none}
+.voce button{width:100%;display:grid;grid-template-columns:52px 1fr auto;align-items:center;gap:12px;font:inherit;text-align:left;
+  background:var(--ink);color:#fff;border:0;border-radius:18px;padding:12px 16px 12px 12px;position:relative;overflow:hidden;box-shadow:0 10px 24px rgba(0,0,0,.18)}
+.voce .ic{width:52px;height:52px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;position:relative;z-index:1}
+.voce .ic svg{width:24px;height:24px;fill:#fff}
+.voce .ic::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:2px solid rgba(218,33,40,.6);animation:onda 1.8s infinite}
+.voce.va .ic::after{animation:none;opacity:0}
+@keyframes onda{0%{transform:scale(.9);opacity:1}100%{transform:scale(1.35);opacity:0}}
+.voce b{display:block;font-family:var(--titolo);font-size:26px;line-height:1;text-transform:uppercase;padding-top:3px;position:relative;z-index:1}
+.voce small{display:block;font-size:13px;opacity:.8;position:relative;z-index:1}
+.voce button{grid-template-columns:52px 1fr 116px;gap:10px;padding:10px 10px 10px 12px}
+/* volto di Stefano che parla, con l'anello rosso dell'avanzamento */
+.voce .volto{width:116px;height:116px;position:relative;z-index:1}
+.voce .volto video{position:absolute;inset:7px;width:102px;height:102px;border-radius:50%;object-fit:cover;background:#2a2c31}
+.voce .volto svg{position:absolute;inset:0;width:116px;height:116px;transform:rotate(-90deg)}
+.voce .volto circle{fill:none;stroke-width:5}
+.voce .volto .tr{stroke:rgba(255,255,255,.18)}
+.voce .volto .av{stroke:var(--red);stroke-linecap:round;transition:stroke-dashoffset .25s linear}
+.voce .pr{position:absolute;left:0;top:0;bottom:0;width:0;background:rgba(218,33,40,.35);transition:width .25s linear}
+.voce details{margin-top:8px;font-size:14px;color:var(--mute)}
+.voce summary{cursor:pointer;font-weight:600;color:var(--ink);padding:4px 2px}
+.voce details p{margin:6px 2px 0;font-style:italic}
+.conf th{font-family:var(--titolo);font-size:22px;text-align:right;padding:6px 0 8px 8px;border-bottom:2px solid var(--ink)}
+.conf td+td{text-align:right;font-weight:600;padding-left:8px}
+.schede{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px}
+.schede input{position:absolute;opacity:0;pointer-events:none}
+.schede label{display:flex;align-items:center;justify-content:center;text-align:center;min-height:46px;padding:6px;border-radius:12px;background:var(--card);border:2px solid transparent;font-weight:600;font-size:14px;cursor:pointer}
+.schede input:checked+label{background:var(--ink);color:#fff}
+.riga[hidden]{display:none}
+#riep{list-style:none;margin:8px 0 0;padding:0;font-size:14px}#riep li{display:flex;justify-content:space-between;gap:10px;padding:5px 0;border-bottom:1px solid var(--line)}#riep li b{white-space:nowrap}
+</style>
+</head>
+<body>
+<a class="avviso" id="avviso" href="#secOrdine"><span><b>Aria o batteria?</b> Scegli il tuo: l'ordine me lo mandi su WhatsApp</span><i>↓</i></a>
+<div class="wrap">
+<div class="hero"><img src="locandina.jpg" alt="MATE, avvitatori Ingersoll Rand da mezzo pollice. Pneumatico 231GXP a 110 euro più IVA. Kit a batteria W7152 con 2 batterie, caricatore e valigetta a 560 euro più IVA. Sul B2B tutta la gamma Ingersoll Rand." width="2160" height="2700"></div>
+<div class="voce" id="voce" hidden>
+  <button type="button" id="voceBtn" aria-label="Ascolta Stefano che spiega gli avvitatori">
+    <span class="pr" id="voceBar"></span>
+    <span class="ic" id="voceIc"><svg viewBox="0 0 24 24"><path id="voceIcona" d="M8 5v14l11-7z"/></svg></span>
+    <span><b>Spiegamelo a voce</b><small>Stefano te li presenta in 15 secondi</small></span>
+    <span class="volto">
+      <video id="voceAudio" src="volto.mp4?v=20261123" poster="volto.jpg?v=20261123" playsinline preload="metadata"></video>
+      <svg viewBox="0 0 116 116" aria-hidden="true"><circle class="tr" cx="58" cy="58" r="55"/><circle class="av" id="voceAnello" cx="58" cy="58" r="55" stroke-dasharray="345.6" stroke-dashoffset="345.6"/></svg>
+    </span>
+  </button>
+  <details><summary>Leggi il testo</summary><p>«Ciao, ti ricordo che sul B2B MAK troverai gli avvitatori della Ingersoll Rand: quello pneumatico a partire da 110 euro e quello a batteria a partire da 560 euro. Spero ti possa essere utile. A presto!»</p></details>
+</div>
+<section id="secOrdine">
+  <h2>Scegli il <em>tuo</em></h2>
+  <p class="sub">I due del video: metti la quantità.</p>
+  <div class="card"><div id="righe"></div></div>
+</section>
+<section id="secGamma">
+  <h2>Tutta la <em>gamma</em></h2>
+  <p class="sub">Tutti gli articoli Ingersoll Rand ordinabili. Puoi scegliere da più categorie.</p>
+  <div class="schede" id="schede">
+    <input type="radio" name="cat" id="catP" value="p" checked><label for="catP">Aria 1/2"</label>
+    <input type="radio" name="cat" id="catB" value="b"><label for="catB">A batteria</label>
+    <input type="radio" name="cat" id="catT" value="t"><label for="catT">Aria 3/4" e 1"</label>
+    <input type="radio" name="cat" id="catA" value="a"><label for="catA">Bussole e utensili</label>
+  </div>
+  <div class="card"><div id="righeG"></div></div>
+</section>
+<section id="secTotale">
+  <h2>Il tuo <em>ordine</em></h2>
+  <div class="card" id="ordine">
+    <ul id="riep"></ul>
+    <div class="totale"><span>Totale + IVA</span><b id="tot">–</b></div>
+    <label class="f" for="officina">Officina (facoltativo)</label>
+    <input type="text" id="officina" placeholder="Nome dell'officina" autocomplete="organization">
+  </div>
+  <p class="nota">Se preferisci, puoi ordinare da solo sul portale B2B con gli stessi codici.</p>
+</section>
+<section>
+  <h2>I due del video <em>a confronto</em></h2>
+  <table class="dati conf">
+    <tr><th></th><th>231GXP</th><th>Kit W7152</th></tr>
+    <tr><td>Alimentazione</td><td>aria</td><td>batteria 20 V</td></tr>
+    <tr><td>Attacco</td><td>1/2"</td><td>1/2"</td></tr>
+    <tr><td>Coppia massima</td><td>610 Nm</td><td>1360 Nm</td></tr>
+    <tr><td>Peso</td><td>2,63 kg</td><td>3,4 kg</td></tr>
+    <tr><td>Regolazione</td><td>5 posizioni</td><td>4 modalità</td></tr>
+    <tr><td>Nel kit</td><td>–</td><td>2 batterie, caricatore, valigetta</td></tr>
+  </table>
+</section>
+<section><div class="btns"><a class="btn" href="tel:+393316798961">📞 Chiamami</a><a class="btn b2b" href="https://b2bshop.makwheels.it/" target="_blank" rel="noopener">🛒 Portale B2B</a></div></section>
+<footer><img src="logo-mate-nero.svg" alt="MATE"><b>Stefano Serafin</b> · Agente MAK · 331 679 8961<br><small>Prezzi del B2B al 23/11/2026, IVA esclusa. Disponibilità da verificare sul B2B.<br>Conteggio anonimo delle visite, senza cookie.</small></footer>
+</div>
+<div class="cta"><a id="wa" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.7a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.2-.2-.5-.3z"/></svg><span id="waTesto">Scrivimi su WhatsApp</span></a></div>
+<script>
+/* Fonte: B2B MAK, ricerca per codice con account cliente, 2026-11-23. W7152 kit confermato da Stefano. */
+const ARTICOLI=[{"g":"e","cod":"93I0000006","nome":"Pneumatico 231GXP","det":"1/2\" · 610 Nm","prezzo":110.0,"img":"foto/93I0000006.jpg"},{"g":"e","cod":"93I0000001","nome":"Kit a batteria W7152","det":"1/2\" · 1360 Nm · 2 batterie, caricatore e valigetta","prezzo":560.0,"img":"foto/93I0000001.jpg"},{"g":"p","cod":"93I0000005","nome":"36QMAX compatto","det":"1/2\" · 640 Nm","prezzo":135.0,"img":"foto/93I0000005.jpg"},{"g":"p","cod":"93I0000007","nome":"2130XP","det":"1/2\" · 816 Nm","prezzo":145.0,"img":"foto/93I0000007.jpg"},{"g":"p","cod":"93I0000008","nome":"2136QXPA","det":"1/2\" · 1490 Nm","prezzo":175.0,"img":"foto/93I0000008.jpg"},{"g":"p","cod":"93I0000009","nome":"2235QXPA","det":"1/2\" · 1760 Nm","prezzo":210.0,"img":"foto/93I0000009.jpg"},{"g":"b","cod":"93I0000023","nome":"W7153","det":"1/2\" · 2170 Nm · a batteria","prezzo":455.0,"img":"foto/93I0000023.jpg"},{"g":"b","cod":"93I0000002","nome":"W8171","det":"3/4\" · 2710 Nm · a batteria","prezzo":650.0,"img":"foto/93I0000002.jpg"},{"g":"b","cod":"93I0000003","nome":"W9691","det":"1\" · 3000 Nm · a batteria","prezzo":1250.0,"img":"foto/93I0000003.jpg"},{"g":"t","cod":"93I0000022","nome":"2146 Q1MAX","det":"3/4\" · 1970 Nm","prezzo":536.0,"img":"foto/93I0000022.jpg"},{"g":"t","cod":"93I0000020","nome":"2146 Q1MAX-3AM","det":"3/4\" · 1970 Nm","prezzo":590.0,"img":"foto/93I0000020.jpg"},{"g":"t","cod":"93I0000011","nome":"285B","det":"1\" · 2400 Nm · dritto","prezzo":530.0,"img":"foto/93I0000011.jpg"},{"g":"t","cod":"93I0000012","nome":"285B-6","det":"1\" · 2400 Nm · albero prolungato","prezzo":535.0,"img":"foto/93I0000012.jpg"},{"g":"t","cod":"93I0000013","nome":"295A","det":"1\" · 2400 Nm · a pistola","prezzo":530.0,"img":"foto/93I0000013.jpg"},{"g":"t","cod":"93I0000014","nome":"295A-6","det":"1\" · 2400 Nm · albero prolungato","prezzo":535.0,"img":"foto/93I0000014.jpg"},{"g":"a","cod":"93I0000004","nome":"Kit bussole 1/2\"","det":"SK4M5LN · 5 pezzi","prezzo":52.0,"img":"foto/93I0000004.jpg"},{"g":"a","cod":"93I0000021","nome":"Kit bussole 3/4\"","det":"SK6M6LN · 6 pezzi","prezzo":220.0,"img":"foto/93I0000021.jpg"},{"g":"a","cod":"93I0000010","nome":"Kit bussole 1\"","det":"SK8M4LN · 4 pezzi","prezzo":180.0,"img":"foto/93I0000010.jpg"},{"g":"a","cod":"93I0000015","nome":"Cricchetto 1077XPA","det":"1/2\" · 73 Nm","prezzo":130.0,"img":"foto/93I0000015.jpg"},{"g":"a","cod":"93I0000016","nome":"Smerigliatrice 302B","det":"angolare · 6 mm · 0,25 kW","prezzo":130.0,"img":"foto/93I0000016.jpg"},{"g":"a","cod":"93I0000017","nome":"Smerigliatrice 308B","det":"dritta · 6 mm · 0,25 kW","prezzo":110.0,"img":"foto/93I0000017.jpg"},{"g":"a","cod":"93I0000018","nome":"Raspatrice 327LS","det":"per pneumatici","prezzo":120.0,"img":"foto/93I0000018.jpg"},{"g":"a","cod":"93I0000019","nome":"Raspatrice 327-EU","det":"mandrino 10 mm","prezzo":110.0,"img":"foto/93I0000019.jpg"}];
+const TELEFONO="393316798961";
+document.addEventListener("DOMContentLoaded",()=>{
+  const $=id=>document.getElementById(id), euro=n=>n.toFixed(2).replace(".",",").replace(/\B(?=(\d{3})+(?!\d))/g,".")+" €", qt=ARTICOLI.map(()=>0), campi=[];
+  ARTICOLI.forEach((a,i)=>{
+    const d=document.createElement("div"); d.className="riga"; d.dataset.g=a.g;
+    d.innerHTML='<img alt="" loading="lazy" src="'+a.img+'"><div><h3>'+a.nome+'</h3><div class="c">'+a.cod+'</div><div class="p">'+a.det+'<br>'+euro(a.prezzo)+' + IVA</div></div><div class="qta"><button type="button" aria-label="Meno">−</button><input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Quantità '+a.nome.replace(/"/g,"&quot;")+'"><button type="button" aria-label="Più">+</button></div>';
+    const [m,c,p]=d.querySelector(".qta").children;
+    m.addEventListener("click",()=>{if(qt[i]>0){qt[i]--;agg();}}); p.addEventListener("click",()=>{if(qt[i]<99){qt[i]++;agg();}});
+    c.addEventListener("focus",()=>c.select()); c.addEventListener("input",()=>{qt[i]=Math.min(99,Math.max(0,parseInt(c.value,10)||0));agg(true);});
+    campi.push({riga:d,campo:c}); $(a.g==="e"?"righe":"righeG").appendChild(d);
+  });
+  const cat=g=>campi.forEach((c,i)=>{if(ARTICOLI[i].g!=="e")c.riga.hidden=ARTICOLI[i].g!==g;});
+  document.querySelectorAll("input[name=cat]").forEach(r=>r.addEventListener("change",()=>{cat(r.value);window.conta&&window.conta("ricerca",r.nextElementSibling.textContent);}));
+  const imp=()=>qt.reduce((s,q,i)=>s+q*ARTICOLI[i].prezzo,0);
+  function wa(){const t=imp(),o=$("officina").value.trim();const x=t?"Ciao Stefano, vorrei questi articoli *Ingersoll Rand*:\n"+ARTICOLI.map((a,i)=>qt[i]?"• "+a.cod+" "+a.nome+": "+qt[i]+" pz × "+euro(a.prezzo):"").filter(Boolean).join("\n")+"\nTotale: "+euro(t)+" + IVA\n\nOfficina: "+o:"Ciao Stefano, ho visto gli avvitatori Ingersoll Rand. Mi dai qualche informazione?";$("wa").href="https://wa.me/"+TELEFONO+"?text="+encodeURIComponent(x);$("waTesto").textContent=t?"Invia l'ordine su WhatsApp":"Scrivimi su WhatsApp";}
+  function agg(k){campi.forEach((c,i)=>{if(!k||document.activeElement!==c.campo)c.campo.value=qt[i];c.riga.classList.toggle("on",qt[i]>0);});const t=imp();$("tot").textContent=t?euro(t):"–";$("riep").innerHTML=ARTICOLI.map((a,i)=>qt[i]?"<li><span>"+qt[i]+" × "+a.nome+"</span><b>"+euro(qt[i]*a.prezzo)+"</b></li>":"").join("");wa();}
+  $("officina").addEventListener("input",wa);
+  $("avviso").addEventListener("click",e=>{e.preventDefault();$("secOrdine").scrollIntoView({behavior:"smooth",block:"start"});});
+  if("IntersectionObserver" in window)new IntersectionObserver(es=>es.forEach(e=>$("avviso").classList.toggle("via",e.isIntersecting||e.boundingClientRect.top<0)),{threshold:[0,.15]}).observe($("secOrdine"));
+  cat("p"); agg();
+});
+</script>
+<script>/* vocale: play/pausa, barra, durata; avvio e ascolto completo vanno al contatore come ricerche */
+document.addEventListener("DOMContentLoaded", () => {
+  const a = document.getElementById("voceAudio"), btn = document.getElementById("voceBtn"), box = document.getElementById("voce");
+  const bar = document.getElementById("voceBar"), anello = document.getElementById("voceAnello"), ico = document.getElementById("voceIcona");
+  const GIRO = 345.6; /* circonferenza dell'anello: 2π × 55 */
+  let contato = false;
+  /* il bottone compare solo se il file del vocale c'è */
+  fetch(a.getAttribute("src").split("?")[0], {method: "HEAD", cache: "no-store"})
+    .then(r => { if (r.ok) box.hidden = false; }).catch(() => {});
+  btn.addEventListener("click", () => {
+    if (a.paused) {
+      a.play();
+      if (!contato && window.conta) { window.conta("ricerca", "vocale avviato"); contato = true; }
+    } else a.pause();
+  });
+  a.addEventListener("play", () => { box.classList.add("va"); ico.setAttribute("d", "M6 5h4v14H6zM14 5h4v14h-4z"); });
+  a.addEventListener("pause", () => { box.classList.remove("va"); ico.setAttribute("d", "M8 5v14l11-7z"); });
+  a.addEventListener("timeupdate", () => {
+    if (!a.duration) return;
+    const f = a.currentTime / a.duration;
+    bar.style.width = (f * 100) + "%";
+    anello.style.strokeDashoffset = GIRO * (1 - f);
+  });
+  a.addEventListener("ended", () => {
+    bar.style.width = "0"; anello.style.strokeDashoffset = GIRO; a.currentTime = 0;
+    if (window.conta) window.conta("ricerca", "vocale ascoltato tutto");
+  });
+});
+</script>
+<script src="/mak-promo/conta.js" defer></script>
+</body>
+</html>

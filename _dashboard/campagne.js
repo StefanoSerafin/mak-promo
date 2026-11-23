@@ -110,6 +110,29 @@ const CAMPAGNE = [
   "conta_dal": "2026-11-15"
  },
  {
+  "c": "avvitatori-ingersoll",
+  "titolo": "Avvitatori Ingersoll Rand · 231GXP 110 € · kit W7152 560 € + IVA",
+  "desc": "Aria o batteria? Scegli il tuo tra tutta la gamma Ingersoll Rand e ordina su WhatsApp.",
+  "argomento": "Officina e consumo",
+  "archiviata": false,
+  "dal": "2026-11-23",
+  "url": "https://stefanoserafin.github.io/mak-promo/avvitatori-ingersoll/",
+  "privata": false,
+  "parole": [
+   "avvitatore",
+   "pistola",
+   "pneumatico",
+   "batteria",
+   "W7152",
+   "231GXP",
+   "bussole",
+   "smerigliatrice",
+   "raspatrice"
+  ],
+  "invio_massa": null,
+  "conta_dal": "2026-11-24"
+ },
+ {
   "c": "black-friday-autel-mx",
   "titolo": "Black Friday · Refill AUTEL MX −15%: 15,70 € + IVA da 20 pezzi",
   "desc": "Dal 26 novembre al 6 dicembre: sensori TPMS AUTEL MX a 15,70 € invece di 18,47 € con il refill da 20 pezzi, anche misti. Ordina su WhatsApp.",
