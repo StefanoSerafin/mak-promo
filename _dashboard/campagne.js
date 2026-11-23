@@ -559,6 +559,42 @@ const CAMPAGNE = [
   "conta_dal": "2026-10-27"
  },
  {
+  "c": "rotolamento-ruotino",
+  "titolo": "Rotolamento ruotino di scorta · confronto",
+  "desc": "Misura del pneumatico e ruotino: confronta la circonferenza di rotolamento.",
+  "argomento": "Inverno e soccorso NPK",
+  "archiviata": false,
+  "dal": "2026-11-23",
+  "url": "https://stefanoserafin.github.io/mak-rotolamento-ruotino/",
+  "privata": true,
+  "parole": [
+   "ruotino",
+   "circonferenza",
+   "scorta",
+   "Ennepicappa"
+  ],
+  "invio_massa": null,
+  "conta_dal": "2026-11-24"
+ },
+ {
+  "c": "ruote-acciaio-magnetto",
+  "titolo": "Ruote in acciaio Magnetto · catalogo applicazioni",
+  "desc": "Uso personale, con PIN. Vettura, misura, pneumatico o codice: trova la ruota in acciaio Magnetto.",
+  "argomento": "Ruote e montaggio",
+  "archiviata": false,
+  "dal": "2026-11-23",
+  "url": "https://stefanoserafin.github.io/mak-cerchi-acciaio-magnetto/",
+  "privata": true,
+  "parole": [
+   "Magnetto",
+   "cerchi",
+   "acciaio",
+   "applicazioni"
+  ],
+  "invio_massa": null,
+  "conta_dal": "2026-11-24"
+ },
+ {
   "c": "spese-trasporto",
   "titolo": "Spese di trasporto MAK · gratis da 550 € + IVA",
   "desc": "Scrivi quanto hai nel carrello: ti dico quanto paghi di trasporto e quanto ti manca alla spedizione gratis.",
