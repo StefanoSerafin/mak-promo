@@ -1,5 +1,5 @@
 /* Generato da _build/dashboard.py: non modificare a mano. */
-const GENERATO = "2026-11-23";
+const GENERATO = "2026-11-24";
 const ARGOMENTI = ["TPMS e diagnosi", "Ruote e montaggio", "Inverno e soccorso NPK", "Officina e consumo", "Portale e servizio"];
 const MIO_DAL = "2026-11-16";
 const CAMPAGNE = [

@@ -149,17 +149,9 @@ Rigenera: `python3 _build/build.py`
 - Foro della ruota (8 esterni; dal 2026-11-12 nei testi «ruota», mai «cerchio») → mozzo dalla vettura o dai bottoni → codice con quantità e «Aggiungi»; gamma completa per esterno con le quantità; ordine su WhatsApp con codici e pezzi. Se l'anello non c'è o non serve, la pagina lo dice e il messaggio chiede a Stefano.
 - Anteprima: `_build/anteprima-anelli-centraggio.html`; icona: `_build/icona-anelli-centraggio.html`.
 
-## Copie per i colleghi agenti (`<agente>/<campagna>/`)
+## Copie per i colleghi (non più)
 
-> **Le cartelle `<agente>/` sono state cancellate il 2026-11-24** (commit `c3b7505`), su richiesta di Stefano: i vecchi link dei colleghi danno 404. `_build/agenti.py` resta perché `dashboard.py` ne usa `campagne()` e il briefing ne legge i nomi; non va lanciato, altrimenti ricrea le cartelle.
->
-> **Dal 2026-11-05 le copie per i colleghi non si fanno più.** Le locandine dei colleghi le cura Matteo Varietà sul suo GitHub, con i link alla pagina ufficiale makwheels. Le cartelle `<agente>/` qui sotto sono ferme al 2026-11-04 e `_build/agenti.py` non va lanciato, salvo richiesta esplicita di Stefano.
-
-- `_build/agenti.py` copia ogni campagna in `<agente>/<campagna>/` con nome, numero, link `tel:` e `wa.me` dell'agente (anche «Ciao <nome>» nei messaggi WhatsApp) e rifà `locandina.jpg` con il suo nome dalla sorgente in `../Locandine/` (fix-pack e halloween-ruotino si copiano: l'immagine non ha nome né numero).
-- Agenti in `AGENTI` dentro lo script: Angelo Magnotta (+39 392 450 1782) → `…/mak-promo/angelo/`, Alberto Pianta (+39 335 522 3011) → `…/mak-promo/alberto/`, Federico Gorgoglione (+39 335 638 4363) → `…/mak-promo/federico/`, Davide Mattaliano (+39 349 051 2550) → `…/mak-promo/davide/`, Oscar Padova (+39 349 071 7481) → `…/mak-promo/oscar/`, Gianluca Giamberardino (+39 339 143 6270) → `…/mak-promo/gianluca/`, Silvana Rinaldi (+39 338 680 0250) → `…/mak-promo/silvana/`, Francesco Parisi (+39 338 259 4763) → `…/mak-promo/francesco/`, Marco Mazzotti (+39 334 113 3956) → `…/mak-promo/marco/`, Marco Cesarini (+39 345 944 3886) → `…/mak-promo/marco-cesarini/`, Michele Bracchi (+39 347 540 6935) → `…/mak-promo/michele/`, Emil Colombani (+39 333 314 0092) → `…/mak-promo/emil/`, Gerardo Giacco (+39 320 223 2932) → `…/mak-promo/gerardo/`, Enrico Galante (+39 349 772 0865) → `…/mak-promo/enrico/`, Stefania Santiglia (+39 327 902 0929) → `…/mak-promo/stefania/`, Matteo Colzani (+39 393 250 5569) → `…/mak-promo/matteo/`, Elisa Rampon (+39 331 667 4100) → `…/mak-promo/elisa/`, Mauro Galante (+39 342 092 3719) → `…/mak-promo/mauro-galante/`, Marco Podda (+39 339 860 5989) → `…/mak-promo/marco-podda/`, Domenico Sorrentino (+39 389 463 2818) → `…/mak-promo/domenico/`, Francesco Di Cesare (+39 345 850 3816) → `…/mak-promo/francesco-dicesare/`, Sebastiano Fabrotti (+39 342 353 5576) → `…/mak-promo/sebastiano/`, Mauro Pallini (+39 339 878 1190) → `…/mak-promo/mauro-pallini/`, Ivan Parisi (+39 333 801 2609) → `…/mak-promo/ivan/`. Per un collega nuovo basta una riga in `AGENTI` e `python3 _build/agenti.py <chiave>`.
-- Lo script non cancella le cartelle: riscrive solo i file cambiati e tiene i file temporanei della locandina fuori dalla Scrivania (su iCloud cancellare e ricreare crea doppioni « 2»). La pagina dell'agente (`<agente>/index.html`) elenca tutte le campagne con anteprima, titolo, link, «Copia link» e «Manda su WhatsApp».
-- Le copie non si modificano a mano: dopo ogni cambio a una campagna, o per una campagna nuova, `python3 _build/agenti.py` e push (per rifare solo le campagne toccate: `python3 _build/agenti.py --solo=<campagna>,<campagna>`, ~1,5 minuti per tutti). Lo script si ferma se in una pagina resta il nome o il numero di Stefano.
-- Frasi valide solo per Stefano (es. «il mio video») in `FRASI`.
+Dal 2026-11-05 le locandine dei colleghi le cura Matteo Varietà sul suo GitHub. Le vecchie copie `<agente>/<campagna>/` e lo script che le generava sono stati cancellati il 2026-11-24 (commit `c3b7505` e successivo, recuperabili dalla cronologia git).
 
 ## ts900-rinnovi (rinnovi AUTEL TS900, senza scadenza)
 
@@ -184,7 +176,7 @@ Rigenera: `python3 _build/build.py`
 ## assistenza-mate (assistenza telefonica gratuita per i clienti con strumenti MATE e Autel, senza prezzi)
 
 - Servizio Clienti MATE **392 098 1064**, dal lunedì al venerdì in orario d'ufficio, support@mate-tech.it (scelta di Stefano del 2026-11-03; il cellulare di Pepe non va pubblicato).
-- **Chiama e WhatsApp vanno all'assistenza, non all'agente** («non facciamo assistenza»): `tel:+393920981064` e `wa.me/393920981064`. Nelle copie dei colleghi il numero resta quello; cambiano solo la firma e la riga «Il mio agente MAK» del messaggio.
+- **Chiama e WhatsApp vanno all'assistenza, non all'agente** («non facciamo assistenza»): `tel:+393920981064` e `wa.me/393920981064`.
 - «La procedura della tua auto»: marca → modello → tipi di procedura e link all'app Apprendimento TPMS (`…/mak-tpms-relearn/#/<marca>/<modello>`) e alla scheda MATE in PDF. Dati in `marche.js`, generato da `_build/assistenza-mate-dati.py` da `../mak-tpms-relearn/data/brands.json`: rilanciarlo quando cambia l'app.
 - «Prepara la richiesta»: strumento, di cosa hai bisogno, officina (il seriale non serve, tolto il 2026-11-03) → messaggio WhatsApp all'assistenza con anche la vettura e l'agente.
 - Locandina: `../Locandine/assistenza-mate/locandina.html` (foto vera MA41 + TS508 da `Video Avatar/Immagini/MATE/`). Anteprima: `_build/anteprima-assistenza-mate.html`; icona: `_build/icona-assistenza-mate.html`.
@@ -197,10 +189,10 @@ Rigenera: `python3 _build/build.py`
 
 ## Monitoraggio (dal 2026-11-03)
 
-- Ogni pagina include `conta.js` (`<script src="/mak-promo/conta.js" defer></script>` prima di `</body>`) e la riga «Conteggio anonimo delle visite, senza cookie.» nel footer. Le copie dei colleghi lo ereditano; la pagina elenco del collega lo include con `data-elenco`.
+- Ogni pagina include `conta.js` (`<script src="/mak-promo/conta.js" defer></script>` prima di `</body>`) e la riga «Conteggio anonimo delle visite, senza cookie.» nel footer.
 - Conta aperture e tocchi su WhatsApp, Chiama, B2B e mail. Le ricerche arrivano dal blocco «ricerche per il contatore anonimo» in fondo alle pagine che ne hanno una: calze-neve, calze-light-espositore, canali-etrto, anelli-centraggio, distanziali-xilema, halloween-ruotino, kit-gomma-ruota, cavalletto-ez-jack-45s, assistenza-mate.
 - Il server è il Worker in `../mak-promo-conta/` (README con cosa si salva e cosa no). I numeri si leggono nel briefing del lunedì.
-- Campagna nuova: script e riga nel footer, più l'aggancio della ricerca se c'è. `_build/agenti.py` si ferma se manca `conta.js`.
+- Campagna nuova: script e riga nel footer, più l'aggancio della ricerca se c'è.
 
 ## multisens-plus (promo lancio MATE MULTIsens+, 9–22 novembre 2026)
 
@@ -208,7 +200,7 @@ Rigenera: `python3 _build/build.py`
 - 14,00 € + IVA a sensore, minimo 40 pezzi (560,00 € + IVA, spedizione inclusa); Rubber, Metal Silver e Metal Black miscelabili a multipli di 10. Sul B2B dal 9/11, sezione Promozioni.
 - Conto alla rovescia: prima del 9/11 conta alla partenza («lo inserisci appena parte»), poi alla fine del 22/11; dopo diventa «Chiedimi le offerte attive».
 - Ordine a passi di 10 per versione, barra verso i 40, mix rapidi; messaggio WhatsApp con le versioni (i codici articolo non sono ancora stati comunicati).
-- Dal 2026-11-04 (richiesta di Stefano) la pagina mostra il **volantino ufficiale MAK/MATE** (`../Locandine/multisens-plus/volantino-mate-multisens-plus.png` → `locandina.jpg`, copiato com'è anche nelle copie dei colleghi: `SORGENTE_LOCANDINA` = None). Le foto di Rubber, Metal Silver e Metal Black (`ms-*.png`) sono ritagliate dal volantino. MA41 e VT57 dalla presentazione. Sezione «Prima aggiorna l'ATEQ» e link all'assistenza MATE.
+- Dal 2026-11-04 (richiesta di Stefano) la pagina mostra il **volantino ufficiale MAK/MATE** (`../Locandine/multisens-plus/volantino-mate-multisens-plus.png` → `locandina.jpg`). Le foto di Rubber, Metal Silver e Metal Black (`ms-*.png`) sono ritagliate dal volantino. MA41 e VT57 dalla presentazione. Sezione «Prima aggiorna l'ATEQ» e link all'assistenza MATE.
 - Anteprima: `_build/anteprima-multisens-plus.html`; icona: `_build/icona-multisens-plus.html`.
 
 ## cap-originali (cap originali e cap neutro da 60 mm, senza prezzi)

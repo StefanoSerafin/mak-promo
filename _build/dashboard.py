@@ -4,8 +4,7 @@
 Va lanciato a ogni campagna nuova (o quando cambia un og:title), dalla cartella mak-promo:
     python3 _build/dashboard.py
 
-Prende le campagne con la stessa regola di agenti.campagne() (cartelle con index.html, senza «_»/«.»,
-escluse le copie dei colleghi), legge og:title e og:description, la data del primo commit e
+Prende le campagne (cartelle con index.html, senza «_»/«.»), legge og:title e og:description, la data del primo commit e
 l'argomento (e le «parole» facoltative per la ricerca) da _build/argomenti.json. Si ferma se una campagna non ha l'argomento, se manca
 l'anteprima o se argomenti.json cita una campagna che non c'è più. Aggiorna anche il numero di
 versione di campagne.js dentro _dashboard/index.html (cache di Safari) e scrive _dashboard/filtri.json,
@@ -22,8 +21,12 @@ from datetime import date, timedelta
 from pathlib import Path
 
 PROMO = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(PROMO / "_build"))
-from agenti import campagne  # noqa: E402  (stessa regola delle copie dei colleghi)
+
+
+def campagne():
+    """Le cartelle di mak-promo con un index.html, senza quelle che iniziano con «_» o «.»."""
+    return sorted(p.name for p in PROMO.iterdir()
+                  if p.is_dir() and (p / "index.html").exists() and not p.name.startswith(("_", ".")))
 
 BASE_URL = "https://stefanoserafin.github.io/mak-promo/"
 ARG = PROMO / "_build" / "argomenti.json"
