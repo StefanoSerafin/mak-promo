@@ -151,6 +151,8 @@ Rigenera: `python3 _build/build.py`
 
 ## Copie per i colleghi agenti (`<agente>/<campagna>/`)
 
+> **Le cartelle `<agente>/` sono state cancellate il 2026-11-24** (commit `c3b7505`), su richiesta di Stefano: i vecchi link dei colleghi danno 404. `_build/agenti.py` resta perché `dashboard.py` ne usa `campagne()` e il briefing ne legge i nomi; non va lanciato, altrimenti ricrea le cartelle.
+>
 > **Dal 2026-11-05 le copie per i colleghi non si fanno più.** Le locandine dei colleghi le cura Matteo Varietà sul suo GitHub, con i link alla pagina ufficiale makwheels. Le cartelle `<agente>/` qui sotto sono ferme al 2026-11-04 e `_build/agenti.py` non va lanciato, salvo richiesta esplicita di Stefano.
 
 - `_build/agenti.py` copia ogni campagna in `<agente>/<campagna>/` con nome, numero, link `tel:` e `wa.me` dell'agente (anche «Ciao <nome>» nei messaggi WhatsApp) e rifà `locandina.jpg` con il suo nome dalla sorgente in `../Locandine/` (fix-pack e halloween-ruotino si copiano: l'immagine non ha nome né numero).
