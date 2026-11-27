@@ -1,5 +1,5 @@
 /* Generato da _build/dashboard.py: non modificare a mano. */
-const GENERATO = "2026-11-24";
+const GENERATO = "2026-11-27";
 const ARGOMENTI = ["TPMS e diagnosi", "Ruote e montaggio", "Inverno e soccorso NPK", "Officina e consumo", "Portale e servizio"];
 const MIO_DAL = "2026-11-16";
 const CAMPAGNE = [
@@ -19,6 +19,7 @@ const CAMPAGNE = [
    "login",
    "registrazione"
   ],
+  "statica": true,
   "invio_massa": null,
   "conta_dal": "2026-11-10"
  },
@@ -36,6 +37,7 @@ const CAMPAGNE = [
    "gasolio",
    "diesel"
   ],
+  "statica": true,
   "invio_massa": null,
   "conta_dal": "2026-10-27"
  },
@@ -54,6 +56,7 @@ const CAMPAGNE = [
    "caravan",
    "rimorchio"
   ],
+  "statica": true,
   "invio_massa": null,
   "conta_dal": "2026-11-15"
  },
@@ -71,6 +74,7 @@ const CAMPAGNE = [
    "centraggio",
    "foro centrale"
   ],
+  "statica": true,
   "invio_massa": null,
   "conta_dal": "2026-10-28"
  },
@@ -89,6 +93,7 @@ const CAMPAGNE = [
    "telefono",
    "help"
   ],
+  "statica": true,
   "invio_massa": "2026-11-10",
   "conta_dal": "2026-11-10"
  },
@@ -106,6 +111,7 @@ const CAMPAGNE = [
    "sensori",
    "valvole"
   ],
+  "statica": true,
   "invio_massa": null,
   "conta_dal": "2026-11-15"
  },
@@ -129,6 +135,7 @@ const CAMPAGNE = [
    "smerigliatrice",
    "raspatrice"
   ],
+  "statica": true,
   "invio_massa": null,
   "conta_dal": "2026-11-24"
  },
@@ -149,6 +156,7 @@ const CAMPAGNE = [
    "-15%",
    "promo"
   ],
+  "statica": true,
   "invio_massa": "2026-11-24",
   "conta_dal": "2026-11-24"
  },
@@ -168,6 +176,7 @@ const CAMPAGNE = [
    "100 pezzi",
    "promo"
   ],
+  "statica": true,
   "invio_massa": "2026-11-24",
   "conta_dal": "2026-11-24"
  },
@@ -190,6 +199,7 @@ const CAMPAGNE = [
    "-15%",
    "promo"
   ],
+  "statica": true,
   "invio_massa": "2026-11-24",
   "conta_dal": "2026-11-24"
  },
@@ -212,6 +222,7 @@ const CAMPAGNE = [
    "-40%",
    "promo"
   ],
+  "statica": true,
   "invio_massa": "2026-11-26",
   "conta_dal": "2026-11-26"
  },
@@ -230,6 +241,7 @@ const CAMPAGNE = [
    "colonnette",
    "viti"
   ],
+  "statica": true,
   "invio_massa": null,
   "conta_dal": "2026-11-11"
  },
@@ -247,6 +259,7 @@ const CAMPAGNE = [
    "antifurto",
    "chiave"
   ],
+  "statica": true,
   "invio_massa": null,
   "conta_dal": "2026-11-14"
  },
@@ -265,6 +278,7 @@ const CAMPAGNE = [
    "inverno",
    "Ennepicappa"
   ],
+  "statica": true,
   "invio_massa": null,
   "conta_dal": "2026-10-27"
  },
@@ -283,6 +297,7 @@ const CAMPAGNE = [
    "inverno",
    "Ennepicappa"
   ],
+  "statica": true,
   "invio_massa": null,
   "conta_dal": "2026-10-30"
  },
@@ -300,6 +315,7 @@ const CAMPAGNE = [
    "larghezza",
    "omologazione"
   ],
+  "statica": true,
   "invio_massa": null,
   "conta_dal": "2026-10-27"
  },
@@ -317,6 +333,7 @@ const CAMPAGNE = [
    "tappi",
    "borchie"
   ],
+  "statica": true,
   "invio_massa": null,
   "conta_dal": "2026-11-07"
  },
@@ -336,6 +353,7 @@ const CAMPAGNE = [
    "Ennepicappa",
    "preventivi"
   ],
+  "statica": false,
   "invio_massa": null,
   "conta_dal": "2026-11-24"
  },
@@ -353,6 +371,7 @@ const CAMPAGNE = [
    "crick",
    "martinetto"
   ],
+  "statica": true,
   "invio_massa": null,
   "conta_dal": "2026-10-30"
  },
@@ -371,6 +390,7 @@ const CAMPAGNE = [
    "lavamani",
    "materiale di consumo"
   ],
+  "statica": true,
   "invio_massa": null,
   "conta_dal": "2026-11-13"
  },
@@ -388,6 +408,7 @@ const CAMPAGNE = [
    "borchie",
    "coprimozzo"
   ],
+  "statica": true,
   "invio_massa": null,
   "conta_dal": "2026-11-07"
  },
@@ -405,6 +426,7 @@ const CAMPAGNE = [
    "MaxiSys",
    "strumento"
   ],
+  "statica": true,
   "invio_massa": null,
   "conta_dal": "2026-11-14"
  },
@@ -422,6 +444,7 @@ const CAMPAGNE = [
    "carreggiata",
    "mozzo"
   ],
+  "statica": true,
   "invio_massa": null,
   "conta_dal": "2026-10-27"
  },
@@ -439,6 +462,7 @@ const CAMPAGNE = [
    "colonnette",
    "valigetta"
   ],
+  "statica": true,
   "invio_massa": null,
   "conta_dal": "2026-10-27"
  },
@@ -457,6 +481,7 @@ const CAMPAGNE = [
    "Ennepicappa",
    "NPK"
   ],
+  "statica": true,
   "invio_massa": null,
   "conta_dal": "2026-10-26"
  },
@@ -476,6 +501,7 @@ const CAMPAGNE = [
    "montate",
    "TPMS"
   ],
+  "statica": true,
   "invio_massa": null,
   "conta_dal": "2026-10-26"
  },
@@ -496,6 +522,7 @@ const CAMPAGNE = [
    "apertura",
    "collaborazione"
   ],
+  "statica": true,
   "invio_massa": null,
   "conta_dal": "2026-11-15"
  },
@@ -513,6 +540,7 @@ const CAMPAGNE = [
    "valvole",
    "MATE"
   ],
+  "statica": true,
   "invio_massa": "2026-11-11",
   "conta_dal": "2026-11-11"
  },
@@ -530,6 +558,7 @@ const CAMPAGNE = [
    "IA",
    "storia"
   ],
+  "statica": true,
   "invio_massa": null,
   "conta_dal": "2026-10-27"
  },
@@ -545,6 +574,7 @@ const CAMPAGNE = [
   "parole": [
    "valvole"
   ],
+  "statica": true,
   "invio_massa": null,
   "conta_dal": "2026-10-27"
  },
@@ -561,6 +591,7 @@ const CAMPAGNE = [
    "valvole",
    "MP6"
   ],
+  "statica": true,
   "invio_massa": null,
   "conta_dal": "2026-10-27"
  },
@@ -578,6 +609,7 @@ const CAMPAGNE = [
    "pesi",
    "equilibratura"
   ],
+  "statica": true,
   "invio_massa": null,
   "conta_dal": "2026-10-27"
  },
@@ -596,6 +628,7 @@ const CAMPAGNE = [
    "scorta",
    "Ennepicappa"
   ],
+  "statica": false,
   "invio_massa": null,
   "conta_dal": "2026-11-24"
  },
@@ -614,6 +647,7 @@ const CAMPAGNE = [
    "acciaio",
    "applicazioni"
   ],
+  "statica": false,
   "invio_massa": null,
   "conta_dal": "2026-11-24"
  },
@@ -632,6 +666,7 @@ const CAMPAGNE = [
    "porto",
    "portale"
   ],
+  "statica": true,
   "invio_massa": null,
   "conta_dal": "2026-11-13"
  },
@@ -649,6 +684,7 @@ const CAMPAGNE = [
    "spazzole",
    "wiper"
   ],
+  "statica": true,
   "invio_massa": null,
   "conta_dal": "2026-10-27"
  },
@@ -666,6 +702,7 @@ const CAMPAGNE = [
    "spazzole",
    "wiper"
   ],
+  "statica": true,
   "invio_massa": null,
   "conta_dal": "2026-11-13"
  },
@@ -684,6 +721,7 @@ const CAMPAGNE = [
    "valvole",
    "ATEQ"
   ],
+  "statica": true,
   "invio_massa": null,
   "conta_dal": "2026-11-15"
  },
@@ -700,6 +738,7 @@ const CAMPAGNE = [
    "sensori",
    "valvole"
   ],
+  "statica": true,
   "invio_massa": null,
   "conta_dal": "2026-11-13"
  },
@@ -718,6 +757,7 @@ const CAMPAGNE = [
    "motorizzazione",
    "collaudo"
   ],
+  "statica": true,
   "invio_massa": null,
   "conta_dal": "2026-10-27"
  },
@@ -735,6 +775,7 @@ const CAMPAGNE = [
    "diagnosi",
    "scadenza"
   ],
+  "statica": true,
   "invio_massa": null,
   "conta_dal": "2026-10-29"
  }

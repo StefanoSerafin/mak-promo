@@ -99,6 +99,14 @@ details.arch summary{cursor:pointer;font-family:var(--titolo);font-size:22px;tex
 .bt .wa{background:var(--verde);color:#062e16}
 .bt .ap{background:#fff;color:var(--ink);border:1px solid var(--line)}
 .link{display:inline-block;margin-top:16px;font-weight:700;color:var(--red);text-decoration:none}
+.stat{margin-top:18px;background:var(--card);border-radius:16px;padding:12px}
+.stat>b{display:block;font-family:var(--titolo);font-size:22px;text-transform:uppercase;line-height:1;padding-top:2px}
+.stat p{margin:4px 0 10px;font-size:13px;color:var(--mute)}
+.stat .r{display:grid;grid-template-columns:96px 1fr;gap:12px;align-items:center}
+.stat .r>a img{width:96px;height:auto;display:block;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,.18)}
+.stat .bb{display:grid;gap:6px}
+.stat .bb a,.stat .bb button{font:inherit;font-size:15px;font-weight:700;border:0;border-radius:12px;padding:11px 6px;text-align:center;text-decoration:none;cursor:pointer;background:#fff;color:var(--ink);border:1px solid var(--line)}
+.stat .bb .inoltra{background:var(--ink);color:#fff;border-color:var(--ink)}
 
 /* chiave */
 .chiave{background:var(--card);border-radius:16px;padding:14px;margin-top:14px}
@@ -161,7 +169,7 @@ details.arch summary{cursor:pointer;font-family:var(--titolo);font-size:22px;tex
 .piede button{font:inherit;font-size:13px;font-weight:700;border:1px solid var(--line);background:#fff;border-radius:10px;padding:7px 12px;cursor:pointer}
 .piede .via{border:0;background:none;color:var(--mute);text-decoration:underline;padding:7px 0;font-weight:500}
 </style>
-<script src="campagne.js?v=199e550e"></script>
+<script src="campagne.js?v=8684dcb6"></script>
 </head>
 <body>
 <div class="wrap">
@@ -347,7 +355,37 @@ document.addEventListener("DOMContentLoaded", () => {
       '<div class="bt"><button type="button" class="cp" data-url="' + c.url + '">Copia link</button>' +
       (c.privata ? "" : '<a class="wa" data-c="' + c.c + '" href="' + linkWA(c) + '" target="_blank" rel="noopener">WhatsApp</a>') +
       '<a class="ap" href="' + c.url + '" target="_blank" rel="noopener">Apri</a></div>' +
+      statica(c) +
       '<a class="link" href="#numeri/' + c.c + '">Numeri di questa locandina ›</a>';
+  }
+
+  /* locandina statica (locandina.jpg): vedi a tutto schermo, scarica, inoltra col menu Condividi di iPhone */
+  const jpg = c => "../" + c.c + "/locandina.jpg";
+  function statica(c) {
+    if (!c.statica) return "";
+    return '<div class="stat"><b>Locandina statica</b><p>L’immagine da mandare come foto, senza link.</p><div class="r">' +
+      '<a href="' + jpg(c) + '" target="_blank" rel="noopener" aria-label="Vedi la locandina a tutto schermo"><img src="' + jpg(c) + '" alt="Locandina ' + esc(c.t1) + '" width="96" height="120"></a>' +
+      '<div class="bb"><a href="' + jpg(c) + '" target="_blank" rel="noopener">Vedi</a>' +
+      '<a href="' + jpg(c) + '" download="' + c.c + '-locandina.jpg">Scarica</a>' +
+      '<button type="button" class="inoltra" data-statica="' + c.c + '">Inoltra…</button></div></div></div>';
+  }
+  /* il file si prepara all'apertura della scheda: iPhone apre «Condividi» solo se share() parte subito dal tocco */
+  let fileStatica = null;
+  function preparaStatica(c) {
+    fileStatica = null;
+    if (!c || !c.statica || !navigator.canShare) return;
+    fetch(jpg(c)).then(r => r.ok ? r.blob() : null).then(b => {
+      if (!b) return;
+      const f = new File([b], c.c + "-locandina.jpg", {type: "image/jpeg"});
+      if (navigator.canShare({files: [f]})) fileStatica = {c: c.c, f};
+    }).catch(() => {});
+  }
+  function inoltra(cc) {
+    if (fileStatica && fileStatica.c === cc) {
+      navigator.share({files: [fileStatica.f]}).catch(() => {});
+    } else {
+      window.open(jpg(PER_C[cc]), "_blank", "noopener");   /* niente Condividi (computer): apre l'immagine */
+    }
   }
 
   /* Copia link: un solo ascoltatore per tutta la pagina */
@@ -368,6 +406,8 @@ document.addEventListener("DOMContentLoaded", () => {
     } catch (e) {}
   }
   document.body.addEventListener("click", e => {
+    const s = e.target.closest("[data-statica]");
+    if (s) { e.preventDefault(); inoltra(s.dataset.statica); return; }
     const w = e.target.closest("a.wa[data-c]");
     if (w) { invio(w.dataset.c); return; }
     const b = e.target.closest("button.cp");
@@ -657,7 +697,7 @@ document.addEventListener("DOMContentLoaded", () => {
     $("vLocandine").hidden = numeri; $("vNumeri").hidden = !numeri;
     $(numeri ? "vistaN" : "vistaL").checked = true;
     $("pElenco").hidden = nuova !== "elenco"; $("pScheda").hidden = nuova !== "scheda";
-    if (nuova === "scheda") $("pScheda").innerHTML = scheda(PER_C[cc]);
+    if (nuova === "scheda") { $("pScheda").innerHTML = scheda(PER_C[cc]); preparaStatica(PER_C[cc]); }
     if (numeri) { aperta = cc; if (!caricati) carica(); else disegnaNumeri(); }
     pagina = nuova;
     window.scrollTo(0, nuova === "elenco" || nuova === "numeri" ? scorri[nuova] : 0);

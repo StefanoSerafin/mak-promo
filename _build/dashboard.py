@@ -125,6 +125,7 @@ def main():
                      "argomento": mappa[c]["argomento"], "archiviata": bool(mappa[c].get("archiviata")),
                      "dal": dal, "url": mappa[c].get("url") or BASE_URL + c + "/", "privata": bool(mappa[c].get("privata")),
                      "parole": [x.strip() for x in mappa[c].get("parole", [])],
+                     "statica": (PROMO / c / "locandina.jpg").exists(),
                      "invio_massa": massa,
                      "conta_dal": massa or (date.fromisoformat(dal) + timedelta(days=1)).isoformat()})
 

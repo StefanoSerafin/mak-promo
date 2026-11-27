@@ -1,5 +1,5 @@
 {
- "generato": "2026-11-24",
+ "generato": "2026-11-27",
  "regola": "Conta dal giorno dopo la pubblicazione (le locandine mandate in massa dal giorno dell'invio); prima di «mio_dal» si saltano anche i giorni di modifica; dal primo invio WhatsApp dalla dashboard le aperture contano comunque; mai gli eventi «mio».",
  "mio_dal": "2026-11-16",
  "inizio_contatore": "2026-11-03",
