@@ -174,10 +174,10 @@ footer b{color:var(--ink)}
 
 <section id="secTrova">
   <h2>Quale cap <em>entra?</em></h2>
-  <p class="sub">Parti da quello che hai: la ruota MAK, il codice articolo scritto sulla fattura o sulla scatola, oppure la tua auto.</p>
+  <p class="sub">Parti da quello che hai: la ruota MAK, il codice articolo scritto sulla fattura o sulla scatola, il codice del cap MAK (es. C012), oppure la tua auto.</p>
   <div class="tabs" role="tablist">
     <input type="radio" name="tab" id="tRuota" value="ruota" checked><label for="tRuota">Ruota MAK<small>modello e misura</small></label>
-    <input type="radio" name="tab" id="tCodice" value="codice"><label for="tCodice">Codice<small>articolo ruota</small></label>
+    <input type="radio" name="tab" id="tCodice" value="codice"><label for="tCodice">Codice<small>ruota o cap MAK</small></label>
     <input type="radio" name="tab" id="tAuto" value="auto"><label for="tAuto">La mia auto<small>marca e modello</small></label>
   </div>
 
@@ -189,8 +189,8 @@ footer b{color:var(--ink)}
   </div>
 
   <div class="card pan" id="pCodice">
-    <label class="f" for="codice"><span class="n">1</span>Codice articolo della ruota</label>
-    <input type="text" id="codice" placeholder="es. F7070KABM38PE2X" autocomplete="off" autocorrect="off" autocapitalize="characters" spellcheck="false" inputmode="text">
+    <label class="f" for="codice"><span class="n">1</span>Codice articolo della ruota o codice del cap MAK</label>
+    <input type="text" id="codice" placeholder="es. F7070KABM38PE2X oppure C012" autocomplete="off" autocorrect="off" autocapitalize="characters" spellcheck="false" inputmode="text">
     <div class="trovati" id="trovati"></div>
   </div>
 
@@ -365,6 +365,8 @@ document.addEventListener("DOMContentLoaded", () => {
     attesa = setTimeout(() => {
       const t = pulisci($("codice").value), box = $("trovati");
       box.innerHTML = "";
+      const cap = t.match(/^C(\d{3}|[1-9]\d)$/);
+      if (cap) { rispostaSede("C" + cap[1].padStart(3, "0")); return; }
       if (t.length < 4) return;
       const esatto = D.CODICI[t] ? t : D.CODICI["F" + t] ? "F" + t : null;
       if (esatto) { apriCodice(esatto); return; }
@@ -387,6 +389,57 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }, 250);
   });
+
+  /* percorso 2b: codice del cap MAK (sede), es. C012 */
+  function rispostaSede(s) {
+    const box = $("ris"); box.innerHTML = "";
+    const ruote = {}, serie = new Set();
+    let mm60 = false;
+    D.MODELLI.forEach((m, mi) => m[1].forEach(v => v[3].forEach(x => {
+      if (x[0] !== s) return;
+      (ruote[mi] = ruote[mi] || new Set()).add(v[0] === null ? "tutte le misure" : v[0] + "″");
+      if (x[1]) serie.add(D.CAPSERIE[x[1]]);
+      if (x[2]) mm60 = true;
+    })));
+    const caps = SEDE_CAP[s] || [], righe = Object.keys(ruote);
+    if (!caps.length && !righe.length) {
+      box.appendChild(testo("Cap MAK <b>" + s + "</b> non trovato: <b>scrivimi il codice</b> e ti rispondo io."));
+      nonTrovato = s; contesto = ""; aggiornaWa(); conta("cap MAK " + s + " non trovato");
+      return;
+    }
+    const testa = document.createElement("div");
+    testa.className = "ruota";
+    testa.innerHTML = "<b>Cap MAK " + s + "</b>" + [...serie].map(esc).join("<br>");
+    box.appendChild(testa);
+    if (caps.length) {
+      const g = blocco("Cap originali che entrano nella sede <b>" + s + "</b>");
+      caps.forEach(c => g.appendChild(schedaCap(c)));
+      box.appendChild(g);
+    } else if (mm60) {
+      const g = blocco("Cap originale per la sede <b>" + s + "</b>");
+      g.appendChild(testo("Il cap originale per questa sede non c'è, <b>ma il cap neutro sì</b>: entra nella sede da 60 mm."));
+      g.appendChild(schedaCap(NEUTRO, true));
+      box.appendChild(g);
+    } else {
+      const g = blocco("Cap originale per la sede <b>" + s + "</b>");
+      g.appendChild(testo("Per questo cap <b>chiedimi</b>: ti dico io quale cap originale entra."));
+      box.appendChild(g);
+    }
+    if (righe.length) {
+      const g = blocco("Ruote MAK con il cap <b>" + s + "</b>");
+      const l = document.createElement("div"); l.className = "modelli";
+      righe.sort((a, b) => D.MODELLI[a][0].localeCompare(D.MODELLI[b][0])).forEach(mi =>
+        l.insertAdjacentHTML("beforeend", "<div><b>" + esc(D.MODELLI[mi][0]) + "</b><span>" + [...ruote[mi]].join(" · ") + "</span></div>"));
+      g.appendChild(l);
+      g.appendChild(testo("La stessa ruota può avere cap diversi a seconda della finitura: col <b>codice articolo</b> la risposta è esatta."));
+      box.appendChild(g);
+    }
+    $("trovati").innerHTML = "";
+    contesto = "Cap MAK " + s;
+    nonTrovato = "";
+    aggiornaWa();
+    conta("cap MAK " + s);
+  }
 
   /* percorso 3: vettura */
   const marcheCap = Object.keys(D.MARCHE_CAP).filter(m => D.VETTURE[m]).sort();
@@ -495,7 +548,7 @@ document.addEventListener("DOMContentLoaded", () => {
         (contesto ? "\n\n" + contesto : "") + (off ? "\nOfficina: " + off : "") + "\n\nMi dici prezzo e disponibilità?";
       etichetta = "Chiedi su WhatsApp";
     } else if (nonTrovato) {
-      t = "Ciao Stefano, ho la ruota con codice " + nonTrovato + ": quale cap originale ci entra?" + (off ? "\nOfficina: " + off : "");
+      t = (/^C\d{3}$/.test(nonTrovato) ? "Ciao Stefano, ho una ruota con il cap MAK " + nonTrovato : "Ciao Stefano, ho la ruota con codice " + nonTrovato) + ": quale cap originale ci entra?" + (off ? "\nOfficina: " + off : "");
       etichetta = "Chiedimi di questo codice";
     } else if (contesto) {
       t = "Ciao Stefano, mi aiuti con il cap? " + contesto + (off ? "\nOfficina: " + off : "");
